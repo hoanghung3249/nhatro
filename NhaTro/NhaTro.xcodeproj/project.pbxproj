@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
+		452E4DD81F4B16F200F27656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD71F4B16F200F27656 /* ViewController.swift */; };
+		452E4DDB1F4B16F200F27656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452E4DD91F4B16F200F27656 /* Main.storyboard */; };
+		452E4DDD1F4B16F200F27656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452E4DDC1F4B16F200F27656 /* Assets.xcassets */; };
+		452E4DE01F4B16F200F27656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452E4DDE1F4B16F200F27656 /* LaunchScreen.storyboard */; };
+		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NhaTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		452E4DD71F4B16F200F27656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		452E4DDA1F4B16F200F27656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		452E4DDC1F4B16F200F27656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		452E4DDF1F4B16F200F27656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
+		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		452E4DCF1F4B16F200F27656 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06E7735D548DB02F0E68DEEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		452E4DC91F4B16F100F27656 = {
+			isa = PBXGroup;
+			children = (
+				452E4DD41F4B16F200F27656 /* NhaTro */,
+				452E4DD31F4B16F200F27656 /* Products */,
+				75A47287B3355DCB6C75BB3C /* Pods */,
+				06E7735D548DB02F0E68DEEB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		452E4DD31F4B16F200F27656 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				452E4DD21F4B16F200F27656 /* NhaTro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		452E4DD41F4B16F200F27656 /* NhaTro */ = {
+			isa = PBXGroup;
+			children = (
+				452E4DD51F4B16F200F27656 /* AppDelegate.swift */,
+				452E4DD71F4B16F200F27656 /* ViewController.swift */,
+				452E4DD91F4B16F200F27656 /* Main.storyboard */,
+				452E4DDC1F4B16F200F27656 /* Assets.xcassets */,
+				452E4DDE1F4B16F200F27656 /* LaunchScreen.storyboard */,
+				452E4DE11F4B16F200F27656 /* Info.plist */,
+			);
+			path = NhaTro;
+			sourceTree = "<group>";
+		};
+		75A47287B3355DCB6C75BB3C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */,
+				A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		452E4DD11F4B16F200F27656 /* NhaTro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 452E4DE41F4B16F200F27656 /* Build configuration list for PBXNativeTarget "NhaTro" */;
+			buildPhases = (
+				E0DE478B237D281165151028 /* [CP] Check Pods Manifest.lock */,
+				452E4DCE1F4B16F200F27656 /* Sources */,
+				452E4DCF1F4B16F200F27656 /* Frameworks */,
+				452E4DD01F4B16F200F27656 /* Resources */,
+				C1DA908A1EDE784A9E83E7F0 /* [CP] Embed Pods Frameworks */,
+				7965DF11AEE46F9A31DEEADF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NhaTro;
+			productName = NhaTro;
+			productReference = 452E4DD21F4B16F200F27656 /* NhaTro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		452E4DCA1F4B16F100F27656 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "HOANG HUNG";
+				TargetAttributes = {
+					452E4DD11F4B16F200F27656 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 452E4DCD1F4B16F100F27656 /* Build configuration list for PBXProject "NhaTro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 452E4DC91F4B16F100F27656;
+			productRefGroup = 452E4DD31F4B16F200F27656 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				452E4DD11F4B16F200F27656 /* NhaTro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		452E4DD01F4B16F200F27656 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452E4DE01F4B16F200F27656 /* LaunchScreen.storyboard in Resources */,
+				452E4DDD1F4B16F200F27656 /* Assets.xcassets in Resources */,
+				452E4DDB1F4B16F200F27656 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7965DF11AEE46F9A31DEEADF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1DA908A1EDE784A9E83E7F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0DE478B237D281165151028 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		452E4DCE1F4B16F200F27656 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				452E4DD81F4B16F200F27656 /* ViewController.swift in Sources */,
+				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		452E4DD91F4B16F200F27656 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				452E4DDA1F4B16F200F27656 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		452E4DDE1F4B16F200F27656 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				452E4DDF1F4B16F200F27656 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		452E4DE21F4B16F200F27656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		452E4DE31F4B16F200F27656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		452E4DE51F4B16F200F27656 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NhaTro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhatro.NhaTro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		452E4DE61F4B16F200F27656 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NhaTro/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nhatro.NhaTro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		452E4DCD1F4B16F100F27656 /* Build configuration list for PBXProject "NhaTro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452E4DE21F4B16F200F27656 /* Debug */,
+				452E4DE31F4B16F200F27656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		452E4DE41F4B16F200F27656 /* Build configuration list for PBXNativeTarget "NhaTro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				452E4DE51F4B16F200F27656 /* Debug */,
+				452E4DE61F4B16F200F27656 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 452E4DCA1F4B16F100F27656 /* Project object */;
+}
