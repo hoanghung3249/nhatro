@@ -8,10 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
-		452E4DD81F4B16F200F27656 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD71F4B16F200F27656 /* ViewController.swift */; };
-		452E4DDB1F4B16F200F27656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452E4DD91F4B16F200F27656 /* Main.storyboard */; };
-		452E4DDD1F4B16F200F27656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452E4DDC1F4B16F200F27656 /* Assets.xcassets */; };
-		452E4DE01F4B16F200F27656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 452E4DDE1F4B16F200F27656 /* LaunchScreen.storyboard */; };
+		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
+		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
+		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
+		45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B201F5074DB005791E4 /* LoginViewController.swift */; };
+		45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B221F50752E005791E4 /* Assets.xcassets */; };
+		45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B271F507578005791E4 /* SWRevealViewController.m */; };
+		45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B291F507596005791E4 /* CategoriesAddition.swift */; };
+		45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2A1F507596005791E4 /* UIViewControllerExtension.swift */; };
+		45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2B1F507596005791E4 /* UIViewExtension.swift */; };
+		45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2F1F5075A3005791E4 /* ProgressView.swift */; };
+		45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B311F5075AD005791E4 /* Utilities.swift */; };
+		45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B341F5075DE005791E4 /* TransitionManager.swift */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +27,21 @@
 		40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NhaTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		452E4DD71F4B16F200F27656 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		452E4DDA1F4B16F200F27656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		452E4DDC1F4B16F200F27656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		452E4DDF1F4B16F200F27656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45EF0B091F50714D005791E4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45EF0B1B1F50746A005791E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		45EF0B201F5074DB005791E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		45EF0B221F50752E005791E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45EF0B251F507577005791E4 /* NhaTro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NhaTro-Bridging-Header.h"; sourceTree = "<group>"; };
+		45EF0B261F507578005791E4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		45EF0B271F507578005791E4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		45EF0B291F507596005791E4 /* CategoriesAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesAddition.swift; sourceTree = "<group>"; };
+		45EF0B2A1F507596005791E4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		45EF0B2B1F507596005791E4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		45EF0B2F1F5075A3005791E4 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		45EF0B311F5075AD005791E4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		45EF0B341F5075DE005791E4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,13 +88,183 @@
 			isa = PBXGroup;
 			children = (
 				452E4DD51F4B16F200F27656 /* AppDelegate.swift */,
-				452E4DD71F4B16F200F27656 /* ViewController.swift */,
-				452E4DD91F4B16F200F27656 /* Main.storyboard */,
-				452E4DDC1F4B16F200F27656 /* Assets.xcassets */,
-				452E4DDE1F4B16F200F27656 /* LaunchScreen.storyboard */,
+				45EF0B071F507127005791E4 /* API */,
+				45EF0B121F5073BC005791E4 /* Models */,
+				45EF0B0B1F507318005791E4 /* Configs */,
+				45EF0B111F50739B005791E4 /* Libraries */,
+				45EF0B131F5073E2005791E4 /* Resources */,
+				45EF0B141F5073F0005791E4 /* ViewControllers */,
+				45EF0B151F5073FA005791E4 /* Views */,
 				452E4DE11F4B16F200F27656 /* Info.plist */,
 			);
 			path = NhaTro;
+			sourceTree = "<group>";
+		};
+		45EF0B071F507127005791E4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B081F50713C005791E4 /* NetworkService */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		45EF0B081F50713C005791E4 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B091F50714D005791E4 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		45EF0B0B1F507318005791E4 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B101F507381005791E4 /* Utilities */,
+				45EF0B0F1F507376005791E4 /* Helper */,
+				45EF0B0E1F507369005791E4 /* Extensions */,
+				45EF0B0C1F507349005791E4 /* Constants */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		45EF0B0C1F507349005791E4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		45EF0B0E1F507369005791E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B291F507596005791E4 /* CategoriesAddition.swift */,
+				45EF0B2A1F507596005791E4 /* UIViewControllerExtension.swift */,
+				45EF0B2B1F507596005791E4 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45EF0B0F1F507376005791E4 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B2F1F5075A3005791E4 /* ProgressView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		45EF0B101F507381005791E4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B311F5075AD005791E4 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		45EF0B111F50739B005791E4 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B331F5075D4005791E4 /* TransitionManager */,
+				45EF0B241F507559005791E4 /* SWRevealViewController */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		45EF0B121F5073BC005791E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		45EF0B131F5073E2005791E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B181F50742D005791E4 /* Storyboards */,
+				45EF0B171F50741C005791E4 /* Plists */,
+				45EF0B161F507411005791E4 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45EF0B141F5073F0005791E4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B1E1F5074C0005791E4 /* Authenticate */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		45EF0B151F5073FA005791E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		45EF0B161F507411005791E4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B221F50752E005791E4 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		45EF0B171F50741C005791E4 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		45EF0B181F50742D005791E4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B191F507443005791E4 /* Main */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		45EF0B191F507443005791E4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */,
+				45EF0B1B1F50746A005791E4 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45EF0B1E1F5074C0005791E4 /* Authenticate */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B1F1F5074CC005791E4 /* LoginVC */,
+			);
+			path = Authenticate;
+			sourceTree = "<group>";
+		};
+		45EF0B1F1F5074CC005791E4 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B201F5074DB005791E4 /* LoginViewController.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		45EF0B241F507559005791E4 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B261F507578005791E4 /* SWRevealViewController.h */,
+				45EF0B271F507578005791E4 /* SWRevealViewController.m */,
+				45EF0B251F507577005791E4 /* NhaTro-Bridging-Header.h */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		45EF0B331F5075D4005791E4 /* TransitionManager */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B341F5075DE005791E4 /* TransitionManager.swift */,
+			);
+			path = TransitionManager;
 			sourceTree = "<group>";
 		};
 		75A47287B3355DCB6C75BB3C /* Pods */ = {
@@ -123,6 +311,7 @@
 				TargetAttributes = {
 					452E4DD11F4B16F200F27656 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,9 +339,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				452E4DE01F4B16F200F27656 /* LaunchScreen.storyboard in Resources */,
-				452E4DDD1F4B16F200F27656 /* Assets.xcassets in Resources */,
-				452E4DDB1F4B16F200F27656 /* Main.storyboard in Resources */,
+				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
+				45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */,
+				45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,31 +400,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				452E4DD81F4B16F200F27656 /* ViewController.swift in Sources */,
+				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
+				45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */,
+				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
+				45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */,
+				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
+				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
+				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
+				45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */,
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
+				45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		452E4DD91F4B16F200F27656 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				452E4DDA1F4B16F200F27656 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		452E4DDE1F4B16F200F27656 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				452E4DDF1F4B16F200F27656 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		452E4DE21F4B16F200F27656 /* Debug */ = {
@@ -336,10 +514,13 @@
 			baseConfigurationReference = 6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NhaTro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nhatro.NhaTro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NhaTro/Libraries/SWRevealViewController/NhaTro-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -349,10 +530,12 @@
 			baseConfigurationReference = A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = NhaTro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nhatro.NhaTro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NhaTro/Libraries/SWRevealViewController/NhaTro-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -376,6 +559,7 @@
 				452E4DE61F4B16F200F27656 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
