@@ -12,10 +12,14 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
-        print("aaa")
     }
+   override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
