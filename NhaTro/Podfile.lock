@@ -75,6 +75,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - NKVPhonePicker (1.1.0)
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - GooglePlaces
   - IQKeyboardManager
   - Kingfisher (~> 3.0)
+  - NKVPhonePicker
   - NVActivityIndicatorView
   - SwiftyJSON
 
@@ -120,10 +122,11 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
   Kingfisher: c8911a7672c6217dec8c0520fb6e76ec4b7e0780
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NKVPhonePicker: 9132baa19101554b94ffd77d3472adf9d26f0f16
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: d0775933f6ea4859228ebcefcc9c0baba12ef79f
+PODFILE CHECKSUM: 7d71cc0c51f93697d9672a4163cefa2854a8356e
 
 COCOAPODS: 1.2.0
