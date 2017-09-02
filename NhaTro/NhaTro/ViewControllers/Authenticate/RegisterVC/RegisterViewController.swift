@@ -9,90 +9,54 @@
 import UIKit
 import NKVPhonePicker
 
-class RegisterViewController: UIViewController,SPSegmentControlDelegate,SPSegmentControlCellStyleDelegate {
+class RegisterViewController: UIViewController {
 
     @IBOutlet weak var txtCountryCode: NKVPhonePickerTextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtFullName: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
-    @IBOutlet weak var segmentedControl: SPSegmentedControl!
+    @IBOutlet weak var segmentedControl: XMSegmentedControl!
     
-        override func viewDidLoad() {
+    
+    //MARK:- Life Cycle
+    override func viewDidLoad() {
         super.viewDidLoad()
-
-            segmentedControl?.layer.borderColor = Color.borderColor().cgColor
-            segmentedControl?.backgroundColor = Color.viewBackgroundColor()
-            segmentedControl?.styleDelegate = self
-            segmentedControl?.delegate = self
-            
-            //first segment control
-            let xFirstCell = self.createCell(
-                text: "User",
-                image: self.createImage(withName: "ionPersonStalkerIonicons")
-            )
-            let xSecondCell = self.createCell(
-                text: "Host",
-                image: self.createImage(withName: "homeAnticon")
-            )
-            for cell in [xFirstCell, xSecondCell] {
-                cell.layout = .textWithImage
-                self.segmentedControl.add(cell: cell)
-            }
-
-            
-
         // Do any additional setup after loading the view.
+        self.setupSegmented()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    //MARK:- Support functions
+    private func setupSegmented() {
+        segmentedControl.delegate = self
+        segmentedControl.backgroundColor = UIColor(red: 74.0/255, green: 74.0/255, blue: 74.0/255, alpha: 0.8)
+        let arrTitle = ["User", "Host"]
+        let arrIcon = [UIImage(named: "ionPersonStalkerIonicons")!,UIImage(named: "homeAnticon")!]
+        segmentedControl.segmentContent = (arrTitle,arrIcon)
+        segmentedControl.highlightColor = UIColor(red: 238.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 1)
+        segmentedControl.layer.cornerRadius = 20
     }
     
+    
+    //MARK:- Action buttons
     @IBAction func btnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        
     }
     
-    
-    private func createCell(text: String, image: UIImage) -> SPSegmentedControlCell {
-        let cell = SPSegmentedControlCell.init()
-        cell.label.text = text
-        cell.label.font = UIFont(name: "Avenir-Medium", size: 13.0)!
-        cell.imageView.image = image
-        cell.imageView.contentMode = .scaleAspectFit
-        cell.imageView.tintColor = .white
-        return cell
-    }
-    
-    private func createImage(withName name: String) -> UIImage {
-        return UIImage.init(named: name)!.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-    }
-    
-    func selectedState(segmentControlCell: SPSegmentedControlCell, forIndex index: Int) {
-        SPAnimation.animate(0.1, animations: {
-            segmentControlCell.imageView.tintColor = UIColor.white
-        })
-        
-        UIView.transition(with: segmentControlCell.label, duration: 0.1, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {
-            segmentControlCell.label.textColor = UIColor.white
-        }, completion: nil)
-    }
-    
-    func normalState(segmentControlCell: SPSegmentedControlCell, forIndex index: Int) {
-        SPAnimation.animate(0.1, animations: {
-            segmentControlCell.imageView.tintColor = UIColor.white
-        })
-        
-        UIView.transition(with: segmentControlCell.label, duration: 0.1, options: [.transitionCrossDissolve, .beginFromCurrentState], animations: {
-            segmentControlCell.label.textColor = UIColor.white
-        }, completion: nil)
-    }
     
 
+}
+
+//MARK:- Segmented Delegate
+extension RegisterViewController: XMSegmentedControlDelegate {
+    
+    func xmSegmentedControl(_ xmSegmentedControl: XMSegmentedControl, selectedSegment: Int) {
+        print("SegmentedControl Selected Segment: \(selectedSegment)")
+    }
 }
 
 

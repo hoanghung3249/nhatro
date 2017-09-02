@@ -20,6 +20,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>gothici.ttf</string>
+		<string>GOTHICBI.TTF</string>
+		<string>GOTHICB0.TTF</string>
+		<string>gothicb.ttf</string>
+		<string>GOTHIC.TTF</string>
+		<string>CenturyGothic.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

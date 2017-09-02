@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
 		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
 		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
@@ -61,6 +62,13 @@
 
 /* Begin PBXFileReference section */
 		40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NhaTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
+		4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
+		4519F9871F5AB6590035AA85 /* GOTHIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHIC.TTF; sourceTree = "<group>"; };
+		4519F9881F5AB6590035AA85 /* gothicb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothicb.ttf; sourceTree = "<group>"; };
+		4519F9891F5AB6590035AA85 /* GOTHICB0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICB0.TTF; sourceTree = "<group>"; };
+		4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICBI.TTF; sourceTree = "<group>"; };
+		4519F98B1F5AB6590035AA85 /* gothici.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothici.ttf; sourceTree = "<group>"; };
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +144,27 @@
 				40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4519F9821F5AB0C60035AA85 /* XMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */,
+			);
+			path = XMSegmentedControl;
+			sourceTree = "<group>";
+		};
+		4519F9851F5AB6430035AA85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */,
+				4519F9871F5AB6590035AA85 /* GOTHIC.TTF */,
+				4519F9881F5AB6590035AA85 /* gothicb.ttf */,
+				4519F9891F5AB6590035AA85 /* GOTHICB0.TTF */,
+				4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */,
+				4519F98B1F5AB6590035AA85 /* gothici.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		452E4DC91F4B16F100F27656 = {
@@ -236,6 +265,7 @@
 		45EF0B111F50739B005791E4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				4519F9821F5AB0C60035AA85 /* XMSegmentedControl */,
 				B77C15F91F5A542300D03921 /* Sparrow */,
 				45EF0B331F5075D4005791E4 /* TransitionManager */,
 				45EF0B241F507559005791E4 /* SWRevealViewController */,
@@ -253,6 +283,7 @@
 		45EF0B131F5073E2005791E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4519F9851F5AB6430035AA85 /* Fonts */,
 				45EF0B181F50742D005791E4 /* Storyboards */,
 				45EF0B171F50741C005791E4 /* Plists */,
 				45EF0B161F507411005791E4 /* Images */,
@@ -739,7 +770,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -766,6 +797,7 @@
 				B77C16401F5A542300D03921 /* SPBezierPathFigure.swift in Sources */,
 				B77C16521F5A542300D03921 /* SPCollectionViewCell.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
+				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B77C16571F5A542300D03921 /* SPGradientView.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,

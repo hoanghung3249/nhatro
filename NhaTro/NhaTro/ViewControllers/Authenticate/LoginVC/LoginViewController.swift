@@ -10,6 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,14 +28,19 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    //MARK:- Action button
+    
     @IBAction func btnLoginFaceBook(_ sender: Any) {
     }
     @IBAction func btnLoginGoogle(_ sender: Any) {
     }
     
     @IBAction func btnLoginPhone(_ sender: Any) {
-        let loginPhone = storyboard?.instantiateViewController(withIdentifier: "RegisterVC")  as! RegisterViewController
-        self.present(loginPhone, animated: true, completion: nil)
+        let registerVC = storyboard?.instantiateViewController(withIdentifier: "RegisterVC")  as! RegisterViewController
+        self.pushTo(registerVC)
     }
 
  
