@@ -216,7 +216,7 @@
         <!--Phone Picker Delegate-->
         <scene sceneID="G4v-60-IUa">
             <objects>
-                <viewController restorationIdentifier="RegisterVC" storyboardIdentifier="RegisterVC" id="sOo-5D-Q3w" customClass="RegisterViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="sOo-5D-Q3w" customClass="RegisterViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dni-bD-Wkw"/>
                         <viewControllerLayoutGuide type="bottom" id="UT3-dV-0fU"/>
