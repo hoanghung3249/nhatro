@@ -35,16 +35,17 @@ class LoginViewController: UIViewController {
     
     //MARK:- Action button
     
-    @IBAction func btnLoginFaceBook(_ sender: Any) {
+    @IBAction func loginFacebook(_ sender: UIButton) {
     }
-    @IBAction func btnLoginGoogle(_ sender: Any) {
+    @IBAction func loginGoogle(_ sender: UIButton) {
     }
-    
-    @IBAction func btnLoginPhone(_ sender: Any) {
-//        let registerVC = storyboard?.instantiateViewController(withIdentifier: "RegisterVC")  as! RegisterViewController
+
+    @IBAction func loginPhone(_ sender: UIButton) {
         let registerVC = Storyboard.main.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.pushTo(registerVC)
+
     }
+    
 
  
 

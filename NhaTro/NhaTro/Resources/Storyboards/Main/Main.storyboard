@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GOTHIC.TTF">
+        <array key="CenturyGothic.ttf">
             <string>CenturyGothic</string>
         </array>
         <array key="gothicb.ttf">
@@ -62,7 +62,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="btnLoginFaceBook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBY-X0-CT4"/>
+                                                            <action selector="loginFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B96-w4-s48"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invalidName-1" translatesAutoresizingMaskIntoConstraints="NO" id="sWN-7a-tYy">
@@ -100,7 +100,7 @@
                                                             <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btnLoginGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egi-ga-pek"/>
+                                                            <action selector="loginGoogle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2U-4H-Crc"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invalidName" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-az-cD7">
@@ -139,7 +139,7 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="btnLoginPhone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DhY-9z-8ta"/>
+                                                            <action selector="loginPhone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P4E-1e-2fJ"/>
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenSmartphoneSimpleLineIcons" translatesAutoresizingMaskIntoConstraints="NO" id="a8t-11-DBM">
@@ -246,7 +246,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnBack:" destination="sOo-5D-Q3w" eventType="touchUpInside" id="59R-Ua-Q3L"/>
+                                            <action selector="Back:" destination="sOo-5D-Q3w" eventType="touchUpInside" id="k2d-MD-UME"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vg-3P-HJV">
@@ -425,6 +425,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextStep:" destination="sOo-5D-Q3w" eventType="touchUpInside" id="L4C-Yx-02f"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -474,6 +477,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4j-P0-DFc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="760.79999999999995" y="108.39580209895054"/>
+        </scene>
+        <!--Verify View Controller-->
+        <scene sceneID="DA7-lr-sQF">
+            <objects>
+                <viewController storyboardIdentifier="VerifyViewController" id="CUl-0w-69d" customClass="VerifyViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lmb-bV-m4d"/>
+                        <viewControllerLayoutGuide type="bottom" id="zTz-ws-T8O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0QL-ht-qNf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img8034" translatesAutoresizingMaskIntoConstraints="NO" id="EAo-gY-gZT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.46000000000000002" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-wF-BGq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERIFICATION CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxP-iG-IjU">
+                                <rect key="frame" x="28" y="64" width="347" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="VsC-F0-cXF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4R-1K-qvT">
+                                <rect key="frame" x="0.0" y="20" width="50" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="TRN-gw-Tgn"/>
+                                    <constraint firstAttribute="width" constant="50" id="Vzu-KL-s7L"/>
+                                </constraints>
+                                <state key="normal" image="arrowLeftSimpleLineIcons">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Back:" destination="CUl-0w-69d" eventType="touchUpInside" id="HhC-OE-aDV"/>
+                                    <action selector="btnBack:" destination="sOo-5D-Q3w" eventType="touchUpInside" id="CyU-qW-bpC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter SMS Verification code " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cf-4j-5ue">
+                                <rect key="frame" x="28" y="128" width="347" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="dMx-WD-OKi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4414" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-1P-xCO">
+                                <rect key="frame" x="31" y="162" width="304" height="18"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="yFh-5N-K1g"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCh-oc-F8T">
+                                <rect key="frame" x="28" y="190" width="307" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="EJA-rO-MFH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <state key="normal" title="Didn’t receive it?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8e-6L-Jwp">
+                                <rect key="frame" x="135" y="248" width="105" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.67843137254901964" blue="0.054901960784313725" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="BSl-fb-auf"/>
+                                    <constraint firstAttribute="height" constant="30" id="gpP-jg-ptg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="CUl-0w-69d" eventType="touchUpInside" id="Xw2-Nh-QDB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Gf-1P-xCO" firstAttribute="leading" secondItem="0QL-ht-qNf" secondAttribute="leading" constant="31" id="1sX-6t-Hgn"/>
+                            <constraint firstItem="kCh-oc-F8T" firstAttribute="top" secondItem="3Gf-1P-xCO" secondAttribute="bottom" constant="10" id="3sI-6r-XQc"/>
+                            <constraint firstItem="l4R-1K-qvT" firstAttribute="leading" secondItem="0QL-ht-qNf" secondAttribute="leading" id="5No-xU-p3B"/>
+                            <constraint firstItem="zTz-ws-T8O" firstAttribute="top" secondItem="XHg-wF-BGq" secondAttribute="bottom" id="AIv-kB-7iU"/>
+                            <constraint firstAttribute="trailing" secondItem="XHg-wF-BGq" secondAttribute="trailing" id="Ckh-gl-Cic"/>
+                            <constraint firstItem="3Gf-1P-xCO" firstAttribute="top" secondItem="1Cf-4j-5ue" secondAttribute="bottom" constant="17" id="DOI-fV-Gpk"/>
+                            <constraint firstAttribute="trailing" secondItem="1Cf-4j-5ue" secondAttribute="trailing" id="El9-Sy-uz0"/>
+                            <constraint firstAttribute="trailing" secondItem="3Gf-1P-xCO" secondAttribute="trailing" constant="40" id="HCh-nS-uuW"/>
+                            <constraint firstItem="l4R-1K-qvT" firstAttribute="top" secondItem="0QL-ht-qNf" secondAttribute="top" constant="20" id="Mdw-LM-wRB"/>
+                            <constraint firstItem="1Cf-4j-5ue" firstAttribute="top" secondItem="hxP-iG-IjU" secondAttribute="bottom" constant="42" id="ORf-zQ-dLo"/>
+                            <constraint firstItem="g8e-6L-Jwp" firstAttribute="top" secondItem="kCh-oc-F8T" secondAttribute="bottom" constant="42" id="Pon-1L-efF"/>
+                            <constraint firstItem="XHg-wF-BGq" firstAttribute="leading" secondItem="0QL-ht-qNf" secondAttribute="leading" id="T9w-aD-cRA"/>
+                            <constraint firstAttribute="trailing" secondItem="kCh-oc-F8T" secondAttribute="trailing" constant="40" id="UPa-KF-mMc"/>
+                            <constraint firstItem="hxP-iG-IjU" firstAttribute="leading" secondItem="0QL-ht-qNf" secondAttribute="leading" constant="28" id="ZYb-p4-9xk"/>
+                            <constraint firstAttribute="trailing" secondItem="hxP-iG-IjU" secondAttribute="trailing" id="djf-EM-7iM"/>
+                            <constraint firstItem="kCh-oc-F8T" firstAttribute="leading" secondItem="0QL-ht-qNf" secondAttribute="leading" constant="28" id="fZs-JK-EmF"/>
+                            <constraint firstItem="hxP-iG-IjU" firstAttribute="top" secondItem="l4R-1K-qvT" secondAttribute="bottom" constant="24" id="m2D-3I-cxL"/>
+                            <constraint firstItem="1Cf-4j-5ue" firstAttribute="leading" secondItem="0QL-ht-qNf" secondAttribute="leading" constant="28" id="p8Q-Eh-Ixt"/>
+                            <constraint firstItem="g8e-6L-Jwp" firstAttribute="centerX" secondItem="XHg-wF-BGq" secondAttribute="centerX" id="vmS-bv-KO1"/>
+                            <constraint firstItem="XHg-wF-BGq" firstAttribute="top" secondItem="0QL-ht-qNf" secondAttribute="top" id="wcT-Ss-v91"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnResendCode" destination="kCh-oc-F8T" id="txN-JY-hDk"/>
+                        <outlet property="txtConfirmCode" destination="3Gf-1P-xCO" id="4CO-oM-uU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSg-Oq-CjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1652" y="110.19490254872565"/>
         </scene>
     </scenes>
     <resources>

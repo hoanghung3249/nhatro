@@ -23,6 +23,7 @@
 		45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B311F5075AD005791E4 /* Utilities.swift */; };
 		45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B341F5075DE005791E4 /* TransitionManager.swift */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
+		B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7504C791F5BB73D00C1730D /* VerifyViewController.swift */; };
 		B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15F71F5A507000D03921 /* RegisterViewController.swift */; };
 		B77C16381F5A542300D03921 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FB1F5A542300D03921 /* SPAnimation.swift */; };
 		B77C16391F5A542300D03921 /* SPAnimationSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FC1F5A542300D03921 /* SPAnimationSpring.swift */; };
@@ -90,6 +91,7 @@
 		45EF0B341F5075DE005791E4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
+		B7504C791F5BB73D00C1730D /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		B77C15F71F5A507000D03921 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B77C15FB1F5A542300D03921 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
 		B77C15FC1F5A542300D03921 /* SPAnimationSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationSpring.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		45EF0B1E1F5074C0005791E4 /* Authenticate */ = {
 			isa = PBXGroup;
 			children = (
+				B7504C781F5BB73100C1730D /* VerifyVC */,
 				B77C15F61F5A504400D03921 /* RegisterVC */,
 				45EF0B1F1F5074CC005791E4 /* LoginVC */,
 			);
@@ -383,6 +386,14 @@
 				A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7504C781F5BB73100C1730D /* VerifyVC */ = {
+			isa = PBXGroup;
+			children = (
+				B7504C791F5BB73D00C1730D /* VerifyViewController.swift */,
+			);
+			path = VerifyVC;
 			sourceTree = "<group>";
 		};
 		B77C15F61F5A504400D03921 /* RegisterVC */ = {
@@ -773,7 +784,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -810,6 +821,7 @@
 				B77C163F1F5A542300D03921 /* SPUIDeviceExtenshion.swift in Sources */,
 				B77C164E1F5A542300D03921 /* SPSegmentControllCell.swift in Sources */,
 				B77C16431F5A542300D03921 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */,
+				B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */,
 				B77C165B1F5A5B4300D03921 /* Color.swift in Sources */,
 				B77C16491F5A542300D03921 /* SPPageItemsScallingViewController.swift in Sources */,
 				B77C164C1F5A542300D03921 /* SPLinesCircleButtonsView.swift in Sources */,

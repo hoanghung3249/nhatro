@@ -43,10 +43,14 @@ class RegisterViewController: UIViewController {
     
     
     //MARK:- Action buttons
-    @IBAction func btnBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
     
+    @IBAction func Back(_ sender: UIButton) {
+                dismiss(animated: true, completion: nil)
+    }
+    @IBAction func nextStep(_ sender: UIButton) {
+        let verifyVC = Storyboard.main.instantiateViewController(withIdentifier: "VerifyViewController") as! VerifyViewController
+        self.pushTo(verifyVC)
+    }
     
 
 }
