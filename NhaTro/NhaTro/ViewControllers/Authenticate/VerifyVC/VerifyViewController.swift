@@ -30,7 +30,7 @@ class VerifyViewController: UIViewController {
     //MARK:- Support functions
     private func setupUI() {
         self.btnResendCode.contentHorizontalAlignment = .left
-        self.txtConfirmCode.underlined()
+        self.txtConfirmCode.underlined(UIColor.white)
         let btnAttributes : [String: Any] = [
             NSForegroundColorAttributeName : UIColor.white,
             NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]

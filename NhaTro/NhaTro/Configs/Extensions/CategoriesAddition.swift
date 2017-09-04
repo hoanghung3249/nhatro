@@ -198,11 +198,13 @@ extension UIColor {
     }
     
 }
+
+//MARK:- Textfield
 extension UITextField{
-    func underlined(){
+    func underlined(_ color:UIColor){
         let border = CALayer()
         let width = CGFloat(1.0)
-        border.borderColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1).cgColor
+        border.borderColor = color.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
         border.borderWidth = width
         self.layer.addSublayer(border)
