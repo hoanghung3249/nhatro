@@ -208,15 +208,36 @@
 				B7E7D9EF1F5D01B100152640 /* NhaTro.entitlements */,
 				452E4DD51F4B16F200F27656 /* AppDelegate.swift */,
 				45EF0B071F507127005791E4 /* API */,
-				45EF0B121F5073BC005791E4 /* Models */,
+				453C6A121F62CABE00F856D8 /* Models */,
 				45EF0B0B1F507318005791E4 /* Configs */,
 				45EF0B111F50739B005791E4 /* Libraries */,
 				45EF0B131F5073E2005791E4 /* Resources */,
 				45EF0B141F5073F0005791E4 /* ViewControllers */,
-				45EF0B151F5073FA005791E4 /* Views */,
+				453C6A131F62CAD100F856D8 /* Views */,
 				452E4DE11F4B16F200F27656 /* Info.plist */,
 			);
 			path = NhaTro;
+			sourceTree = "<group>";
+		};
+		453C6A111F62CAAE00F856D8 /* Plists */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plists;
+			sourceTree = "<group>";
+		};
+		453C6A121F62CABE00F856D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		453C6A131F62CAD100F856D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		45EF0B071F507127005791E4 /* API */ = {
@@ -292,19 +313,12 @@
 			path = Libraries;
 			sourceTree = "<group>";
 		};
-		45EF0B121F5073BC005791E4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		45EF0B131F5073E2005791E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				453C6A111F62CAAE00F856D8 /* Plists */,
 				4519F9851F5AB6430035AA85 /* Fonts */,
 				45EF0B181F50742D005791E4 /* Storyboards */,
-				45EF0B171F50741C005791E4 /* Plists */,
 				45EF0B161F507411005791E4 /* Images */,
 			);
 			path = Resources;
@@ -318,26 +332,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		45EF0B151F5073FA005791E4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		45EF0B161F507411005791E4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				45EF0B221F50752E005791E4 /* Assets.xcassets */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		45EF0B171F50741C005791E4 /* Plists */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Plists;
 			sourceTree = "<group>";
 		};
 		45EF0B181F50742D005791E4 /* Storyboards */ = {
