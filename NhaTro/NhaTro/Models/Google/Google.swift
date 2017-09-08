@@ -1,8 +1,8 @@
 //
-//  Facebook.swift
+//  Google.swift
 //  NhaTro
 //
-//  Created by HOANGHUNG on 9/8/17.
+//  Created by DUY on 9/8/17.
 //  Copyright © 2017 HOANG HUNG. All rights reserved.
 //
 

@@ -10,7 +10,6 @@
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
-		453C6A1A1F62D04500F856D8 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C6A191F62D04500F856D8 /* Facebook.swift */; };
 		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
 		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
 		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
@@ -61,6 +60,8 @@
 		B77C16581F5A542300D03921 /* SPUILabelExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C16361F5A542300D03921 /* SPUILabelExtenshion.swift */; };
 		B77C16591F5A542300D03921 /* SPUIViewExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C16371F5A542300D03921 /* SPUIViewExtenshion.swift */; };
 		B77C165B1F5A5B4300D03921 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C165A1F5A5B4300D03921 /* Color.swift */; };
+		B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77D29411F62D19800C8F9D5 /* Facebook.swift */; };
+		B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77D29431F62D1A400C8F9D5 /* Google.swift */; };
 		B7E7D9EC1F5D00AF00152640 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */; };
 		B7E7D9ED1F5D00AF00152640 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */; };
 		B7E7D9EE1F5D00AF00152640 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */; };
@@ -79,7 +80,6 @@
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		453C6A191F62D04500F856D8 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		45EF0B091F50714D005791E4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45EF0B1B1F50746A005791E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -133,6 +133,8 @@
 		B77C16361F5A542300D03921 /* SPUILabelExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUILabelExtenshion.swift; sourceTree = "<group>"; };
 		B77C16371F5A542300D03921 /* SPUIViewExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIViewExtenshion.swift; sourceTree = "<group>"; };
 		B77C165A1F5A5B4300D03921 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = NhaTro/ViewControllers/Authenticate/RegisterVC/Color.swift; sourceTree = SOURCE_ROOT; };
+		B77D29411F62D19800C8F9D5 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		B77D29431F62D1A400C8F9D5 /* Google.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
@@ -231,7 +233,8 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				453C6A191F62D04500F856D8 /* Facebook.swift */,
+				B77D29401F62D18400C8F9D5 /* Google */,
+				B77D293F1F62D17900C8F9D5 /* Facebook */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -686,6 +689,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B77D293F1F62D17900C8F9D5 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				B77D29411F62D19800C8F9D5 /* Facebook.swift */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
+		B77D29401F62D18400C8F9D5 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				B77D29431F62D1A400C8F9D5 /* Google.swift */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -833,7 +852,7 @@
 				B77C16401F5A542300D03921 /* SPBezierPathFigure.swift in Sources */,
 				B77C16521F5A542300D03921 /* SPCollectionViewCell.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
-				453C6A1A1F62D04500F856D8 /* Facebook.swift in Sources */,
+				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B77C16571F5A542300D03921 /* SPGradientView.swift in Sources */,
@@ -859,6 +878,7 @@
 				B77C163C1F5A542300D03921 /* SPUIColorExtenshion.swift in Sources */,
 				B77C16511F5A542300D03921 /* SPSegmentedControl.swift in Sources */,
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
+				B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */,
 				B77C163A1F5A542300D03921 /* SPAnimationUpward.swift in Sources */,
 				B77C164D1F5A542300D03921 /* SPRoundButton.swift in Sources */,
 				45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */,
