@@ -13,9 +13,6 @@ import Kingfisher
 
 class LoginViewController: UIViewController {
 
-    
-
-    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +39,7 @@ class LoginViewController: UIViewController {
         ProgressView.shared.hide()
     }
     @IBAction func loginGoogle(_ sender: UIButton) {
-        ProgressView.shared.show(self.view)
+//        ProgressView.shared.show(self.view)
 
     }
 
@@ -68,7 +65,7 @@ class LoginViewController: UIViewController {
                     })
                 }
             }else{
-                
+                print(error?.localizedDescription)
             }
         }
     }
