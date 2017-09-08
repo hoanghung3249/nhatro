@@ -19,7 +19,8 @@ target 'NhaTro' do
     pod 'GooglePlaces'
     pod 'NVActivityIndicatorView'
     pod 'Kingfisher', '~> 3.0' 
-pod 'NKVPhonePicker'
+    pod 'NKVPhonePicker'
+    pod 'GoogleSignIn'
 
 
 
