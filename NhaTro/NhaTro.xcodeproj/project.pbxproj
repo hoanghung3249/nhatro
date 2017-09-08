@@ -10,6 +10,7 @@
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
+		453C6A1A1F62D04500F856D8 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453C6A191F62D04500F856D8 /* Facebook.swift */; };
 		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
 		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
 		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
@@ -78,6 +79,7 @@
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		453C6A191F62D04500F856D8 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		45EF0B091F50714D005791E4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45EF0B1B1F50746A005791E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				453C6A191F62D04500F856D8 /* Facebook.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 				B77C16401F5A542300D03921 /* SPBezierPathFigure.swift in Sources */,
 				B77C16521F5A542300D03921 /* SPCollectionViewCell.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
+				453C6A1A1F62D04500F856D8 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B77C16571F5A542300D03921 /* SPGradientView.swift in Sources */,
