@@ -35,11 +35,15 @@ class LoginViewController: UIViewController {
     //MARK:- Action button
     
     @IBAction func loginFacebook(_ sender: UIButton) {
-        loginFaceBook()
-        ProgressView.shared.hide()
+//        Facebook.loginWithFacebook(viewcontroller: self, { (dataFB) in
+//            <#code#>
+//        }) { (error, code) in
+//            <#code#>
+//        }
+//        ProgressView.shared.hide()
     }
     @IBAction func loginGoogle(_ sender: UIButton) {
-//        ProgressView.shared.show(self.view)
+
 
     }
 
@@ -48,30 +52,4 @@ class LoginViewController: UIViewController {
         self.pushTo(registerVC)
 
     }
-    func loginFaceBook(){
-        let loginfaceBook:FBSDKLoginManager = FBSDKLoginManager()
-        ProgressView.shared.show(self.view)
-        loginfaceBook.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-            if error == nil {
-                ProgressView.shared.hide()
-                let fbloginresult:FBSDKLoginManagerLoginResult = result!
-                if FBSDKAccessToken.current() != nil {
-                    FBSDKGraphRequest(graphPath: "Me", parameters: ["fields":"id,email,name"]).start(completionHandler: { (concect, result, error) in
-                        if error == nil{
-                            let value = result as! Dictionary<String,AnyObject>
-                            let link:String = value["id"] as! String
-                            let avatar:String = "https://graph.facebook.com/\(link)/picture"
-                        }
-                    })
-                }
-            }else{
-                print(error?.localizedDescription)
-            }
-        }
-    }
-
-    
-
- 
-
 }
