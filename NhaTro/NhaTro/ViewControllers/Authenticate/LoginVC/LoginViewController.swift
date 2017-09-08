@@ -9,10 +9,12 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import Kingfisher
 
 class LoginViewController: UIViewController {
 
     
+
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -36,8 +38,12 @@ class LoginViewController: UIViewController {
     //MARK:- Action button
     
     @IBAction func loginFacebook(_ sender: UIButton) {
+        loginFaceBook()
+        ProgressView.shared.hide()
     }
     @IBAction func loginGoogle(_ sender: UIButton) {
+        ProgressView.shared.show(self.view)
+
     }
 
     @IBAction func loginPhone(_ sender: UIButton) {
@@ -45,6 +51,28 @@ class LoginViewController: UIViewController {
         self.pushTo(registerVC)
 
     }
+    func loginFaceBook(){
+        let loginfaceBook:FBSDKLoginManager = FBSDKLoginManager()
+        ProgressView.shared.show(self.view)
+        loginfaceBook.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error == nil {
+                ProgressView.shared.hide()
+                let fbloginresult:FBSDKLoginManagerLoginResult = result!
+                if FBSDKAccessToken.current() != nil {
+                    FBSDKGraphRequest(graphPath: "Me", parameters: ["fields":"id,email,name"]).start(completionHandler: { (concect, result, error) in
+                        if error == nil{
+                            let value = result as! Dictionary<String,AnyObject>
+                            let link:String = value["id"] as! String
+                            let avatar:String = "https://graph.facebook.com/\(link)/picture"
+                        }
+                    })
+                }
+            }else{
+                ProgressHUD.showError(error?.localizedDescription)
+            }
+        }
+    }
+
     
 
  

@@ -60,6 +60,10 @@
 		B77C16581F5A542300D03921 /* SPUILabelExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C16361F5A542300D03921 /* SPUILabelExtenshion.swift */; };
 		B77C16591F5A542300D03921 /* SPUIViewExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C16371F5A542300D03921 /* SPUIViewExtenshion.swift */; };
 		B77C165B1F5A5B4300D03921 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C165A1F5A5B4300D03921 /* Color.swift */; };
+		B7E7D87B1F5CDEAD00152640 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E7D87A1F5CDEAD00152640 /* ProgressHUD.m */; };
+		B7E7D9EC1F5D00AF00152640 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */; };
+		B7E7D9ED1F5D00AF00152640 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */; };
+		B7E7D9EE1F5D00AF00152640 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +132,12 @@
 		B77C16361F5A542300D03921 /* SPUILabelExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUILabelExtenshion.swift; sourceTree = "<group>"; };
 		B77C16371F5A542300D03921 /* SPUIViewExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIViewExtenshion.swift; sourceTree = "<group>"; };
 		B77C165A1F5A5B4300D03921 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = NhaTro/ViewControllers/Authenticate/RegisterVC/Color.swift; sourceTree = SOURCE_ROOT; };
+		B7E7D8791F5CDEAD00152640 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		B7E7D87A1F5CDEAD00152640 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		B7E7D9EF1F5D01B100152640 /* NhaTro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NhaTro.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +145,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E7D9EC1F5D00AF00152640 /* FBSDKCoreKit.framework in Frameworks */,
+				B7E7D9ED1F5D00AF00152640 /* FBSDKLoginKit.framework in Frameworks */,
+				B7E7D9EE1F5D00AF00152640 /* FBSDKShareKit.framework in Frameworks */,
 				8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +158,9 @@
 		06E7735D548DB02F0E68DEEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */,
+				B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */,
+				B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */,
 				40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */,
 			);
 			name = Frameworks;
@@ -192,6 +208,7 @@
 		452E4DD41F4B16F200F27656 /* NhaTro */ = {
 			isa = PBXGroup;
 			children = (
+				B7E7D9EF1F5D01B100152640 /* NhaTro.entitlements */,
 				452E4DD51F4B16F200F27656 /* AppDelegate.swift */,
 				45EF0B071F507127005791E4 /* API */,
 				45EF0B121F5073BC005791E4 /* Models */,
@@ -271,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				4519F9821F5AB0C60035AA85 /* XMSegmentedControl */,
+				B7E7D8781F5CDEAD00152640 /* ProgressHUD */,
 				B77C15F91F5A542300D03921 /* Sparrow */,
 				45EF0B331F5075D4005791E4 /* TransitionManager */,
 				45EF0B241F507559005791E4 /* SWRevealViewController */,
@@ -669,6 +687,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B7E7D8781F5CDEAD00152640 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				B7E7D8791F5CDEAD00152640 /* ProgressHUD.h */,
+				B7E7D87A1F5CDEAD00152640 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -707,6 +734,11 @@
 						DevelopmentTeam = 533G42X52A;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -796,6 +828,7 @@
 			files = (
 				B77C16561F5A542300D03921 /* SPBlurView.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
+				B7E7D87B1F5CDEAD00152640 /* ProgressHUD.m in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
 				B77C163E1F5A542300D03921 /* SPDelay.swift in Sources */,
 				B77C16461F5A542300D03921 /* SPRandom.swift in Sources */,
@@ -950,6 +983,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 533G42X52A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.25.0",
+				);
 				INFOPLIST_FILE = NhaTro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -970,6 +1007,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 533G42X52A;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FacebookSDKs-iOS-4.25.0",
+				);
 				INFOPLIST_FILE = NhaTro/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
