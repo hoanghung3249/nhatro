@@ -22,9 +22,8 @@ class ProgressView{
         containerView.backgroundColor = UIColor(hex: 0x000000, alpha: 0.4)
 //        containerView.backgroundColor = UIColor.clear
         
-        indicator.type = .ballScaleMultiple
-//        indicator.color = UIColor(red: 29.0/255.0, green: 79.0/255.0, blue: 131.0/255.0, alpha: 1)
-        indicator.color = UIColor.white
+        indicator.type = .ballClipRotate
+        indicator.color = Color.mainColor()
         indicator.center = CGPoint(x: view.bounds.width/2,y: view.bounds.height/2)
         indicator.startAnimating()
         containerView.addSubview(indicator)
