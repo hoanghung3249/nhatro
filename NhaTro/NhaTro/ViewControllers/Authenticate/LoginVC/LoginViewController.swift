@@ -68,7 +68,7 @@ class LoginViewController: UIViewController {
                     })
                 }
             }else{
-                ProgressHUD.showError(error?.localizedDescription)
+                
             }
         }
     }
