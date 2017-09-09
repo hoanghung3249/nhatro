@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-typealias success = (_ responseData: [String:Any]) -> Void
+typealias success = (_ responseData: JSON?) -> Void
 typealias failed = (_ error: String, _ code:Int?) -> Void
 
 struct NetworkService {

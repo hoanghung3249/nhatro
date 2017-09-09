@@ -27,7 +27,8 @@ struct Facebook {
                                 FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                                     if (error == nil){
                                         if let result = result as? Dictionary<String,Any> {
-                                            Success(result)
+                                            let json = JSON(result)
+                                            Success(json)
                                         }
                                     } else {
                                         Failed((error?.localizedDescription)!, nil)
@@ -43,3 +44,23 @@ struct Facebook {
         }
     }
 }
+
+struct FacebookModel {
+    
+    var firstName:String
+    var email:String
+    var id:String
+    var lastName:String
+    var name:String
+    
+    init(_ json:JSON) {
+        self.firstName = json["first_name"].stringValue
+        self.email = json["email"].stringValue
+        self.id = json["id"].stringValue
+        self.lastName = json["last_name"].stringValue
+        self.name = json["name"].stringValue
+    }
+}
+
+
+

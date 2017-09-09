@@ -11,9 +11,14 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 import Kingfisher
 import GoogleSignIn
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
+    var google:Google?
+    var facebook:FacebookModel?
+    
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,16 +37,26 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().delegate = self
     }
     
+    fileprivate func loginFacebook() {
+        Facebook.loginWithFacebook(viewcontroller: self, { [weak self] (dataFB) in
+            guard let strongSelf = self else { return }
+            if let dataJSON = dataFB {
+                strongSelf.facebook = FacebookModel(dataJSON)
+            }
+        }) { [weak self] (error, code) in
+            guard let strongSelf = self else { return }
+            strongSelf.showAlert(with: error)
+        }
+    }
     
     
     //MARK:- Action button
     
     @IBAction func loginFacebook(_ sender: UIButton) {
-        
+        loginFacebook()
     }
     @IBAction func loginGoogle(_ sender: UIButton) {
         GIDSignIn.sharedInstance().signIn()
-        
     }
 
     @IBAction func loginPhone(_ sender: UIButton) {
@@ -51,6 +66,8 @@ class LoginViewController: UIViewController {
     }
 }
 
+
+//MARK:- Google Delegate
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     
     
@@ -59,17 +76,12 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
             print(error.localizedDescription)
             return
         }
-        print(user.profile.name)
-        print(user.profile.email)
-        print(user.userID)
-        print(user.authentication.idToken)
-        print(user.profile.imageURL(withDimension: 400))
-        
+        guard let userProfile = user else { return }
+        self.google = Google(userProfile)
     }
     
-    
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
+        print(user.profile)
     }
     
 }
