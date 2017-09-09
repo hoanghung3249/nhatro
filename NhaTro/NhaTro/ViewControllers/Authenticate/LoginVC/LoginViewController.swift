@@ -10,24 +10,26 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Kingfisher
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        self.setupGoogle()
         // Do any additional setup after loading the view.
     }
    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //MARK:- Support function
+    
+    fileprivate func setupGoogle() {
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     
@@ -35,16 +37,11 @@ class LoginViewController: UIViewController {
     //MARK:- Action button
     
     @IBAction func loginFacebook(_ sender: UIButton) {
-//        Facebook.loginWithFacebook(viewcontroller: self, { (dataFB) in
-//            <#code#>
-//        }) { (error, code) in
-//            <#code#>
-//        }
-//        ProgressView.shared.hide()
+        
     }
     @IBAction func loginGoogle(_ sender: UIButton) {
-
-
+        GIDSignIn.sharedInstance().signIn()
+        
     }
 
     @IBAction func loginPhone(_ sender: UIButton) {
@@ -53,3 +50,29 @@ class LoginViewController: UIViewController {
 
     }
 }
+
+extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+    
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        print(user.profile.name)
+        print(user.profile.email)
+        print(user.userID)
+        print(user.authentication.idToken)
+        print(user.profile.imageURL(withDimension: 400))
+        
+    }
+    
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
+    
+}
+
+
+
