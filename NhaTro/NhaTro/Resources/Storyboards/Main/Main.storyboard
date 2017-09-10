@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="CenturyGothic.ttf">
+        <array key="GOTHIC.TTF">
             <string>CenturyGothic</string>
         </array>
         <array key="gothicb.ttf">
@@ -34,15 +34,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img8034" translatesAutoresizingMaskIntoConstraints="NO" id="U59-8v-zgE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hostel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SD3-VA-bHW">
-                                        <rect key="frame" x="29" y="118" width="317" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zfi-fL-HUh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-bK-2oH">
                                         <rect key="frame" x="10" y="497" width="355" height="140"/>
                                         <subviews>
@@ -184,17 +175,23 @@
                                             <constraint firstItem="h35-RO-AEY" firstAttribute="trailing" secondItem="Qan-vd-dma" secondAttribute="trailing" id="yh3-5J-qwF"/>
                                         </constraints>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoHostelYellow" translatesAutoresizingMaskIntoConstraints="NO" id="WDX-7S-vO0">
+                                        <rect key="frame" x="122" y="110" width="130" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="X00-rL-z2A"/>
+                                            <constraint firstAttribute="width" constant="130" id="y5t-gD-lVy"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="WDX-7S-vO0" firstAttribute="centerX" secondItem="U59-8v-zgE" secondAttribute="centerX" id="4FT-Wf-4hE"/>
                                     <constraint firstItem="U59-8v-zgE" firstAttribute="leading" secondItem="seN-Sf-61j" secondAttribute="leading" id="Ies-Th-Sin"/>
                                     <constraint firstAttribute="trailing" secondItem="U59-8v-zgE" secondAttribute="trailing" id="PZR-Oh-DAc"/>
                                     <constraint firstItem="U59-8v-zgE" firstAttribute="top" secondItem="seN-Sf-61j" secondAttribute="top" id="Rry-7s-hGd"/>
                                     <constraint firstAttribute="bottom" secondItem="U59-8v-zgE" secondAttribute="bottom" id="ZtL-Li-Cpk"/>
+                                    <constraint firstItem="WDX-7S-vO0" firstAttribute="top" secondItem="seN-Sf-61j" secondAttribute="top" constant="110" id="aHM-1N-rbH"/>
                                     <constraint firstAttribute="trailing" secondItem="gcH-bK-2oH" secondAttribute="trailing" constant="10" id="goy-Vw-n3Z"/>
-                                    <constraint firstItem="SD3-VA-bHW" firstAttribute="top" secondItem="seN-Sf-61j" secondAttribute="top" constant="118" id="iJz-ax-iTd"/>
-                                    <constraint firstAttribute="trailing" secondItem="SD3-VA-bHW" secondAttribute="trailing" constant="29" id="l2u-KJ-xLf"/>
-                                    <constraint firstItem="SD3-VA-bHW" firstAttribute="leading" secondItem="seN-Sf-61j" secondAttribute="leading" constant="29" id="lxo-4z-49i"/>
                                     <constraint firstAttribute="bottom" secondItem="gcH-bK-2oH" secondAttribute="bottom" constant="30" id="rpR-FW-Cyq"/>
                                     <constraint firstItem="gcH-bK-2oH" firstAttribute="leading" secondItem="seN-Sf-61j" secondAttribute="leading" constant="10" id="xtC-2r-IZM"/>
                                 </constraints>
@@ -612,6 +609,7 @@
         <image name="img8034" width="373" height="667"/>
         <image name="invalidName" width="22" height="22"/>
         <image name="invalidName-1" width="22" height="22"/>
+        <image name="logoHostelYellow" width="209" height="88"/>
         <image name="screenSmartphoneSimpleLineIcons" width="15" height="26"/>
     </resources>
 </document>

@@ -71,7 +71,7 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            print(error.localizedDescription)
+            self.showAlert(with: error.localizedDescription)
             return
         }
         guard let userProfile = user else { return }
