@@ -7,11 +7,7 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-import FBSDKCoreKit
-import Kingfisher
 import GoogleSignIn
-import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
@@ -25,7 +21,8 @@ class LoginViewController: UIViewController {
         self.setupGoogle()
         // Do any additional setup after loading the view.
     }
-   override var preferredStatusBarStyle: UIStatusBarStyle {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
@@ -55,6 +52,7 @@ class LoginViewController: UIViewController {
     @IBAction func loginFacebook(_ sender: UIButton) {
         loginFacebook()
     }
+    
     @IBAction func loginGoogle(_ sender: UIButton) {
         GIDSignIn.sharedInstance().signIn()
     }
