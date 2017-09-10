@@ -25,21 +25,21 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.22.1):
     - FBSDKCoreKit
-  - Firebase/Core (4.1.0):
+  - Firebase/Core (4.1.1):
     - FirebaseAnalytics (= 4.0.3)
-    - FirebaseCore (= 4.0.5)
-  - Firebase/Crash (4.1.0):
+    - FirebaseCore (= 4.0.6)
+  - Firebase/Crash (4.1.1):
     - Firebase/Core
     - FirebaseCrash (= 2.0.1)
-  - Firebase/Messaging (4.1.0):
+  - Firebase/Messaging (4.1.1):
     - Firebase/Core
-    - FirebaseMessaging (= 2.0.1)
+    - FirebaseMessaging (= 2.0.2)
   - FirebaseAnalytics (4.0.3):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseCore (4.0.5):
+  - FirebaseCore (4.0.6):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
   - FirebaseCrash (2.0.1):
@@ -48,9 +48,9 @@ PODS:
     - GoogleToolboxForMac/Logger (~> 2.1)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - Protobuf (~> 3.1)
-  - FirebaseInstanceID (2.0.1):
+  - FirebaseInstanceID (2.0.2):
     - FirebaseCore (~> 4.0)
-  - FirebaseMessaging (2.0.1):
+  - FirebaseMessaging (2.0.2):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -109,9 +109,9 @@ DEPENDENCIES:
   - FBSDKCoreKit (~> 4.22.1)
   - FBSDKLoginKit (~> 4.22.1)
   - FBSDKShareKit (~> 4.22.1)
-  - Firebase/Core
-  - Firebase/Crash
-  - Firebase/Messaging
+  - Firebase/Core (~> 4.1.1)
+  - Firebase/Crash (~> 4.1.1)
+  - Firebase/Messaging (~> 4.1.1)
   - GoogleMaps
   - GooglePlaces
   - GoogleSignIn
@@ -130,12 +130,12 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
   FBSDKShareKit: 1cbd0fdc2bb3277dd3522512855dcf1f4088f734
-  Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
+  Firebase: 052c0de688fc87b414996eea13e223dd9fee3fa2
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
-  FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
+  FirebaseCore: 28def3c643989c97ea5a69ea5000f5fa9902b9fd
   FirebaseCrash: bce9fbfb7dd6cc850a41fe39740a2292e6b61f2e
-  FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
-  FirebaseMessaging: b45ff9ef5d932600d3f78ff43168e7c5707aa7dc
+  FirebaseInstanceID: c4c7fca62c7b7330caee5da04f19a37ea37bb1c1
+  FirebaseMessaging: 85af6c27188538b3a6f7dfd0b3b0596358cb0c39
   GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
   GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
   GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
@@ -150,6 +150,6 @@ SPEC CHECKSUMS:
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6a440e78163bc44ba1e6286cb1bf97027c22342c
+PODFILE CHECKSUM: 7bb5ef60579b630095ea01406d212db5fe7e0354
 
 COCOAPODS: 1.2.1

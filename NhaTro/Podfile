@@ -6,9 +6,9 @@ target 'NhaTro' do
     pod 'Alamofire', '~> 4.0'
     pod 'SwiftyJSON'
     pod 'IQKeyboardManager'
-    pod 'Firebase/Core'
-    pod 'Firebase/Crash'
-    pod 'Firebase/Messaging'
+    pod 'Firebase/Core’, ‘~> 4.1.1’
+    pod 'Firebase/Crash', ‘~> 4.1.1’
+    pod 'Firebase/Messaging', ‘~> 4.1.1’
     pod 'FacebookCore', '~> 0.2'
     pod 'FacebookLogin', '~> 0.2'
     pod 'FacebookShare', '~> 0.2'
