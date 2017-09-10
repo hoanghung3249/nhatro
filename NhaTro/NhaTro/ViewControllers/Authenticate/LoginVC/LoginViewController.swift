@@ -10,7 +10,15 @@ import UIKit
 import GoogleSignIn
 
 class LoginViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var imgLogo: UIImageView!
+    @IBOutlet weak var vwBound: UIView!
+    @IBOutlet weak var vwLogin: UIView!
+    @IBOutlet weak var lctWidthImgLogo: NSLayoutConstraint!
+    @IBOutlet weak var lctCenterYImgLogo: NSLayoutConstraint!
+    @IBOutlet weak var lctHeightImgLogo: NSLayoutConstraint!
+    
     var google:Google?
     var facebook:FacebookModel?
     
@@ -18,8 +26,9 @@ class LoginViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupGoogle()
         // Do any additional setup after loading the view.
+        self.setupGoogle()
+        self.setupUI()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -32,6 +41,31 @@ class LoginViewController: UIViewController {
     fileprivate func setupGoogle() {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    fileprivate func setupUI() {
+        self.vwLogin.isHidden = true
+        self.lctWidthImgLogo.constant = 210
+        self.lctHeightImgLogo.constant = 85
+        Utilities.shared.delayWithSeconds(1) { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.showView()
+        }
+    }
+    
+    
+    fileprivate func showView() {
+        self.lctWidthImgLogo.constant = 130
+        self.lctHeightImgLogo.constant = 50
+        let imgTopContraint = self.lctCenterYImgLogo.constraintWithMultiplier(1/3)
+        self.view.removeConstraint(self.lctCenterYImgLogo)
+        self.lctCenterYImgLogo = imgTopContraint
+        self.view.addConstraint(lctCenterYImgLogo)
+        self.vwLogin.isHidden = false
+        self.vwBound.backgroundColor = .clear
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     fileprivate func loginFacebook() {
@@ -71,7 +105,7 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
-            self.showAlert(with: error.localizedDescription)
+            print(error.localizedDescription)
             return
         }
         guard let userProfile = user else { return }

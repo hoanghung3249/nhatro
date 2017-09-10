@@ -23,6 +23,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.setupSegmented()
+        self.setupDelegate()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -41,11 +42,15 @@ class RegisterViewController: UIViewController {
         segmentedControl.layer.cornerRadius = 20
     }
     
+    private func setupDelegate() {
+        self.txtCountryCode.delegate = self
+    }
+    
     
     //MARK:- Action buttons
     
     @IBAction func Back(_ sender: UIButton) {
-                dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func nextStep(_ sender: UIButton) {
         let verifyVC = Storyboard.main.instantiateViewController(withIdentifier: "VerifyViewController") as! VerifyViewController
@@ -61,6 +66,17 @@ extension RegisterViewController: XMSegmentedControlDelegate {
     func xmSegmentedControl(_ xmSegmentedControl: XMSegmentedControl, selectedSegment: Int) {
         print("SegmentedControl Selected Segment: \(selectedSegment)")
     }
+}
+
+//MARK:- Textfield Delegate
+extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.txtCountryCode {
+            self.view.endEditing(true)
+        }
+    }
+    
 }
 
 
