@@ -22,6 +22,23 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showAlertWithAction(_ title:String,_ mess:String,_ confirmBtn:String?, completion:@escaping (_ bool:Bool)->()) {
+        let alert = UIAlertController(title: title, message: mess, preferredStyle: .alert)
+        if let confirmBtn = confirmBtn {
+            let ok = UIAlertAction(title: confirmBtn, style: .default, handler: { (action) in
+                completion(true)
+            })
+            alert.addAction(ok)
+        } else {
+            let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) in
+                completion(false)
+            }
+            alert.addAction(cancel)
+        }
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     //MARK: - PRESENT VC
     func addChildView(_ storyboardName: String, identifier: String) -> UIViewController{
         let vc = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(withIdentifier: identifier)
