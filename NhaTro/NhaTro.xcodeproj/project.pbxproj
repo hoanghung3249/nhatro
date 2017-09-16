@@ -24,6 +24,10 @@
 		45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B311F5075AD005791E4 /* Utilities.swift */; };
 		45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B341F5075DE005791E4 /* TransitionManager.swift */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
+		B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741D6061F6B8D0300C11EE7 /* Home.storyboard */; };
+		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
+		B741D6111F6B9AD200C11EE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6101F6B9AD200C11EE7 /* TabBarController.swift */; };
+		B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */; };
 		B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7504C791F5BB73D00C1730D /* VerifyViewController.swift */; };
 		B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15F71F5A507000D03921 /* RegisterViewController.swift */; };
 		B77C16381F5A542300D03921 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FB1F5A542300D03921 /* SPAnimation.swift */; };
@@ -98,6 +102,10 @@
 		45EF0B341F5075DE005791E4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
+		B741D6061F6B8D0300C11EE7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		B741D6101F6B9AD200C11EE7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7504C791F5BB73D00C1730D /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		B77C15F71F5A507000D03921 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B77C15FB1F5A542300D03921 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
@@ -219,7 +227,7 @@
 				45EF0B111F50739B005791E4 /* Libraries */,
 				45EF0B131F5073E2005791E4 /* Resources */,
 				45EF0B141F5073F0005791E4 /* ViewControllers */,
-				453C6A131F62CAD100F856D8 /* Views */,
+				B741D6121F6BC33900C11EE7 /* Views */,
 				452E4DE11F4B16F200F27656 /* Info.plist */,
 			);
 			path = NhaTro;
@@ -240,13 +248,6 @@
 				B77D293F1F62D17900C8F9D5 /* Facebook */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		453C6A131F62CAD100F856D8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		453C6A1D1F62D28900F856D8 /* GooglePlist */ = {
@@ -344,6 +345,7 @@
 		45EF0B141F5073F0005791E4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B741D6081F6B8DBA00C11EE7 /* Home */,
 				45EF0B1E1F5074C0005791E4 /* Authenticate */,
 			);
 			path = ViewControllers;
@@ -360,6 +362,7 @@
 		45EF0B181F50742D005791E4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B741D6051F6B8CD800C11EE7 /* Home */,
 				45EF0B191F507443005791E4 /* Main */,
 			);
 			path = Storyboards;
@@ -417,6 +420,55 @@
 				A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B741D6051F6B8CD800C11EE7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B741D6061F6B8D0300C11EE7 /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B741D6081F6B8DBA00C11EE7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B741D60F1F6B9A9B00C11EE7 /* TabbarVC */,
+				B741D60C1F6B8F9200C11EE7 /* HomePageVC */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B741D60C1F6B8F9200C11EE7 /* HomePageVC */ = {
+			isa = PBXGroup;
+			children = (
+				B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */,
+			);
+			path = HomePageVC;
+			sourceTree = "<group>";
+		};
+		B741D60F1F6B9A9B00C11EE7 /* TabbarVC */ = {
+			isa = PBXGroup;
+			children = (
+				B741D6101F6B9AD200C11EE7 /* TabBarController.swift */,
+			);
+			path = TabbarVC;
+			sourceTree = "<group>";
+		};
+		B741D6121F6BC33900C11EE7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B741D6131F6BC33900C11EE7 /* HomePageCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B741D6131F6BC33900C11EE7 /* HomePageCell */ = {
+			isa = PBXGroup;
+			children = (
+				B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */,
+			);
+			path = HomePageCell;
 			sourceTree = "<group>";
 		};
 		B7504C781F5BB73100C1730D /* VerifyVC */ = {
@@ -786,6 +838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
+				B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */,
 				453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */,
 				45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */,
 				45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */,
@@ -850,6 +903,7 @@
 				B77C16561F5A542300D03921 /* SPBlurView.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
+				B741D6111F6B9AD200C11EE7 /* TabBarController.swift in Sources */,
 				B77C163E1F5A542300D03921 /* SPDelay.swift in Sources */,
 				B77C16461F5A542300D03921 /* SPRandom.swift in Sources */,
 				B77C164F1F5A542300D03921 /* SPSegmentControlProtocol.swift in Sources */,
@@ -867,6 +921,7 @@
 				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
+				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
 				B77C16571F5A542300D03921 /* SPGradientView.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
 				B77C16591F5A542300D03921 /* SPUIViewExtenshion.swift in Sources */,
@@ -893,6 +948,7 @@
 				B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */,
 				B77C163A1F5A542300D03921 /* SPAnimationUpward.swift in Sources */,
 				B77C164D1F5A542300D03921 /* SPRoundButton.swift in Sources */,
+				B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */,
 				45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */,
 				B77C163D1F5A542300D03921 /* SPConstraintsAssistent.swift in Sources */,
 				B77C16391F5A542300D03921 /* SPAnimationSpring.swift in Sources */,

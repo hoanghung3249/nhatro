@@ -46,7 +46,8 @@ class VerifyViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func login(_ sender: UIButton) {
-        
+        let tabbar = storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! UITabBarController
+        self.present(tabbar, animated: true, completion: nil)
     }
    
 
