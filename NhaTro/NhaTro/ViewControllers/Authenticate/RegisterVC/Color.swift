@@ -24,3 +24,14 @@ class Color {
     }
     
 }
+
+class Font: UIFont {
+    
+    static func fontCenturyGothic(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "Century Gothic", size: size)!
+    }
+    
+    static func fontCenturyGothicBold(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "CenturyGothic-Bold", size: size)!
+    }
+}

@@ -23,6 +23,12 @@
 		45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2F1F5075A3005791E4 /* ProgressView.swift */; };
 		45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B311F5075AD005791E4 /* Utilities.swift */; };
 		45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B341F5075DE005791E4 /* TransitionManager.swift */; };
+		45FF15271F6E408300473B18 /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */; };
+		45FF15281F6E408300473B18 /* GOTHIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9871F5AB6590035AA85 /* GOTHIC.TTF */; };
+		45FF15291F6E408300473B18 /* gothicb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9881F5AB6590035AA85 /* gothicb.ttf */; };
+		45FF152A1F6E408300473B18 /* GOTHICB0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9891F5AB6590035AA85 /* GOTHICB0.TTF */; };
+		45FF152B1F6E408300473B18 /* GOTHICBI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */; };
+		45FF152C1F6E408300473B18 /* gothici.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F98B1F5AB6590035AA85 /* gothici.ttf */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
 		B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741D6061F6B8D0300C11EE7 /* Home.storyboard */; };
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
@@ -840,6 +846,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FF15271F6E408300473B18 /* CenturyGothic.ttf in Resources */,
+				45FF15281F6E408300473B18 /* GOTHIC.TTF in Resources */,
+				45FF15291F6E408300473B18 /* gothicb.ttf in Resources */,
+				45FF152A1F6E408300473B18 /* GOTHICB0.TTF in Resources */,
+				45FF152B1F6E408300473B18 /* GOTHICBI.TTF in Resources */,
+				45FF152C1F6E408300473B18 /* gothici.ttf in Resources */,
 				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
 				B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */,
 				453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */,
