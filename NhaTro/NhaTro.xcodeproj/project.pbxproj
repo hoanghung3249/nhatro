@@ -26,8 +26,9 @@
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
 		B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741D6061F6B8D0300C11EE7 /* Home.storyboard */; };
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
-		B741D6111F6B9AD200C11EE7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6101F6B9AD200C11EE7 /* TabBarController.swift */; };
 		B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */; };
+		B741D6171F6E1BA200C11EE7 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */; };
+		B741D6191F6E20CA00C11EE7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6181F6E20CA00C11EE7 /* TabBarViewController.swift */; };
 		B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7504C791F5BB73D00C1730D /* VerifyViewController.swift */; };
 		B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15F71F5A507000D03921 /* RegisterViewController.swift */; };
 		B77C16381F5A542300D03921 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FB1F5A542300D03921 /* SPAnimation.swift */; };
@@ -104,8 +105,9 @@
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
 		B741D6061F6B8D0300C11EE7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		B741D6101F6B9AD200C11EE7 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
+		B741D6181F6E20CA00C11EE7 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B7504C791F5BB73D00C1730D /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		B77C15F71F5A507000D03921 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B77C15FB1F5A542300D03921 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
@@ -450,7 +452,7 @@
 		B741D60F1F6B9A9B00C11EE7 /* TabbarVC */ = {
 			isa = PBXGroup;
 			children = (
-				B741D6101F6B9AD200C11EE7 /* TabBarController.swift */,
+				B741D6181F6E20CA00C11EE7 /* TabBarViewController.swift */,
 			);
 			path = TabbarVC;
 			sourceTree = "<group>";
@@ -467,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */,
+				B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */,
 			);
 			path = HomePageCell;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
 				B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */,
 				453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */,
+				B741D6171F6E1BA200C11EE7 /* HomePageCell.xib in Resources */,
 				45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */,
 				45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -903,7 +907,6 @@
 				B77C16561F5A542300D03921 /* SPBlurView.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
-				B741D6111F6B9AD200C11EE7 /* TabBarController.swift in Sources */,
 				B77C163E1F5A542300D03921 /* SPDelay.swift in Sources */,
 				B77C16461F5A542300D03921 /* SPRandom.swift in Sources */,
 				B77C164F1F5A542300D03921 /* SPSegmentControlProtocol.swift in Sources */,
@@ -913,6 +916,7 @@
 				B77C16541F5A542300D03921 /* SPPageItemsScalingCollectionLayout.swift in Sources */,
 				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
 				B77C16441F5A542300D03921 /* SPLaunchAnimationSlideExtenshion.swift in Sources */,
+				B741D6191F6E20CA00C11EE7 /* TabBarViewController.swift in Sources */,
 				45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */,
 				B77C164A1F5A542300D03921 /* SPParalaxTableViewController.swift in Sources */,
 				B77C16401F5A542300D03921 /* SPBezierPathFigure.swift in Sources */,

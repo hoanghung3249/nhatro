@@ -9,17 +9,32 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-    @IBOutlet weak var CoHienthi: UICollectionView!
 
+    @IBOutlet weak var cvwDetails: UICollectionView!
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        CoHienthi.delegate = self
-        CoHienthi.dataSource = self
         self.navigationController?.navigationBar.barTintColor = Color.mainColor()
-
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.setupCollectionView()
         // Do any additional setup after loading the view.
     }
+    
+    private func setupCollectionView() {
+        cvwDetails.delegate = self
+        cvwDetails.dataSource = self
+        //Setup layout for item in collectionview
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: self.view.frame.size.width, height: 181)
+        layout.scrollDirection = .vertical
+        cvwDetails.collectionViewLayout = layout
+        
+        //Register cell for collectionView
+        let nib = UINib(nibName: "HomePageCell", bundle: nil)
+        cvwDetails.register(nib, forCellWithReuseIdentifier: "HomePageCell")
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -27,15 +42,25 @@ class HomePageViewController: UIViewController {
 
 
 }
+
+//MARK:- CollectionView Datasource & Delegate
 extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! HomePageCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCollectionViewCell
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.size.width, height: 181)
+    }
+    
 }
