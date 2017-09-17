@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="u4H-us-IWp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="CenturyGothic.ttf">
+        <array key="GOTHIC.TTF">
             <string>CenturyGothic</string>
         </array>
     </customFonts>
@@ -16,7 +16,7 @@
         <!--Home-->
         <scene sceneID="Rzs-cT-RNm">
             <objects>
-                <viewController id="aFl-pK-gM9" customClass="HomePageViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewController" id="aFl-pK-gM9" customClass="HomePageViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aBx-x1-rHb"/>
                         <viewControllerLayoutGuide type="bottom" id="zle-WB-cBH"/>
@@ -123,26 +123,6 @@
             </objects>
             <point key="canvasLocation" x="-1703.2" y="1415.4422788605698"/>
         </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="vkL-Vp-eWa">
-            <objects>
-                <tabBarController restorationIdentifier="TabBarVC" storyboardIdentifier="TabBarVC" id="u4H-us-IWp" customClass="TabBarViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="uv3-xx-i5D">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="XYy-0H-UdY" kind="relationship" relationship="viewControllers" id="VRt-u5-bvb"/>
-                        <segue destination="4sS-yt-YES" kind="relationship" relationship="viewControllers" id="1zK-zq-BlV"/>
-                        <segue destination="mWY-dg-M8g" kind="relationship" relationship="viewControllers" id="FYs-Nw-iTU"/>
-                        <segue destination="xzg-e4-WNZ" kind="relationship" relationship="viewControllers" id="jgP-Xm-nc2"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ejT-Ea-kia" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-204" y="-192"/>
-        </scene>
         <!--Root View Controller-->
         <scene sceneID="qDf-yh-9E9">
             <objects>
@@ -171,25 +151,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UFl-le-0z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-714" y="1415"/>
-        </scene>
-        <!--Yêu Thích-->
-        <scene sceneID="dee-MC-ghe">
-            <objects>
-                <navigationController id="4sS-yt-YES" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Yêu Thích" image="heart" id="Onb-su-HLf">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uks-q5-tw4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xRD-y9-bJy" kind="relationship" relationship="rootViewController" id="DSA-ig-qMy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8gX-oN-DD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-714" y="618"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="4Er-tn-F5K">
@@ -220,25 +181,6 @@
             </objects>
             <point key="canvasLocation" x="273" y="1415"/>
         </scene>
-        <!--Đăng Tin-->
-        <scene sceneID="lwf-VL-IMf">
-            <objects>
-                <navigationController id="mWY-dg-M8g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Đăng Tin" image="plus" id="XiD-Do-R4f">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7Dx-fl-edu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="uH6-7x-Gsd" kind="relationship" relationship="rootViewController" id="2Wy-8j-Smy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A4k-3F-PbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="274" y="618"/>
-        </scene>
         <!--Root View Controller-->
         <scene sceneID="IaK-fN-Dvm">
             <objects>
@@ -268,51 +210,9 @@
             </objects>
             <point key="canvasLocation" x="1182" y="1415"/>
         </scene>
-        <!--Thông Tin-->
-        <scene sceneID="jcc-gz-2jy">
-            <objects>
-                <navigationController id="xzg-e4-WNZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Thông Tin" image="avatar" id="XBv-2s-AF5">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="YI0-wP-Ex2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="62W-Fe-EXN" kind="relationship" relationship="rootViewController" id="WLP-Kv-RgX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9yC-sh-ERZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1182" y="618"/>
-        </scene>
-        <!--Trang Chủ-->
-        <scene sceneID="QfP-0F-U6E">
-            <objects>
-                <navigationController id="XYy-0H-UdY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trang Chủ" image="home" id="WmK-eF-NDM">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EOv-BH-Gw0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="aFl-pK-gM9" kind="relationship" relationship="rootViewController" id="7Uq-OM-wIW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ba-3Y-kxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1703" y="618"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="avatar" width="23" height="27"/>
-        <image name="heart" width="27" height="25"/>
-        <image name="home" width="25" height="25"/>
         <image name="homeLocationMarker" width="20" height="26"/>
         <image name="invalidName-2" width="12" height="21"/>
-        <image name="plus" width="27" height="27"/>
     </resources>
 </document>

@@ -12,10 +12,33 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tabBar.tintColor = .black
         self.tabBar.barTintColor = Color.mainColor()
-        
+        self.setupViewController()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    private func setupViewController() {
+        let homePageVC = Storyboard.home.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+        let naviPageVC = UINavigationController(rootViewController: homePageVC)
+        naviPageVC.tabBarItem = UITabBarItem(title: "Trang Chủ", image: UIImage(named: "home"), selectedImage: UIImage(named: "homeSelected"))
+        
+        
+        let likeVC = UIViewController()
+        let naviLikeVC = UINavigationController(rootViewController: likeVC)
+        naviLikeVC.tabBarItem = UITabBarItem(title: "Yêu Thích", image: UIImage(named: "heart"), selectedImage: UIImage(named:"likeSelected"))
+        
+        let postVC = UIViewController()
+        let naviPostVC = UINavigationController(rootViewController: postVC)
+        naviPostVC.tabBarItem = UITabBarItem(title: "Đăng Tin", image: UIImage(named: "plus"), selectedImage: UIImage(named:"postSeledted"))
+        
+        let infoVC = UIViewController()
+        let naviInfoVC = UINavigationController(rootViewController: infoVC)
+        naviInfoVC.tabBarItem = UITabBarItem(title: "Thông Tin", image: UIImage(named: "avatar"), selectedImage: UIImage(named:"infoSelected"))
+        
+        self.viewControllers = [naviPageVC, naviLikeVC , naviPostVC, naviInfoVC]
+        self.selectedViewController = naviPageVC
+        
     }
 
 
