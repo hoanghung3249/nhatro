@@ -21,6 +21,7 @@ target 'NhaTro' do
     pod 'Kingfisher', '~> 3.0' 
     pod 'NKVPhonePicker'
     pod 'GoogleSignIn'
+    pod "Texture"
 
 
 
