@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home-->
+        <!--Home Page View Controller-->
         <scene sceneID="Rzs-cT-RNm">
             <objects>
                 <viewController storyboardIdentifier="HomePageViewController" id="aFl-pK-gM9" customClass="HomePageViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,7 +114,6 @@
                             <constraint firstItem="LAp-5p-dS5" firstAttribute="top" secondItem="qIe-bk-ezT" secondAttribute="bottom" id="wik-Hj-pJR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="WFW-Qs-Rpx"/>
                     <connections>
                         <outlet property="cvwDetails" destination="a5Y-ao-Psf" id="YnF-ZR-l5S"/>
                     </connections>

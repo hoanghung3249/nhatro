@@ -16,17 +16,10 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.setupNavigation()
     }
 
     
     //MARK:- Support function
-    
-    private func setupNavigation() {
-        self.navigationController?.navigationBar.barTintColor = Color.mainColor()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: Font.fontCenturyGothicBold(20),NSForegroundColorAttributeName : UIColor.white]
-        self.navigationItem.title = "Đăng Tin"
-    }
     
 
 }

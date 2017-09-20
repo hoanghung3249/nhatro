@@ -16,7 +16,6 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupCollectionView()
-        self.setupNavigation()
         // Do any additional setup after loading the view.
     }
     
@@ -34,12 +33,6 @@ class HomePageViewController: UIViewController {
         //Register cell for collectionView
         let nib = UINib(nibName: "HomePageCell", bundle: nil)
         cvwDetails.register(nib, forCellWithReuseIdentifier: "HomePageCell")
-    }
-    
-    private func setupNavigation() {
-        self.navigationController?.navigationBar.barTintColor = Color.mainColor()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: Font.fontCenturyGothicBold(20),NSForegroundColorAttributeName : UIColor.white]
-        self.navigationItem.title = "Home"
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

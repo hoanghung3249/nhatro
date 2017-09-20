@@ -13,6 +13,9 @@
 		453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */; };
 		458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */; };
 		458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FF1F7292FE00D8CD80 /* PostViewController.swift */; };
+		458D63041F72968000D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D63031F72968000D8CD80 /* NhaTroNavigationVC.swift */; };
+		458D63081F72A05A00D8CD80 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D63061F72A05A00D8CD80 /* TabBarController.swift */; };
+		458D63091F72A05A00D8CD80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D63071F72A05A00D8CD80 /* TabBarViewController.swift */; };
 		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
 		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
 		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
@@ -37,7 +40,6 @@
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
 		B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */; };
 		B741D6171F6E1BA200C11EE7 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */; };
-		B741D6191F6E20CA00C11EE7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6181F6E20CA00C11EE7 /* TabBarViewController.swift */; };
 		B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7504C791F5BB73D00C1730D /* VerifyViewController.swift */; };
 		B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15F71F5A507000D03921 /* RegisterViewController.swift */; };
 		B77C16381F5A542300D03921 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FB1F5A542300D03921 /* SPAnimation.swift */; };
@@ -98,6 +100,9 @@
 		453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		458D62FF1F7292FE00D8CD80 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		458D63031F72968000D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
+		458D63061F72A05A00D8CD80 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		458D63071F72A05A00D8CD80 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		45EF0B091F50714D005791E4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45EF0B1B1F50746A005791E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -119,7 +124,6 @@
 		B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
-		B741D6181F6E20CA00C11EE7 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		B7504C791F5BB73D00C1730D /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		B77C15F71F5A507000D03921 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B77C15FB1F5A542300D03921 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
@@ -286,6 +290,32 @@
 				458D62FF1F7292FE00D8CD80 /* PostViewController.swift */,
 			);
 			path = PostVC;
+			sourceTree = "<group>";
+		};
+		458D63011F72961400D8CD80 /* ViewCommon */ = {
+			isa = PBXGroup;
+			children = (
+				458D63051F72A05A00D8CD80 /* TabbarVC */,
+				458D63021F72962100D8CD80 /* Navigation */,
+			);
+			path = ViewCommon;
+			sourceTree = "<group>";
+		};
+		458D63021F72962100D8CD80 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				458D63031F72968000D8CD80 /* NhaTroNavigationVC.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		458D63051F72A05A00D8CD80 /* TabbarVC */ = {
+			isa = PBXGroup;
+			children = (
+				458D63061F72A05A00D8CD80 /* TabBarController.swift */,
+				458D63071F72A05A00D8CD80 /* TabBarViewController.swift */,
+			);
+			path = TabbarVC;
 			sourceTree = "<group>";
 		};
 		45EF0B071F507127005791E4 /* API */ = {
@@ -471,7 +501,7 @@
 		B741D6081F6B8DBA00C11EE7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B741D60F1F6B9A9B00C11EE7 /* TabbarVC */,
+				458D63011F72961400D8CD80 /* ViewCommon */,
 				B741D60C1F6B8F9200C11EE7 /* HomePageVC */,
 				458D62FB1F72924A00D8CD80 /* FavoriteVC */,
 				458D62FE1F7292F300D8CD80 /* PostVC */,
@@ -486,14 +516,6 @@
 				B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */,
 			);
 			path = HomePageVC;
-			sourceTree = "<group>";
-		};
-		B741D60F1F6B9A9B00C11EE7 /* TabbarVC */ = {
-			isa = PBXGroup;
-			children = (
-				B741D6181F6E20CA00C11EE7 /* TabBarViewController.swift */,
-			);
-			path = TabbarVC;
 			sourceTree = "<group>";
 		};
 		B741D6121F6BC33900C11EE7 /* Views */ = {
@@ -951,6 +973,7 @@
 			files = (
 				B77C16561F5A542300D03921 /* SPBlurView.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
+				458D63081F72A05A00D8CD80 /* TabBarController.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
 				B77C163E1F5A542300D03921 /* SPDelay.swift in Sources */,
 				B77C16461F5A542300D03921 /* SPRandom.swift in Sources */,
@@ -962,9 +985,9 @@
 				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
 				B77C16441F5A542300D03921 /* SPLaunchAnimationSlideExtenshion.swift in Sources */,
 				458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */,
-				B741D6191F6E20CA00C11EE7 /* TabBarViewController.swift in Sources */,
 				45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */,
 				B77C164A1F5A542300D03921 /* SPParalaxTableViewController.swift in Sources */,
+				458D63041F72968000D8CD80 /* NhaTroNavigationVC.swift in Sources */,
 				B77C16401F5A542300D03921 /* SPBezierPathFigure.swift in Sources */,
 				B77C16521F5A542300D03921 /* SPCollectionViewCell.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
@@ -975,6 +998,7 @@
 				B77C16571F5A542300D03921 /* SPGradientView.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
 				B77C16591F5A542300D03921 /* SPUIViewExtenshion.swift in Sources */,
+				458D63091F72A05A00D8CD80 /* TabBarViewController.swift in Sources */,
 				B77C16411F5A542300D03921 /* SPUIImageExtenshion.swift in Sources */,
 				45039C351F5B9C35001DD70A /* Constants.swift in Sources */,
 				B77C163F1F5A542300D03921 /* SPUIDeviceExtenshion.swift in Sources */,
