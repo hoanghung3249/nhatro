@@ -25,15 +25,15 @@ class TabBarViewController: ASTabBarController {
         naviPageVC.tabBarItem = UITabBarItem(title: "Trang Chủ", image: UIImage(named: "home"), selectedImage: UIImage(named: "homeSelected"))
         
         
-        let likeVC = UIViewController()
+        let likeVC = Storyboard.home.instantiateViewController(withIdentifier: "FavoriteViewController") as! FavoriteViewController
         let naviLikeVC = UINavigationController(rootViewController: likeVC)
         naviLikeVC.tabBarItem = UITabBarItem(title: "Yêu Thích", image: UIImage(named: "heart"), selectedImage: UIImage(named:"likeSelected"))
         
-        let postVC = UIViewController()
+        let postVC = Storyboard.home.instantiateViewController(withIdentifier: "PostViewController") as! PostViewController
         let naviPostVC = UINavigationController(rootViewController: postVC)
         naviPostVC.tabBarItem = UITabBarItem(title: "Đăng Tin", image: UIImage(named: "plus"), selectedImage: UIImage(named:"postSeledted"))
         
-        let infoVC = UIViewController()
+        let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
         let naviInfoVC = UINavigationController(rootViewController: infoVC)
         naviInfoVC.tabBarItem = UITabBarItem(title: "Thông Tin", image: UIImage(named: "avatar"), selectedImage: UIImage(named:"infoSelected"))
         
