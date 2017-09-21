@@ -18,7 +18,12 @@ class HomePageViewController: UIViewController {
         self.setupCollectionView()
         // Do any additional setup after loading the view.
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationItem.title = "Home"
+        tabBarController?.tabBar.isHidden = false
+    }
     
     //MARK:- Support functions
     private func setupCollectionView() {
@@ -37,6 +42,12 @@ class HomePageViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    @IBAction func showMap(_ sender: UIButton) {
+        let showMap = Storyboard.home.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
+        self.navigationItem.title = ""
+        self.navigationController?.pushViewController(showMap!, animated: true)
     }
 
 
