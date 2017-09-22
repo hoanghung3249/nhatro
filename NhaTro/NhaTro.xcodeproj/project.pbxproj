@@ -39,8 +39,12 @@
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
 		B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */; };
 		B741D6171F6E1BA200C11EE7 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */; };
+		B743F5001F74C27200122804 /* G8SliderStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = B743F4FF1F74C27200122804 /* G8SliderStep.swift */; };
 		B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7504C791F5BB73D00C1730D /* VerifyViewController.swift */; };
 		B77B75251F73E5E500B1E888 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B75241F73E5E500B1E888 /* MapViewController.swift */; };
+		B77B75281F74109400B1E888 /* GoogleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B75271F74109400B1E888 /* GoogleMap.swift */; };
+		B77B752D1F7416C700B1E888 /* InfoWinDow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B77B752C1F7416C700B1E888 /* InfoWinDow.xib */; };
+		B77B752F1F7417BE00B1E888 /* InfoWinDowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B752E1F7417BE00B1E888 /* InfoWinDowView.swift */; };
 		B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15F71F5A507000D03921 /* RegisterViewController.swift */; };
 		B77C16381F5A542300D03921 /* SPAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FB1F5A542300D03921 /* SPAnimation.swift */; };
 		B77C16391F5A542300D03921 /* SPAnimationSpring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C15FC1F5A542300D03921 /* SPAnimationSpring.swift */; };
@@ -123,8 +127,12 @@
 		B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
+		B743F4FF1F74C27200122804 /* G8SliderStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = G8SliderStep.swift; sourceTree = "<group>"; };
 		B7504C791F5BB73D00C1730D /* VerifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
 		B77B75241F73E5E500B1E888 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B77B75271F74109400B1E888 /* GoogleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMap.swift; sourceTree = "<group>"; };
+		B77B752C1F7416C700B1E888 /* InfoWinDow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWinDow.xib; sourceTree = "<group>"; };
+		B77B752E1F7417BE00B1E888 /* InfoWinDowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoWinDowView.swift; sourceTree = "<group>"; };
 		B77C15F71F5A507000D03921 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B77C15FB1F5A542300D03921 /* SPAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimation.swift; sourceTree = "<group>"; };
 		B77C15FC1F5A542300D03921 /* SPAnimationSpring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPAnimationSpring.swift; sourceTree = "<group>"; };
@@ -262,6 +270,7 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B77B75261F74106E00B1E888 /* GoogleMap */,
 				B77D29401F62D18400C8F9D5 /* Google */,
 				B77D293F1F62D17900C8F9D5 /* Facebook */,
 			);
@@ -382,6 +391,7 @@
 		45EF0B111F50739B005791E4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B743F4FE1F74C27200122804 /* G8SliderStep */,
 				4519F9821F5AB0C60035AA85 /* XMSegmentedControl */,
 				B77C15F91F5A542300D03921 /* Sparrow */,
 				45EF0B331F5075D4005791E4 /* TransitionManager */,
@@ -521,6 +531,7 @@
 		B741D6121F6BC33900C11EE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B77B75291F74168500B1E888 /* InfoWinDow */,
 				B741D6131F6BC33900C11EE7 /* HomePageCell */,
 			);
 			path = Views;
@@ -533,6 +544,14 @@
 				B741D6161F6E1BA200C11EE7 /* HomePageCell.xib */,
 			);
 			path = HomePageCell;
+			sourceTree = "<group>";
+		};
+		B743F4FE1F74C27200122804 /* G8SliderStep */ = {
+			isa = PBXGroup;
+			children = (
+				B743F4FF1F74C27200122804 /* G8SliderStep.swift */,
+			);
+			path = G8SliderStep;
 			sourceTree = "<group>";
 		};
 		B7504C781F5BB73100C1730D /* VerifyVC */ = {
@@ -549,6 +568,23 @@
 				B77B75241F73E5E500B1E888 /* MapViewController.swift */,
 			);
 			path = MapVC;
+			sourceTree = "<group>";
+		};
+		B77B75261F74106E00B1E888 /* GoogleMap */ = {
+			isa = PBXGroup;
+			children = (
+				B77B75271F74109400B1E888 /* GoogleMap.swift */,
+			);
+			path = GoogleMap;
+			sourceTree = "<group>";
+		};
+		B77B75291F74168500B1E888 /* InfoWinDow */ = {
+			isa = PBXGroup;
+			children = (
+				B77B752C1F7416C700B1E888 /* InfoWinDow.xib */,
+				B77B752E1F7417BE00B1E888 /* InfoWinDowView.swift */,
+			);
+			path = InfoWinDow;
 			sourceTree = "<group>";
 		};
 		B77C15F61F5A504400D03921 /* RegisterVC */ = {
@@ -913,6 +949,7 @@
 				45FF15281F6E408300473B18 /* GOTHIC.TTF in Resources */,
 				45FF15291F6E408300473B18 /* gothicb.ttf in Resources */,
 				45FF152A1F6E408300473B18 /* GOTHICB0.TTF in Resources */,
+				B77B752D1F7416C700B1E888 /* InfoWinDow.xib in Resources */,
 				45FF152B1F6E408300473B18 /* GOTHICBI.TTF in Resources */,
 				45FF152C1F6E408300473B18 /* gothici.ttf in Resources */,
 				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
@@ -1033,6 +1070,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77C16561F5A542300D03921 /* SPBlurView.swift in Sources */,
+				B743F5001F74C27200122804 /* G8SliderStep.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
 				B77C163E1F5A542300D03921 /* SPDelay.swift in Sources */,
@@ -1052,11 +1090,13 @@
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
 				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
+				B77B752F1F7417BE00B1E888 /* InfoWinDowView.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
 				B77C16571F5A542300D03921 /* SPGradientView.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
 				B77C16591F5A542300D03921 /* SPUIViewExtenshion.swift in Sources */,
+				B77B75281F74109400B1E888 /* GoogleMap.swift in Sources */,
 				B77C16411F5A542300D03921 /* SPUIImageExtenshion.swift in Sources */,
 				458D63101F72CDCC00D8CD80 /* TabBarViewController.swift in Sources */,
 				45039C351F5B9C35001DD70A /* Constants.swift in Sources */,

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="CenturyGothic.ttf">
+        <array key="GOTHIC.TTF">
             <string>CenturyGothic</string>
         </array>
     </customFonts>
@@ -187,7 +187,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ionIosArrowDownIonicons" translatesAutoresizingMaskIntoConstraints="NO" id="0j5-Pv-GrO">
-                                                <rect key="frame" x="320.5" y="13" width="15" height="21"/>
+                                                <rect key="frame" x="310" y="13" width="15" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="15" id="Etg-y7-m7J"/>
                                                     <constraint firstAttribute="height" constant="21" id="hHo-A8-NDv"/>
@@ -202,7 +202,7 @@
                                             <constraint firstItem="QRX-K5-9aB" firstAttribute="leading" secondItem="aE5-qM-pRE" secondAttribute="trailing" constant="9" id="dT0-bi-Fqj"/>
                                             <constraint firstItem="aE5-qM-pRE" firstAttribute="leading" secondItem="mCM-d3-Mel" secondAttribute="leading" constant="53" id="fZm-5m-ELr"/>
                                             <constraint firstItem="QRX-K5-9aB" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="13" id="n28-vH-bgB"/>
-                                            <constraint firstItem="0j5-Pv-GrO" firstAttribute="leading" secondItem="aYd-IP-mGE" secondAttribute="trailing" constant="19.5" id="ogc-rO-2tQ"/>
+                                            <constraint firstItem="0j5-Pv-GrO" firstAttribute="leading" secondItem="aYd-IP-mGE" secondAttribute="trailing" constant="9" id="ogc-rO-2tQ"/>
                                             <constraint firstItem="aYd-IP-mGE" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="14" id="tTQ-ye-fnM"/>
                                             <constraint firstItem="aE5-qM-pRE" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="14" id="uFy-jJ-1RN"/>
                                             <constraint firstAttribute="bottom" secondItem="D9Q-r0-65v" secondAttribute="bottom" constant="3" id="wJ5-ac-zve"/>
@@ -223,14 +223,60 @@
                                     <constraint firstAttribute="trailing" secondItem="mCM-d3-Mel" secondAttribute="trailing" id="pto-KU-e3U"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="psu-mZ-rAK">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ag6-LP-OAF">
+                                        <rect key="frame" x="20" y="21" width="335" height="54"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="gZr-cl-SmX" customClass="G8SliderStep" customModule="NhaTro" customModuleProvider="target">
+                                                <rect key="frame" x="23" y="12" width="289" height="31"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="stepTickWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeSliderValue:" destination="7kQ-6I-u9T" eventType="valueChanged" id="WxA-Nt-uHi"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="54" id="0lb-FW-c11"/>
+                                            <constraint firstItem="gZr-cl-SmX" firstAttribute="centerY" secondItem="ag6-LP-OAF" secondAttribute="centerY" id="VIK-wx-rK0"/>
+                                            <constraint firstAttribute="trailing" secondItem="gZr-cl-SmX" secondAttribute="trailing" constant="25" id="lgh-O9-zYG"/>
+                                            <constraint firstItem="gZr-cl-SmX" firstAttribute="leading" secondItem="ag6-LP-OAF" secondAttribute="leading" constant="25" id="pvk-ri-kbG"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ag6-LP-OAF" secondAttribute="trailing" constant="20" id="W5Z-gF-mzz"/>
+                                    <constraint firstItem="ag6-LP-OAF" firstAttribute="leading" secondItem="psu-mZ-rAK" secondAttribute="leading" constant="20" id="dYz-BR-gHy"/>
+                                    <constraint firstItem="ag6-LP-OAF" firstAttribute="top" secondItem="psu-mZ-rAK" secondAttribute="top" constant="21" id="tAu-F4-lek"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o7J-hi-P9R" firstAttribute="top" secondItem="WLf-45-GEw" secondAttribute="bottom" id="7nk-mg-Oib"/>
+                            <constraint firstAttribute="trailing" secondItem="psu-mZ-rAK" secondAttribute="trailing" id="Etm-yE-KKw"/>
+                            <constraint firstItem="psu-mZ-rAK" firstAttribute="top" secondItem="o7J-hi-P9R" secondAttribute="bottom" id="MXy-7c-kpd"/>
+                            <constraint firstItem="FqX-F9-RvD" firstAttribute="top" secondItem="psu-mZ-rAK" secondAttribute="bottom" id="ggb-qv-g8M"/>
                             <constraint firstItem="o7J-hi-P9R" firstAttribute="leading" secondItem="Og8-hc-HsB" secondAttribute="leading" id="jJR-fM-3Mr"/>
                             <constraint firstAttribute="trailing" secondItem="o7J-hi-P9R" secondAttribute="trailing" id="n8i-xP-g7T"/>
+                            <constraint firstItem="psu-mZ-rAK" firstAttribute="leading" secondItem="Og8-hc-HsB" secondAttribute="leading" id="piC-wG-dqD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ViewGoogleMap" destination="psu-mZ-rAK" id="mFW-01-zoe"/>
+                        <outlet property="sldStep" destination="gZr-cl-SmX" id="NXM-SO-fon"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiC-IP-GZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

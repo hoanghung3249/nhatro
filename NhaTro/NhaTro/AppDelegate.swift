@@ -11,7 +11,8 @@ import IQKeyboardManager
 import FBSDKCoreKit
 import Firebase
 import GoogleSignIn
-
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //Config Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        //Config Google Map
+        GMSPlacesClient.provideAPIKey("AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww")
+        GMSServices.provideAPIKey("AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww")
     
         // Override point for customization after application launch.
         return true

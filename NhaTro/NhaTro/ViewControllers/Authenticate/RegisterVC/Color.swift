@@ -23,6 +23,16 @@ class Color {
         return UIColor(red: 255.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 0.7)
     }
     
+    static func kLightGrayColor() -> UIColor {
+        return UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1)
+    }
+    
+    static func kGrayColor() -> UIColor {
+        return UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1)
+    }
+
+
+    
 }
 
 class Font: UIFont {
