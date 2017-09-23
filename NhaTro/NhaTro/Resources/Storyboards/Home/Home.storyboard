@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GOTHIC.TTF">
+        <array key="CenturyGothic.ttf">
             <string>CenturyGothic</string>
         </array>
     </customFonts>
@@ -227,10 +227,10 @@
                                 <rect key="frame" x="0.0" y="65" width="375" height="602"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ag6-LP-OAF">
-                                        <rect key="frame" x="20" y="21" width="335" height="54"/>
+                                        <rect key="frame" x="20" y="18" width="335" height="54"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="gZr-cl-SmX" customClass="G8SliderStep" customModule="NhaTro" customModuleProvider="target">
-                                                <rect key="frame" x="23" y="12" width="289" height="31"/>
+                                                <rect key="frame" x="23" y="20" width="289" height="31"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="stepTickWidth">
                                                         <real key="value" value="2"/>
@@ -241,15 +241,22 @@
                                                 </connections>
                                             </slider>
                                         </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="0lb-FW-c11"/>
-                                            <constraint firstItem="gZr-cl-SmX" firstAttribute="centerY" secondItem="ag6-LP-OAF" secondAttribute="centerY" id="VIK-wx-rK0"/>
+                                            <constraint firstItem="gZr-cl-SmX" firstAttribute="top" secondItem="ag6-LP-OAF" secondAttribute="top" constant="20" id="XMS-XI-XSH"/>
                                             <constraint firstAttribute="trailing" secondItem="gZr-cl-SmX" secondAttribute="trailing" constant="25" id="lgh-O9-zYG"/>
                                             <constraint firstItem="gZr-cl-SmX" firstAttribute="leading" secondItem="ag6-LP-OAF" secondAttribute="leading" constant="25" id="pvk-ri-kbG"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -258,7 +265,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ag6-LP-OAF" secondAttribute="trailing" constant="20" id="W5Z-gF-mzz"/>
                                     <constraint firstItem="ag6-LP-OAF" firstAttribute="leading" secondItem="psu-mZ-rAK" secondAttribute="leading" constant="20" id="dYz-BR-gHy"/>
-                                    <constraint firstItem="ag6-LP-OAF" firstAttribute="top" secondItem="psu-mZ-rAK" secondAttribute="top" constant="21" id="tAu-F4-lek"/>
+                                    <constraint firstItem="ag6-LP-OAF" firstAttribute="top" secondItem="psu-mZ-rAK" secondAttribute="top" constant="18" id="tAu-F4-lek"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -274,8 +281,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ViewGoogleMap" destination="psu-mZ-rAK" id="mFW-01-zoe"/>
                         <outlet property="sldStep" destination="gZr-cl-SmX" id="NXM-SO-fon"/>
+                        <outlet property="viewGoogleMap" destination="psu-mZ-rAK" id="fzD-GW-XRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiC-IP-GZb" userLabel="First Responder" sceneMemberID="firstResponder"/>

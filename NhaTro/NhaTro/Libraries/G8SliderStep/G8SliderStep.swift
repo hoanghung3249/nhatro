@@ -38,7 +38,8 @@ class G8SliderStep: UISlider {
     @IBInspectable var stepTickHeight: Float = 15
     @IBInspectable var stepTickColor: UIColor = UIColor.lightGray
     @IBInspectable var stepTickRounded: Bool = true
-    @IBInspectable var unselectedFont: UIFont = UIFont.systemFont(ofSize: 13)
+//    @IBInspectable var unselectedFont: UIFont = UIFont.systemFont(ofSize: 13)
+    @IBInspectable var unselectedFont: UIFont = Font.fontCenturyGothic(13)
     @IBInspectable var selectedFont: UIFont = UIFont.systemFont(ofSize: 13)
     @IBInspectable var stepTitlesOffset: CGFloat = 1
     
@@ -213,6 +214,7 @@ class G8SliderStep: UISlider {
                 let lbl = UILabel()
                 lbl.font = unselectedFont
                 lbl.text = title
+                lbl.textColor = Color.kGrayColor()
                 lbl.textAlignment = .center
                 lbl.sizeToFit()
                 

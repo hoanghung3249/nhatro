@@ -12,9 +12,10 @@ import GoogleMaps
 
 class MapViewController: UIViewController,UISearchBarDelegate {
     
+    @IBOutlet weak var viewGoogleMap: UIView!
     @IBOutlet weak var sldStep: G8SliderStep!
-    @IBOutlet weak var ViewGoogleMap: UIView!
-    lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
+    lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
+
     var destinations = [VacationDestination(name: "Duy hands0me", location: CLLocationCoordinate2D(latitude: 10.785872,longitude: 106.641432), zoom: 18, price: "1.000.000", phone: "0962667632"),VacationDestination(name: "123 Quang Trung, P.11, Quận Gò Vấp", location: CLLocationCoordinate2D(latitude: 10.786515,longitude: 106.645262), zoom: 20, price: "2.000.000", phone: "01666502222")]
     
     //MARK:- Life cycle
@@ -35,6 +36,7 @@ class MapViewController: UIViewController,UISearchBarDelegate {
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.tintColor = .white
         navigationItem.backBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .plain, target: nil, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
 
@@ -45,7 +47,11 @@ class MapViewController: UIViewController,UISearchBarDelegate {
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.delegate = self
-        
+        if let textSearch = searchBar.value(forKey: "_searchField") as? UITextField {
+            textSearch.layer.cornerRadius = 10
+            textSearch.clipsToBounds = true
+        }
+
         navigationItem.titleView = searchBar
         
     }
@@ -87,10 +93,10 @@ extension MapViewController:GMSMapViewDelegate,CLLocationManagerDelegate{
      func setupGoogleMap(){
         _ = destinations
         let current = destinations.first
-        let camera = GMSCameraPosition.camera(withLatitude: (current?.location.latitude)!,longitude: (current?.location.longitude)!, zoom: 12)
-        let mapView = GMSMapView.map(withFrame: CGRect.init(x: 0, y: 0, width: self.ViewGoogleMap.frame.size.width, height: self.ViewGoogleMap.frame.size.height), camera: camera)
+        let camera = GMSCameraPosition.camera(withLatitude: (current?.location.latitude)!,longitude: (current?.location.longitude)!, zoom: 15)
+        let mapView = GMSMapView.map(withFrame: CGRect.init(x: 0, y: 0, width: self.viewGoogleMap.frame.size.width, height: self.viewGoogleMap.frame.size.height), camera: camera)
         
-        ViewGoogleMap.insertSubview(mapView, at: 0)
+        viewGoogleMap.insertSubview(mapView, at: 0)
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
@@ -107,7 +113,7 @@ extension MapViewController:GMSMapViewDelegate,CLLocationManagerDelegate{
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        let infoWindow = Bundle.main.loadNibNamed("InfoWinDow", owner: self.ViewGoogleMap, options: nil)?.first as? InfoWinDowView
+        let infoWindow = Bundle.main.loadNibNamed("InfoWinDow", owner: self.viewGoogleMap, options: nil)?.first as? InfoWinDowView
         if let des = marker.userData as? VacationDestination {
             infoWindow?.lblPrice.text = des.price
             infoWindow?.lblName.text = des.name
@@ -124,7 +130,6 @@ extension MapViewController{
         sldStep.stepImages = [UIImage(named:"ovalCopy2")!, UIImage(named:"ovalCopy2")!,UIImage(named:"ovalCopy2")!,]
         sldStep.tickTitles = ["1km","3km","5km"]
         sldStep.minimumValue = 1
-        
         sldStep.trackColor = Color.kLightGrayColor()
         sldStep.stepTickColor = Color.kLightGrayColor()
         sldStep.stepTickWidth = 20

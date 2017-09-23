@@ -76,7 +76,9 @@ class LoginViewController: UIViewController {
             }
         }) { [weak self] (error, code) in
             guard let strongSelf = self else { return }
-            strongSelf.showAlert(with: error)
+            if error != "" {
+                strongSelf.showAlert(with: error)
+            }
         }
     }
     

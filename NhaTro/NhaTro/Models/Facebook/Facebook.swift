@@ -19,7 +19,7 @@ struct Facebook {
             if (error == nil){
                 let fbloginresult : FBSDKLoginManagerLoginResult = result!
                 if fbloginresult.isCancelled {
-                    Failed("Cancel", 1)
+                    Failed("", 1)
                 } else {
                     if fbloginresult.grantedPermissions != nil {
                         if(fbloginresult.grantedPermissions.contains("email")) {
