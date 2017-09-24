@@ -11,7 +11,7 @@
         <array key="CenturyGothic.ttf">
             <string>CenturyGothic</string>
         </array>
-        <array key="gothicb.ttf">
+        <array key="GOTHICB0.TTF">
             <string>CenturyGothic-Bold</string>
         </array>
     </customFonts>
@@ -282,7 +282,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="80" id="Ttd-QT-JxU"/>
                                     </constraints>
-                                    <mutableString key="text">+ Có thang máy. Bảo vệ trực 24/24, giờ giấc thoải mái.
+                                    <string key="text">+ Có thang máy. Bảo vệ trực 24/24, giờ giấc thoải mái.
 + Internet cáp quang tốc độ cao, truyền hình cáp.
 + Dọn vệ sinh hàng ngày, không gian sống sạch đẹp.
 + Hầm để xe thoải mái, có dịch vụ giặt là.+ Có thang máy. Bảo vệ trực 24/24, giờ giấc thoải mái.
@@ -291,7 +291,7 @@
 + Hầm để xe thoải mái, có dịch vụ giặt là.+ Có thang máy. Bảo vệ trực 24/24, giờ giấc thoải mái.
 + Internet cáp quang tốc độ cao, truyền hình cáp.
 + Dọn vệ sinh hàng ngày, không gian sống sạch đẹp.
-+ Hầm để xe thoải mái, có dịch vụ giặt là.</mutableString>
++ Hầm để xe thoải mái, có dịch vụ giặt là.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
