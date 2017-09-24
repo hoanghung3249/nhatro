@@ -21,7 +21,9 @@ class DetailHostelViewController: UIViewController {
     
     private func loadDetail(){
         let detailView = DetailHostelView.fromNib(nibName: "DetailHostel")
-        vwContain.addSubview(detailView)
+        DispatchQueue.main.async {
+            self.vwContain.addSubview(detailView)
+        }
     }
     
 
