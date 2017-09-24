@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb170907303478734</string>
+				<string>fb182111059002955</string>
 			</array>
 		</dict>
 		<dict>
@@ -44,9 +44,9 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>170907303478734</string>
+	<string>182111059002955</string>
 	<key>FacebookDisplayName</key>
-	<string>NhaTro</string>
+	<string>Nha Tro</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

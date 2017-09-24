@@ -73,5 +73,8 @@ extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: 181)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = storyboard?.instantiateViewController(withIdentifier: "DetailHostelViewController") as! DetailHostelViewController
+        self.present(detail, animated: true, completion: nil)
+    }
 }

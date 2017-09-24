@@ -52,6 +52,7 @@ struct FacebookModel {
     var id:String
     var lastName:String
     var name:String
+    var url:String
     
     init(_ json:JSON) {
         self.firstName = json["first_name"].stringValue
@@ -59,6 +60,9 @@ struct FacebookModel {
         self.id = json["id"].stringValue
         self.lastName = json["last_name"].stringValue
         self.name = json["name"].stringValue
+        let urlString = json["picture"].dictionaryValue
+        let dataString = urlString["data"]?.dictionaryValue
+        self.url = (dataString?["url"]?.stringValue)!
     }
 }
 

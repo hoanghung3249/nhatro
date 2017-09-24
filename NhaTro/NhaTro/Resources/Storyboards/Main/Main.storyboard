@@ -11,7 +11,7 @@
         <array key="CenturyGothic.ttf">
             <string>CenturyGothic</string>
         </array>
-        <array key="GOTHICB0.TTF">
+        <array key="gothicb.ttf">
             <string>CenturyGothic-Bold</string>
         </array>
     </customFonts>
@@ -130,7 +130,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
-                                                        <state key="normal" title="Login with Phone Number">
+                                                        <state key="normal" title="Login with Email">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
