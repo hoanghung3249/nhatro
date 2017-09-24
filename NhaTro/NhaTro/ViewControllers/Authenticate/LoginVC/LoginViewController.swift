@@ -94,8 +94,8 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginPhone(_ sender: UIButton) {
-        let registerVC = Storyboard.main.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
-        self.pushTo(registerVC)
+        let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        self.pushTo(loginVC)
 
     }
 }
