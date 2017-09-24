@@ -9,7 +9,17 @@
 import UIKit
 
 class DetailHostelView: UIView {
+    
+    @IBOutlet weak var txtvDescribe: UITextView!
+    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var lblArena: UILabel!
+    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var imgAvatar: UIImageView!
+    
+    @IBOutlet weak var lblName: UILabel!
 
+    @IBOutlet weak var lblDate: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
 //        setupView()
@@ -29,5 +39,4 @@ class DetailHostelView: UIView {
         }
         
     }
-
 }
