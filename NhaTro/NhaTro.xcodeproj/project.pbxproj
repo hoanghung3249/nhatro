@@ -11,6 +11,9 @@
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
 		453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */; };
+		455131981F7928B900BD731A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455131971F7928B900BD731A /* MenuViewController.swift */; };
+		4551319B1F7929C000BD731A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4551319A1F7929C000BD731A /* MenuCell.xib */; };
+		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
 		458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */; };
 		458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FF1F7292FE00D8CD80 /* PostViewController.swift */; };
 		458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */; };
@@ -33,7 +36,6 @@
 		45FF152A1F6E408300473B18 /* GOTHICB0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9891F5AB6590035AA85 /* GOTHICB0.TTF */; };
 		45FF152B1F6E408300473B18 /* GOTHICBI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */; };
 		45FF152C1F6E408300473B18 /* gothici.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F98B1F5AB6590035AA85 /* gothici.ttf */; };
-		45FF152F1F6E87AD00473B18 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FF152E1F6E87AD00473B18 /* InfoViewController.swift */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
 		B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741D6061F6B8D0300C11EE7 /* Home.storyboard */; };
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
@@ -106,6 +108,9 @@
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		455131971F7928B900BD731A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4551319A1F7929C000BD731A /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		458D62FF1F7292FE00D8CD80 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
@@ -124,7 +129,6 @@
 		45EF0B2F1F5075A3005791E4 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		45EF0B311F5075AD005791E4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45EF0B341F5075DE005791E4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
-		45FF152E1F6E87AD00473B18 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
 		B741D6061F6B8D0300C11EE7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -291,6 +295,24 @@
 				453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */,
 			);
 			path = GooglePlist;
+			sourceTree = "<group>";
+		};
+		455131961F7928AA00BD731A /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				455131991F7929AF00BD731A /* Cell */,
+				455131971F7928B900BD731A /* MenuViewController.swift */,
+			);
+			path = MenuVC;
+			sourceTree = "<group>";
+		};
+		455131991F7929AF00BD731A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4551319A1F7929C000BD731A /* MenuCell.xib */,
+				4551319C1F792B3000BD731A /* MenuCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		458D62FB1F72924A00D8CD80 /* FavoriteVC */ = {
@@ -492,14 +514,6 @@
 			path = TransitionManager;
 			sourceTree = "<group>";
 		};
-		45FF152D1F6E879F00473B18 /* InfoVC */ = {
-			isa = PBXGroup;
-			children = (
-				45FF152E1F6E87AD00473B18 /* InfoViewController.swift */,
-			);
-			path = InfoVC;
-			sourceTree = "<group>";
-		};
 		75A47287B3355DCB6C75BB3C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,7 +539,7 @@
 				B741D60C1F6B8F9200C11EE7 /* HomePageVC */,
 				458D62FB1F72924A00D8CD80 /* FavoriteVC */,
 				458D62FE1F7292F300D8CD80 /* PostVC */,
-				45FF152D1F6E879F00473B18 /* InfoVC */,
+				455131961F7928AA00BD731A /* MenuVC */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -993,6 +1007,7 @@
 				B77BB0011F775BE800A24DBE /* DetailHostel.xib in Resources */,
 				453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */,
 				B741D6171F6E1BA200C11EE7 /* HomePageCell.xib in Resources */,
+				4551319B1F7929C000BD731A /* MenuCell.xib in Resources */,
 				45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */,
 				45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -1144,15 +1159,16 @@
 				B77C164E1F5A542300D03921 /* SPSegmentControllCell.swift in Sources */,
 				B77C16431F5A542300D03921 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */,
 				B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */,
+				4551319D1F792B3000BD731A /* MenuCell.swift in Sources */,
 				B77C165B1F5A5B4300D03921 /* Color.swift in Sources */,
 				B77C16491F5A542300D03921 /* SPPageItemsScallingViewController.swift in Sources */,
 				B77C164C1F5A542300D03921 /* SPLinesCircleButtonsView.swift in Sources */,
-				45FF152F1F6E87AD00473B18 /* InfoViewController.swift in Sources */,
 				B77C16581F5A542300D03921 /* SPUILabelExtenshion.swift in Sources */,
 				458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */,
 				B77B75251F73E5E500B1E888 /* MapViewController.swift in Sources */,
 				45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */,
 				B77C16421F5A542300D03921 /* SPInternetConnection.swift in Sources */,
+				455131981F7928B900BD731A /* MenuViewController.swift in Sources */,
 				458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */,
 				B77C16551F5A542300D03921 /* SPParallaxTableViewCell.swift in Sources */,
 				B77C16531F5A542300D03921 /* SPPageItemsScalingCollectionView.swift in Sources */,

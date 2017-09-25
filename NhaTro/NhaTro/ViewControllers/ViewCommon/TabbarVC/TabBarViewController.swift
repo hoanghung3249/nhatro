@@ -36,11 +36,12 @@ class TabBarViewController: ASTabBarController {
         naviPostVC.tabBarItem = UITabBarItem(title: "Đăng Tin", image: UIImage(named: "plus"), selectedImage: UIImage(named:"postSeledted"))
         naviPostVC.setupTitle("Đăng Tin")
         
-        let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-        let naviInfoVC = NhaTroNavigationVC(rootViewController: infoVC)
-        naviInfoVC.tabBarItem = UITabBarItem(title: "Menu", image: UIImage(named: "menu"), selectedImage: UIImage(named:"menu_selected"))
+        let menuVC = Storyboard.home.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        let naviMenuVC = NhaTroNavigationVC(rootViewController: menuVC)
+        naviMenuVC.tabBarItem = UITabBarItem(title: "Menu", image: UIImage(named: "menu"), selectedImage: UIImage(named:"menu_selected"))
+        naviMenuVC.setupTitle("Menu")
         
-        self.viewControllers = [naviPageVC, naviLikeVC , naviPostVC, naviInfoVC]
+        self.viewControllers = [naviPageVC, naviLikeVC , naviPostVC, naviMenuVC]
         self.selectedViewController = naviPageVC
         
     }
