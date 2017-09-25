@@ -16,8 +16,6 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
 
-    
-    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -41,12 +39,11 @@ class SignInViewController: UIViewController {
     }
     
     
-    //MARK:- Action buttons
+    
     @IBAction func Back(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
 
     }
-    
     @IBAction func SignIn(_ sender: UIButton) {
         guard let email = self.txtEmail.text, let pass = self.txtPassword.text else {
             return
@@ -63,7 +60,6 @@ class SignInViewController: UIViewController {
 //        self.present(tabbar, animated: true, completion: nil)
 
     }
-    
     @IBAction func RegisterEmail(_ sender: UIButton) {
         let registerVC = Storyboard.main.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         self.pushTo(registerVC)
@@ -75,11 +71,7 @@ class SignInViewController: UIViewController {
 //MARK:- Support API
 extension SignInViewController {
     
-    fileprivate func callAPILogin(_ params:[String:AnyObject]) {
-        
-        
-        
-    }
+    
     
     
 }
