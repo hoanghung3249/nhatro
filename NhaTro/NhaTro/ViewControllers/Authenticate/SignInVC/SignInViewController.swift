@@ -9,8 +9,12 @@
 import UIKit
 
 class SignInViewController: UIViewController {
+    
+    
     @IBOutlet weak var btnForgotPass: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +45,19 @@ class SignInViewController: UIViewController {
 
     }
     @IBAction func SignIn(_ sender: UIButton) {
-        let tabbar = TabBarViewController()
-        self.present(tabbar, animated: true, completion: nil)
+        guard let email = self.txtEmail.text, let pass = self.txtPassword.text else {
+            return
+        }
+        Params.createParamLogin(email, pass) { [weak self] (error, params) in
+            guard let strongSelf = self else { return }
+            if error == nil {
+                print(params)
+            } else {
+                strongSelf.showAlert(with: error!)
+            }
+        }
+//        let tabbar = TabBarViewController()
+//        self.present(tabbar, animated: true, completion: nil)
 
     }
     @IBAction func RegisterEmail(_ sender: UIButton) {
@@ -52,3 +67,15 @@ class SignInViewController: UIViewController {
     
     
 }
+
+//MARK:- Support API
+extension SignInViewController {
+    
+    
+    
+    
+}
+
+
+
+

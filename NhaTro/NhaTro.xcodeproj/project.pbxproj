@@ -14,6 +14,7 @@
 		455131981F7928B900BD731A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455131971F7928B900BD731A /* MenuViewController.swift */; };
 		4551319B1F7929C000BD731A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4551319A1F7929C000BD731A /* MenuCell.xib */; };
 		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
+		4551319F1F793D7000BD731A /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319E1F793D7000BD731A /* Params.swift */; };
 		458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */; };
 		458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FF1F7292FE00D8CD80 /* PostViewController.swift */; };
 		458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */; };
@@ -111,6 +112,7 @@
 		455131971F7928B900BD731A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4551319A1F7929C000BD731A /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		4551319E1F793D7000BD731A /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		458D62FF1F7292FE00D8CD80 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			isa = PBXGroup;
 			children = (
 				45EF0B2F1F5075A3005791E4 /* ProgressView.swift */,
+				4551319E1F793D7000BD731A /* Params.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1183,6 +1186,7 @@
 				B77C164D1F5A542300D03921 /* SPRoundButton.swift in Sources */,
 				B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */,
 				45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */,
+				4551319F1F793D7000BD731A /* Params.swift in Sources */,
 				B77C163D1F5A542300D03921 /* SPConstraintsAssistent.swift in Sources */,
 				B77C16391F5A542300D03921 /* SPAnimationSpring.swift in Sources */,
 				B77C16381F5A542300D03921 /* SPAnimation.swift in Sources */,
