@@ -38,7 +38,7 @@ class TabBarViewController: ASTabBarController {
         
         let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
         let naviInfoVC = NhaTroNavigationVC(rootViewController: infoVC)
-        naviInfoVC.tabBarItem = UITabBarItem(title: "Thông Tin", image: UIImage(named: "avatar"), selectedImage: UIImage(named:"infoSelected"))
+        naviInfoVC.tabBarItem = UITabBarItem(title: "Menu", image: UIImage(named: "menu"), selectedImage: UIImage(named:"menu_selected"))
         
         self.viewControllers = [naviPageVC, naviLikeVC , naviPostVC, naviInfoVC]
         self.selectedViewController = naviPageVC
