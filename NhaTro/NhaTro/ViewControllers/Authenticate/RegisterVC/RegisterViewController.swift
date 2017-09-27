@@ -11,9 +11,13 @@ import NKVPhonePicker
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var txtConfirmPassWord: UITextField!
+    @IBOutlet weak var txtPassWord: UITextField!
     @IBOutlet weak var txtCountryCode: NKVPhonePickerTextField!
     @IBOutlet weak var txtEmail: UITextField!
-    @IBOutlet weak var txtFullName: UITextField!
+
+    @IBOutlet weak var txtLastName: UITextField!
+    @IBOutlet weak var txtFirstName: UITextField!
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var segmentedControl: XMSegmentedControl!
     
@@ -22,7 +26,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.setupSegmented()
+//        self.setupSegmented()
         self.setupDelegate()
     }
 
@@ -40,6 +44,7 @@ class RegisterViewController: UIViewController {
         segmentedControl.segmentContent = (arrTitle,arrIcon)
         segmentedControl.highlightColor = UIColor(red: 238.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 1)
         segmentedControl.layer.cornerRadius = 20
+        
     }
     
     private func setupDelegate() {

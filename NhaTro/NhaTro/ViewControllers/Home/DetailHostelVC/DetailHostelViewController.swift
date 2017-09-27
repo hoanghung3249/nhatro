@@ -18,6 +18,10 @@ class DetailHostelViewController: UIViewController {
         loadDetail()
         // Do any additional setup after loading the view.
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     
     private func loadDetail(){
         let detailView = DetailHostelView.fromNib(nibName: "DetailHostel")
