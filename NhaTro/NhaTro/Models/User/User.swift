@@ -25,6 +25,7 @@ class User {
     var firstName:String!
     var lastName:String!
     
+    //Xóa value về giá trị mặc định
     internal func logOut() {
         self.email = ""
         self.token = ""
@@ -36,6 +37,7 @@ class User {
         self.firstName = ""
         self.lastName = ""
     }
+    
     
     func parseUserData(_ userDict: [String:AnyObject]?) {
         if let user = userDict {

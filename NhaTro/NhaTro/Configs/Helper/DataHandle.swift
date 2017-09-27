@@ -13,9 +13,10 @@ class DataHandle: NSObject {
     
     static let shared : DataHandle = DataHandle()
     
-    
+    //Lưu user
     func setUserData(_ userLoginDict: [String: AnyObject]){
         let userDefault = UserDefaults.standard
+        //Kiểm tra nếu user đã tồn tại thì xóa data cũ
         if userDefault.value(forKey: "setUserData") != nil{
             userDefault.removeObject(forKey: "setUserData")
         }
@@ -30,6 +31,7 @@ class DataHandle: NSObject {
         userDefault.synchronize()
     }
     
+    //Lấy data user theo Dictionary
     func getUserData() -> [String: AnyObject]?{
         let userDefault = UserDefaults.standard
         if let userData = userDefault.value(forKey: "setUserData") as? Data{

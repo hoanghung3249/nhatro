@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     
     
     private func checkUserData() {
+        //Check user data để chuyển màn hình
         if let userData = parseUserData() {
             window?.makeKeyAndVisible()
             if userData.email != "" {

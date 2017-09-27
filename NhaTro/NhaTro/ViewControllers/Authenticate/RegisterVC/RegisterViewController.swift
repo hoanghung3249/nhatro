@@ -96,6 +96,16 @@ extension RegisterViewController: UITextFieldDelegate {
 //MARK:- Support API
 extension RegisterViewController {
     
+    //Tạo param dùng để call API 
+    /*
+     {
+     "email": "hoanghung@gmail.com",
+     "first_name": "Hung",
+     "last_name": "Nguyen",
+     "phone": "0937094414",
+     "password": "123456"
+     }
+     */
     fileprivate func createParamRegister(_ email:String,_ pass:String,_ firstName:String,_ lastName:String,_ phone:String ) -> [String:AnyObject] {
         
         var params:[String:AnyObject] = Dictionary()
@@ -108,6 +118,7 @@ extension RegisterViewController {
     }
     
     
+    //Gọi API sau khi có param
     fileprivate func register(_ params:[String:AnyObject]) {
         ProgressView.shared.show(self.view)
         NetworkService.requestWith(.post, url: Constant.APIKey.register, parameters: params) { [weak self] (data, error, code) in
