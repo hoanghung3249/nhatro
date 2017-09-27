@@ -11,6 +11,21 @@ import UIKit
 
 struct Constant {
     
+    struct APIKey {
+        
+        static let devUrl                   = "http://192.168.1.103/api"
+        static let domain                   = devUrl
+        
+        //Authen
+        static let login                    = "\(domain)/members/postLogin"
+        static let logOut                   = "\(domain)/members/getLogout"
+        static let register                 = "\(domain)/members/postSignup"
+        static let changePass               = "\(domain)/members/change-password"
+        static let forgotPass               = "\(domain)/members/forgot-password"
+        
+        
+    }
+    
 }
 
 
