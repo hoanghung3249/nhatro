@@ -15,6 +15,9 @@
 		4551319B1F7929C000BD731A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4551319A1F7929C000BD731A /* MenuCell.xib */; };
 		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
 		4551319F1F793D7000BD731A /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319E1F793D7000BD731A /* Params.swift */; };
+		457D32D21F7BE01E00C54E91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D11F7BE01E00C54E91 /* User.swift */; };
+		457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D31F7BE35700C54E91 /* DataHandle.swift */; };
+		457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */; };
 		458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */; };
 		458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FF1F7292FE00D8CD80 /* PostViewController.swift */; };
 		458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */; };
@@ -113,6 +116,9 @@
 		4551319A1F7929C000BD731A /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4551319E1F793D7000BD731A /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
+		457D32D11F7BE01E00C54E91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		457D32D31F7BE35700C54E91 /* DataHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandle.swift; sourceTree = "<group>"; };
+		457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataSignIn.swift; sourceTree = "<group>"; };
 		458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		458D62FF1F7292FE00D8CD80 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
@@ -284,6 +290,7 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				457D32D01F7BE01500C54E91 /* User */,
 				B77B75261F74106E00B1E888 /* GoogleMap */,
 				B77D29401F62D18400C8F9D5 /* Google */,
 				B77D293F1F62D17900C8F9D5 /* Facebook */,
@@ -315,6 +322,14 @@
 				4551319C1F792B3000BD731A /* MenuCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		457D32D01F7BE01500C54E91 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				457D32D11F7BE01E00C54E91 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		458D62FB1F72924A00D8CD80 /* FavoriteVC */ = {
@@ -409,6 +424,8 @@
 			children = (
 				45EF0B2F1F5075A3005791E4 /* ProgressView.swift */,
 				4551319E1F793D7000BD731A /* Params.swift */,
+				457D32D31F7BE35700C54E91 /* DataHandle.swift */,
+				457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1148,6 +1165,7 @@
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
 				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
+				457D32D21F7BE01E00C54E91 /* User.swift in Sources */,
 				B77B752F1F7417BE00B1E888 /* InfoWinDowView.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
@@ -1174,8 +1192,10 @@
 				455131981F7928B900BD731A /* MenuViewController.swift in Sources */,
 				458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */,
 				B77C16551F5A542300D03921 /* SPParallaxTableViewCell.swift in Sources */,
+				457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */,
 				B77C16531F5A542300D03921 /* SPPageItemsScalingCollectionView.swift in Sources */,
 				B77C16501F5A542300D03921 /* SPSegmentControlStyleProtocol.swift in Sources */,
+				457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */,
 				B77C164B1F5A542300D03921 /* SPIconsButton.swift in Sources */,
 				B77C16451F5A542300D03921 /* SPLaunchAnimation.swift in Sources */,
 				B77C163C1F5A542300D03921 /* SPUIColorExtenshion.swift in Sources */,

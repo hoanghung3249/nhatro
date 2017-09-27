@@ -34,8 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         GMSPlacesClient.provideAPIKey("AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww")
         GMSServices.provideAPIKey("AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww")
     
+        checkUserData()
+        
         // Override point for customization after application launch.
         return true
+    }
+    
+    
+    private func checkUserData() {
+        if let userData = parseUserData() {
+            window?.makeKeyAndVisible()
+            if userData.email != "" {
+                let homeVC = TabBarViewController()
+                window?.rootViewController = homeVC
+            } else {
+                let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                window?.rootViewController = loginVC
+            }
+        }
+    }
+    
+    private func parseUserData() -> User? {
+        let userData = User.shared
+        userData?.parseUserData(dataHandle.getUserData())
+        return userData
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
