@@ -12,8 +12,8 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var tbvMenu: UITableView!
     
-    fileprivate var arrTitle:[String] = ["Thông tin", "Phòng trọ", "Lịch sử", "Đăng xuất"]
-    fileprivate var arrImgIcon:[String] = ["user", "home-1", "history", "logout"]
+    fileprivate let arrTitle:[String] = ["Thông tin", "Phòng trọ", "Lịch sử", "Đăng xuất"]
+    fileprivate let arrImgIcon:[String] = ["user", "home-1", "history", "logout"]
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
