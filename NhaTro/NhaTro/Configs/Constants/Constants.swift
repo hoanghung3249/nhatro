@@ -29,6 +29,13 @@ struct Constant {
 }
 
 
+struct StatusCode {
+    
+    static let success                      = 200
+    
+}
+
+
 struct Storyboard {
     
     static let main = UIStoryboard(name: "Main", bundle: nil)

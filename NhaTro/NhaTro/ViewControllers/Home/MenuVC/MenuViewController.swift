@@ -60,13 +60,46 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.row) {
         case 3:
-            let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            self.present(loginVC, animated: true, completion: nil)
+            self.callAPILogOut()
             break
         default:
             print("test")
         }
     }
     
+}
+
+//MARK:- Support API
+extension MenuViewController {
+    
+    fileprivate func callAPILogOut() {
+        guard let user = USER else { return }
+        ProgressView.shared.show((self.parent?.view)!)
+        
+        NetworkService.requestWithHeader(.get, user.token, url: Constant.APIKey.logOut, parameters: nil) { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if error != nil {
+                if let code = code {
+                    if code == StatusCode.success {
+                        USER?.logOut()
+                        URLCache.shared.removeAllCachedResponses()
+                        URLCache.shared.diskCapacity = 0
+                        URLCache.shared.memoryCapacity = 0
+                        let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                        DispatchQueue.main.async {
+                            strongSelf.present(loginVC, animated: true, completion: nil)
+                        }
+                    } else {
+                        strongSelf.showAlert(with: error!)
+                    }
+                }
+            }
+        }
+    }
     
 }
+
+
+
+

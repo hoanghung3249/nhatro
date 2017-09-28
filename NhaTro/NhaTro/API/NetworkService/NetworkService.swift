@@ -102,7 +102,7 @@ struct NetworkService {
     
     static func requestWithHeader(_ requestType: Alamofire.HTTPMethod,_ token:String ,url: String, parameters: Dictionary<String, Any>?, Completion:((_ data: [String: Any]?, _ error: String?, _ code:Int?) -> Void)?){
         let _headers: HTTPHeaders = ["Accept": "application/json",
-                                     "Authorization": token
+                                     "Authorization": "Bearer \(token)"
         ]
         
         Alamofire.request(url, method: requestType, parameters: parameters, encoding: JSONEncoding.default, headers: _headers).responseJSON { (response:DataResponse<Any>) in
@@ -112,13 +112,14 @@ struct NetworkService {
                     Completion!(nil, "Data is wrong format, Please contact server side.", nil)
                     return
                 }
+                print(value)
                 if let status = value["status"] as? String{
                     if status == "success" {
                         if let data = value["data"] as? [String: Any], let code = value["status_code"] as? Int{
                             print(data)
                             Completion!(data, nil, code)
-                        }else if let code = value["status_code"] as? Int{
-                            Completion!(["Success": "success"],nil,code)
+                        }else if let code = value["status_code"] as? Int, let mess = value["message"] as? String{
+                            Completion!(["Success": "success"],mess,code)
                         } else {
                             Completion!(["Success": "success"],nil,nil)
                         }
