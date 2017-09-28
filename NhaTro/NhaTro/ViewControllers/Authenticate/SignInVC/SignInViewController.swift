@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SignInViewController: UIViewController {
     
@@ -15,6 +16,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    
+    fileprivate let parser:ParseDataSignIn = ParseDataSignIn()
 
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -51,17 +54,13 @@ class SignInViewController: UIViewController {
         guard let email = self.txtEmail.text, let pass = self.txtPassword.text else {
             return
         }
-        Params.createParamLogin(email, pass) { [weak self] (error, params) in
-            guard let strongSelf = self else { return }
-            if error == nil {
-                print(params)
-            } else {
-                strongSelf.showAlert(with: error!)
-            }
+        let (params,error) = Params.createParamLogin(email, pass)
+        if let params = params {
+            self.callAPILogin(params)
+        } else if let error = error {
+            self.showAlert(with: error)
         }
-//        let tabbar = TabBarViewController()
-//        self.present(tabbar, animated: true, completion: nil)
-
+        
     }
     
     @IBAction func RegisterEmail(_ sender: UIButton) {
@@ -75,7 +74,26 @@ class SignInViewController: UIViewController {
 //MARK:- Support API
 extension SignInViewController {
     
-    
+    fileprivate func callAPILogin(_ params:[String:AnyObject]) {
+        ProgressView.shared.show(self.view)
+        NetworkService.requestWith(.post, url: Constant.APIKey.login, parameters: params) { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if error == nil {
+                if let data = data {
+                    let dataJSON = JSON(data)
+                    print(dataJSON)
+                    strongSelf.parser.fetchDataSignIn(data: dataJSON)
+                    Utilities.shared.delayWithSeconds(0.5, completion: {
+                        let tabVC = TabBarViewController()
+                        strongSelf.present(tabVC, animated: true, completion: nil)
+                    })
+                }
+            } else {
+                strongSelf.showAlert(with: error!)
+            }
+        }
+    }
     
     
 }
