@@ -170,6 +170,7 @@ extension SignInViewController {
             if error == nil {
                 Utilities.shared.showAlerControler(title: "SUCCESS", message: "Please checking your email account!", confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
                     if bool {
+                        strongSelf.view.endEditing(true)
                         if !(strongSelf.isChangeView) {
                             strongSelf.isChangeView = true
                             strongSelf.changeEmailViewLctTop.constant = 1000
