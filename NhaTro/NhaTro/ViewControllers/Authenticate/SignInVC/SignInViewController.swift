@@ -125,6 +125,7 @@ class SignInViewController: UIViewController {
     }
     
     func dismissView() {
+        self.view.endEditing(true)
         if !(self.isChangeView) {
             self.isChangeView = true
             self.changeEmailViewLctTop.constant = 1000
@@ -170,15 +171,7 @@ extension SignInViewController {
             if error == nil {
                 Utilities.shared.showAlerControler(title: "SUCCESS", message: "Please checking your email account!", confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
                     if bool {
-                        strongSelf.view.endEditing(true)
-                        if !(strongSelf.isChangeView) {
-                            strongSelf.isChangeView = true
-                            strongSelf.changeEmailViewLctTop.constant = 1000
-                            strongSelf.vwBlur.isHidden = true
-                        }
-                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
-                            strongSelf.view.layoutIfNeeded()
-                        })
+                        strongSelf.dismissView()
                     }
                 })
             } else {
