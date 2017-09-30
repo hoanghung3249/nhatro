@@ -110,7 +110,18 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func resendEmail(_ sender: UIButton) {
-        
+        guard let email = self.txtResendEmail.text else { return }
+        if email.isEmptyOrWhitespace() {
+            self.showAlert(with: "Please input the email!")
+            return
+        }
+        if !email.isValidEmail() {
+            self.showAlert(with: "The email format is invalid.")
+            return
+        }
+        var param:[String:AnyObject] = Dictionary()
+        param.updateValue(email as AnyObject, forKey: "email")
+        self.callAPIForgotPass(param)
     }
     
     func dismissView() {
@@ -149,6 +160,31 @@ extension SignInViewController {
                 strongSelf.showAlert(with: error!)
             }
         }
+    }
+    
+    fileprivate func callAPIForgotPass(_ param:[String:AnyObject]) {
+        ProgressView.shared.show(self.view)
+        NetworkService.requestWith(.post, url: Constant.APIKey.forgotPass, parameters: param) { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if error == nil {
+                Utilities.shared.showAlerControler(title: "SUCCESS", message: "Please checking your email account!", confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
+                    if bool {
+                        if !(strongSelf.isChangeView) {
+                            strongSelf.isChangeView = true
+                            strongSelf.changeEmailViewLctTop.constant = 1000
+                            strongSelf.vwBlur.isHidden = true
+                        }
+                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                            strongSelf.view.layoutIfNeeded()
+                        })
+                    }
+                })
+            } else {
+                strongSelf.showAlert(with: error!)
+            }
+        }
+        
     }
     
     
