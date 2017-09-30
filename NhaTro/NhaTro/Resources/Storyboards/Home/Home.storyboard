@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GOTHIC.TTF">
+        <array key="CenturyGothic.ttf">
             <string>CenturyGothic</string>
         </array>
     </customFonts>
@@ -314,12 +314,22 @@
                                                     <constraint firstAttribute="height" constant="600" id="dio-La-TQj"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcH-1e-ZwM">
+                                                <rect key="frame" x="8" y="630" width="359" height="1"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Yrt-KX-t2Y"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="QqT-hE-smC" firstAttribute="top" secondItem="LNp-yh-51o" secondAttribute="top" id="3cs-Ad-guv"/>
                                             <constraint firstAttribute="trailing" secondItem="QqT-hE-smC" secondAttribute="trailing" id="5bT-t6-4Jl"/>
                                             <constraint firstItem="QqT-hE-smC" firstAttribute="leading" secondItem="LNp-yh-51o" secondAttribute="leading" id="EYv-Ni-yub"/>
+                                            <constraint firstAttribute="trailing" secondItem="rcH-1e-ZwM" secondAttribute="trailing" constant="8" id="JQc-Vl-sva"/>
+                                            <constraint firstItem="rcH-1e-ZwM" firstAttribute="top" secondItem="QqT-hE-smC" secondAttribute="bottom" constant="30" id="ZLW-tp-UWF"/>
+                                            <constraint firstItem="rcH-1e-ZwM" firstAttribute="leading" secondItem="LNp-yh-51o" secondAttribute="leading" constant="8" id="ney-jR-XmE"/>
                                         </constraints>
                                     </view>
                                 </subviews>

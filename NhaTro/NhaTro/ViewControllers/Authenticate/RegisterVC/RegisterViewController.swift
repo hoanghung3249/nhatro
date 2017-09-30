@@ -63,11 +63,17 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func nextStep(_ sender: UIButton) {
-//        let verifyVC = Storyboard.main.instantiateViewController(withIdentifier: "VerifyViewController") as! VerifyViewController
-//        self.pushTo(verifyVC)
-        guard let email = self.txtEmail.text, let pass = self.txtPassWord.text, let phone = self.txtPhoneNumber.text, let firstName = self.txtFirstName.text, let lastName = self.txtLastName.text else { return }
-        let params = self.createParamRegister(email, pass, firstName, lastName, phone)
-        self.register(params)
+//        guard let email = self.txtEmail.text, let pass = self.txtPassWord.text, let phone = self.txtPhoneNumber.text, let firstName = self.txtFirstName.text, let confirmPass = self.txtConfirmPassWord.text,let lastName = self.txtLastName.text else { return }
+//        let (param,error) = Params.createParamResgister(email, pass, phone, firstName, lastName, confirmPass)
+//        if error != nil {
+//            self.showAlert(with: error!)
+//        }else{
+//            self.register(param!)
+//
+//        }
+        let hienra = Storyboard.home.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+        self.present(hienra, animated: true, completion: nil)
+        
     }
     
 
