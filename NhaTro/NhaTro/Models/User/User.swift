@@ -36,6 +36,7 @@ class User {
         self.total_motel = -1
         self.firstName = ""
         self.lastName = ""
+        dataHandle.removeUserData()
     }
     
     
