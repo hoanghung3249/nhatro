@@ -32,6 +32,12 @@ class MenuViewController: UIViewController {
         self.tbvMenu.separatorStyle = .none
     }
     
+    fileprivate func showInfoVC() {
+        let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(infoVC, animated: true)
+    }
+    
     
 
 }
@@ -59,6 +65,9 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.row) {
+        case 0:
+            self.showInfoVC()
+            break
         case 3:
             self.callAPILogOut()
             break
