@@ -11,6 +11,7 @@
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
 		453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */; };
+		45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45429C891F8662DA0019493C /* InfoViewController.swift */; };
 		455131981F7928B900BD731A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455131971F7928B900BD731A /* MenuViewController.swift */; };
 		4551319B1F7929C000BD731A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4551319A1F7929C000BD731A /* MenuCell.xib */; };
 		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
@@ -112,6 +113,7 @@
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45429C891F8662DA0019493C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		455131971F7928B900BD731A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4551319A1F7929C000BD731A /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -306,9 +308,18 @@
 			path = GooglePlist;
 			sourceTree = "<group>";
 		};
+		45429C881F8662CC0019493C /* InfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				45429C891F8662DA0019493C /* InfoViewController.swift */,
+			);
+			path = InfoVC;
+			sourceTree = "<group>";
+		};
 		455131961F7928AA00BD731A /* MenuVC */ = {
 			isa = PBXGroup;
 			children = (
+				45429C881F8662CC0019493C /* InfoVC */,
 				455131991F7929AF00BD731A /* Cell */,
 				455131971F7928B900BD731A /* MenuViewController.swift */,
 			);
@@ -1182,6 +1193,7 @@
 				B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */,
 				4551319D1F792B3000BD731A /* MenuCell.swift in Sources */,
 				B77C165B1F5A5B4300D03921 /* Color.swift in Sources */,
+				45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */,
 				B77C16491F5A542300D03921 /* SPPageItemsScallingViewController.swift in Sources */,
 				B77C164C1F5A542300D03921 /* SPLinesCircleButtonsView.swift in Sources */,
 				B77C16581F5A542300D03921 /* SPUILabelExtenshion.swift in Sources */,
