@@ -5,11 +5,12 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="CenturyGothic.ttf">
+        <array key="GOTHIC.TTF">
             <string>CenturyGothic</string>
         </array>
     </customFonts>
@@ -372,55 +373,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DWG-J5-grQ">
-                                <rect key="frame" x="20" y="60" width="335" height="63"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kc-nA-6MA">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="16" id="95K-oW-Ezk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Old Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtE-tM-YbW">
-                                        <rect key="frame" x="0.0" y="26" width="335" height="37"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="37" id="Bdq-dh-ve0"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="4Kc-nA-6MA" secondAttribute="trailing" id="0Bu-bC-IPP"/>
-                                    <constraint firstItem="4Kc-nA-6MA" firstAttribute="top" secondItem="DWG-J5-grQ" secondAttribute="top" id="DGI-g2-XIQ"/>
-                                    <constraint firstItem="mtE-tM-YbW" firstAttribute="leading" secondItem="DWG-J5-grQ" secondAttribute="leading" id="KWq-Bh-HkS"/>
-                                    <constraint firstAttribute="trailing" secondItem="mtE-tM-YbW" secondAttribute="trailing" id="Pga-xo-5RL"/>
-                                    <constraint firstItem="4Kc-nA-6MA" firstAttribute="leading" secondItem="DWG-J5-grQ" secondAttribute="leading" id="agn-cI-3cu"/>
-                                    <constraint firstAttribute="height" constant="63" id="dKJ-Cg-E4O"/>
-                                    <constraint firstItem="mtE-tM-YbW" firstAttribute="top" secondItem="4Kc-nA-6MA" secondAttribute="bottom" constant="10" id="esC-NO-Hdy"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrg-Lk-6Uh">
-                                <rect key="frame" x="20" y="133" width="335" height="63"/>
+                                <rect key="frame" x="36" y="60" width="303" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUJ-lY-6xd">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="54F-8A-5jt"/>
                                         </constraints>
@@ -429,7 +386,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFO-EI-rXP">
-                                        <rect key="frame" x="0.0" y="26" width="335" height="37"/>
+                                        <rect key="frame" x="0.0" y="26" width="303" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="ZaU-Ru-vSv"/>
                                         </constraints>
@@ -452,6 +409,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="eUJ-lY-6xd" firstAttribute="leading" secondItem="Lrg-Lk-6Uh" secondAttribute="leading" id="4WD-zp-Ndr"/>
+                                    <constraint firstAttribute="height" constant="63" id="JzJ-a8-f59"/>
                                     <constraint firstItem="PFO-EI-rXP" firstAttribute="top" secondItem="eUJ-lY-6xd" secondAttribute="bottom" constant="10" id="QOg-Ut-VIN"/>
                                     <constraint firstAttribute="trailing" secondItem="eUJ-lY-6xd" secondAttribute="trailing" id="Tbc-69-2x4"/>
                                     <constraint firstAttribute="trailing" secondItem="PFO-EI-rXP" secondAttribute="trailing" id="e2L-LO-fwg"/>
@@ -460,10 +418,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-b1-Qc7">
-                                <rect key="frame" x="20" y="206" width="335" height="63"/>
+                                <rect key="frame" x="36" y="133" width="303" height="63"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-ez-t3Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="3gH-xO-pxk"/>
                                         </constraints>
@@ -472,7 +430,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confrim New Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zL-pR-iXr">
-                                        <rect key="frame" x="0.0" y="26" width="335" height="37"/>
+                                        <rect key="frame" x="0.0" y="26" width="303" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="gwN-a9-uYn"/>
                                         </constraints>
@@ -503,7 +461,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-25-5WC">
-                                <rect key="frame" x="135.5" y="284" width="104" height="28"/>
+                                <rect key="frame" x="135.5" y="211" width="104" height="28"/>
                                 <color key="backgroundColor" red="1" green="0.67843137249999996" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Q7g-re-5A8"/>
@@ -525,25 +483,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lrg-Lk-6Uh" firstAttribute="top" secondItem="DWG-J5-grQ" secondAttribute="bottom" constant="10" id="0lF-gG-l4Y"/>
-                            <constraint firstItem="CaG-b1-Qc7" firstAttribute="leading" secondItem="DWG-J5-grQ" secondAttribute="leading" id="2Dx-Ko-Dvo"/>
                             <constraint firstItem="Jo8-25-5WC" firstAttribute="top" secondItem="CaG-b1-Qc7" secondAttribute="bottom" constant="15" id="4bd-ZV-U8P"/>
-                            <constraint firstItem="DWG-J5-grQ" firstAttribute="top" secondItem="n7v-dB-Ue4" secondAttribute="bottom" constant="40" id="6Ji-d4-eZf"/>
-                            <constraint firstItem="CaG-b1-Qc7" firstAttribute="width" secondItem="DWG-J5-grQ" secondAttribute="width" id="7zB-ex-Q4V"/>
-                            <constraint firstItem="DWG-J5-grQ" firstAttribute="leading" secondItem="gww-gF-zIP" secondAttribute="leading" constant="20" id="AHc-h9-at5"/>
-                            <constraint firstItem="Lrg-Lk-6Uh" firstAttribute="width" secondItem="DWG-J5-grQ" secondAttribute="width" id="K5D-2R-OI0"/>
-                            <constraint firstItem="CaG-b1-Qc7" firstAttribute="height" secondItem="DWG-J5-grQ" secondAttribute="height" id="QzH-sL-olo"/>
+                            <constraint firstItem="CaG-b1-Qc7" firstAttribute="width" secondItem="Lrg-Lk-6Uh" secondAttribute="width" id="Lfz-Wn-w2W"/>
+                            <constraint firstItem="Lrg-Lk-6Uh" firstAttribute="leading" secondItem="gww-gF-zIP" secondAttribute="leadingMargin" constant="20" id="Pwc-DQ-JFS"/>
                             <constraint firstItem="CaG-b1-Qc7" firstAttribute="top" secondItem="Lrg-Lk-6Uh" secondAttribute="bottom" constant="10" id="RSV-UG-NCh"/>
-                            <constraint firstAttribute="trailing" secondItem="DWG-J5-grQ" secondAttribute="trailing" constant="20" id="bRT-n1-1we"/>
-                            <constraint firstItem="Lrg-Lk-6Uh" firstAttribute="leading" secondItem="DWG-J5-grQ" secondAttribute="leading" id="cAs-la-U7q"/>
+                            <constraint firstItem="CaG-b1-Qc7" firstAttribute="height" secondItem="Lrg-Lk-6Uh" secondAttribute="height" id="YWi-st-QQt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lrg-Lk-6Uh" secondAttribute="trailing" constant="20" id="jdM-xF-biP"/>
                             <constraint firstItem="Jo8-25-5WC" firstAttribute="centerX" secondItem="gww-gF-zIP" secondAttribute="centerX" id="lcB-bB-9kT"/>
-                            <constraint firstItem="Lrg-Lk-6Uh" firstAttribute="height" secondItem="DWG-J5-grQ" secondAttribute="height" id="pml-eC-70f"/>
+                            <constraint firstItem="CaG-b1-Qc7" firstAttribute="leading" secondItem="Lrg-Lk-6Uh" secondAttribute="leading" id="xHy-Cl-zzk"/>
+                            <constraint firstItem="Lrg-Lk-6Uh" firstAttribute="top" secondItem="n7v-dB-Ue4" secondAttribute="bottom" constant="40" id="xNj-Dv-XsT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="txtConfirmPass" destination="8zL-pR-iXr" id="DnI-0u-0qb"/>
                         <outlet property="txtNewPass" destination="PFO-EI-rXP" id="Nr8-aV-lgR"/>
-                        <outlet property="txtOldPass" destination="mtE-tM-YbW" id="Kwp-Rq-50h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxd-oD-nfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
