@@ -12,6 +12,7 @@
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
 		453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */; };
 		45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45429C891F8662DA0019493C /* InfoViewController.swift */; };
+		4550B5901F87BBE200E0F43B /* ChangePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4550B58F1F87BBE200E0F43B /* ChangePassViewController.swift */; };
 		455131981F7928B900BD731A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455131971F7928B900BD731A /* MenuViewController.swift */; };
 		4551319B1F7929C000BD731A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4551319A1F7929C000BD731A /* MenuCell.xib */; };
 		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
@@ -114,6 +115,7 @@
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45429C891F8662DA0019493C /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		4550B58F1F87BBE200E0F43B /* ChangePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassViewController.swift; sourceTree = "<group>"; };
 		455131971F7928B900BD731A /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4551319A1F7929C000BD731A /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -316,9 +318,18 @@
 			path = InfoVC;
 			sourceTree = "<group>";
 		};
+		4550B58E1F87BBCE00E0F43B /* ChangePassVC */ = {
+			isa = PBXGroup;
+			children = (
+				4550B58F1F87BBE200E0F43B /* ChangePassViewController.swift */,
+			);
+			path = ChangePassVC;
+			sourceTree = "<group>";
+		};
 		455131961F7928AA00BD731A /* MenuVC */ = {
 			isa = PBXGroup;
 			children = (
+				4550B58E1F87BBCE00E0F43B /* ChangePassVC */,
 				45429C881F8662CC0019493C /* InfoVC */,
 				455131991F7929AF00BD731A /* Cell */,
 				455131971F7928B900BD731A /* MenuViewController.swift */,
@@ -1173,6 +1184,7 @@
 				B77BB0091F77FF8700A24DBE /* SignInViewController.swift in Sources */,
 				B77C16401F5A542300D03921 /* SPBezierPathFigure.swift in Sources */,
 				B77C16521F5A542300D03921 /* SPCollectionViewCell.swift in Sources */,
+				4550B5901F87BBE200E0F43B /* ChangePassViewController.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
 				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,

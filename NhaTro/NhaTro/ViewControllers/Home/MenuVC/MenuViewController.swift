@@ -12,8 +12,8 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var tbvMenu: UITableView!
     
-    fileprivate let arrTitle:[String] = ["Thông tin", "Phòng trọ", "Lịch sử", "Đăng xuất"]
-    fileprivate let arrImgIcon:[String] = ["user", "home-1", "history", "logout"]
+    fileprivate let arrTitle:[String] = ["Thông tin", "Phòng trọ", "Lịch sử", "Bảo mật" ,"Đăng xuất"]
+    fileprivate let arrImgIcon:[String] = ["user", "home-1", "history","lock","logout"]
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -45,6 +45,12 @@ class MenuViewController: UIViewController {
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
+    fileprivate func showChangePassVC() {
+        let changePassVC = Storyboard.home.instantiateViewController(withIdentifier: "ChangePassViewController") as! ChangePassViewController
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.title = ""
+        self.navigationController?.pushViewController(changePassVC, animated: true)
+    }
     
 
 }
@@ -76,6 +82,9 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
             self.showInfoVC()
             break
         case 3:
+            self.showChangePassVC()
+            break
+        case 4:
             self.callAPILogOut()
             break
         default:
