@@ -38,6 +38,11 @@ class InfoViewController: UIViewController {
         self.imgProfile.layer.cornerRadius = self.imgProfile.frame.size.width / 2
         self.imgProfile.clipsToBounds = true
         self.setupSegmented()
+        self.setupNavigation()
+    }
+    
+    private func setupNavigation() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: self, action: #selector(InfoViewController.dismissView))
     }
     
     private func setupSegmented() {
@@ -53,6 +58,13 @@ class InfoViewController: UIViewController {
         segmentedControl.highlightColor = UIColor(red: 255.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 1)
         segmentedControl.layer.cornerRadius = 20
         
+    }
+    
+    
+    //MARK:- Action buttons
+    
+    func dismissView() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     

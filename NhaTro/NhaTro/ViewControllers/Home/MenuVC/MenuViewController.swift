@@ -23,6 +23,11 @@ class MenuViewController: UIViewController {
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationItem.title = "Menu"
+    }
+    
     //MARK:- Support functions
     
     private func setupTableView() {
@@ -35,6 +40,7 @@ class MenuViewController: UIViewController {
     fileprivate func showInfoVC() {
         let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
         self.hidesBottomBarWhenPushed = true
+        self.navigationItem.title = ""
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
