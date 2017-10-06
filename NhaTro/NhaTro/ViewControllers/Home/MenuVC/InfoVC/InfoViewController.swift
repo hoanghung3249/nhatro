@@ -21,6 +21,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var txtLastName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
+    @IBOutlet weak var btnEdit: UIButton!
     
     
     //MARK:- Life cycle
@@ -39,6 +40,8 @@ class InfoViewController: UIViewController {
         self.imgProfile.clipsToBounds = true
         self.setupSegmented()
         self.setupNavigation()
+        self.setupData()
+        self.setupTextField(false)
     }
     
     private func setupNavigation() {
@@ -59,6 +62,23 @@ class InfoViewController: UIViewController {
         segmentedControl.layer.cornerRadius = 20
     }
     
+    private func setupData() {
+        guard let userData = USER else { return }
+        self.navigationItem.title = userData.firstName + userData.lastName
+        self.txtEmail.text = userData.email
+        self.txtFirstName.text = userData.firstName
+        self.txtLastName.text = userData.lastName
+        self.txtAddress.text = userData.address
+        self.txtPhoneNumber.text = userData.phone
+    }
+    
+    fileprivate func setupTextField(_ isActive:Bool) {
+        self.txtPhoneNumber.isUserInteractionEnabled = isActive
+        self.txtLastName.isUserInteractionEnabled = isActive
+        self.txtFirstName.isUserInteractionEnabled = isActive
+        self.txtAddress.isUserInteractionEnabled = isActive
+        self.txtEmail.isUserInteractionEnabled = isActive
+    }
     
     //MARK:- Action buttons
     
@@ -67,6 +87,14 @@ class InfoViewController: UIViewController {
     }
     
     
+    @IBAction func editProfile(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            setupTextField(true)
+        } else {
+            setupTextField(false)
+        }
+    }
     
 
 }

@@ -617,7 +617,7 @@
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EA6-hO-Pda">
                                                                         <rect key="frame" x="71" y="0.0" width="264" height="39"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                                     </textField>
@@ -635,7 +635,7 @@
                                                                             <constraint firstAttribute="height" constant="39" id="UdL-Je-zx5"/>
                                                                             <constraint firstAttribute="width" constant="70" id="WHz-ZX-q26"/>
                                                                         </constraints>
-                                                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
@@ -776,14 +776,19 @@
                                                     <constraint firstAttribute="height" constant="30" id="vhM-z7-BmN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="13"/>
+                                                <color key="tintColor" red="1" green="0.67843137249999996" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Edit">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" title="Save"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="editProfile:" destination="opg-mN-6xL" eventType="touchUpInside" id="T7s-Pa-VOH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -821,6 +826,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnEdit" destination="Bi2-lM-CI4" id="YGw-O0-6Kl"/>
                         <outlet property="imgProfile" destination="oTE-Tq-NFH" id="EgF-VP-fYq"/>
                         <outlet property="segmentedControl" destination="S5O-tL-dBe" id="sBI-dD-Xai"/>
                         <outlet property="txtAddress" destination="1cl-E6-X22" id="Vdo-ID-eXm"/>
