@@ -27,6 +27,12 @@ class MenuViewController: UIViewController {
         self.navigationItem.title = "Menu"
         self.tabBarController?.tabBar.isHidden = false
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.title = ""
+    }
 
     
     //MARK:- Support functions
@@ -40,15 +46,11 @@ class MenuViewController: UIViewController {
     
     fileprivate func showInfoVC() {
         let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationItem.title = ""
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
     fileprivate func showChangePassVC() {
         let changePassVC = Storyboard.home.instantiateViewController(withIdentifier: "ChangePassViewController") as! ChangePassViewController
-        self.tabBarController?.tabBar.isHidden = true
-        self.navigationItem.title = ""
         self.navigationController?.pushViewController(changePassVC, animated: true)
     }
     
