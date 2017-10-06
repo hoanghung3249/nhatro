@@ -51,6 +51,19 @@ struct Params {
         return (params,nil)
     }
 
+    static func createParamChangePass(_ newPass:String,_ confirmPass:String) -> ([String:AnyObject]?,String?) {
+        var params:Dictionary<String,AnyObject> = Dictionary()
+        
+        if newPass.isEmptyOrWhitespace() || confirmPass.isEmptyOrWhitespace() {
+            return (nil, "Please input all fields requirement!")
+        }
+        
+        if confirmPass != newPass {
+            return(nil , "The confirm password does not correct with the password! ")
+        }
+        params.updateValue(newPass as AnyObject, forKey: "password")
+        return(params,nil)
+    }
     
     
 }

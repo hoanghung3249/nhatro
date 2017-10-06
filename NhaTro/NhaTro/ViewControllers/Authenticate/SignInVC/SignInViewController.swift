@@ -81,17 +81,17 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func SignIn(_ sender: UIButton) {
-//        guard let email = self.txtEmail.text, let pass = self.txtPassword.text else {
-//            return
-//        }
-//        let (params,error) = Params.createParamLogin(email, pass)
-//        if let params = params {
-//            self.callAPILogin(params)
-//        } else if let error = error {
-//            self.showAlert(with: error)
-//        }
-        let tabVC = TabBarViewController()
-        self.present(tabVC, animated: true, completion: nil)
+        guard let email = self.txtEmail.text, let pass = self.txtPassword.text else {
+            return
+        }
+        let (params,error) = Params.createParamLogin(email, pass)
+        if let params = params {
+            self.callAPILogin(params)
+        } else if let error = error {
+            self.showAlert(with: error)
+        }
+//        let tabVC = TabBarViewController()
+//        self.present(tabVC, animated: true, completion: nil)
         
     }
     
