@@ -55,9 +55,8 @@ class InfoViewController: UIViewController {
         segmentedControl.layer.borderWidth = 0.5
         segmentedControl.tint = .black
         segmentedControl.highlightTint = .black
-        segmentedControl.highlightColor = UIColor(red: 255.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 1)
+        segmentedControl.highlightColor = Color.mainColor()
         segmentedControl.layer.cornerRadius = 20
-        
     }
     
     
