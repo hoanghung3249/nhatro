@@ -31,9 +31,9 @@ class VerifyViewController: UIViewController {
     private func setupUI() {
         self.btnResendCode.contentHorizontalAlignment = .left
         self.txtConfirmCode.underlined(UIColor.white)
-        let btnAttributes : [String: Any] = [
-            NSForegroundColorAttributeName : UIColor.white,
-            NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]
+        let btnAttributes = [
+            NSAttributedStringKey.foregroundColor : UIColor.white,
+            NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue] as [NSAttributedStringKey : Any]
         let stringAttribute = NSMutableAttributedString(string: "Didn’t receive it?", attributes: btnAttributes)
         btnResendCode.setAttributedTitle(stringAttribute, for: .normal)
     }

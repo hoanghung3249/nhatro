@@ -149,7 +149,7 @@ struct Utilities {
         attributedString.append(NSAttributedString(string: "Before you use this service, you must have "))
         attributedString.append(NSAttributedString(string: "\nagreed to the "))
         attributedString.append(NSAttributedString(string: "terms and conditions",
-                                                   attributes: [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue]))
+                                                   attributes: [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]))
         attributedString.append(NSAttributedString(string: " of this service"))
         return attributedString
     }

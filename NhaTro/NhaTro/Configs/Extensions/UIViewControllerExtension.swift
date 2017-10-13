@@ -73,7 +73,7 @@ extension UIViewController {
         self.view.addGestureRecognizer(tapOutside)
     }
     
-    func tap(_ gesture: UITapGestureRecognizer){
+    @objc func tap(_ gesture: UITapGestureRecognizer){
         self.view.endEditing(true)
     }
     

@@ -43,9 +43,10 @@ class SignInViewController: UIViewController {
 
     //MARK:- Support functions
     private func setupUI() {
-        let btnAttributes : [String: Any] = [
-            NSForegroundColorAttributeName : UIColor.white,
-            NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]
+        let btnAttributes = [
+            NSAttributedStringKey.foregroundColor : UIColor.white,
+            NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue] as [NSAttributedStringKey : Any]
+        
         let stringAttribute = NSMutableAttributedString(string: "Forgot Password?", attributes: btnAttributes)
         let stringAttribute1 = NSMutableAttributedString(string: "Register with Email?", attributes: btnAttributes)
         btnForgotPass.setAttributedTitle(stringAttribute, for: .normal)
@@ -126,7 +127,7 @@ class SignInViewController: UIViewController {
         self.callAPIForgotPass(param)
     }
     
-    func dismissView() {
+    @objc func dismissView() {
         self.view.endEditing(true)
         if !(self.isChangeView) {
             self.isChangeView = true

@@ -45,7 +45,7 @@ class ChangePassViewController: UIViewController {
         }
     }
     
-    func dismissView() {
+    @objc func dismissView() {
         self.navigationController?.popViewController(animated: true)
     }
 

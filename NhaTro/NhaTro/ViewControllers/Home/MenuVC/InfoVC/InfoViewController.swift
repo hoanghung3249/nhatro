@@ -82,7 +82,7 @@ class InfoViewController: UIViewController {
     
     //MARK:- Action buttons
     
-    func dismissView() {
+    @objc func dismissView() {
         self.navigationController?.popViewController(animated: true)
     }
     

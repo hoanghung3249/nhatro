@@ -92,7 +92,7 @@ class G8SliderStep: UISlider {
         self.addTarget(self, action: #selector(G8SliderStep.didMoveSliderStepValue), for: [.touchUpInside, .touchUpOutside, .touchCancel])
     }
     
-    internal func sliderTapped(_ gestureRecognizer: UIGestureRecognizer) {
+    @objc internal func sliderTapped(_ gestureRecognizer: UIGestureRecognizer) {
         if self.isHighlighted {
             return
         }
@@ -106,14 +106,14 @@ class G8SliderStep: UISlider {
         didMoveSliderStepValue(true)
     }
     
-    internal func movingSliderStepValue() {
+    @objc internal func movingSliderStepValue() {
         let intValue = Int(round(self.value))
         let floatValue = Float(intValue)
         
         setThumbForSliderValue(floatValue)
     }
     
-    internal func didMoveSliderStepValue(_ sendValueChangedEvent: Bool = false) {
+    @objc internal func didMoveSliderStepValue(_ sendValueChangedEvent: Bool = false) {
         let intValue = Int(round(self.value))
         let floatValue = Float(intValue)
         
