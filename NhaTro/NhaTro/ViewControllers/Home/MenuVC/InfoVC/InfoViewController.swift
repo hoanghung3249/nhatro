@@ -108,3 +108,18 @@ extension InfoViewController: XMSegmentedControlDelegate {
         print("SegmentedControl Selected Segment: \(selectedSegment)")
     }
 }
+
+//MARK:- Support API
+extension InfoViewController {
+    
+    fileprivate func callAPIEditProfile(_ params:[String:AnyObject]) {
+        ProgressView.shared.show((self.parent?.view)!)
+        
+        
+    }
+    
+    
+}
+
+
+
