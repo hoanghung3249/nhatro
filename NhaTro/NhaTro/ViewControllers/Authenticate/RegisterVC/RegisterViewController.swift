@@ -71,9 +71,8 @@ class RegisterViewController: UIViewController {
 //            self.register(param!)
 //
 //        }
-        let hienra = Storyboard.home.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-        self.present(hienra, animated: true, completion: nil)
-        
+        let tabbar = TabBarViewController()
+        self.present(tabbar, animated: true, completion: nil)
     }
     
 
