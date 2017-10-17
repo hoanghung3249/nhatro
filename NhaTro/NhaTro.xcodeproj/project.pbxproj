@@ -95,6 +95,7 @@
 		B77C165B1F5A5B4300D03921 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77C165A1F5A5B4300D03921 /* Color.swift */; };
 		B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77D29411F62D19800C8F9D5 /* Facebook.swift */; };
 		B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77D29431F62D1A400C8F9D5 /* Google.swift */; };
+		B7C364DC1F960294009DFF61 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C364DB1F960294009DFF61 /* ImageCollectionViewCell.swift */; };
 		B7E7D9EC1F5D00AF00152640 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */; };
 		B7E7D9ED1F5D00AF00152640 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */; };
 		B7E7D9EE1F5D00AF00152640 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */; };
@@ -195,6 +196,7 @@
 		B77C165A1F5A5B4300D03921 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Color.swift; path = NhaTro/ViewControllers/Authenticate/RegisterVC/Color.swift; sourceTree = SOURCE_ROOT; };
 		B77D29411F62D19800C8F9D5 /* Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		B77D29431F62D1A400C8F9D5 /* Google.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
+		B7C364DB1F960294009DFF61 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7E7D9E91F5D00AF00152640 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		B7E7D9EA1F5D00AF00152640 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		B7E7D9EB1F5D00AF00152640 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/NhaTro-euwnycfcwfahaxhbwjxkekkmdyje/Build/Products/Debug-iphonesimulator/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				458D62FF1F7292FE00D8CD80 /* PostViewController.swift */,
+				B7C364DB1F960294009DFF61 /* ImageCollectionViewCell.swift */,
 			);
 			path = PostVC;
 			sourceTree = "<group>";
@@ -1164,6 +1167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77C16561F5A542300D03921 /* SPBlurView.swift in Sources */,
+				B7C364DC1F960294009DFF61 /* ImageCollectionViewCell.swift in Sources */,
 				B743F5001F74C27200122804 /* G8SliderStep.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
