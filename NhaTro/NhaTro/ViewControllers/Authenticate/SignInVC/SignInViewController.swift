@@ -20,6 +20,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var txtResendEmail: UITextField!
     @IBOutlet weak var btnResend: UIButton!
     @IBOutlet weak var vwForgotPass: UIView!
+    @IBOutlet weak var lctTopBtnBack: NSLayoutConstraint!
     
     var changeEmailViewLctTop:NSLayoutConstraint!
     fileprivate var isChangeView:Bool = true
@@ -51,7 +52,13 @@ class SignInViewController: UIViewController {
         let stringAttribute1 = NSMutableAttributedString(string: "Register with Email?", attributes: btnAttributes)
         btnForgotPass.setAttributedTitle(stringAttribute, for: .normal)
         btnRegister.setAttributedTitle(stringAttribute1, for: .normal)
-
+        
+        if #available(iOS 11, *) {
+            lctTopBtnBack.constant = 52
+        } else {
+            lctTopBtnBack.constant = 20
+        }
+        
     }
     
     fileprivate func setupForgotPassView() {
