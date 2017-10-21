@@ -29,7 +29,6 @@
 		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
 		45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B201F5074DB005791E4 /* LoginViewController.swift */; };
 		45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B221F50752E005791E4 /* Assets.xcassets */; };
-		45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B271F507578005791E4 /* SWRevealViewController.m */; };
 		45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B291F507596005791E4 /* CategoriesAddition.swift */; };
 		45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2A1F507596005791E4 /* UIViewControllerExtension.swift */; };
 		45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2B1F507596005791E4 /* UIViewExtension.swift */; };
@@ -99,8 +98,6 @@
 		45EF0B201F5074DB005791E4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		45EF0B221F50752E005791E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45EF0B251F507577005791E4 /* NhaTro-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NhaTro-Bridging-Header.h"; sourceTree = "<group>"; };
-		45EF0B261F507578005791E4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		45EF0B271F507578005791E4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		45EF0B291F507596005791E4 /* CategoriesAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesAddition.swift; sourceTree = "<group>"; };
 		45EF0B2A1F507596005791E4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		45EF0B2B1F507596005791E4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -472,8 +469,6 @@
 		45EF0B241F507559005791E4 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
-				45EF0B261F507578005791E4 /* SWRevealViewController.h */,
-				45EF0B271F507578005791E4 /* SWRevealViewController.m */,
 				45EF0B251F507577005791E4 /* NhaTro-Bridging-Header.h */,
 			);
 			path = SWRevealViewController;
@@ -865,7 +860,6 @@
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
 				B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */,
 				B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */,
-				45EF0B281F507578005791E4 /* SWRevealViewController.m in Sources */,
 				4551319F1F793D7000BD731A /* Params.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
