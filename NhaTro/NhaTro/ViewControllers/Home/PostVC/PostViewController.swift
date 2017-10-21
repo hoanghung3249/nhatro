@@ -9,11 +9,12 @@
 import UIKit
 
 class PostViewController: UIViewController {
-    @IBOutlet weak var txtLocation: UITextField!
-    @IBOutlet weak var txtPrice: UITextField!
+   
     @IBOutlet weak var txtPhone: UITextField!
-    @IBOutlet weak var txtAcreage: UITextField!
+    @IBOutlet weak var txtPrice: UITextField!
+    @IBOutlet weak var txtLocation: UITextField!
     @IBOutlet weak var CoView: UICollectionView!
+    @IBOutlet weak var txtAcreage: UITextField!
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class PostViewController: UIViewController {
         self.txtPhone.underlined(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5))
     }
     
-    @IBOutlet weak var Up: UIButton!
+ 
 
 }
 
@@ -45,7 +46,8 @@ extension PostViewController:UICollectionViewDelegate,UICollectionViewDataSource
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2    }
+        return 2
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
