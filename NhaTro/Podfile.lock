@@ -87,13 +87,13 @@ PODS:
   - GTMSessionFetcher/Full (1.1.12):
     - GTMSessionFetcher/Core (= 1.1.12)
   - IQKeyboardManager (5.0.4)
-  - Kingfisher (4.1.0)
+  - Kingfisher (4.1.1)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - NKVPhonePicker (1.1.0)
+  - NKVPhonePicker (1.2.0)
   - NVActivityIndicatorView (4.0.0):
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
@@ -166,9 +166,9 @@ SPEC CHECKSUMS:
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
-  Kingfisher: f14df8cbe576bf55f211fa589e9869bceb4ea87d
+  Kingfisher: 6793a473357b5dbee42b0068ef203fe8325f259e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  NKVPhonePicker: 9132baa19101554b94ffd77d3472adf9d26f0f16
+  NKVPhonePicker: bde21135440ae62684528664d82bd51e1be69b13
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   PINCache: 98e7b1ef782824ad231ade51987c218b758c30d8
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
