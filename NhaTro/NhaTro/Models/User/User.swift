@@ -24,6 +24,7 @@ class User {
     var total_motel:Int!
     var firstName:String!
     var lastName:String!
+    var roleId:Int!
     
     //Xóa value về giá trị mặc định
     internal func logOut() {
@@ -36,6 +37,7 @@ class User {
         self.total_motel = -1
         self.firstName = ""
         self.lastName = ""
+        self.roleId = 0
         dataHandle.removeUserData()
     }
     
@@ -51,6 +53,7 @@ class User {
             self.total_motel = user["total_motel"] as! Int
             self.avatarUrl = user["avatar"] as? String ?? ""
             self.token = user["token"] as! String
+            self.roleId = user["role_id"] as? Int
         } else {
             self.email = ""
             self.token = ""
@@ -61,6 +64,7 @@ class User {
             self.total_motel = -1
             self.firstName = ""
             self.lastName = ""
+            self.roleId = 0
         }
     }
     

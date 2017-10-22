@@ -27,8 +27,6 @@ class InfoViewController: UIViewController {
     //MARK:- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         self.setupUI()
     }
 
@@ -42,10 +40,17 @@ class InfoViewController: UIViewController {
         self.setupNavigation()
         self.setupData()
         self.setupTextField(false)
+        setupActionForImg()
     }
     
     private func setupNavigation() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: self, action: #selector(InfoViewController.dismissView))
+    }
+    
+    private func setupActionForImg() {
+        imgProfile.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.selectPhoto))
+        imgProfile.addGestureRecognizer(tapGesture)
     }
     
     private func setupSegmented() {
@@ -86,6 +91,9 @@ class InfoViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func selectPhoto() {
+        print("open photo")
+    }
     
     @IBAction func editProfile(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -95,8 +103,6 @@ class InfoViewController: UIViewController {
             setupTextField(false)
         }
     }
-    
-
 }
 
 
@@ -106,6 +112,9 @@ extension InfoViewController: XMSegmentedControlDelegate {
     
     func xmSegmentedControl(_ xmSegmentedControl: XMSegmentedControl, selectedSegment: Int) {
         print("SegmentedControl Selected Segment: \(selectedSegment)")
+        if selectedSegment == 1 {
+            
+        }
     }
 }
 
