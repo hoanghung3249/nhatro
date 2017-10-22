@@ -22,6 +22,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtPhoneNumber: UITextField!
     @IBOutlet weak var segmentedControl: XMSegmentedControl!
     
+    @IBOutlet weak var lctTopBtnBack: NSLayoutConstraint!
+    
+    
+    
     let parser:ParseDataSignIn = ParseDataSignIn()
     
     
@@ -30,6 +34,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        self.setupSegmented()
+        setupUI()
         self.setupDelegate()
         
     }
@@ -48,6 +53,15 @@ class RegisterViewController: UIViewController {
         segmentedControl.segmentContent = (arrTitle,arrIcon)
         segmentedControl.highlightColor = UIColor(red: 238.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 1)
         segmentedControl.layer.cornerRadius = 20
+        
+    }
+    
+    private func setupUI() {
+        if #available(iOS 11, *) {
+            lctTopBtnBack.constant = 52
+        } else {
+            lctTopBtnBack.constant = 20
+        }
         
     }
     
@@ -71,8 +85,8 @@ class RegisterViewController: UIViewController {
 //            self.register(param!)
 //
 //        }
-        let hienra = Storyboard.home.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-        self.present(hienra, animated: true, completion: nil)
+        let tabbarVC = TabBarViewController()
+        self.present(tabbarVC, animated: true, completion: nil)
         
     }
     

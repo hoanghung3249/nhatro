@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,7 @@
         <array key="GOTHIC.TTF">
             <string>CenturyGothic</string>
         </array>
-        <array key="GOTHICB0.TTF">
+        <array key="gothicb.ttf">
             <string>CenturyGothic-Bold</string>
         </array>
     </customFonts>
@@ -516,7 +517,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUu-K2-FN3">
-                                                <rect key="frame" x="0.0" y="20" width="50" height="20"/>
+                                                <rect key="frame" x="0.0" y="52" width="50" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="rXZ-D8-XB3"/>
                                                     <constraint firstAttribute="width" constant="50" id="yn5-3q-3hH"/>
@@ -618,10 +619,9 @@
                                                         <rect key="frame" x="0.0" y="47" width="335" height="37"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SQ-P4-iJa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="162" height="37"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="37"/>
                                                                 <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="162.5" id="3ed-8x-P9Y"/>
                                                                     <constraint firstAttribute="height" constant="37" id="sav-wm-yCq"/>
                                                                 </constraints>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -634,10 +634,9 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-mj-BSx">
-                                                                <rect key="frame" x="172" y="0.0" width="163" height="37"/>
+                                                                <rect key="frame" x="175.33333333333337" y="0.0" width="159.66666666666663" height="37"/>
                                                                 <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.5" colorSpace="calibratedRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="162.5" id="9Rx-oC-1C7"/>
                                                                     <constraint firstAttribute="height" constant="37" id="mpq-qu-Rye"/>
                                                                 </constraints>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -652,8 +651,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="6SQ-P4-iJa" firstAttribute="width" secondItem="MUV-0e-B7q" secondAttribute="width" multiplier="1/2.1" id="Ffg-mE-eKH"/>
                                                             <constraint firstItem="6SQ-P4-iJa" firstAttribute="top" secondItem="MUV-0e-B7q" secondAttribute="top" id="LHU-oX-8Gc"/>
                                                             <constraint firstItem="mXi-mj-BSx" firstAttribute="top" secondItem="MUV-0e-B7q" secondAttribute="top" id="mOL-0v-IAj"/>
+                                                            <constraint firstItem="mXi-mj-BSx" firstAttribute="width" secondItem="6SQ-P4-iJa" secondAttribute="width" id="t36-wH-I8n"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -803,7 +804,7 @@
                                             <constraint firstAttribute="trailing" secondItem="XVL-qt-70a" secondAttribute="trailing" constant="20" id="1uv-g2-EGI"/>
                                             <constraint firstItem="8Eh-gg-x1T" firstAttribute="top" secondItem="DwQ-mN-bOQ" secondAttribute="bottom" constant="21" id="2WW-xS-NgQ"/>
                                             <constraint firstItem="DwQ-mN-bOQ" firstAttribute="top" secondItem="XVL-qt-70a" secondAttribute="bottom" id="5Cg-Yp-Lcm"/>
-                                            <constraint firstItem="JUu-K2-FN3" firstAttribute="top" secondItem="Mkm-oP-tzZ" secondAttribute="top" constant="20" id="7o8-v3-m7c"/>
+                                            <constraint firstItem="JUu-K2-FN3" firstAttribute="top" secondItem="Mkm-oP-tzZ" secondAttribute="top" constant="52" id="7o8-v3-m7c"/>
                                             <constraint firstItem="JUu-K2-FN3" firstAttribute="leading" secondItem="Mkm-oP-tzZ" secondAttribute="leading" id="9nt-gd-Qz7"/>
                                             <constraint firstItem="XVL-qt-70a" firstAttribute="leading" secondItem="Mkm-oP-tzZ" secondAttribute="leading" constant="20" id="AQC-mX-5dZ"/>
                                             <constraint firstItem="hEh-GM-Kei" firstAttribute="leading" secondItem="Mkm-oP-tzZ" secondAttribute="leading" constant="21" id="B72-CA-hR0"/>
@@ -846,6 +847,7 @@
                         <viewLayoutGuide key="safeArea" id="bWe-bZ-jJN"/>
                     </view>
                     <connections>
+                        <outlet property="lctTopBtnBack" destination="7o8-v3-m7c" id="DuU-5F-06S"/>
                         <outlet property="segmentedControl" destination="XVL-qt-70a" id="158-JE-S2w"/>
                         <outlet property="txtConfirmPassWord" destination="za9-1g-KVj" id="2rr-FT-yiq"/>
                         <outlet property="txtCountryCode" destination="kcr-px-dbd" id="x6w-jM-GCb"/>
