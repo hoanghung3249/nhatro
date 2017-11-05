@@ -259,6 +259,31 @@
 			path = DataCenter;
 			sourceTree = "<group>";
 		};
+		45486A311FAEC3B0001E68F3 /* Param */ = {
+			isa = PBXGroup;
+			children = (
+				4551319E1F793D7000BD731A /* Params.swift */,
+			);
+			path = Param;
+			sourceTree = "<group>";
+		};
+		45486A321FAEC3BC001E68F3 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				45EF0B2F1F5075A3005791E4 /* ProgressView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		45486A331FAEC3C7001E68F3 /* HandleUserData */ = {
+			isa = PBXGroup;
+			children = (
+				457D32D31F7BE35700C54E91 /* DataHandle.swift */,
+				457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */,
+			);
+			path = HandleUserData;
+			sourceTree = "<group>";
+		};
 		4550B58E1F87BBCE00E0F43B /* ChangePassVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,10 +412,9 @@
 			isa = PBXGroup;
 			children = (
 				45486A2E1FAEBD64001E68F3 /* DataCenter */,
-				45EF0B2F1F5075A3005791E4 /* ProgressView.swift */,
-				4551319E1F793D7000BD731A /* Params.swift */,
-				457D32D31F7BE35700C54E91 /* DataHandle.swift */,
-				457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */,
+				45486A321FAEC3BC001E68F3 /* ProgressView */,
+				45486A311FAEC3B0001E68F3 /* Param */,
+				45486A331FAEC3C7001E68F3 /* HandleUserData */,
 			);
 			path = Helper;
 			sourceTree = "<group>";

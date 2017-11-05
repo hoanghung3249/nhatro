@@ -301,7 +301,7 @@ open class XMSegmentedControl: UIView {
                     let imageSize = image.size
                     let text: String = segmentContent.text[i]
                     
-                    let halfSizeFont = UIFont(name: font.fontName, size: font.pointSize / 2.0)
+                    guard let halfSizeFont = UIFont(name: font.fontName, size: font.pointSize / 2.0) else { return }
                     let textSize = NSString(string: text).size(withAttributes: [NSAttributedStringKey.font: halfSizeFont])
                     
                     let spacing: CGFloat = 12
