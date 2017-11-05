@@ -23,7 +23,7 @@ target 'NhaTro' do
     pod 'NKVPhonePicker'
     pod 'GoogleSignIn'
     pod "Texture"
-
+    pod 'DKImagePickerController'
 
 
 end

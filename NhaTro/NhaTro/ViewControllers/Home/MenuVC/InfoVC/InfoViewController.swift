@@ -8,6 +8,8 @@
 
 import UIKit
 import NKVPhonePicker
+import GooglePlaces
+import DKImagePickerController
 
 class InfoViewController: UIViewController {
     
@@ -23,6 +25,8 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var btnEdit: UIButton!
     
+    fileprivate var userLocation:CLLocationCoordinate2D?
+    fileprivate var autocompleteController:GMSAutocompleteViewController?
     
     //MARK:- Life cycle
     override func viewDidLoad() {
@@ -35,6 +39,7 @@ class InfoViewController: UIViewController {
     private func setupUI() {
         self.imgProfile.layer.cornerRadius = self.imgProfile.frame.size.width / 2
         self.imgProfile.clipsToBounds = true
+        txtAddress.delegate = self
         self.setupSegmented()
         self.setupNavigation()
         self.setupData()
@@ -95,7 +100,13 @@ class InfoViewController: UIViewController {
     }
     
     @objc func selectPhoto() {
-        print("open photo")
+        let pickerController = DKImagePickerController()
+        pickerController.singleSelect = true
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            print(assets[0])
+        }
+        present(pickerController, animated: true, completion: nil)
     }
     
     @IBAction func editProfile(_ sender: UIButton) {
@@ -147,4 +158,49 @@ extension InfoViewController {
     }
     
     
+}
+// MARK: - Textfield Delegate
+extension InfoViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        view.endEditing(true)
+        autocompleteController = GMSAutocompleteViewController()
+        autocompleteController?.delegate = self
+        DispatchQueue.main.async {
+            self.present(self.autocompleteController!, animated: true, completion: nil)
+        }
+    }
+}
+// MARK: - AutocompleteController Delegate
+extension InfoViewController: GMSAutocompleteViewControllerDelegate {
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        userLocation = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        if let address = place.formattedAddress {
+            txtAddress.text = address
+        }
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
 }
