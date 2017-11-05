@@ -100,7 +100,7 @@ struct NetworkService {
     }
     
     
-    static func requestWithHeader(_ requestType: Alamofire.HTTPMethod,_ token:String ,url: String, parameters: Dictionary<String, Any>?, Completion:((_ data: [String: Any]?, _ error: String?, _ code:Int?) -> Void)?){
+    static func requestWithHeader(_ requestType: Alamofire.HTTPMethod,_ token:String ,url: String, parameters: Dictionary<String, Any>?, Completion:((_ data: JSON?, _ error: String?, _ code:Int?) -> Void)?){
         let _headers: HTTPHeaders = ["Accept": "application/json",
                                      "Authorization": "Bearer \(token)"
         ]
@@ -117,7 +117,8 @@ struct NetworkService {
                     if status == "success" {
                         if let data = value["data"] as? [String: Any], let code = value["status_code"] as? Int{
                             print(data)
-                            Completion!(data, nil, code)
+                            let dataJSON = JSON(data)
+                            Completion!(dataJSON, nil, code)
                         }else if let code = value["status_code"] as? Int, let mess = value["message"] as? String{
                             Completion!(["Success": "success"],mess,code)
                         } else {

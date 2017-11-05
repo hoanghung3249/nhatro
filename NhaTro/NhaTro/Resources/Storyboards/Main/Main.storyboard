@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,21 +24,21 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="seN-Sf-61j">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img8034" translatesAutoresizingMaskIntoConstraints="NO" id="U59-8v-zgE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2Y-l9-imu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-bK-2oH">
-                                        <rect key="frame" x="10" y="608" width="355" height="140"/>
+                                        <rect key="frame" x="10" y="497" width="355" height="140"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eLx-V1-vgF">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
@@ -62,7 +60,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invalidName-1" translatesAutoresizingMaskIntoConstraints="NO" id="sWN-7a-tYy">
-                                                        <rect key="frame" x="10" y="7.6666666666666288" width="25" height="25"/>
+                                                        <rect key="frame" x="10" y="7.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="Iw7-rm-Mia"/>
                                                             <constraint firstAttribute="height" constant="25" id="W1Z-xz-idy"/>
@@ -100,7 +98,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invalidName" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-az-cD7">
-                                                        <rect key="frame" x="10" y="7.6666666666666288" width="25" height="25"/>
+                                                        <rect key="frame" x="10" y="7.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="MW5-KX-cED"/>
                                                             <constraint firstAttribute="height" constant="25" id="UUy-IX-e9E"/>
@@ -139,7 +137,7 @@
                                                         </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenSmartphoneSimpleLineIcons" translatesAutoresizingMaskIntoConstraints="NO" id="a8t-11-DBM">
-                                                        <rect key="frame" x="12" y="6.6666666666666288" width="20" height="27"/>
+                                                        <rect key="frame" x="12" y="6.5" width="20" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="DNy-Xp-pVD"/>
                                                             <constraint firstAttribute="height" constant="27" id="ICo-OX-jyq"/>
@@ -181,7 +179,7 @@
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoHostelYellow" translatesAutoresizingMaskIntoConstraints="NO" id="WDX-7S-vO0">
-                                        <rect key="frame" x="122" y="364" width="130" height="50"/>
+                                        <rect key="frame" x="122" y="308.5" width="130" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="GdN-02-IVn"/>
                                             <constraint firstAttribute="height" constant="50" id="VQe-Zl-bch"/>
@@ -233,21 +231,21 @@
             <objects>
                 <viewController storyboardIdentifier="SignInViewController" id="9jr-ma-aHg" customClass="SignInViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f3S-dv-bZY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om0-Hy-ubL">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img8034" translatesAutoresizingMaskIntoConstraints="NO" id="Dky-no-4Sw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKm-KL-Jfi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3B4-o1-HLs">
-                                        <rect key="frame" x="92" y="724" width="191" height="30"/>
+                                        <rect key="frame" x="92" y="613" width="191" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="191" id="7hY-Te-tzS"/>
@@ -262,7 +260,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuP-nR-uWF">
-                                        <rect key="frame" x="135.66666666666666" y="203" width="104" height="30"/>
+                                        <rect key="frame" x="135.5" y="203" width="104" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.67843137249999996" blue="0.054901960780000002" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="104" id="jqU-8Y-UW3"/>
@@ -316,7 +314,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjs-tg-tJR">
-                                        <rect key="frame" x="66.666666666666686" y="59" width="242" height="30"/>
+                                        <rect key="frame" x="66.5" y="59" width="242" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="242" id="UAZ-pg-gdp"/>
                                             <constraint firstAttribute="height" constant="30" id="x04-Ei-50U"/>
@@ -502,20 +500,20 @@
             <objects>
                 <viewController storyboardIdentifier="RegisterViewController" id="sOo-5D-Q3w" customClass="RegisterViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c9W-8w-riM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKq-vo-wU1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mkm-oP-tzZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img8034" translatesAutoresizingMaskIntoConstraints="NO" id="EuN-Di-0Nu">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
                                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVj-Cp-o5p">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUu-K2-FN3">
@@ -621,7 +619,7 @@
                                                         <rect key="frame" x="0.0" y="47" width="335" height="37"/>
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6SQ-P4-iJa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="159.66666666666666" height="37"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="37"/>
                                                                 <color key="backgroundColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="0.5" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="37" id="sav-wm-yCq"/>
@@ -636,7 +634,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXi-mj-BSx">
-                                                                <rect key="frame" x="175.33333333333337" y="0.0" width="159.66666666666663" height="37"/>
+                                                                <rect key="frame" x="175.5" y="0.0" width="159.5" height="37"/>
                                                                 <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.5" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="37" id="mpq-qu-Rye"/>
@@ -869,15 +867,15 @@
             <objects>
                 <viewController storyboardIdentifier="VerifyViewController" id="CUl-0w-69d" customClass="VerifyViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0QL-ht-qNf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img8034" translatesAutoresizingMaskIntoConstraints="NO" id="EAo-gY-gZT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.46000000000000002" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-wF-BGq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERIFICATION CODE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxP-iG-IjU">
