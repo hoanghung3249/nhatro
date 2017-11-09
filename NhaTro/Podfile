@@ -23,8 +23,7 @@ target 'NhaTro' do
     pod 'NKVPhonePicker'
     pod 'GoogleSignIn'
     pod "Texture"
-    pod 'DKImagePickerController'
-
+   
 
 end
 post_install do |installer|

@@ -9,7 +9,6 @@
 import UIKit
 import NKVPhonePicker
 import GooglePlaces
-import DKImagePickerController
 
 class InfoViewController: UIViewController {
     
@@ -44,7 +43,7 @@ class InfoViewController: UIViewController {
         self.setupNavigation()
         self.setupData()
         self.setupTextField(false)
-        setupActionForImg()
+//        setupActionForImg()
         guard let userData = USER else { return }
         if userData.roleId != 2 {
             segmentedControl.selectedSegment = 1
@@ -55,11 +54,11 @@ class InfoViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: self, action: #selector(InfoViewController.dismissView))
     }
     
-    private func setupActionForImg() {
-        imgProfile.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.selectPhoto))
-        imgProfile.addGestureRecognizer(tapGesture)
-    }
+//    private func setupActionForImg() {
+//        imgProfile.isUserInteractionEnabled = true
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.selectPhoto))
+//        imgProfile.addGestureRecognizer(tapGesture)
+//    }
     
     private func setupSegmented() {
         segmentedControl.delegate = self
@@ -99,15 +98,15 @@ class InfoViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func selectPhoto() {
-        let pickerController = DKImagePickerController()
-        pickerController.singleSelect = true
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            print("didSelectAssets")
-            print(assets[0])
-        }
-        present(pickerController, animated: true, completion: nil)
-    }
+//    @objc func selectPhoto() {
+//        let pickerController = DKImagePickerController()
+//        pickerController.singleSelect = true
+//        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+//            print("didSelectAssets")
+//            print(assets[0])
+//        }
+//        present(pickerController, animated: true, completion: nil)
+//    }
     
     @IBAction func editProfile(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected

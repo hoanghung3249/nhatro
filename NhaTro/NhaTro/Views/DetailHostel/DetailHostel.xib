@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="CenturyGothic.ttf">
-            <string>CenturyGothic</string>
-        </array>
-        <array key="gothicb.ttf">
-            <string>CenturyGothic-Bold</string>
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -44,7 +43,7 @@
                                         <constraint firstAttribute="height" constant="18" id="3qs-1q-AUx"/>
                                         <constraint firstAttribute="width" constant="40" id="hK3-e5-Ii0"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -54,7 +53,7 @@
                                         <constraint firstAttribute="width" constant="70" id="Kas-t5-Nks"/>
                                         <constraint firstAttribute="height" constant="18" id="YNh-aN-0yN"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -66,12 +65,12 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02831234567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvt-z5-zER">
-                                    <rect key="frame" x="187" y="140" width="92" height="18"/>
+                                    <rect key="frame" x="187" y="140" width="100" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="Oek-YS-D56"/>
-                                        <constraint firstAttribute="width" constant="92" id="pfu-aZ-yah"/>
+                                        <constraint firstAttribute="width" constant="100" id="pfu-aZ-yah"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic" family="Century Gothic" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -80,7 +79,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="19" id="E8C-h8-p7C"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -159,7 +158,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="18" id="BuN-U7-DWa"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -176,7 +175,7 @@
                                 <constraint firstAttribute="width" constant="171" id="Ah3-Kb-bQa"/>
                                 <constraint firstAttribute="height" constant="16" id="Umv-jL-CT8"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -186,7 +185,7 @@
                                 <constraint firstAttribute="width" constant="171" id="cHS-7o-5Lp"/>
                                 <constraint firstAttribute="height" constant="12" id="nyA-gz-rzd"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -199,17 +198,17 @@
                                         <constraint firstAttribute="height" constant="15" id="Zd1-8d-mUO"/>
                                         <constraint firstAttribute="width" constant="66" id="xm9-Cn-Hwh"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liên hệ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-ab-mj0">
-                                    <rect key="frame" x="8" y="85" width="43" height="15"/>
+                                    <rect key="frame" x="8" y="85" width="47" height="15"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="43" id="WRs-yu-PG3"/>
+                                        <constraint firstAttribute="width" constant="47" id="WRs-yu-PG3"/>
                                         <constraint firstAttribute="height" constant="15" id="eZ9-eM-21Y"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -219,17 +218,17 @@
                                         <constraint firstAttribute="width" constant="46" id="0vv-e8-FbZ"/>
                                         <constraint firstAttribute="height" constant="15" id="eWI-gq-Jn2"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mô tả:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goq-jc-Xse">
-                                    <rect key="frame" x="8" y="110" width="35" height="15"/>
+                                    <rect key="frame" x="8" y="110" width="40" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="15" id="04l-GR-hNh"/>
-                                        <constraint firstAttribute="width" constant="35" id="90K-wn-QkI"/>
+                                        <constraint firstAttribute="width" constant="40" id="90K-wn-QkI"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -239,7 +238,7 @@
                                         <constraint firstAttribute="width" constant="56" id="PI9-jO-lKo"/>
                                         <constraint firstAttribute="height" constant="15" id="h2C-ne-Ufo"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="CenturyGothic-Bold" family="Century Gothic" pointSize="12"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -248,7 +247,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.500.000 VNĐ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plw-4E-lQw">
                                             <rect key="frame" x="0.0" y="50" width="293" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -265,12 +264,12 @@
 + Internet cáp quang tốc độ cao, truyền hình cáp.
 + Dọn vệ sinh hàng ngày, không gian sống sạch đẹp.
 + Hầm để xe thoải mái, có dịch vụ giặt là.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15m2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-KX-cFB">
                                             <rect key="frame" x="0.0" y="25" width="293" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -279,13 +278,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="szr-wA-uwU"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02831234567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dB-3P-KoQ">
                                             <rect key="frame" x="0.0" y="75" width="293" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -342,7 +341,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="xLF-vr-Re1"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

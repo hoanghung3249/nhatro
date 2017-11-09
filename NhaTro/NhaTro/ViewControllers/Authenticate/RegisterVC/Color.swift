@@ -37,11 +37,11 @@ class Color {
 
 class Font: UIFont {
     
-    static func fontCenturyGothic(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "Century Gothic", size: size)!
+    static func fontAvenirNext(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "Avenir Next", size: size)!
     }
     
-    static func fontCenturyGothicBold(_ size: CGFloat) -> UIFont {
-        return UIFont(name: "CenturyGothic-Bold", size: size)!
+    static func fontAvenirNextBold(_ size: CGFloat) -> UIFont {
+        return UIFont(name: "AvenirNext-Bold", size: size)!
     }
 }

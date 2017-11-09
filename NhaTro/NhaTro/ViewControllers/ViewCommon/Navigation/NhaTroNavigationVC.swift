@@ -23,7 +23,7 @@ class NhaTroNavigationVC: UINavigationController {
     //MARK:- Support function
     private func setupBasicView() {
         self.navigationBar.barTintColor = Color.mainColor()
-        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: Font.fontCenturyGothicBold(20),NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: Font.fontAvenirNextBold(20),NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 
     
