@@ -9,6 +9,7 @@
 import UIKit
 import NKVPhonePicker
 import GooglePlaces
+import TLPhotoPicker
 
 class InfoViewController: UIViewController {
     
@@ -43,7 +44,7 @@ class InfoViewController: UIViewController {
         self.setupNavigation()
         self.setupData()
         self.setupTextField(false)
-//        setupActionForImg()
+        setupActionForImg()
         guard let userData = USER else { return }
         if userData.roleId != 2 {
             segmentedControl.selectedSegment = 1
@@ -54,11 +55,11 @@ class InfoViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: self, action: #selector(InfoViewController.dismissView))
     }
     
-//    private func setupActionForImg() {
-//        imgProfile.isUserInteractionEnabled = true
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.selectPhoto))
-//        imgProfile.addGestureRecognizer(tapGesture)
-//    }
+    private func setupActionForImg() {
+        imgProfile.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.selectPhoto))
+        imgProfile.addGestureRecognizer(tapGesture)
+    }
     
     private func setupSegmented() {
         segmentedControl.delegate = self
@@ -98,15 +99,14 @@ class InfoViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-//    @objc func selectPhoto() {
-//        let pickerController = DKImagePickerController()
-//        pickerController.singleSelect = true
-//        pickerController.didSelectAssets = { (assets: [DKAsset]) in
-//            print("didSelectAssets")
-//            print(assets[0])
-//        }
-//        present(pickerController, animated: true, completion: nil)
-//    }
+    @objc func selectPhoto() {
+        let viewController = TLPhotosPickerViewController()
+        viewController.delegate = self
+        viewController.configure.mediaType = PHAssetMediaType.image
+        viewController.configure.usedCameraButton = true
+        viewController.configure.maxSelectedAssets = 1
+        self.present(viewController, animated: true, completion: nil)
+    }
     
     @IBAction func editProfile(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -158,6 +158,34 @@ extension InfoViewController {
     
     
 }
+
+extension InfoViewController: TLPhotosPickerViewControllerDelegate {
+    
+    //TLPhotosPickerViewControllerDelegate
+    func dismissPhotoPicker(withTLPHAssets: [TLPHAsset]) {
+        // use selected order, fullresolution image
+        guard let imagePicker = withTLPHAssets.first else { return }
+        guard let imageFullSize = imagePicker.fullResolutionImage else { return }
+        let imageData = UIImageJPEGRepresentation(imageFullSize, 0.1)
+        DispatchQueue.main.async {
+            self.imgProfile.image = UIImage(data: imageData!)
+        }
+    }
+    //    func dismissPhotoPicker(withPHAssets: [PHAsset]) {
+    //        // if you want to used phasset.
+    //    }
+    func photoPickerDidCancel() {
+        // cancel
+    }
+    func dismissComplete() {
+        // picker viewcontroller dismiss completion
+    }
+    func didExceedMaximumNumberOfSelection(picker: TLPhotosPickerViewController) {
+        // exceed max selection
+    }
+    
+}
+
 // MARK: - Textfield Delegate
 extension InfoViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {

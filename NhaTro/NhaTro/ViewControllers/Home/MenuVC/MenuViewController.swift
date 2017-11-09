@@ -102,31 +102,20 @@ extension MenuViewController {
     fileprivate func callAPILogOut() {
         guard let user = USER else { return }
         ProgressView.shared.show((self.parent?.view)!)
-        
-        NetworkService.requestWithHeader(.get, user.token, url: Constant.APIKey.logOut, parameters: nil) { [weak self] (data, error, code) in
-            guard let strongSelf = self else { return }
+        DataCenter.shared.callAPILogOut(user.token) { [weak self] (success, err) in
+            guard let `self` = self else { return }
             ProgressView.shared.hide()
-            if error != nil {
-                if let code = code {
-                    if code == StatusCode.success {
-                        USER?.logOut()
-                        URLCache.shared.removeAllCachedResponses()
-                        URLCache.shared.diskCapacity = 0
-                        URLCache.shared.memoryCapacity = 0
-                        let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                        DispatchQueue.main.async {
-                            strongSelf.present(loginVC, animated: true, completion: nil)
-                        }
-                    } else {
-                        strongSelf.showAlert(with: error!)
-                    }
+            if success {
+                USER?.logOut()
+                guard let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController else { return }
+                DispatchQueue.main.async {
+                    self.present(loginVC, animated: true, completion: nil)
                 }
+            } else {
+                guard let err = err else { return }
+                self.showAlert(with: err)
             }
         }
     }
     
 }
-
-
-
-

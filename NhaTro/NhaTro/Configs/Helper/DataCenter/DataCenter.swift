@@ -25,4 +25,25 @@ class DataCenter {
             }
         }
     }
+    
+    func callAPILogOut(_ token:String,  _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        NetworkService.requestWithHeader(.get, token, url: Constant.APIKey.logOut, parameters: nil) { (data, error, code) in
+            guard let completion = completion else { return }
+            if error != nil {
+                if let code = code {
+                    if code == StatusCode.success {
+                        USER?.logOut()
+                        URLCache.shared.removeAllCachedResponses()
+                        URLCache.shared.diskCapacity = 0
+                        URLCache.shared.memoryCapacity = 0
+                        completion(true, nil)
+                    } else {
+                        guard let err = error else { return }
+                        completion(false, err)
+                    }
+                }
+            }
+        }
+    }
+    
 }
