@@ -276,9 +276,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="o7J-hi-P9R" firstAttribute="top" secondItem="WLf-45-GEw" secondAttribute="bottom" id="7nk-mg-Oib"/>
+                            <constraint firstAttribute="bottom" secondItem="psu-mZ-rAK" secondAttribute="bottom" id="Cr7-x4-rpf"/>
                             <constraint firstAttribute="trailing" secondItem="psu-mZ-rAK" secondAttribute="trailing" id="Etm-yE-KKw"/>
                             <constraint firstItem="psu-mZ-rAK" firstAttribute="top" secondItem="o7J-hi-P9R" secondAttribute="bottom" id="MXy-7c-kpd"/>
-                            <constraint firstItem="FqX-F9-RvD" firstAttribute="top" secondItem="psu-mZ-rAK" secondAttribute="bottom" id="ggb-qv-g8M"/>
                             <constraint firstItem="o7J-hi-P9R" firstAttribute="leading" secondItem="Og8-hc-HsB" secondAttribute="leading" id="jJR-fM-3Mr"/>
                             <constraint firstAttribute="trailing" secondItem="o7J-hi-P9R" secondAttribute="trailing" id="n8i-xP-g7T"/>
                             <constraint firstItem="psu-mZ-rAK" firstAttribute="leading" secondItem="Og8-hc-HsB" secondAttribute="leading" id="piC-wG-dqD"/>
@@ -866,7 +866,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAF-Tg-NJp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAF-Tg-NJp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNc-lh-PUm">

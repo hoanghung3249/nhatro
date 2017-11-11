@@ -53,6 +53,8 @@ class InfoViewController: UIViewController {
     
     private func setupNavigation() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: self, action: #selector(InfoViewController.dismissView))
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     private func setupActionForImg() {
@@ -91,6 +93,7 @@ class InfoViewController: UIViewController {
         self.txtFirstName.isUserInteractionEnabled = isActive
         self.txtAddress.isUserInteractionEnabled = isActive
         self.txtEmail.isUserInteractionEnabled = isActive
+        self.segmentedControl.isUserInteractionEnabled = isActive
     }
     
     //MARK:- Action buttons

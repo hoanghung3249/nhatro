@@ -15,17 +15,20 @@ class HomePageViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupCollectionView()
-        // Do any additional setup after loading the view.
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationItem.title = "Home"
-        tabBarController?.tabBar.isHidden = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupLayout()
+        self.setupCollectionView()
     }
     
     //MARK:- Support functions
+    private func setupLayout() {
+        tabBarController?.tabBar.isHidden = false
+        self.navigationItem.title = "Home"
+    }
+    
     private func setupCollectionView() {
         cvwDetails.delegate = self
         cvwDetails.dataSource = self
@@ -47,11 +50,9 @@ class HomePageViewController: UIViewController {
     @IBAction func showMap(_ sender: UIButton) {
         let showMap = Storyboard.home.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationItem.title = ""
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(showMap!, animated: true)
     }
-
-
-
 }
 
 //MARK:- CollectionView Datasource & Delegate

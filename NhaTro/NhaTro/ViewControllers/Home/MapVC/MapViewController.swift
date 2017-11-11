@@ -34,13 +34,14 @@ class MapViewController: UIViewController,UISearchBarDelegate {
     
     //MARK:- Support functions
     private func setupNavi(){
-        tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.tintColor = .white
         let backBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
         backBtn.setImage(#imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), for: .normal)
         backBtn.addTarget(self, action: #selector(MapViewController.backView), for: .touchUpInside)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
     private func setupSearchBar() {
