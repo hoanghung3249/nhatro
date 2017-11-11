@@ -13,6 +13,7 @@ import GoogleMaps
 class MapViewController: UIViewController,UISearchBarDelegate {
     
     @IBOutlet weak var viewGoogleMap: UIView!
+    fileprivate var mapView:GMSMapView?
     @IBOutlet weak var sldStep: G8SliderStep!
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
 
@@ -35,11 +36,12 @@ class MapViewController: UIViewController,UISearchBarDelegate {
     private func setupNavi(){
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.tintColor = .white
-        navigationItem.backBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .plain, target: nil, action: nil)
+        let backBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
+        backBtn.setImage(#imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), for: .normal)
+        backBtn.addTarget(self, action: #selector(MapViewController.backView), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
-
-
     
     private func setupSearchBar() {
         searchBar.searchBarStyle = UISearchBarStyle.prominent
@@ -51,13 +53,15 @@ class MapViewController: UIViewController,UISearchBarDelegate {
             textSearch.layer.cornerRadius = 10
             textSearch.clipsToBounds = true
         }
-
         navigationItem.titleView = searchBar
-        
     }
     
     
     //MARK:- Action buttons
+    
+    @objc func backView() {
+        navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func changeSliderValue(_ sender: G8SliderStep) {
 //        if !sender.isTracking {
@@ -88,27 +92,24 @@ class MapViewController: UIViewController,UISearchBarDelegate {
 
 //MARK:- Setup Google Map
 extension MapViewController:GMSMapViewDelegate,CLLocationManagerDelegate{
-
-    
      func setupGoogleMap(){
-        _ = destinations
-        let current = destinations.first
-        let camera = GMSCameraPosition.camera(withLatitude: (current?.location.latitude)!,longitude: (current?.location.longitude)!, zoom: 15)
-        let mapView = GMSMapView.map(withFrame: CGRect.init(x: 0, y: 0, width: self.viewGoogleMap.frame.size.width, height: self.viewGoogleMap.frame.size.height), camera: camera)
-        
-        viewGoogleMap.insertSubview(mapView, at: 0)
-        mapView.delegate = self
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        
-        
-        //Creates a marker in the center of the map.
-        for i in destinations {
-            let marker = GMSMarker(position: i.location)
-            marker.icon = UIImage(named: "homeLocationMarker")
-            marker.userData = i
-            marker.map = mapView
+//        _ = destinations
+        mapView = GMSMapView(frame: CGRect(x: 0, y: 0, width: self.viewGoogleMap.frame.size.width, height: self.viewGoogleMap.frame.size.height))
+        mapView?.mapType = .terrain
+        mapView?.isMyLocationEnabled = true
+        mapView?.settings.myLocationButton = true
+        mapView?.delegate = self
+        DispatchQueue.main.async {
+            self.viewGoogleMap.insertSubview(self.mapView!, at: 0)
         }
+//
+//        //Creates a marker in the center of the map.
+//        for i in destinations {
+//            let marker = GMSMarker(position: i.location)
+//            marker.icon = UIImage(named: "homeLocationMarker")
+//            marker.userData = i
+//            marker.map = mapView
+//        }
         
     }
     
@@ -139,12 +140,4 @@ extension MapViewController{
         sldStep.value = 1
         sldStep.isContinuous = false
     }
-
 }
-    
-
-
-
-
-
-
