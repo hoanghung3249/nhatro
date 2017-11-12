@@ -15,6 +15,7 @@ class User {
     
     static let shared: User! = User()
     
+    var id:Int!
     var email:String!
     var token:String!
     var address:String!
@@ -42,6 +43,7 @@ class User {
         self.roleId = 0
         self.latitude = ""
         self.longitude = ""
+        self.id = -1
         dataHandle.removeUserData()
     }
     
@@ -60,6 +62,7 @@ class User {
             self.roleId = user["role_id"] as? Int
             self.latitude = user["latitude"] as? String ?? ""
             self.longitude = user["longitude"] as? String ?? ""
+            self.id = user["id"] as? Int
         } else {
             self.email = ""
             self.token = ""
@@ -73,6 +76,7 @@ class User {
             self.roleId = 0
             self.latitude = ""
             self.longitude = "0.0"
+            self.id = -1
         }
     }
 }

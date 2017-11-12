@@ -28,6 +28,7 @@ class ParseDataSignIn: NSObject {
         userData?.roleId = data["role_id"].intValue
         userData?.latitude = data["latitude"].stringValue
         userData?.longitude = data["longitude"].stringValue
+        userData?.id = data["id"].intValue
         
         //Lưu user data
         var userDataDict:[String:AnyObject] = [:]
@@ -44,6 +45,7 @@ class ParseDataSignIn: NSObject {
         userDataDict.updateValue(userData?.roleId as AnyObject, forKey: "role_id")
         userDataDict.updateValue(userData?.latitude as AnyObject, forKey: "latitude")
         userDataDict.updateValue(userData?.longitude as AnyObject, forKey: "longitude")
+        userDataDict.updateValue(userData?.id as AnyObject, forKey: "id")
         //Datahandle cần 1 Dictionary truyền vào
         dataHandle.setUserData(userDataDict)
     }
