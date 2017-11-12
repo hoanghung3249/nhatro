@@ -121,8 +121,6 @@ class InfoViewController: UIViewController {
     }
 }
 
-
-
 //MARK:- Segmented Delegate
 extension InfoViewController: XMSegmentedControlDelegate {
     

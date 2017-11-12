@@ -18,25 +18,21 @@ class MenuViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationItem.title = "Menu"
         self.tabBarController?.tabBar.isHidden = false
+        self.setupTableView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.title = ""
     }
-
     
     //MARK:- Support functions
-    
     private func setupTableView() {
         self.tbvMenu.delegate = self
         self.tbvMenu.dataSource = self
@@ -46,17 +42,17 @@ class MenuViewController: UIViewController {
     
     fileprivate func showInfoVC() {
         let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
     fileprivate func showChangePassVC() {
         let changePassVC = Storyboard.home.instantiateViewController(withIdentifier: "ChangePassViewController") as! ChangePassViewController
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(changePassVC, animated: true)
     }
     
-
 }
-
 
 //MARK:- Tableview Delegate & Datasource
 extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
@@ -117,5 +113,4 @@ extension MenuViewController {
             }
         }
     }
-    
 }
