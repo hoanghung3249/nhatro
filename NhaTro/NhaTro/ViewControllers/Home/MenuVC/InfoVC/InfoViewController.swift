@@ -10,6 +10,7 @@ import UIKit
 import NKVPhonePicker
 import GooglePlaces
 import TLPhotoPicker
+import Kingfisher
 
 class InfoViewController: UIViewController {
     
@@ -92,8 +93,22 @@ class InfoViewController: UIViewController {
         self.txtLastName.isUserInteractionEnabled = isActive
         self.txtFirstName.isUserInteractionEnabled = isActive
         self.txtAddress.isUserInteractionEnabled = isActive
-        self.txtEmail.isUserInteractionEnabled = isActive
         self.segmentedControl.isUserInteractionEnabled = isActive
+    }
+    
+    private func createParamEditProfile(_ phone:String, _ first_name:String, _ last_name:String, _ address:String, _ userImage:UIImageView?, _ userLocation:CLLocationCoordinate2D) {
+        let (param,error) = Params.createParamUpdateProfile(phone, first_name, last_name, address, userLocation)
+        if let error = error {
+            showAlert(with: error)
+        } else {
+            guard let param = param else { return }
+            var imageProfile = [UIImage]()
+            if userImage?.image != nil {
+                guard let imgProfile = userImage?.image else { return }
+                imageProfile.append(imgProfile)
+            }
+            callAPIEditProfile(param, "image", imageProfile)
+        }
     }
     
     //MARK:- Action buttons
@@ -117,6 +132,8 @@ class InfoViewController: UIViewController {
             setupTextField(true)
         } else {
             setupTextField(false)
+            guard let phone = txtPhoneNumber.text, let first_name = txtFirstName.text, let last_name = txtLastName.text, let address = txtAddress.text, let userLocation = userLocation else { return }
+            createParamEditProfile(phone, first_name, last_name, address, imgProfile, userLocation)
         }
     }
 }
@@ -138,7 +155,7 @@ extension InfoViewController: XMSegmentedControlDelegate {
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()
             if success {
-                strongSelf.showAlertSuccess(with: "Update Role Success")
+                strongSelf.showAlertSuccess(with: "Nâng cấp tài khoản thành công!")
             } else {
                 guard let err = mess else { return }
                 strongSelf.segmentedControl.selectedSegment = 0
@@ -150,14 +167,19 @@ extension InfoViewController: XMSegmentedControlDelegate {
 
 //MARK:- Support API
 extension InfoViewController {
-    
-    fileprivate func callAPIEditProfile(_ params:[String:AnyObject]) {
+    fileprivate func callAPIEditProfile(_ params:[String:Any], _ imgName:String, _ imageProfile:[UIImage]) {
         ProgressView.shared.show((self.parent?.view)!)
-        
-        
+        DataCenter.shared.callAPIEditProfile(params, imgName, imageProfile, { [weak self] (success, error) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if success {
+                strongSelf.showAlertSuccess(with: "Cập nhật thông tin thành công!")
+            } else {
+                guard let err = error else { return }
+                strongSelf.showAlert(with: err)
+            }
+        })
     }
-    
-    
 }
 
 extension InfoViewController: TLPhotosPickerViewControllerDelegate {

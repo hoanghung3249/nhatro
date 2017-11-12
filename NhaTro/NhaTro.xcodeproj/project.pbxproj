@@ -25,6 +25,7 @@
 		458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FF1F7292FE00D8CD80 /* PostViewController.swift */; };
 		458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */; };
 		458D63101F72CDCC00D8CD80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630E1F72CDCC00D8CD80 /* TabBarViewController.swift */; };
+		45925C3C1FB800FD00A15AB5 /* JSONFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45925C3B1FB800FD00A15AB5 /* JSONFormat.swift */; };
 		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
 		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
 		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
@@ -95,6 +96,7 @@
 		458D62FF1F7292FE00D8CD80 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
 		458D630E1F72CDCC00D8CD80 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		45925C3B1FB800FD00A15AB5 /* JSONFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFormat.swift; sourceTree = "<group>"; };
 		45EF0B091F50714D005791E4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45EF0B1B1F50746A005791E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				45925C3A1FB800EE00A15AB5 /* JSONFormat */,
 				457D32D01F7BE01500C54E91 /* User */,
 				B77B75261F74106E00B1E888 /* GoogleMap */,
 				B77D29401F62D18400C8F9D5 /* Google */,
@@ -360,6 +363,14 @@
 				458D630E1F72CDCC00D8CD80 /* TabBarViewController.swift */,
 			);
 			path = TabbarVC;
+			sourceTree = "<group>";
+		};
+		45925C3A1FB800EE00A15AB5 /* JSONFormat */ = {
+			isa = PBXGroup;
+			children = (
+				45925C3B1FB800FD00A15AB5 /* JSONFormat.swift */,
+			);
+			path = JSONFormat;
 			sourceTree = "<group>";
 		};
 		45EF0B071F507127005791E4 /* API */ = {
@@ -886,6 +897,7 @@
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
 				B77B75281F74109400B1E888 /* GoogleMap.swift in Sources */,
 				45486A301FAEBDFA001E68F3 /* DataCenter.swift in Sources */,
+				45925C3C1FB800FD00A15AB5 /* JSONFormat.swift in Sources */,
 				458D63101F72CDCC00D8CD80 /* TabBarViewController.swift in Sources */,
 				45039C351F5B9C35001DD70A /* Constants.swift in Sources */,
 				B7504C7A1F5BB73D00C1730D /* VerifyViewController.swift in Sources */,

@@ -166,7 +166,7 @@ struct NetworkService {
             // import parameters
             if parameters != nil  {
                 for (key, valueElement) in parameters! {
-                    if valueElement is String || valueElement is Int {
+                    if valueElement is String || valueElement is Int || valueElement is Double {
                         multipartFormData.append("\(valueElement)".data(using: .utf8)!, withName: key)
                     }
                 }

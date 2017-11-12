@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Params {
     
     static func createParamLogin(_ email:String,_ pass:String) -> ([String:AnyObject]?,String?) {
@@ -65,5 +64,25 @@ struct Params {
         return(params,nil)
     }
     
+    static func createParamUpdateProfile(_ phone:String, _ first_name:String, _ last_name:String, _ address:String, _ userLocation:CLLocationCoordinate2D) -> ([String:Any]?,String?) {
+        var param = [String:Any]()
+        if first_name.isEmptyOrWhitespace() || last_name.isEmptyOrWhitespace() || address.isEmptyOrWhitespace() || phone.isEmptyOrWhitespace() {
+            return(nil, "Xin hãy nhập các trường yêu cầu!")
+        }
+        
+        if !phone.isPhoneNumber {
+            return(nil, "Số điện thoại không hợp lệ!")
+        }
+        
+        param = [
+            "phone":phone,
+            "first_name":first_name,
+            "last_name":last_name,
+            "address":address,
+            "latitude":userLocation.latitude,
+            "longitude":userLocation.longitude
+        ]
+        return(param, nil)
+    }
     
 }

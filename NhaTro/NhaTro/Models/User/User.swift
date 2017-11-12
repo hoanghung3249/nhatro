@@ -25,6 +25,8 @@ class User {
     var firstName:String!
     var lastName:String!
     var roleId:Int!
+    var latitude:String!
+    var longitude:String!
     
     //Xóa value về giá trị mặc định
     internal func logOut() {
@@ -38,6 +40,8 @@ class User {
         self.firstName = ""
         self.lastName = ""
         self.roleId = 0
+        self.latitude = ""
+        self.longitude = ""
         dataHandle.removeUserData()
     }
     
@@ -54,6 +58,8 @@ class User {
             self.avatarUrl = user["avatar"] as? String ?? ""
             self.token = user["token"] as! String
             self.roleId = user["role_id"] as? Int
+            self.latitude = user["latitude"] as? String ?? ""
+            self.longitude = user["longitude"] as? String ?? ""
         } else {
             self.email = ""
             self.token = ""
@@ -65,9 +71,9 @@ class User {
             self.firstName = ""
             self.lastName = ""
             self.roleId = 0
+            self.latitude = ""
+            self.longitude = "0.0"
         }
     }
-    
-    
 }
 

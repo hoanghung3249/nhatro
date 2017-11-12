@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import Alamofire
 
 class DataCenter {
     
@@ -46,4 +47,25 @@ class DataCenter {
         }
     }
     
+    func callAPIEditProfile(_ param:[String:Any], _ imageName:String, _ imageProfile:[UIImage], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _headers: HTTPHeaders = ["Accept": "application/json",
+                                     "Authorization": "Bearer \(userToken)"
+        ]
+        NetworkService.callApiMultiPart(url: Constant.APIKey.updateProfile, withNames: [imageName], method: .post, images: imageProfile, parameters: param, headers: _headers, completion: { (data) in
+            guard let completion = completion else { return }
+            let jsonFormat = JSONFormat(data)
+            let parser:ParseDataSignIn = ParseDataSignIn()
+            if jsonFormat.status == "success" {
+                let userData = jsonFormat.data
+                print(userData)
+                parser.fetchDataSignIn(data: userData)
+                completion(true, jsonFormat.message)
+            } else {
+                completion(false, jsonFormat.message)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }    
 }
