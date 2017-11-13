@@ -90,6 +90,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginGoogle(_ sender: UIButton) {
+        GIDSignIn.sharedInstance().clientID = "151862910224-3hec1qnegk798ua6ja7q1sdud6gshh37.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().signIn()
     }
 

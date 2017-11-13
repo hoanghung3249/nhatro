@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.white], for: .normal)
 //        FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-
+        
         IQKeyboardManager.shared().isEnabled = true
         //Config Facebook SDK
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
