@@ -10,6 +10,7 @@ import UIKit
 
 class PostViewController: UIViewController {
    
+    @IBOutlet weak var txtView: UITextView!
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtPrice: UITextField!
     @IBOutlet weak var txtLocation: UITextField!
@@ -20,6 +21,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         CoView.delegate = self
         CoView.dataSource = self
+        txtView.delegate = self
         setupUI()
         // Do any additional setup after loading the view.
     }
@@ -36,9 +38,6 @@ class PostViewController: UIViewController {
         self.txtAcreage.underlined(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5))
         self.txtPhone.underlined(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5))
     }
-    
- 
-
 }
 
 extension PostViewController:UICollectionViewDelegate,UICollectionViewDataSource{
@@ -53,4 +52,20 @@ extension PostViewController:UICollectionViewDelegate,UICollectionViewDataSource
         
         return cell
     }
+}
+extension PostViewController:UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if txtView.text == "Có chỗ để xe, có thang máy,…"{
+            txtView.text = ""
+            txtView.textColor = UIColor.black
+        }
+        
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if txtView.text == ""{
+            txtView.text = "Có chỗ để xe, có thang máy,…"
+            txtView.textColor = UIColor.gray
+        }
+    }
+
 }
