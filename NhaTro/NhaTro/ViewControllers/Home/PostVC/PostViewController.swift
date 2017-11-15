@@ -23,6 +23,8 @@ class PostViewController: UIViewController {
         CoView.dataSource = self
         txtView.delegate = self
         setupUI()
+        setupTextField()
+        setupTextField1()
         // Do any additional setup after loading the view.
     }
 
@@ -37,6 +39,23 @@ class PostViewController: UIViewController {
         self.txtPrice.underlined(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5))
         self.txtAcreage.underlined(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5))
         self.txtPhone.underlined(UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5))
+    }
+    
+    private func setupTextField() {
+        let label = UILabel()
+        label.text = "m2"
+        label.font = Font.fontAvenirNext(12)
+        label.frame = CGRect(x: 0, y: 0, width: 30, height: txtAcreage.frame.size.height)
+        txtAcreage.rightView = label
+        txtAcreage.rightViewMode = .always
+    }
+    private func setupTextField1() {
+        let label = UILabel()
+        label.text = "VNĐ"
+        label.font = Font.fontAvenirNext(12)
+        label.frame = CGRect(x: 0, y: 0, width: 30, height: txtPrice.frame.size.height)
+        txtPrice.rightView = label
+        txtPrice.rightViewMode = .always
     }
 }
 

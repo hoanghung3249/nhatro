@@ -15,7 +15,10 @@ class NhaTroNavigationVC: UINavigationController {
         super.viewDidLoad()
         self.setupBasicView()
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     //MARK:- Support function
     private func setupBasicView() {
         self.navigationBar.barTintColor = Color.mainColor()
