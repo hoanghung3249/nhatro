@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
+		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
 		453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */; };
 		45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45429C891F8662DA0019493C /* InfoViewController.swift */; };
@@ -78,6 +79,7 @@
 		4519F9891F5AB6590035AA85 /* GOTHICB0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICB0.TTF; sourceTree = "<group>"; };
 		4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICBI.TTF; sourceTree = "<group>"; };
 		4519F98B1F5AB6590035AA85 /* gothici.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothici.ttf; sourceTree = "<group>"; };
+		451CB5671FBFEC570025EB44 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,6 +183,14 @@
 				4519F98B1F5AB6590035AA85 /* gothici.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		451CB5661FBFEC2B0025EB44 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				451CB5671FBFEC570025EB44 /* Reusable.swift */,
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		452E4DC91F4B16F100F27656 = {
@@ -392,6 +402,7 @@
 		45EF0B0B1F507318005791E4 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				451CB5661FBFEC2B0025EB44 /* Reusable */,
 				45EF0B101F507381005791E4 /* Utilities */,
 				45EF0B0F1F507376005791E4 /* Helper */,
 				45EF0B0E1F507369005791E4 /* Extensions */,
@@ -910,6 +921,7 @@
 				455131981F7928B900BD731A /* MenuViewController.swift in Sources */,
 				458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */,
 				457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */,
+				451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */,
 				457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */,
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
 				B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */,

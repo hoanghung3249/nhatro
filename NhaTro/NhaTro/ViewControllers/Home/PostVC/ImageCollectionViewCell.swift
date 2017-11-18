@@ -12,5 +12,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imgHinh: UIImageView!
     
+    func configCell(_ image: UIImage) {
+        imgHinh.image = image
+    }
 
 }

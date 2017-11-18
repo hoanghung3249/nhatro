@@ -254,5 +254,14 @@ extension UITextField{
         self.layer.addSublayer(border)
         self.layer.masksToBounds = true
     }
+    
+    func addTextRightView(_ text:String, _ font: UIFont) {
+        let label = UILabel()
+        label.text = text
+        label.font = font
+        label.frame = CGRect(x: 0, y: 0, width: 30, height: self.frame.size.height)
+        self.rightView = label
+        self.rightViewMode = .always
+    }
 
 }

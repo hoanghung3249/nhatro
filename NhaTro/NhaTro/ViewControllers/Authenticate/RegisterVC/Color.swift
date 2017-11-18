@@ -31,7 +31,9 @@ class Color {
         return UIColor(red: 155.0/255.0, green: 155.0/255.0, blue: 155.0/255.0, alpha: 1)
     }
 
-
+    static func txtUnderlineColor() -> UIColor {
+        return UIColor(red: 151.0/255.0, green: 151.0/255.0, blue: 151.0/255.0, alpha: 0.5)
+    }
     
 }
 
