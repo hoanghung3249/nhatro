@@ -15,15 +15,13 @@ class TabBarViewController: ASTabBarController {
         super.viewDidLoad()
         self.tabBar.barTintColor = Color.mainColor()
         self.setupViewController()
-        // Do any additional setup after loading the view.
     }
-    
     
     private func setupViewController() {
         let homePageVC = Storyboard.home.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
         let naviPageVC = NhaTroNavigationVC(rootViewController: homePageVC)
         naviPageVC.tabBarItem = UITabBarItem(title: "Trang Chủ", image: UIImage(named: "home"), selectedImage: UIImage(named: "homeSelected"))
-        naviPageVC.setupTitle("Home")
+        naviPageVC.setupTitle("Trang Chủ")
         
         
         let likeVC = Storyboard.home.instantiateViewController(withIdentifier: "FavoriteViewController") as! FavoriteViewController
@@ -45,6 +43,4 @@ class TabBarViewController: ASTabBarController {
         self.selectedViewController = naviPageVC
         
     }
-
-
 }

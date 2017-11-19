@@ -247,5 +247,9 @@ extension UIImage {
         return newImage!
     }
     
+    func resizeToData() -> Data {
+        let imgData = UIImageJPEGRepresentation(self, 0.1)
+        return imgData!
+    }
     
 }

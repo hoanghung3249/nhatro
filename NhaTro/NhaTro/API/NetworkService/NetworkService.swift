@@ -59,39 +59,43 @@ struct NetworkService {
         }
     }
     
-    static func requestData(_ requestType: Alamofire.HTTPMethod, url: String, parameters: Dictionary<String, Any>?, Completion:((_ data: JSON?, _ error: String?, _ code:Int?) -> Void)?){
-        let _headers: HTTPHeaders = ["Accept": "application/json"]
+    static func requestData(_ requestType: Alamofire.HTTPMethod, url: String, parameters: Dictionary<String, Any>?, encoding:ParameterEncoding, headers:HTTPHeaders, Completion:((_ data: JSON?, _ pagination:JSON? , _ error: String?, _ code:Int?) -> Void)?){
+        let _headers: HTTPHeaders = headers
         
-        Alamofire.request(url, method: requestType, parameters: parameters, encoding: JSONEncoding.default, headers: _headers).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(url, method: requestType, parameters: parameters, encoding: encoding, headers: _headers).responseJSON { (response:DataResponse<Any>) in
             switch(response.result) {
             case .success(let value):
                 guard let value = value as? [String: Any] else{
-                    Completion!(nil, "Data is wrong format, Please contact server side.", nil)
+                    Completion!(nil, nil,"Data is wrong format, Please contact server side.", nil)
                     return
                 }
                 if let status = value["status"] as? String{
                     if status == "success" {
-                        if let data = value["data"] as? [[String: Any]], let code = value["status_code"] as? Int{
+                        if let data = value["data"] as? [[String: Any]], let code = value["status_code"] as? Int, let pagination = value["paginator"] as? [String:Any] {
                             let dataJSON = JSON(data)
-                            Completion!(dataJSON, nil, code)
-                        }else{
-                            Completion!([["Success": "success"]],nil,nil)
+                            let pagination = JSON(pagination)
+                            Completion!(dataJSON, pagination,nil, code)
+                        } else if let data = value["data"] as? [[String: Any]], let code = value["status_code"] as? Int {
+                            let dataJSON = JSON(data)
+                            Completion!(dataJSON, nil, nil, code)
+                        } else {
+                            Completion!([["Success": "success"]], nil,nil,nil)
                         }
                     }else{
                         if let error = value["message"] as? String, let code = value["status_code"] as? Int {
-                            Completion!(nil,error,code)
+                            Completion!(nil, nil,error,code)
                         }
                     }
                 }else{
-                    Completion!(nil, "The Server is Unreachable, Please try again later.", nil)
+                    Completion!(nil, nil,"The Server is Unreachable, Please try again later.", nil)
                 }
                 break
                 
             case .failure(let error):
                 if(error._code == -1009) {
-                    Completion!(nil, "No internet connection", -1009)
+                    Completion!(nil, nil,"No internet connection", -1009)
                 } else {
-                    Completion!(nil, error.localizedDescription, nil)
+                    Completion!(nil, nil,error.localizedDescription, nil)
                 }
                 break
                 

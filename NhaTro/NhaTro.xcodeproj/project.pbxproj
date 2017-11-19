@@ -10,6 +10,8 @@
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
+		452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE131FC138DA00CD85FA /* Pagination.swift */; };
+		452AEE171FC13BD400CD85FA /* Motel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE161FC13BD400CD85FA /* Motel.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
 		453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 453C6A1E1F62D29300F856D8 /* GoogleService-Info.plist */; };
 		45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45429C891F8662DA0019493C /* InfoViewController.swift */; };
@@ -80,6 +82,8 @@
 		4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICBI.TTF; sourceTree = "<group>"; };
 		4519F98B1F5AB6590035AA85 /* gothici.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothici.ttf; sourceTree = "<group>"; };
 		451CB5671FBFEC570025EB44 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		452AEE131FC138DA00CD85FA /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		452AEE161FC13BD400CD85FA /* Motel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motel.swift; sourceTree = "<group>"; };
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		452E4DD51F4B16F200F27656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		452E4DE11F4B16F200F27656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -193,6 +197,22 @@
 			path = Reusable;
 			sourceTree = "<group>";
 		};
+		452AEE121FC1389F00CD85FA /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				452AEE131FC138DA00CD85FA /* Pagination.swift */,
+			);
+			path = Pagination;
+			sourceTree = "<group>";
+		};
+		452AEE151FC13BC800CD85FA /* Motel */ = {
+			isa = PBXGroup;
+			children = (
+				452AEE161FC13BD400CD85FA /* Motel.swift */,
+			);
+			path = Motel;
+			sourceTree = "<group>";
+		};
 		452E4DC91F4B16F100F27656 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +259,8 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				452AEE151FC13BC800CD85FA /* Motel */,
+				452AEE121FC1389F00CD85FA /* Pagination */,
 				45925C3A1FB800EE00A15AB5 /* JSONFormat */,
 				457D32D01F7BE01500C54E91 /* User */,
 				B77B75261F74106E00B1E888 /* GoogleMap */,
@@ -889,6 +911,7 @@
 				B7C364DC1F960294009DFF61 /* ImageCollectionViewCell.swift in Sources */,
 				B743F5001F74C27200122804 /* G8SliderStep.swift in Sources */,
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
+				452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
 				45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */,
 				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
@@ -926,6 +949,7 @@
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
 				B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */,
 				B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */,
+				452AEE171FC13BD400CD85FA /* Motel.swift in Sources */,
 				4551319F1F793D7000BD731A /* Params.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

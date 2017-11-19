@@ -102,8 +102,8 @@ extension PostViewController: TLPhotosPickerViewControllerDelegate {
     func dismissPhotoPicker(withTLPHAssets: [TLPHAsset]) {
         guard let imagePicker = withTLPHAssets.first else { return }
         guard let imageFullSize = imagePicker.fullResolutionImage else { return }
-        let imageData = UIImageJPEGRepresentation(imageFullSize, 0.1)
-        let img = UIImage(data: imageData!)
+        let imageData = imageFullSize.resizeToData()
+        let img = UIImage(data: imageData)
         var imgPhongTro = arrImage[row]
         if arrImage.count <= 4 && imgPhongTro == imgDefault {
             arrImage.append(imgDefault)

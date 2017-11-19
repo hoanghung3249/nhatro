@@ -67,5 +67,32 @@ class DataCenter {
         }) { (error) in
             print(error.localizedDescription)
         }
-    }    
+    }
+    
+    func callAPIGetListMotel(page:Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[Motel], _ pagination:Pagination?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _headers: HTTPHeaders = ["Accept": "application/json",
+                                     "Authorization": "Bearer \(userToken)"
+        ]
+        let param = ["country":3,
+                     "page":page
+        ] as [String:Any]
+        NetworkService.requestData(.get, url: Constant.APIKey.getListMotel, parameters: param, encoding: URLEncoding.default, headers: _headers) { (data, pagination,mess, code) in
+            guard let completion = completion else { return }
+            if mess == nil {
+                var arrMotel = [Motel]()
+                guard let dataJSON = data?.arrayValue, let pagination = pagination else { return }
+                let paging = Pagination(pagination)
+                for motelJSON in dataJSON {
+                    let motel = Motel(motelJSON)
+                    print(motel)
+                    arrMotel.append(motel)
+                }
+                completion(true, nil, arrMotel, paging)
+            } else {
+                guard let mess = mess else { return }
+                completion(false, mess, [], nil)
+            }
+        }
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 class HomePageViewController: UIViewController {
 
     @IBOutlet weak var cvwDetails: UICollectionView!
+    fileprivate var arrMotel = [Motel]()
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class HomePageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupLayout()
+        getListMotel(1)
         self.setupCollectionView()
     }
     
@@ -43,10 +45,28 @@ class HomePageViewController: UIViewController {
         cvwDetails.register(nib, forCellWithReuseIdentifier: "HomePageCell")
     }
     
+    fileprivate func getListMotel(_ page:Int) {
+        ProgressView.shared.show(view)
+        DataCenter.shared.callAPIGetListMotel(page: page) { [weak self] (success, mess, arrMotel, paging) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if success {
+                strongSelf.arrMotel = arrMotel
+                DispatchQueue.main.async {
+                    strongSelf.cvwDetails.reloadData()
+                }
+            } else {
+                guard let mess = mess else { return }
+                strongSelf.showAlert(with: mess)
+            }
+        }
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    // MARK: - Action buttons
     @IBAction func showMap(_ sender: UIButton) {
         let showMap = Storyboard.home.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationItem.title = ""
@@ -58,16 +78,14 @@ class HomePageViewController: UIViewController {
 //MARK:- CollectionView Datasource & Delegate
 extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return arrMotel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCollectionViewCell
+        let motel = arrMotel[indexPath.row]
+        cell.configHomeCell(motel)
         return cell
     }
     
