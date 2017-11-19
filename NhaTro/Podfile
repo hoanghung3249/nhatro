@@ -20,7 +20,6 @@ target 'NhaTro' do
     pod 'Kingfisher'
     pod 'NKVPhonePicker'
     pod 'GoogleSignIn'
-    pod "Texture"
     pod "TLPhotoPicker"
     pod 'GoogleMaps’
     pod 'GooglePlaces'

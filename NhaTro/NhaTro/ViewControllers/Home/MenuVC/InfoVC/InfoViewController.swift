@@ -11,6 +11,7 @@ import NKVPhonePicker
 import GooglePlaces
 import TLPhotoPicker
 import Kingfisher
+import Photos
 
 class InfoViewController: UIViewController {
     
