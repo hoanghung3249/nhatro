@@ -88,6 +88,7 @@ PODS:
     - GTMSessionFetcher/Core (= 1.1.12)
   - IQKeyboardManager (5.0.4)
   - Kingfisher (4.1.1)
+  - KRPullLoader (1.1.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -140,6 +141,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - IQKeyboardManager
   - Kingfisher
+  - KRPullLoader
   - NKVPhonePicker
   - NVActivityIndicatorView
   - SwiftyJSON
@@ -169,6 +171,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   IQKeyboardManager: 1df9c0f147af1681cfb2d9977bc30309d45a7e76
   Kingfisher: 6793a473357b5dbee42b0068ef203fe8325f259e
+  KRPullLoader: 8209e472b2f7f67b22e809f0b614ca1043a8239e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NKVPhonePicker: bde21135440ae62684528664d82bd51e1be69b13
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
@@ -180,6 +183,6 @@ SPEC CHECKSUMS:
   Texture: 12eb0807c117aaa21ef86f7f52dc61cc13e59739
   TLPhotoPicker: d850050494b9dcac0b585cf2d49ad2accf692d25
 
-PODFILE CHECKSUM: 06917b0764da08a785463754a1417217beaf2990
+PODFILE CHECKSUM: 349d02178973d0a17ca729e2882a3a6cae39f506
 
 COCOAPODS: 1.3.1
