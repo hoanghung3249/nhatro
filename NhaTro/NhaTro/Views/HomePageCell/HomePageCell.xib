@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,71 +25,69 @@
                 <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hohenzollern-bridge-2204867_640" translatesAutoresizingMaskIntoConstraints="NO" id="d6D-vB-t65">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="d6D-vB-t65">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51u-d9-Gw2">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhe-bT-4vc">
-                                <rect key="frame" x="13" y="38" width="40" height="18"/>
+                                <rect key="frame" x="13" y="39.5" width="40" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Ie2-Yb-65j"/>
                                     <constraint firstAttribute="height" constant="18" id="y1m-ax-5lh"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.200.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hx-DT-oUq">
-                                <rect key="frame" x="60" y="39" width="105" height="17"/>
+                                <rect key="frame" x="60" y="40.5" width="105" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="Ku4-On-GkF"/>
                                     <constraint firstAttribute="width" constant="105" id="ZFa-Y4-ylp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ionIosTelephoneIonicons" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-ui-hl1">
-                                <rect key="frame" x="197" y="40" width="16" height="15"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_black" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-ui-hl1">
+                                <rect key="frame" x="197" y="41.5" width="16" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="58W-dU-Qd8"/>
                                     <constraint firstAttribute="height" constant="15" id="rxe-C1-rFV"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02831234567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPq-6l-CuD">
-                                <rect key="frame" x="220" y="38" width="154" height="18"/>
+                                <rect key="frame" x="220" y="39.5" width="154" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Mbm-kb-kVf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Quang Trung, Gò Vấp, TP.HCM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvD-Tj-6gQ">
-                                <rect key="frame" x="13" y="17" width="361" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 Quang Trung, Gò Vấp, TP.HCM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvD-Tj-6gQ">
+                                <rect key="frame" x="13" y="17" width="348" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="19" id="gcH-lH-ppK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="gcH-lH-ppK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfC-M5-JVA">
-                                <rect key="frame" x="186" y="38" width="1" height="19"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="186" y="37.5" width="1" height="19"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="7Eb-5k-jwP"/>
                                     <constraint firstAttribute="width" constant="1" id="QC4-uf-l2g"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IvD-Tj-6gQ" firstAttribute="top" secondItem="51u-d9-Gw2" secondAttribute="top" constant="17" id="2Gx-dY-0tm"/>
                             <constraint firstItem="IPq-6l-CuD" firstAttribute="top" secondItem="IvD-Tj-6gQ" secondAttribute="bottom" constant="2" id="4NJ-U4-aZl"/>
-                            <constraint firstItem="OfC-M5-JVA" firstAttribute="top" secondItem="51u-d9-Gw2" secondAttribute="top" constant="38" id="EAN-Om-tMt"/>
                             <constraint firstItem="IPq-6l-CuD" firstAttribute="leading" secondItem="lSq-ui-hl1" secondAttribute="trailing" constant="7" id="EJn-0a-cRo"/>
                             <constraint firstItem="7hx-DT-oUq" firstAttribute="top" secondItem="IvD-Tj-6gQ" secondAttribute="bottom" constant="3" id="Je3-GM-ee6"/>
                             <constraint firstItem="7hx-DT-oUq" firstAttribute="leading" secondItem="mhe-bT-4vc" secondAttribute="trailing" constant="7" id="Pg6-mW-tzJ"/>
@@ -98,7 +97,8 @@
                             <constraint firstItem="lSq-ui-hl1" firstAttribute="top" secondItem="IvD-Tj-6gQ" secondAttribute="bottom" constant="4" id="l5W-WE-C7p"/>
                             <constraint firstItem="IvD-Tj-6gQ" firstAttribute="leading" secondItem="51u-d9-Gw2" secondAttribute="leading" constant="13" id="p9z-rc-sY9"/>
                             <constraint firstAttribute="trailing" secondItem="IPq-6l-CuD" secondAttribute="trailing" id="pyb-Yi-t0B"/>
-                            <constraint firstAttribute="trailing" secondItem="IvD-Tj-6gQ" secondAttribute="trailing" id="wtH-rR-PT5"/>
+                            <constraint firstItem="OfC-M5-JVA" firstAttribute="top" secondItem="lSq-ui-hl1" secondAttribute="top" multiplier="0.9" id="rck-mx-578"/>
+                            <constraint firstAttribute="trailing" secondItem="IvD-Tj-6gQ" secondAttribute="trailing" constant="13" id="wtH-rR-PT5"/>
                             <constraint firstItem="lSq-ui-hl1" firstAttribute="leading" secondItem="OfC-M5-JVA" secondAttribute="trailing" constant="10" id="zYh-sC-kzJ"/>
                         </constraints>
                     </view>
@@ -125,7 +125,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="hohenzollern-bridge-2204867_640" width="640" height="425"/>
-        <image name="ionIosTelephoneIonicons" width="11" height="11"/>
+        <image name="phone_black" width="11" height="11"/>
+        <image name="placeholder" width="363" height="181"/>
     </resources>
 </document>

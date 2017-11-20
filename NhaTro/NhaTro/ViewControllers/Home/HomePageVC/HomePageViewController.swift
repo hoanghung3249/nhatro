@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import KRPullLoader
 
 class HomePageViewController: UIViewController {
 
     @IBOutlet weak var cvwDetails: UICollectionView!
     fileprivate var arrMotel = [Motel]()
+    fileprivate var current_Page:Int = 1
+    fileprivate var total_pages:Int = 0
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -21,7 +24,7 @@ class HomePageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupLayout()
-        getListMotel(1)
+        getListMotel(current_Page)
         self.setupCollectionView()
     }
     
@@ -51,6 +54,8 @@ class HomePageViewController: UIViewController {
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()
             if success {
+                guard let paging = paging else { return }
+                strongSelf.total_pages = paging.total_pages
                 strongSelf.arrMotel = arrMotel
                 DispatchQueue.main.async {
                     strongSelf.cvwDetails.reloadData()
@@ -93,7 +98,7 @@ extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSo
         return CGSize(width: self.view.frame.size.width, height: 181)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detail = storyboard?.instantiateViewController(withIdentifier: "DetailHostelViewController") as! DetailHostelViewController
-        self.present(detail, animated: true, completion: nil)
+//        let detail = storyboard?.instantiateViewController(withIdentifier: "DetailHostelViewController") as! DetailHostelViewController
+//        self.present(detail, animated: true, completion: nil)
     }
 }

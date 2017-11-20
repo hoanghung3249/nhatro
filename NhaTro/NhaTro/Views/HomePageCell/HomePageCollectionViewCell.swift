@@ -26,6 +26,8 @@ class HomePageCollectionViewCell: UICollectionViewCell {
             let imgThumb = "\(Constant.APIKey.baseUrl)\(img.sub_image_thumb)"
             let url = URL(string: imgThumb)
             imgHinhCell.kf.setImage(with: url)
+        } else {
+            imgHinhCell.image = UIImage(named: "placeholder")
         }
     }
 }
