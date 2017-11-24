@@ -16,6 +16,9 @@ class HomePageViewController: UIViewController {
     fileprivate var current_Page:Int = 1
     fileprivate var total_pages:Int = 0
     
+    private let loadMoreView = KRPullLoadView()
+    private let refreshView = KRPullLoadView()
+    
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,14 @@ class HomePageViewController: UIViewController {
         super.viewWillAppear(animated)
         setupLayout()
         getListMotel(current_Page)
+        arrMotel.removeAll()
         self.setupCollectionView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cvwDetails.removePullLoadableView(loadMoreView)
+        cvwDetails.removePullLoadableView(refreshView)
     }
     
     //MARK:- Support functions
@@ -46,6 +56,10 @@ class HomePageViewController: UIViewController {
         //Register cell for collectionView
         let nib = UINib(nibName: "HomePageCell", bundle: nil)
         cvwDetails.register(nib, forCellWithReuseIdentifier: "HomePageCell")
+        loadMoreView.delegate = self
+        refreshView.delegate = self
+        cvwDetails.addPullLoadableView(loadMoreView, type: .loadMore)
+        cvwDetails.addPullLoadableView(refreshView, type: .refresh)
     }
     
     fileprivate func getListMotel(_ page:Int) {
@@ -56,7 +70,9 @@ class HomePageViewController: UIViewController {
             if success {
                 guard let paging = paging else { return }
                 strongSelf.total_pages = paging.total_pages
-                strongSelf.arrMotel = arrMotel
+                for motel in arrMotel {
+                    strongSelf.arrMotel.append(motel)
+                }
                 DispatchQueue.main.async {
                     strongSelf.cvwDetails.reloadData()
                 }
@@ -100,5 +116,46 @@ extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let detail = storyboard?.instantiateViewController(withIdentifier: "DetailHostelViewController") as! DetailHostelViewController
 //        self.present(detail, animated: true, completion: nil)
+    }
+}
+
+// MARK: - KRPullLoader Delegate
+extension HomePageViewController: KRPullLoadViewDelegate {
+    func pullLoadView(_ pullLoadView: KRPullLoadView, didChangeState state: KRPullLoaderState, viewType type: KRPullLoaderType) {
+        weak var `self` = self
+        if type == .loadMore {
+            switch state {
+            case let .loading(completionHandler):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    guard let strongSelf = self else { return }
+                    completionHandler()
+                    strongSelf.loadMore()
+                }
+            default: break
+            }
+        } else {
+            switch state {
+            case let .loading(completionHandler):
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    guard let strongSelf = self else { return }
+                    completionHandler()
+                    strongSelf.refreshPage()
+                })
+            default: break
+            }
+        }
+    }
+    
+    private func loadMore() {
+        if current_Page < total_pages {
+            current_Page += 1
+            getListMotel(current_Page)
+        }
+    }
+    
+    private func refreshPage() {
+        current_Page = 1
+        arrMotel.removeAll()
+        getListMotel(current_Page)
     }
 }
