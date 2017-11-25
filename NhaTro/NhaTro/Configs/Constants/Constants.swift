@@ -47,5 +47,5 @@ struct Storyboard {
     
     static let main = UIStoryboard(name: "Main", bundle: nil)
     static let home = UIStoryboard(name: "Home", bundle: nil)
-    
+    static let detail = UIStoryboard(name: "DetailHostel", bundle: nil)
 }
