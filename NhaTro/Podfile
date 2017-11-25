@@ -24,6 +24,7 @@ target 'NhaTro' do
     pod 'GoogleMaps’
     pod 'GooglePlaces'
     pod "KRPullLoader"
+	pod 'Viewer'
 
 end
 post_install do |installer|
