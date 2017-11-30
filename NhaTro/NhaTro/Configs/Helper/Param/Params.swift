@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 struct Params {
     
@@ -84,6 +85,10 @@ struct Params {
             "longitude":userLocation.longitude
         ]
         return(param, nil)
+    }
+    
+    static func createParamPostInfo(_ arrImage:[UIImage], area:Double, address:String, unitPrice:Double, phone:String, description:String, location:CLLocationCoordinate2D) {
+        
     }
     
 }

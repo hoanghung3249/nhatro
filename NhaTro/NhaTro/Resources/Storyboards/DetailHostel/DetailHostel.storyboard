@@ -427,6 +427,7 @@
                                             <outlet property="lblPrice" destination="0kf-RV-ZXv" id="6f7-2B-3rE"/>
                                             <outlet property="txvDes" destination="dBm-VR-3Ar" id="ZQc-je-IFg"/>
                                             <outlet property="vwBoundsTextView" destination="K0w-lL-k74" id="4m2-ee-Hh4"/>
+                                            <outlet property="vwContent" destination="VKl-UG-Gnb" id="Mdq-Uw-RkA"/>
                                             <outlet property="vwInfo" destination="315-WL-Ug7" id="JEf-Vt-29P"/>
                                         </connections>
                                     </tableViewCell>

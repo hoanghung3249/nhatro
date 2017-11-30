@@ -9,6 +9,7 @@
 import UIKit
 import TLPhotoPicker
 import Photos
+import GooglePlaces
 
 class PostViewController: UIViewController {
    
@@ -22,6 +23,10 @@ class PostViewController: UIViewController {
     fileprivate let imgDefault = UIImage(named: "add_image")!
     fileprivate var arrImage:[UIImage] = [UIImage]()
     fileprivate var row:Int = 0
+    fileprivate var hostelLocation:CLLocationCoordinate2D?
+    fileprivate var autocompleteController:GMSAutocompleteViewController?
+    let geocoder = CLGeocoder()
+    var placemark: CLPlacemark?
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -49,6 +54,7 @@ class PostViewController: UIViewController {
     
     private func setupDelegate() {
         txtView.delegate = self
+        txtLocation.delegate = self
     }
     
     fileprivate func selectPhoto(_ row:Int) {
@@ -82,7 +88,7 @@ extension PostViewController:UICollectionViewDelegate,UICollectionViewDataSource
 }
 
 // MARK: - TextView Delegate
-extension PostViewController:UITextViewDelegate{
+extension PostViewController: UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         if txtView.text == "Có chỗ để xe, có thang máy,…"{
             txtView.text = ""
@@ -123,5 +129,58 @@ extension PostViewController: TLPhotosPickerViewControllerDelegate {
     func dismissComplete() {
     }
     func didExceedMaximumNumberOfSelection(picker: TLPhotosPickerViewController) {
+    }
+}
+
+// MARK: - Textfield Delegate
+extension PostViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        view.endEditing(true)
+        autocompleteController = GMSAutocompleteViewController()
+        autocompleteController?.delegate = self
+        DispatchQueue.main.async {
+            self.present(self.autocompleteController!, animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - AutocompleteController Delegate
+extension PostViewController: GMSAutocompleteViewControllerDelegate {
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        hostelLocation = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        if let address = place.formattedAddress {
+            txtLocation.text = address
+        }
+        let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            guard let lastPlaceMark = placemarks?.last else { return }
+            print(lastPlaceMark.postalCode)
+            print(lastPlaceMark.isoCountryCode)
+        }
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
