@@ -9,12 +9,16 @@
 import UIKit
 
 class ImageDetailCell: UITableViewCell {
+    
     @IBOutlet weak var cvwImageDeatil: UICollectionView!
+    var completionHandler:((_ indexPath:IndexPath)->())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionView()
         // Initialization code
     }
+    
      private func setupCollectionView(){
         cvwImageDeatil.delegate = self
         cvwImageDeatil.dataSource = self
@@ -29,12 +33,12 @@ class ImageDetailCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
-extension ImageDetailCell:UICollectionViewDelegate,UICollectionViewDataSource{
+
+// MARK: - CollectionView Datasouce & Delegate
+extension ImageDetailCell:UICollectionViewDelegate,UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -48,7 +52,14 @@ extension ImageDetailCell:UICollectionViewDelegate,UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageDetailCollectionViewCell
-        
+  
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let actionClick = self.completionHandler else { return }
+        actionClick(indexPath)
+        
+    }
+    
 }
+

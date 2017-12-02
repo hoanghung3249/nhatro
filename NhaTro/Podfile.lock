@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (4.5.1)
+  - AXPhotoViewer (1.3.6):
+    - AXPhotoViewer/Lite (= 1.3.6)
+  - AXPhotoViewer/Core (1.3.6):
+    - AXStateButton (>= 1.1.3)
+    - FLAnimatedImage (>= 1.0.0)
+  - AXPhotoViewer/Lite (1.3.6):
+    - AXPhotoViewer/Core
+  - AXStateButton (1.1.4)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -55,6 +63,7 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - FLAnimatedImage (1.0.12)
   - GoogleMaps (2.5.0):
     - GoogleMaps/Maps (= 2.5.0)
   - GoogleMaps/Base (2.5.0)
@@ -101,10 +110,10 @@ PODS:
   - Protobuf (3.4.0)
   - SwiftyJSON (3.1.4)
   - TLPhotoPicker (1.3.2)
-  - Viewer (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - AXPhotoViewer
   - Bolts
   - FacebookCore (~> 0.2)
   - FacebookLogin (~> 0.2)
@@ -125,10 +134,11 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - SwiftyJSON
   - TLPhotoPicker
-  - Viewer
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AXPhotoViewer: f1edb13f8116f57e67c5f2a6484acd9f8a54d263
+  AXStateButton: 6c515a433e37551505046429b5be04c12daa8c07
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
@@ -142,6 +152,7 @@ SPEC CHECKSUMS:
   FirebaseCrash: cded0fc566c03651aea606a101bc156085f333ca
   FirebaseInstanceID: f2b688c66b972f30d7fa9f5f9f91455454a03b47
   FirebaseMessaging: 75d83375b0f7a9911568d7bdd1a1a8261cbcbdef
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleSignIn: 8c599fc10d25b2af86a3f82fd9631e863f2b1400
@@ -157,8 +168,7 @@ SPEC CHECKSUMS:
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TLPhotoPicker: d850050494b9dcac0b585cf2d49ad2accf692d25
-  Viewer: 1820d06cfe48054775a3e979567208dc37eb270d
 
-PODFILE CHECKSUM: 130426dc04b4a6450c6700cb7ff99e8a4a55faaa
+PODFILE CHECKSUM: 7da7f48c875170a0dadaeb58e437e2025629d0fe
 
 COCOAPODS: 1.3.1

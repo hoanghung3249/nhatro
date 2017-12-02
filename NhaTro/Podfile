@@ -23,8 +23,8 @@ target 'NhaTro' do
     pod "TLPhotoPicker"
     pod 'GoogleMaps’
     pod 'GooglePlaces'
-    pod "KRPullLoader"
-	pod 'Viewer'
+    pod "KRPullLoader"	
+    pod 'AXPhotoViewer'
 
 end
 post_install do |installer|

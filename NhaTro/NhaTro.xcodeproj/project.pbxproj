@@ -49,6 +49,8 @@
 		45FF152C1F6E408300473B18 /* gothici.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F98B1F5AB6590035AA85 /* gothici.ttf */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
 		B7166D8A1FC31D9600DD8F78 /* DetailNearHostelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7166D891FC31D9600DD8F78 /* DetailNearHostelCell.swift */; };
+		B7166D8B1FC31EF900DD8F78 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7166D881FC31CEA00DD8F78 /* HomePageCell.xib */; };
+		B7166D8E1FCC439400DD8F78 /* ImageHostelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7166D8D1FCC439400DD8F78 /* ImageHostelViewController.swift */; };
 		B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741D6061F6B8D0300C11EE7 /* Home.storyboard */; };
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
 		B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */; };
@@ -123,6 +125,7 @@
 		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
 		B7166D891FC31D9600DD8F78 /* DetailNearHostelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNearHostelCell.swift; sourceTree = "<group>"; };
+		B7166D8D1FCC439400DD8F78 /* ImageHostelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHostelViewController.swift; sourceTree = "<group>"; };
 		B741D6061F6B8D0300C11EE7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		B741D6141F6BC38000C11EE7 /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -582,6 +585,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B7166D8C1FCC437600DD8F78 /* ImageHostelVC */ = {
+			isa = PBXGroup;
+			children = (
+				B7166D8D1FCC439400DD8F78 /* ImageHostelViewController.swift */,
+			);
+			path = ImageHostelVC;
+			sourceTree = "<group>";
+		};
 		B741D6051F6B8CD800C11EE7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +604,7 @@
 		B741D6081F6B8DBA00C11EE7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B7166D8C1FCC437600DD8F78 /* ImageHostelVC */,
 				B77BB0021F7764DA00A24DBE /* DetailHostelVC */,
 				B77B75231F73E5C700B1E888 /* MapVC */,
 				B741D60C1F6B8F9200C11EE7 /* HomePageVC */,
@@ -873,11 +885,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AXPhotoViewer/AXPhotoViewer.framework",
+				"${BUILT_PRODUCTS_DIR}/AXStateButton/AXStateButton.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
@@ -892,16 +907,18 @@
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TLPhotoPicker/TLPhotoPicker.framework",
-				"${BUILT_PRODUCTS_DIR}/Viewer/Viewer.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXPhotoViewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AXStateButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
@@ -916,7 +933,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLPhotoPicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Viewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -960,6 +976,7 @@
 				458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */,
 				B7BD02CA1FC315EF003BB71E /* ImageDetailCollectionViewCell.swift in Sources */,
 				B77BB0041F77650700A24DBE /* DetailHostelViewController.swift in Sources */,
+				B7166D8E1FCC439400DD8F78 /* ImageHostelViewController.swift in Sources */,
 				45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */,
 				B77BB0091F77FF8700A24DBE /* SignInViewController.swift in Sources */,
 				4550B5901F87BBE200E0F43B /* ChangePassViewController.swift in Sources */,
