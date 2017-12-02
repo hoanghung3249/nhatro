@@ -8,8 +8,15 @@
 
 import UIKit
 
+
+
 class ImageDetailCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var imgDetail: UIImageView!
 
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
 }
