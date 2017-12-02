@@ -25,13 +25,7 @@ class DetailHostelViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationItem.title = "Thông Tin"
-        self.tabBarController?.tabBar.isHidden = true
         setupTableView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         setupUI()
     }
     
@@ -45,6 +39,8 @@ class DetailHostelViewController: UIViewController {
 
     private func setupNavigation() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: self, action: #selector(DetailHostelViewController.dismissView))
+        self.navigationItem.title = "Thông Tin"
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
@@ -73,7 +69,6 @@ class DetailHostelViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     strongSelf.isReload = true
-                    strongSelf.view.layoutIfNeeded()
                     strongSelf.tbvDetail.reloadData()
                 }
             }
