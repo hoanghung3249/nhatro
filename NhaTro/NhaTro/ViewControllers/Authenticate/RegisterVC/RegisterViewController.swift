@@ -23,11 +23,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var segmentedControl: XMSegmentedControl!
     
     @IBOutlet weak var lctTopBtnBack: NSLayoutConstraint!
-    
-    
-    
     let parser:ParseDataSignIn = ParseDataSignIn()
-    
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -126,39 +122,32 @@ extension RegisterViewController {
      "password": "123456"
      }
      */
-    fileprivate func createParamRegister(_ email:String,_ pass:String,_ firstName:String,_ lastName:String,_ phone:String ) -> [String:AnyObject] {
+    fileprivate func createParamRegister(_ email:String,_ pass:String,_ firstName:String,_ lastName:String,_ phone:String ) -> [String:Any] {
         
-        var params:[String:AnyObject] = Dictionary()
-        params.updateValue(email as AnyObject, forKey: "email")
-        params.updateValue(pass as AnyObject, forKey: "password")
-        params.updateValue(firstName as AnyObject, forKey: "first_name")
-        params.updateValue(lastName as AnyObject, forKey: "last_name")
-        params.updateValue(phone as AnyObject, forKey: "phone")
+        var params:[String:Any] = Dictionary()
+        params.updateValue(email as Any, forKey: "email")
+        params.updateValue(pass as Any, forKey: "password")
+        params.updateValue(firstName as Any, forKey: "first_name")
+        params.updateValue(lastName as Any, forKey: "last_name")
+        params.updateValue(phone as Any, forKey: "phone")
         return params
     }
     
     
     //Gọi API sau khi có param
-    fileprivate func register(_ params:[String:AnyObject]) {
+    fileprivate func register(_ params:[String:Any]) {
         ProgressView.shared.show(self.view)
-        NetworkService.requestWith(.post, url: Constant.APIKey.register, parameters: params) { [weak self] (data, error, code) in
+        DataCenter.shared.callAPILogin(with: params, url: Constant.APIKey.register) { [weak self] (success, mess) in
             guard let strongSelf = self else { return }
-            ProgressView.shared.hide()
-            if error == nil {
-                if let data = data {
-                    let dataJSON = JSON(data)
-                    strongSelf.parser.fetchDataSignIn(data: dataJSON)
-                }
+            if success {
+                Utilities.shared.delayWithSeconds(0.5, completion: {
+                    let tabBarVC = TabBarViewController()
+                    strongSelf.present(tabBarVC, animated: true, completion: nil)
+                })
             } else {
-                strongSelf.showAlert(with: error!)
+                guard let error = mess else { return }
+                strongSelf.showAlert(with: error)
             }
-            
         }
     }
-    
 }
-
-
-
-
-

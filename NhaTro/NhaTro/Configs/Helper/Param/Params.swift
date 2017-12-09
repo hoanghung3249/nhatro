@@ -12,8 +12,8 @@ import UIKit
 
 struct Params {
     
-    static func createParamLogin(_ email:String,_ pass:String) -> ([String:AnyObject]?,String?) {
-        var params:Dictionary<String,AnyObject> = Dictionary()
+    static func createParamLogin(_ email:String,_ pass:String) -> ([String:Any]?,String?) {
+        var params:Dictionary<String,Any> = Dictionary()
         if email.isEmptyOrWhitespace() || pass.isEmptyOrWhitespace() {
             
             return (nil, "Please input all fields requirement!")
@@ -22,8 +22,8 @@ struct Params {
             
             return (nil, "The email format is invalid.")
         }
-        params.updateValue(email as AnyObject, forKey: "email")
-        params.updateValue(pass as AnyObject, forKey: "password")
+        params.updateValue(email as Any, forKey: "email")
+        params.updateValue(pass as Any, forKey: "password")
         
         return (params,nil)
     }

@@ -129,8 +129,8 @@ class SignInViewController: UIViewController {
             self.showAlert(with: "The email format is invalid.")
             return
         }
-        var param:[String:AnyObject] = Dictionary()
-        param.updateValue(email as AnyObject, forKey: "email")
+        var param:[String:Any] = Dictionary()
+        param.updateValue(email as Any, forKey: "email")
         self.callAPIForgotPass(param)
     }
     
@@ -152,48 +152,38 @@ class SignInViewController: UIViewController {
 //MARK:- Support API
 extension SignInViewController {
     
-    fileprivate func callAPILogin(_ params:[String:AnyObject]) {
+    fileprivate func callAPILogin(_ params:[String:Any]) {
         ProgressView.shared.show(self.view)
-        NetworkService.requestWith(.post, url: Constant.APIKey.login, parameters: params) { [weak self] (data, error, code) in
+        DataCenter.shared.callAPILogin(with: params, url: Constant.APIKey.login) { [weak self] (success, mess) in
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()
-            if error == nil {
-                if let data = data {
-                    let dataJSON = JSON(data)
-                    print(dataJSON)
-                    strongSelf.parser.fetchDataSignIn(data: dataJSON)
-                    Utilities.shared.delayWithSeconds(0.5, completion: {
-                        let tabVC = TabBarViewController()
-                        strongSelf.present(tabVC, animated: true, completion: nil)
-                    })
-                }
+            if success {
+                Utilities.shared.delayWithSeconds(0.5, completion: {
+                    let tabBarVC = TabBarViewController()
+                    strongSelf.present(tabBarVC, animated: true, completion: nil)
+                })
             } else {
-                strongSelf.showAlert(with: error!)
+                guard let error = mess else { return }
+                strongSelf.showAlert(with: error)
             }
         }
     }
     
-    fileprivate func callAPIForgotPass(_ param:[String:AnyObject]) {
+    fileprivate func callAPIForgotPass(_ param:[String:Any]) {
         ProgressView.shared.show(self.view)
-        NetworkService.requestWith(.post, url: Constant.APIKey.forgotPass, parameters: param) { [weak self] (data, error, code) in
+        DataCenter.shared.callAPIForgotPass(with: param) { [weak self] (success, mess) in
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()
-            if error == nil {
+            if success {
                 Utilities.shared.showAlerControler(title: "SUCCESS", message: "Please checking your email account!", confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
                     if bool {
                         strongSelf.dismissView()
                     }
                 })
             } else {
-                strongSelf.showAlert(with: error!)
+                guard let error = mess else { return }
+                strongSelf.showAlert(with: error)
             }
         }
-        
     }
-    
-    
 }
-
-
-
-

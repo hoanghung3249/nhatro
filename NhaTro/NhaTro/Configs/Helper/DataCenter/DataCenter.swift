@@ -14,6 +14,52 @@ class DataCenter {
     
     static let shared = DataCenter()
     
+    private func createHeader(_ userToken: String) -> HTTPHeaders {
+        if userToken.isEmpty {
+            let _header: HTTPHeaders = ["Accept": "application/json",
+                                        "MT-API-KEY": "\(Constant.APIKey.secretKey)"
+                                        ]
+            return _header
+        } else {
+            let _header: HTTPHeaders = ["Accept": "application/json",
+                                        "Authorization": "Bearer \(userToken)",
+                                        "MT-API-KEY": "\(Constant.APIKey.secretKey)"
+                                        ]
+            return _header
+        }
+    }
+    
+    func callAPILogin(with params: [String:Any], url: String , _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        let _header = createHeader("")
+        NetworkService.requestWith(.post, url: url, parameters: params, header: _header) { (data, error, code) in
+            guard let completion = completion else { return }
+            let parser:ParseDataSignIn = ParseDataSignIn()
+            if error == nil {
+                if let data = data {
+                    let dataJSON = JSON(data)
+                    print(dataJSON)
+                    parser.fetchDataSignIn(data: dataJSON)
+                    completion(true, nil)
+                }
+            } else {
+                completion(false, error!)
+            }
+        }
+    }
+    
+    func callAPIForgotPass(with params: [String:Any], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        NetworkService.requestWith(.post, url: Constant.APIKey.forgotPass, parameters: params, header: _header) { (data, error, code) in
+            guard let completion = completion else { return }
+            if error == nil {
+                completion(true, nil)
+            } else {
+                completion(false, error!)
+            }
+        }
+    }
+    
     func callAPIUpdateRole(_ token:String, _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         NetworkService.requestWithHeader(.get, token, url: Constant.APIKey.updateRole, parameters: nil) { (data, mess, code) in
             guard let completion = completion else { return }
@@ -49,9 +95,7 @@ class DataCenter {
     
     func callAPIEditProfile(_ param:[String:Any], _ imageName:String, _ imageProfile:[UIImage], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         guard let userToken = USER?.token else { return }
-        let _headers: HTTPHeaders = ["Accept": "application/json",
-                                     "Authorization": "Bearer \(userToken)"
-        ]
+        let _headers = createHeader(userToken)
         NetworkService.callApiMultiPart(url: Constant.APIKey.updateProfile, withNames: [imageName], method: .post, images: imageProfile, parameters: param, headers: _headers, completion: { (data) in
             guard let completion = completion else { return }
             let jsonFormat = JSONFormat(data)
@@ -71,9 +115,7 @@ class DataCenter {
     
     func callAPIGetListMotel(page:Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[Motel], _ pagination:Pagination?) -> Void)?) {
         guard let userToken = USER?.token else { return }
-        let _headers: HTTPHeaders = ["Accept": "application/json",
-                                     "Authorization": "Bearer \(userToken)"
-        ]
+        let _headers = createHeader(userToken)
         let param = ["country":3,
                      "page":page
         ] as [String:Any]

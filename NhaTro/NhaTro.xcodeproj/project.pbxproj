@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4501E7711FCC4855008B78AC /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4501E7701FCC442C008B78AC /* HomePageCell.xib */; };
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
+		450C38211FDB88E4006792E3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C38201FDB88E4006792E3 /* NetworkReachability.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
 		452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE131FC138DA00CD85FA /* Pagination.swift */; };
@@ -49,7 +50,6 @@
 		45FF152C1F6E408300473B18 /* gothici.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F98B1F5AB6590035AA85 /* gothici.ttf */; };
 		8A48120917D31C8DDEF21295 /* Pods_NhaTro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */; };
 		B7166D8A1FC31D9600DD8F78 /* DetailNearHostelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7166D891FC31D9600DD8F78 /* DetailNearHostelCell.swift */; };
-		B7166D8B1FC31EF900DD8F78 /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7166D881FC31CEA00DD8F78 /* HomePageCell.xib */; };
 		B7166D8E1FCC439400DD8F78 /* ImageHostelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7166D8D1FCC439400DD8F78 /* ImageHostelViewController.swift */; };
 		B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B741D6061F6B8D0300C11EE7 /* Home.storyboard */; };
 		B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B741D60D1F6B8FAE00C11EE7 /* HomePageViewController.swift */; };
@@ -81,6 +81,7 @@
 		40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NhaTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4501E7701FCC442C008B78AC /* HomePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
 		45039C341F5B9C35001DD70A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		450C38201FDB88E4006792E3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
 		4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
 		4519F9871F5AB6590035AA85 /* GOTHIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHIC.TTF; sourceTree = "<group>"; };
@@ -177,6 +178,14 @@
 				40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		450C381F1FDB88BE006792E3 /* NetworkReachability */ = {
+			isa = PBXGroup;
+			children = (
+				450C38201FDB88E4006792E3 /* NetworkReachability.swift */,
+			);
+			path = NetworkReachability;
 			sourceTree = "<group>";
 		};
 		4519F9821F5AB0C60035AA85 /* XMSegmentedControl */ = {
@@ -466,6 +475,7 @@
 		45EF0B0F1F507376005791E4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				450C381F1FDB88BE006792E3 /* NetworkReachability */,
 				45486A2E1FAEBD64001E68F3 /* DataCenter */,
 				45486A321FAEC3BC001E68F3 /* ProgressView */,
 				45486A311FAEC3B0001E68F3 /* Param */,
@@ -988,6 +998,7 @@
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
+				450C38211FDB88E4006792E3 /* NetworkReachability.swift in Sources */,
 				B7166D8A1FC31D9600DD8F78 /* DetailNearHostelCell.swift in Sources */,
 				B77B75281F74109400B1E888 /* GoogleMap.swift in Sources */,
 				45486A301FAEBDFA001E68F3 /* DataCenter.swift in Sources */,
