@@ -60,8 +60,10 @@ class DataCenter {
         }
     }
     
-    func callAPIUpdateRole(_ token:String, _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
-        NetworkService.requestWithHeader(.get, token, url: Constant.APIKey.updateRole, parameters: nil) { (data, mess, code) in
+    func callAPIUpdateRole(_ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        NetworkService.requestWithHeader(.get, url: Constant.APIKey.updateRole, parameters: nil, header: _header) { (data, mess, code) in
             guard let completion = completion else { return }
             guard let code = code else { return }
             if code == StatusCode.success {
@@ -73,8 +75,10 @@ class DataCenter {
         }
     }
     
-    func callAPILogOut(_ token:String,  _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
-        NetworkService.requestWithHeader(.get, token, url: Constant.APIKey.logOut, parameters: nil) { (data, error, code) in
+    func callAPILogOut(_ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        NetworkService.requestWithHeader(.get, url: Constant.APIKey.logOut, parameters: nil, header: _header) { (data, error, code) in
             guard let completion = completion else { return }
             if error != nil {
                 if let code = code {
@@ -91,6 +95,21 @@ class DataCenter {
                 }
             }
         }
+    }
+    
+    func callAPIChangePassword(_ params: [String:Any], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        NetworkService.requestWithHeader(.post, url: Constant.APIKey.changePass, parameters: params, header: _header, Completion: { (data, error, code) in
+            guard let completion = completion else { return }
+            if let code = code {
+                if code == StatusCode.success {
+                    completion(true, nil)
+                } else {
+                    completion(false, error!)
+                }
+            }
+        })
     }
     
     func callAPIEditProfile(_ param:[String:Any], _ imageName:String, _ imageProfile:[UIImage], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {

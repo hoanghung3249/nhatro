@@ -103,12 +103,9 @@ struct NetworkService {
     }
     
     
-    static func requestWithHeader(_ requestType: Alamofire.HTTPMethod,_ token:String ,url: String, parameters: Dictionary<String, Any>?, Completion:((_ data: JSON?, _ error: String?, _ code:Int?) -> Void)?){
-        let _headers: HTTPHeaders = ["Accept": "application/json",
-                                     "Authorization": "Bearer \(token)"
-        ]
+    static func requestWithHeader(_ requestType: Alamofire.HTTPMethod, url: String, parameters: Dictionary<String, Any>?, header: HTTPHeaders, Completion:((_ data: JSON?, _ error: String?, _ code:Int?) -> Void)?){
         
-        Alamofire.request(url, method: requestType, parameters: parameters, encoding: JSONEncoding.default, headers: _headers).responseJSON { (response:DataResponse<Any>) in
+        Alamofire.request(url, method: requestType, parameters: parameters, encoding: JSONEncoding.default, headers: header).responseJSON { (response:DataResponse<Any>) in
             switch(response.result) {
             case .success(let value):
                 guard let value = value as? [String: Any] else{

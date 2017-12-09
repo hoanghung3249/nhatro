@@ -57,28 +57,20 @@ extension ChangePassViewController {
     
     fileprivate func callAPIChangePass(_ params:[String:AnyObject]) {
         ProgressView.shared.show((self.parent?.view)!)
-        
-        if let userData = USER {
-            NetworkService.requestWithHeader(.post, userData.token, url: Constant.APIKey.changePass, parameters: params, Completion: { [weak self] (data, error, code) in
-                guard let strongSelf = self else { return }
-                ProgressView.shared.hide()
-                if let code = code {
-                    if code == StatusCode.success {
-                        Utilities.shared.showAlerControler(title: "Success", message: error!, confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
-                            if bool {
-                                strongSelf.navigationController?.popViewController(animated: true)
-                            }
-                        })
-                    } else {
-                        strongSelf.showAlert(with: error!)
+        DataCenter.shared.callAPIChangePassword(params) { [weak self] (success, mess) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if success {
+                Utilities.shared.showAlerControler(title: "Success", message: mess!, confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
+                    if bool {
+                        strongSelf.navigationController?.popViewController(animated: true)
                     }
-                }
-            })
+                })
+            } else {
+                guard let error = mess else { return }
+                strongSelf.showAlert(with: error)
+            }
         }
         
     }
-    
-    
 }
-
-

@@ -146,13 +146,13 @@ extension InfoViewController: XMSegmentedControlDelegate {
         print("SegmentedControl Selected Segment: \(selectedSegment)")
         guard let userData = USER else { return }
         if selectedSegment == 1 && userData.active == 0 {
-            callAPIUpdateRole(userData)
+            callAPIUpdateRole()
         }
     }
     
-    private func callAPIUpdateRole(_ userData:User) {
+    private func callAPIUpdateRole() {
         ProgressView.shared.show((self.parent?.view)!)
-        DataCenter.shared.callAPIUpdateRole(userData.token, { [weak self] (success, mess) in
+        DataCenter.shared.callAPIUpdateRole { [weak self] (success, mess) in
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()
             if success {
@@ -162,7 +162,7 @@ extension InfoViewController: XMSegmentedControlDelegate {
                 strongSelf.segmentedControl.selectedSegment = 0
                 strongSelf.showAlert(with: err)
             }
-        })
+        }
     }
 }
 

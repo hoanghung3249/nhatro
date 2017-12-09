@@ -96,9 +96,8 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
 extension MenuViewController {
     
     fileprivate func callAPILogOut() {
-        guard let user = USER else { return }
         ProgressView.shared.show((self.parent?.view)!)
-        DataCenter.shared.callAPILogOut(user.token) { [weak self] (success, err) in
+        DataCenter.shared.callAPILogOut { [weak self] (success, err) in
             guard let `self` = self else { return }
             ProgressView.shared.hide()
             if success {
