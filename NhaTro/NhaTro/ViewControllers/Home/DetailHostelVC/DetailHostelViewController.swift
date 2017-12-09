@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AXPhotoViewer
 
 class DetailHostelViewController: UIViewController {
     
@@ -16,15 +17,17 @@ class DetailHostelViewController: UIViewController {
     fileprivate var detailTextViewHeight:CGFloat = 0.0
     fileprivate var isReload = false
     
+    let arrImg = [Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil),
+                  Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil),
+                  Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil),
+                  Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil)
+    ]
+    
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = false
         setupNavigation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         setupTableView()
         setupUI()
     }
@@ -99,6 +102,10 @@ extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
             return detailCell
         case 2:
             let imageDetailCell = tableView.dequeueReusableCell(ofType: ImageDetailCell.self, at: indexPath)
+            imageDetailCell.completionHandler = { [weak self] (index) in
+                guard let strongSelf = self else { return }
+                strongSelf.presentPhotoVC(index, arrImage: [])
+            }
             return imageDetailCell
         default:
             let detailNearHostelCell = tableView.dequeueReusableCell(ofType: DetailNearHostelCell.self, at: indexPath)
@@ -122,5 +129,18 @@ extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
         default:
             return 0
         }
+    }
+    
+    private func presentPhotoVC(_ indexPath:IndexPath, arrImage:[UIImage]) {
+        let dataSource = PhotosDataSource(photos: self.arrImg, initialPhotoIndex: indexPath.row)
+        let photosViewController = PhotosViewController(dataSource: dataSource)
+        photosViewController.view.backgroundColor = .clear
+        photosViewController.overlayView.topStackContainer.backgroundColor = Color.mainColor(with: 1.0)
+        photosViewController.overlayView.backgroundColor = .clear
+        photosViewController.overlayView.toolbar.clipsToBounds = true
+        photosViewController.overlayView.toolbar.layer.shadowOpacity = 0
+        photosViewController.overlayView.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: nil, action: nil)
+        photosViewController.overlayView.rightBarButtonItem? = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
+        self.pushTo(photosViewController)
     }
 }

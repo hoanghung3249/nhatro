@@ -23,6 +23,10 @@ class Color {
         return UIColor(red: 255.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 0.7)
     }
     
+    static func mainColor(with alpha: CGFloat) -> UIColor {
+        return UIColor(red: 255.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: alpha)
+    }
+    
     static func kLightGrayColor() -> UIColor {
         return UIColor(red: 216.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1)
     }
