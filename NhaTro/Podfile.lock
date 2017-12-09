@@ -108,6 +108,11 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
   - Protobuf (3.4.0)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
   - SwiftyJSON (3.1.4)
   - TLPhotoPicker (1.3.2)
 
@@ -132,6 +137,7 @@ DEPENDENCIES:
   - KRPullLoader
   - NKVPhonePicker
   - NVActivityIndicatorView
+  - RealmSwift
   - SwiftyJSON
   - TLPhotoPicker
 
@@ -166,9 +172,11 @@ SPEC CHECKSUMS:
   NKVPhonePicker: bde21135440ae62684528664d82bd51e1be69b13
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TLPhotoPicker: d850050494b9dcac0b585cf2d49ad2accf692d25
 
-PODFILE CHECKSUM: 7da7f48c875170a0dadaeb58e437e2025629d0fe
+PODFILE CHECKSUM: 1942d020048a4a84ceba94320be7eb243426ea27
 
 COCOAPODS: 1.3.1
