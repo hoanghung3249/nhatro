@@ -57,6 +57,8 @@ class PostViewController: UIViewController {
         txtLocation.delegate = self
     }
     
+    // MARK: - Action buttons
+    
     fileprivate func selectPhoto(_ row:Int) {
         let photoVC = TLPhotosPickerViewController()
         photoVC.delegate = self
@@ -69,6 +71,18 @@ class PostViewController: UIViewController {
             self.present(photoVC, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func postHostel(_ sender: UIButton) {
+        guard let area = txtAcreage.text, let address = txtLocation.text, let unitPrice = txtPrice.text, let phone = txtPhone.text, let description = txtView.text, let location = hostelLocation else { return }
+        let (param, error) = Params.createParamPostInfo(area: area, address: address, unitPrice: unitPrice, phone: phone, description: description, location: location)
+        if error != nil {
+            showAlert(with: error!)
+        } else {
+            guard let param = param else { return }
+            callAPIPostHostel(with: param)
+        }
+    }
+    
 }
 
 // MARK: - CollectionView DataSource and Delegate
@@ -152,12 +166,12 @@ extension PostViewController: GMSAutocompleteViewControllerDelegate {
         if let address = place.formattedAddress {
             txtLocation.text = address
         }
-        let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
-            guard let lastPlaceMark = placemarks?.last else { return }
-            print(lastPlaceMark.postalCode)
-            print(lastPlaceMark.isoCountryCode)
-        }
+//        let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+//        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+//            guard let lastPlaceMark = placemarks?.last else { return }
+//            print(lastPlaceMark.postalCode)
+//            print(lastPlaceMark.isoCountryCode)
+//        }
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
@@ -182,5 +196,40 @@ extension PostViewController: GMSAutocompleteViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+
+// MARK: - Support API
+extension PostViewController {
+    
+    fileprivate func callAPIPostHostel(with param: [String:Any]) {
+        ProgressView.shared.show(self.view!)
+        DataCenter.shared.callAPIPostHostel(with: param, arrImage: arrImage) { [weak self] (success, mess) in
+            guard let strongSelf = self else { return }
+            ProgressView.shared.hide()
+            if success {
+                Utilities.shared.showAlerControler(title: "Thông Báo", message: "Đăng bài thành công!", confirmButtonText: "Ok", cancelButtonText: nil, atController: strongSelf, completion: { (isOk) in
+                    if isOk {
+                        strongSelf.updateUI()
+                    }
+                })
+            } else {
+                guard let error = mess else { return }
+                strongSelf.showAlert(with: error)
+            }
+        }
+    }
+    
+    private func updateUI() {
+        txtView.text = ""
+        txtPhone.text = ""
+        txtPrice.text = ""
+        txtLocation.text = ""
+        txtAcreage.text = ""
+        arrImage = []
+        arrImage.append(imgDefault)
+        DispatchQueue.main.async {
+            self.CoView.reloadData()
+        }
     }
 }

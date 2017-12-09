@@ -175,7 +175,6 @@ struct NetworkService {
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
-                    //                    print(response.result.value)
                     switch response.result {
                     case .success(let data):
                         let responseDic = JSON(data)

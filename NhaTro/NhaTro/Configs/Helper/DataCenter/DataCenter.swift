@@ -115,8 +115,8 @@ class DataCenter {
     func callAPIEditProfile(_ param:[String:Any], _ imageName:String, _ imageProfile:[UIImage], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         guard let userToken = USER?.token else { return }
         let _headers = createHeader(userToken)
+        guard let completion = completion else { return }
         NetworkService.callApiMultiPart(url: Constant.APIKey.updateProfile, withNames: [imageName], method: .post, images: imageProfile, parameters: param, headers: _headers, completion: { (data) in
-            guard let completion = completion else { return }
             let jsonFormat = JSONFormat(data)
             let parser:ParseDataSignIn = ParseDataSignIn()
             if jsonFormat.status == "success" {
@@ -129,6 +129,7 @@ class DataCenter {
             }
         }) { (error) in
             print(error.localizedDescription)
+            completion(false, error.localizedDescription)
         }
     }
     
@@ -155,5 +156,38 @@ class DataCenter {
                 completion(false, mess, [], nil)
             }
         }
+    }
+    
+    func callAPIPostHostel(with param: [String:Any], arrImage:[UIImage], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        let arrImg = createArrImage(arrImage)
+        let arrImgName = createImagesName(arrImg)
+        guard let completion = completion else { return }
+        NetworkService.callApiMultiPart(url: Constant.APIKey.postMotel, withNames: arrImgName, method: .post, images: arrImg, parameters: param, headers: _header, completion: { (data) in
+            let jsonFormat = JSONFormat(data)
+            print(jsonFormat)
+            if jsonFormat.status == "success" {
+                completion(true, nil)
+            } else {
+                completion(false, jsonFormat.message)
+            }
+        }) { (error) in
+            completion(false, error.localizedDescription)
+        }
+    }
+    
+    private func createArrImage(_ arrImg:[UIImage]) -> [UIImage] {
+        let arrImage = arrImg.filter({ $0 != UIImage(named: "add_image")! })
+        return arrImage
+    }
+    
+    private func createImagesName(_ arrImage:[UIImage]) -> [String] {
+        var arrImgName = [String]()
+        for index in 0..<arrImage.count {
+            let imgName = "sub\(index + 1)"
+            arrImgName.append(imgName)
+        }
+        return arrImgName
     }
 }

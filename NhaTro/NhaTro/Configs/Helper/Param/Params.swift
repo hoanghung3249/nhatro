@@ -87,8 +87,30 @@ struct Params {
         return(param, nil)
     }
     
-    static func createParamPostInfo(_ arrImage:[UIImage], area:Double, address:String, unitPrice:Double, phone:String, description:String, location:CLLocationCoordinate2D) {
-        
+    static func createParamPostInfo(area:String, address:String, unitPrice:String, phone:String, description:String, location:CLLocationCoordinate2D) -> ([String:Any]?, String?) {
+        var param = [String:Any]()
+        if address.isEmptyOrWhitespace() {
+            return (nil, "Xin hãy nhập địa chỉ!")
+        }
+        if area.isEmptyOrWhitespace() {
+            return (nil, "Xin hãy nhập diện tích!")
+        }
+        if phone.isEmptyOrWhitespace() {
+            return (nil, "Xin hãy nhập số điện thoại!")
+        }
+        if unitPrice.isEmptyOrWhitespace() {
+            return (nil, "Xin hãy nhập giá phòng!")
+        }
+        param = [
+            "location": address,
+            "erea": area,
+            "unit_price":unitPrice,
+            "phone": phone,
+            "description": description,
+            "country": "3",
+            "latitude": location.latitude,
+            "longitude": location.longitude
+        ]
+        return (param, nil)
     }
-    
 }
