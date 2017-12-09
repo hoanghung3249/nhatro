@@ -15,12 +15,10 @@ struct Params {
     static func createParamLogin(_ email:String,_ pass:String) -> ([String:Any]?,String?) {
         var params:Dictionary<String,Any> = Dictionary()
         if email.isEmptyOrWhitespace() || pass.isEmptyOrWhitespace() {
-            
-            return (nil, "Please input all fields requirement!")
+            return (nil, "Xin nhập Email hoặc Password!")
         }
         if !email.isValidEmail() {
-            
-            return (nil, "The email format is invalid.")
+            return (nil, "Email không đúng định dạng!")
         }
         params.updateValue(email as Any, forKey: "email")
         params.updateValue(pass as Any, forKey: "password")
@@ -31,18 +29,16 @@ struct Params {
     static func createParamResgister(_ email:String,_ pass:String,_ phone:String,_ firstName:String,_ lastName:String,_ confirmPass:String) -> ([String:AnyObject]?,String?) {
         var params:Dictionary<String,AnyObject> = Dictionary()
         if email.isEmptyOrWhitespace() || pass.isEmptyOrWhitespace() || phone.isEmptyOrWhitespace() || firstName.isEmptyOrWhitespace() ||  lastName.isEmptyOrWhitespace() || confirmPass.isEmptyOrWhitespace()  {
-            
-            return (nil, "Please input all fields requirement!")
+            return (nil, "Xin nhập các trường yêu cầu!")
         }
         if !email.isValidEmail() {
-            
-            return (nil, "The email format is invalid.")
+            return (nil, "Email không đúng định dạng!")
         }
         if confirmPass != pass {
-            return(nil , "The confirm password does not correct with the password! ")
+            return(nil , "Mật khẩu xác nhận không đúng với mật khẩu!")
         }
-        if pass.characters.count < 6 {
-            return(nil,"The password has contains at least 6 character!")
+        if pass.count < 6 {
+            return(nil,"Mật khẩu phải chứa ít nhất 6 kí tự!")
         }
         params.updateValue(email as AnyObject, forKey: "email")
         params.updateValue(pass as AnyObject, forKey: "password")
@@ -56,11 +52,11 @@ struct Params {
         var params:Dictionary<String,AnyObject> = Dictionary()
         
         if newPass.isEmptyOrWhitespace() || confirmPass.isEmptyOrWhitespace() {
-            return (nil, "Please input all fields requirement!")
+            return (nil, "Xin hãy các trường yêu cầu!")
         }
         
         if confirmPass != newPass {
-            return(nil , "The confirm password does not correct with the password! ")
+            return(nil ,"Mật khẩu xác nhận không đúng với mật khẩu!")
         }
         params.updateValue(newPass as AnyObject, forKey: "password")
         return(params,nil)
