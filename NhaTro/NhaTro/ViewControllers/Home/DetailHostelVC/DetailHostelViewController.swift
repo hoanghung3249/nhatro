@@ -16,12 +16,9 @@ class DetailHostelViewController: UIViewController {
     fileprivate var colHeight:CGFloat = 0.0
     fileprivate var detailTextViewHeight:CGFloat = 0.0
     fileprivate var isReload = false
+    var motel:Motel?
     
-    let arrImg = [Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil),
-                  Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil),
-                  Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil),
-                  Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: UIImage(named: "hohenzollern-bridge-2204867_640"), url: nil)
-    ]
+    var arrImg = [PhotoProtocol]()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -30,6 +27,7 @@ class DetailHostelViewController: UIViewController {
         setupNavigation()
         setupTableView()
         setupUI()
+        setupArrImg()
     }
     
     // MARK: - Support functions
@@ -38,6 +36,16 @@ class DetailHostelViewController: UIViewController {
         tbvDetail.delegate = self
         tbvDetail.dataSource = self
         tbvDetail.separatorStyle = .none
+    }
+    
+    private func setupArrImg() {
+        guard let motel = motel else { return }
+        if motel.images.count > 0 {
+            for img in motel.images {
+                let photo = Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: nil, url: URL(string: "\(Constant.APIKey.baseUrl)\(img.sub_image)"))
+                arrImg.append(photo)
+            }
+        }
     }
 
     private func setupNavigation() {
@@ -92,19 +100,23 @@ extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let motel = motel else { return UITableViewCell() }
         switch indexPath.row {
         case 0:
             let headerCell = tableView.dequeueReusableCell(ofType: HeaderImageCell.self, at: indexPath)
+            headerCell.configHeaderCell(motel)
             return headerCell
         case 1:
             let detailCell = tableView.dequeueReusableCell(ofType: DetailCell.self, at: indexPath)
             detailCell.contentView.layoutIfNeeded()
+            detailCell.configDetailCell(motel)
             return detailCell
         case 2:
             let imageDetailCell = tableView.dequeueReusableCell(ofType: ImageDetailCell.self, at: indexPath)
+            imageDetailCell.configImageDetailCell(motel)
             imageDetailCell.completionHandler = { [weak self] (index) in
                 guard let strongSelf = self else { return }
-                strongSelf.presentPhotoVC(index, arrImage: [])
+                strongSelf.presentPhotoVC(index, arrImage: strongSelf.arrImg)
             }
             return imageDetailCell
         default:
@@ -131,16 +143,18 @@ extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
         }
     }
     
-    private func presentPhotoVC(_ indexPath:IndexPath, arrImage:[UIImage]) {
-        let dataSource = PhotosDataSource(photos: self.arrImg, initialPhotoIndex: indexPath.row)
+    private func presentPhotoVC(_ indexPath:IndexPath, arrImage:[PhotoProtocol]) {
+        let dataSource = PhotosDataSource(photos: arrImage, initialPhotoIndex: indexPath.row)
         let photosViewController = PhotosViewController(dataSource: dataSource)
         photosViewController.view.backgroundColor = .clear
         photosViewController.overlayView.topStackContainer.backgroundColor = Color.mainColor(with: 1.0)
         photosViewController.overlayView.backgroundColor = .clear
         photosViewController.overlayView.toolbar.clipsToBounds = true
         photosViewController.overlayView.toolbar.layer.shadowOpacity = 0
-        photosViewController.overlayView.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: nil, action: nil)
+//        photosViewController.overlayView.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "arrowLeftSimpleLineIcons"), style: .done, target: nil, action: nil)
         photosViewController.overlayView.rightBarButtonItem? = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
-        self.pushTo(photosViewController)
+        DispatchQueue.main.async {
+            self.pushTo(photosViewController)
+        }
     }
 }

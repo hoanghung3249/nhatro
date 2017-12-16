@@ -22,14 +22,17 @@ class HomePageViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        getListMotel(current_Page)
+        arrMotel.removeAll()
+        self.setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupLayout()
-        getListMotel(current_Page)
-        arrMotel.removeAll()
-        self.setupCollectionView()
+//        getListMotel(current_Page)
+//        arrMotel.removeAll()
+//        self.setupCollectionView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -113,9 +116,15 @@ extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: self.view.frame.size.width, height: 181)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let detail = storyboard?.instantiateViewController(withIdentifier: "DetailHostelViewController") as! DetailHostelViewController
-//        self.present(detail, animated: true, completion: nil)
+        let motel = arrMotel[indexPath.row]
+        let detailVC = Storyboard.detail.instantiateViewController(ofType: DetailHostelViewController.self)
+        detailVC.motel = motel
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }
 

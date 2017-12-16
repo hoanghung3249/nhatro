@@ -98,9 +98,6 @@ class SignInViewController: UIViewController {
         } else if let error = error {
             self.showAlert(with: error)
         }
-//        let tabVC = TabBarViewController()
-//        self.present(tabVC, animated: true, completion: nil)
-        
     }
     
     @IBAction func RegisterEmail(_ sender: UIButton) {

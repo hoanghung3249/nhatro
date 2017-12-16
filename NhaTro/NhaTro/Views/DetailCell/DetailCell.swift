@@ -35,4 +35,18 @@ class DetailCell: UITableViewCell {
         self.imgUser.layer.cornerRadius = self.imgUser.frame.size.width / 2
         self.imgUser.clipsToBounds = true
     }
+    
+    func configDetailCell(_ motel: Motel) {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.lblAddress.text = motel.location
+            strongSelf.lblPhone.text = motel.phone
+            strongSelf.lblArea.text = "\(motel.area)"
+            strongSelf.lblPrice.text = "\(motel.unit_price)"
+            strongSelf.lblName.text = "\(motel.firstName) \(motel.lastName)"
+            strongSelf.txvDes.text = motel.description
+            let urlAvatar = URL(string: "\(Constant.APIKey.baseUrl)\(motel.avatar)")
+            strongSelf.imgUser.kf.setImage(with: urlAvatar)
+        }
+    }
 }

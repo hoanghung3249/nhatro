@@ -10,6 +10,9 @@ import Foundation
 import SwiftyJSON
 
 struct Motel {
+    var firstName:String
+    var lastName:String
+    var avatar:String
     var name:String
     var description:String
     var location:String
@@ -21,6 +24,7 @@ struct Motel {
     var latitude:Double
     var longitude:Double
     var images = [MotelImage]()
+    var createdAt:String
     
     init(_ dataJSON:JSON) {
         name = dataJSON["name"].stringValue
@@ -33,6 +37,10 @@ struct Motel {
         latitude = dataJSON["latitude"].doubleValue
         longitude = dataJSON["longitude"].doubleValue
         location = dataJSON["location"].stringValue
+        firstName = dataJSON["first_name"].stringValue
+        lastName = dataJSON["last_name"].stringValue
+        avatar = dataJSON["avatar"].stringValue
+        createdAt = dataJSON["created_at"].stringValue
         if let arrImage = dataJSON["image"].array {
             if arrImage.count > 0 {
                 for img in arrImage {

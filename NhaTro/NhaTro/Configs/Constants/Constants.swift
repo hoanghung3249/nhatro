@@ -13,8 +13,8 @@ struct Constant {
     
     struct APIKey {
         
-        static let devUrl                   = "http://192.168.1.26/api"
-        static let baseUrl                  = "http://192.168.1.26/"
+        static let devUrl                   = "http://192.168.1.9/api"
+        static let baseUrl                  = "http://192.168.1.9/"
         static let domain                   = devUrl
         static let secretKey                = "DEVNATSVSMOTEL01031995"
         

@@ -23,6 +23,7 @@
 		4551319B1F7929C000BD731A /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4551319A1F7929C000BD731A /* MenuCell.xib */; };
 		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
 		4551319F1F793D7000BD731A /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319E1F793D7000BD731A /* Params.swift */; };
+		456AF47A1FE4C2A200A06EC5 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456AF4791FE4C2A200A06EC5 /* RealmUtilities.swift */; };
 		457D32D21F7BE01E00C54E91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D11F7BE01E00C54E91 /* User.swift */; };
 		457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D31F7BE35700C54E91 /* DataHandle.swift */; };
 		457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */; };
@@ -103,6 +104,7 @@
 		4551319A1F7929C000BD731A /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4551319E1F793D7000BD731A /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
+		456AF4791FE4C2A200A06EC5 /* RealmUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtilities.swift; sourceTree = "<group>"; };
 		457D32D11F7BE01E00C54E91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		457D32D31F7BE35700C54E91 /* DataHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandle.swift; sourceTree = "<group>"; };
 		457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataSignIn.swift; sourceTree = "<group>"; };
@@ -367,6 +369,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		456AF4781FE4C26200A06EC5 /* RealmUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				456AF4791FE4C2A200A06EC5 /* RealmUtilities.swift */,
+			);
+			path = RealmUtilities;
+			sourceTree = "<group>";
+		};
 		457D32D01F7BE01500C54E91 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +485,7 @@
 		45EF0B0F1F507376005791E4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				456AF4781FE4C26200A06EC5 /* RealmUtilities */,
 				450C381F1FDB88BE006792E3 /* NetworkReachability */,
 				45486A2E1FAEBD64001E68F3 /* DataCenter */,
 				45486A321FAEC3BC001E68F3 /* ProgressView */,
@@ -1013,6 +1024,7 @@
 				4551319D1F792B3000BD731A /* MenuCell.swift in Sources */,
 				B77C165B1F5A5B4300D03921 /* Color.swift in Sources */,
 				45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */,
+				456AF47A1FE4C2A200A06EC5 /* RealmUtilities.swift in Sources */,
 				458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */,
 				B77B75251F73E5E500B1E888 /* MapViewController.swift in Sources */,
 				45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */,

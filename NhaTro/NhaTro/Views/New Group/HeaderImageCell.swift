@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HeaderImageCell: UITableViewCell {
     @IBOutlet weak var imgHeader: UIImageView!
@@ -27,6 +28,20 @@ class HeaderImageCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configHeaderCell(_ motel:Motel) {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.lblPhone.text = motel.phone
+            strongSelf.lblPrice.text = "\(motel.unit_price) VNĐ"
+            strongSelf.lblLocation.text = motel.location
+            if motel.images.count > 0 {
+                let subImage = motel.images[0].sub_image_thumb
+                let url = URL(string: "\(Constant.APIKey.baseUrl)\(subImage)")
+                strongSelf.imgHeader.kf.setImage(with: url)
+            }
+        }
     }
 
 }
