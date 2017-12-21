@@ -94,7 +94,8 @@ class HomePageViewController: UIViewController {
     @IBAction func showMap(_ sender: UIButton) {
         let showMap = Storyboard.home.instantiateViewController(withIdentifier: "MapViewController") as? MapViewController
         self.navigationItem.title = ""
-        self.hidesBottomBarWhenPushed = true
+//        self.hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(showMap!, animated: true)
     }
 }
