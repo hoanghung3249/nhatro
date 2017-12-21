@@ -49,7 +49,6 @@ class RegisterViewController: UIViewController {
         segmentedControl.segmentContent = (arrTitle,arrIcon)
         segmentedControl.highlightColor = UIColor(red: 238.0/255.0, green: 173.0/255.0, blue: 14.0/255.0, alpha: 1)
         segmentedControl.layer.cornerRadius = 20
-        
     }
     
     private func setupUI() {
@@ -58,7 +57,6 @@ class RegisterViewController: UIViewController {
         } else {
             lctTopBtnBack.constant = 20
         }
-        
     }
     
     private func setupDelegate() {

@@ -11,7 +11,7 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
-    
+    // MARK: - Outlets and Variables
     @IBOutlet weak var imgLogo: UIImageView!
     @IBOutlet weak var vwBound: UIView!
     @IBOutlet weak var vwLogin: UIView!
@@ -19,9 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var lctCenterYImgLogo: NSLayoutConstraint!
     @IBOutlet weak var lctHeightImgLogo: NSLayoutConstraint!
     
-    var google:Google?
-    var facebook:FacebookModel?
-    
+    fileprivate var google:Google?
+    fileprivate var facebook:FacebookModel?
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -95,17 +94,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginPhone(_ sender: UIButton) {
-        let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        let loginVC = Storyboard.main.instantiateViewController(ofType: SignInViewController.self)
         self.pushTo(loginVC)
-
     }
 }
 
 
 //MARK:- Google Delegate
 extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
-    
-    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print(error.localizedDescription)
@@ -118,8 +114,4 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print(user.profile)
     }
-    
 }
-
-
-

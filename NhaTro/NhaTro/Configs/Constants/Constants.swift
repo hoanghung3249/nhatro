@@ -11,10 +11,12 @@ import UIKit
 
 struct Constant {
     
+    static let GoogleAPIKey = "AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww"
+    
     struct APIKey {
         
-        static let devUrl                   = "http://192.168.1.9/api"
-        static let baseUrl                  = "http://192.168.1.9/"
+        static let devUrl                   = "http://10.5.50.168/api"
+        static let baseUrl                  = "http://10.5.50.168/"
         static let domain                   = devUrl
         static let secretKey                = "DEVNATSVSMOTEL01031995"
         

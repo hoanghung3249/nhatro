@@ -32,12 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //Config Google Map
-        GMSPlacesClient.provideAPIKey("AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww")
-        GMSServices.provideAPIKey("AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww")
+        GMSPlacesClient.provideAPIKey(Constant.GoogleAPIKey)
+        GMSServices.provideAPIKey(Constant.GoogleAPIKey)
     
         checkUserData()
-        
-        // Override point for customization after application launch.
         return true
     }
     
