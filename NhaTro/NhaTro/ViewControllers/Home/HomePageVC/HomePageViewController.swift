@@ -8,16 +8,23 @@
 
 import UIKit
 import KRPullLoader
+import HGPlaceholders
 
 class HomePageViewController: UIViewController {
 
-    @IBOutlet weak var cvwDetails: UICollectionView!
+//    @IBOutlet weak var cvwDetails: UICollectionView!
+    
+    @IBOutlet weak var cvwDetails: CollectionView!
     fileprivate var arrMotel = [Motel]()
     fileprivate var current_Page:Int = 1
     fileprivate var total_pages:Int = 0
     
     private let loadMoreView = KRPullLoadView()
     private let refreshView = KRPullLoadView()
+    fileprivate var placeholderCollectionView: CollectionView? {
+        get { return cvwDetails }
+    }
+    
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -63,6 +70,12 @@ class HomePageViewController: UIViewController {
         refreshView.delegate = self
         cvwDetails.addPullLoadableView(loadMoreView, type: .loadMore)
         cvwDetails.addPullLoadableView(refreshView, type: .refresh)
+        setupPlaceholder()
+    }
+    
+    private func setupPlaceholder() {
+        placeholderCollectionView?.placeholderDelegate = self
+        cvwDetails.placeholdersProvider = .nhatroProvider
     }
     
     fileprivate func getListMotel(_ page:Int) {
@@ -82,6 +95,11 @@ class HomePageViewController: UIViewController {
             } else {
                 guard let mess = mess else { return }
                 strongSelf.showAlert(with: mess)
+                DispatchQueue.main.async {
+                    strongSelf.cvwDetails.reloadData()
+                    let key = PlaceholderKey.custom(key: "nhatroNoInternet")
+                    strongSelf.placeholderCollectionView?.showCustomPlaceholder(with: key)
+                }
             }
         }
     }
@@ -107,9 +125,11 @@ extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomePageCell", for: indexPath) as! HomePageCollectionViewCell
-        let motel = arrMotel[indexPath.row]
-        cell.configHomeCell(motel)
+        let cell = collectionView.dequeueReusableCell(ofType: HomePageCollectionViewCell.self, at: indexPath)
+        if arrMotel.count > 0 {
+            let motel = arrMotel[indexPath.row]
+            cell.configHomeCell(motel)
+        }
         return cell
     }
     
@@ -166,5 +186,13 @@ extension HomePageViewController: KRPullLoadViewDelegate {
         current_Page = 1
         arrMotel.removeAll()
         getListMotel(current_Page)
+    }
+}
+
+// MARK: - Placeholder delegate
+extension HomePageViewController: PlaceholderDelegate {
+    func view(_ view: Any, actionButtonTappedFor placeholder: Placeholder) {
+//        (view as? CollectionView)?.showDefault()
+        print("reload collectionview")
     }
 }

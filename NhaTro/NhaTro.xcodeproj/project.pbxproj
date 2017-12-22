@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4501E7711FCC4855008B78AC /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4501E7701FCC442C008B78AC /* HomePageCell.xib */; };
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
+		4506E8CA1FECB13300A19BD8 /* PlaceholderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */; };
 		450C38211FDB88E4006792E3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C38201FDB88E4006792E3 /* NetworkReachability.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
@@ -82,6 +83,7 @@
 		40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NhaTro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4501E7701FCC442C008B78AC /* HomePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
 		45039C341F5B9C35001DD70A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderProvider.swift; sourceTree = "<group>"; };
 		450C38201FDB88E4006792E3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
 		4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 				40F2C26F16E911A2000CAB81 /* Pods_NhaTro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4506E8C81FECB12000A19BD8 /* PlaceholderProvider */ = {
+			isa = PBXGroup;
+			children = (
+				4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */,
+			);
+			path = PlaceholderProvider;
 			sourceTree = "<group>";
 		};
 		450C381F1FDB88BE006792E3 /* NetworkReachability */ = {
@@ -485,6 +495,7 @@
 		45EF0B0F1F507376005791E4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4506E8C81FECB12000A19BD8 /* PlaceholderProvider */,
 				456AF4781FE4C26200A06EC5 /* RealmUtilities */,
 				450C381F1FDB88BE006792E3 /* NetworkReachability */,
 				45486A2E1FAEBD64001E68F3 /* DataCenter */,
@@ -920,6 +931,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/KRPullLoader/KRPullLoader.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -948,6 +960,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRPullLoader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -1010,6 +1023,7 @@
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				457D32D21F7BE01E00C54E91 /* User.swift in Sources */,
 				B77B752F1F7417BE00B1E888 /* InfoWinDowView.swift in Sources */,
+				4506E8CA1FECB13300A19BD8 /* PlaceholderProvider.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
