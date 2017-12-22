@@ -10,6 +10,7 @@
 		4501E7711FCC4855008B78AC /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4501E7701FCC442C008B78AC /* HomePageCell.xib */; };
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4506E8CA1FECB13300A19BD8 /* PlaceholderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */; };
+		4506E8CD1FECC38300A19BD8 /* DownloadSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */; };
 		450C38211FDB88E4006792E3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C38201FDB88E4006792E3 /* NetworkReachability.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
@@ -84,6 +85,7 @@
 		4501E7701FCC442C008B78AC /* HomePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
 		45039C341F5B9C35001DD70A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderProvider.swift; sourceTree = "<group>"; };
+		4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSession.swift; sourceTree = "<group>"; };
 		450C38201FDB88E4006792E3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
 		4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 				4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */,
 			);
 			path = PlaceholderProvider;
+			sourceTree = "<group>";
+		};
+		4506E8CB1FECC37000A19BD8 /* DownloadSession */ = {
+			isa = PBXGroup;
+			children = (
+				4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */,
+			);
+			path = DownloadSession;
 			sourceTree = "<group>";
 		};
 		450C381F1FDB88BE006792E3 /* NetworkReachability */ = {
@@ -495,6 +505,7 @@
 		45EF0B0F1F507376005791E4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4506E8CB1FECC37000A19BD8 /* DownloadSession */,
 				4506E8C81FECB12000A19BD8 /* PlaceholderProvider */,
 				456AF4781FE4C26200A06EC5 /* RealmUtilities */,
 				450C381F1FDB88BE006792E3 /* NetworkReachability */,
@@ -1039,6 +1050,7 @@
 				B77C165B1F5A5B4300D03921 /* Color.swift in Sources */,
 				45429C8A1F8662DA0019493C /* InfoViewController.swift in Sources */,
 				456AF47A1FE4C2A200A06EC5 /* RealmUtilities.swift in Sources */,
+				4506E8CD1FECC38300A19BD8 /* DownloadSession.swift in Sources */,
 				458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */,
 				B77B75251F73E5E500B1E888 /* MapViewController.swift in Sources */,
 				45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */,

@@ -65,7 +65,7 @@ class HomePageViewController: UIViewController {
         
         //Register cell for collectionView
         let nib = UINib(nibName: "HomePageCell", bundle: nil)
-        cvwDetails.register(nib, forCellWithReuseIdentifier: "HomePageCell")
+        cvwDetails.register(nib, forCellWithReuseIdentifier: "HomePageCollectionViewCell")
         loadMoreView.delegate = self
         refreshView.delegate = self
         cvwDetails.addPullLoadableView(loadMoreView, type: .loadMore)
@@ -75,7 +75,8 @@ class HomePageViewController: UIViewController {
     
     private func setupPlaceholder() {
         placeholderCollectionView?.placeholderDelegate = self
-        cvwDetails.placeholdersProvider = .nhatroProvider
+        placeholderCollectionView?.placeholdersProvider = .nhatroProvider
+        placeholderCollectionView?.showLoadingPlaceholder()
     }
     
     fileprivate func getListMotel(_ page:Int) {
@@ -93,12 +94,9 @@ class HomePageViewController: UIViewController {
                     strongSelf.cvwDetails.reloadData()
                 }
             } else {
-                guard let mess = mess else { return }
-                strongSelf.showAlert(with: mess)
                 DispatchQueue.main.async {
                     strongSelf.cvwDetails.reloadData()
-                    let key = PlaceholderKey.custom(key: "nhatroNoInternet")
-                    strongSelf.placeholderCollectionView?.showCustomPlaceholder(with: key)
+                    strongSelf.placeholderCollectionView?.showErrorPlaceholder()
                 }
             }
         }
@@ -182,7 +180,7 @@ extension HomePageViewController: KRPullLoadViewDelegate {
         }
     }
     
-    private func refreshPage() {
+    fileprivate func refreshPage() {
         current_Page = 1
         arrMotel.removeAll()
         getListMotel(current_Page)
@@ -192,7 +190,7 @@ extension HomePageViewController: KRPullLoadViewDelegate {
 // MARK: - Placeholder delegate
 extension HomePageViewController: PlaceholderDelegate {
     func view(_ view: Any, actionButtonTappedFor placeholder: Placeholder) {
-//        (view as? CollectionView)?.showDefault()
-        print("reload collectionview")
+        (view as? CollectionView)?.showDefault()
+        refreshPage()
     }
 }
