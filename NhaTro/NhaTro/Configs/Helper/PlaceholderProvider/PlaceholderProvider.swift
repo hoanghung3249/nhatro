@@ -27,15 +27,15 @@ extension PlaceholdersProvider {
         let loading = Placeholder(data: loadingData, style: loadingStyle, key: .loadingKey)
         
         var errorData: PlaceholderData = .nhatroError
-        errorData.image = #imageLiteral(resourceName: "internetConnection")
+        errorData.image = #imageLiteral(resourceName: "error")
         let error = Placeholder(data: errorData, style: commonStyle, key: .errorKey)
         
         var noResultsData: PlaceholderData = .nhatroNoResults
-        noResultsData.image = #imageLiteral(resourceName: "internetConnection")
+        noResultsData.image = #imageLiteral(resourceName: "notFound")
         let noResults = Placeholder(data: noResultsData, style: commonStyle, key: .noResultsKey)
         
         var noConnectionData: PlaceholderData = .nhatroNoInternet
-        noConnectionData.image = #imageLiteral(resourceName: "internetConnection")
+        noConnectionData.image = #imageLiteral(resourceName: "no_internet")
         let noConnection = Placeholder(data: noConnectionData, style: commonStyle, key: .noConnectionKey)
         
         let placeholdersProvider = PlaceholdersProvider(loading: loading, error: error, noResults: noResults, noConnection: noConnection)
