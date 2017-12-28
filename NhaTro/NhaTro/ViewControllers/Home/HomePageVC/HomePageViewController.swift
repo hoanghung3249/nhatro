@@ -24,7 +24,7 @@ class HomePageViewController: UIViewController {
     fileprivate var placeholderCollectionView: CollectionView? {
         get { return cvwDetails }
     }
-    
+    fileprivate let handleNetwork = HandleNetwork()
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -37,6 +37,7 @@ class HomePageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupLayout()
+        reachabilityChanged()
 //        getListMotel(current_Page)
 //        arrMotel.removeAll()
 //        self.setupCollectionView()
@@ -46,6 +47,7 @@ class HomePageViewController: UIViewController {
         super.viewDidDisappear(animated)
         cvwDetails.removePullLoadableView(loadMoreView)
         cvwDetails.removePullLoadableView(refreshView)
+        handleNetwork.stopNotifier()
     }
     
     //MARK:- Support functions
@@ -98,6 +100,16 @@ class HomePageViewController: UIViewController {
                     strongSelf.cvwDetails.reloadData()
                     strongSelf.placeholderCollectionView?.showErrorPlaceholder()
                 }
+            }
+        }
+    }
+    
+    fileprivate func reachabilityChanged() {
+        handleNetwork.networkChange = { (hasConnection) in
+            if hasConnection {
+                print("has connection")
+            } else {
+                print("lost connection")
             }
         }
     }

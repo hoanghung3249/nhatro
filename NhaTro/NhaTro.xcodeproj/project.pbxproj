@@ -11,7 +11,6 @@
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4506E8CA1FECB13300A19BD8 /* PlaceholderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */; };
 		4506E8CD1FECC38300A19BD8 /* DownloadSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */; };
-		450C38211FDB88E4006792E3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C38201FDB88E4006792E3 /* NetworkReachability.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
 		452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE131FC138DA00CD85FA /* Pagination.swift */; };
@@ -29,6 +28,8 @@
 		457D32D21F7BE01E00C54E91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D11F7BE01E00C54E91 /* User.swift */; };
 		457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D31F7BE35700C54E91 /* DataHandle.swift */; };
 		457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */; };
+		45874C7D1FF3D2C000250231 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45874C7C1FF3D2C000250231 /* Reachability.swift */; };
+		45874C7F1FF3D83300250231 /* HandleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45874C7E1FF3D83300250231 /* HandleNetwork.swift */; };
 		458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */; };
 		458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D62FF1F7292FE00D8CD80 /* PostViewController.swift */; };
 		458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */; };
@@ -86,7 +87,6 @@
 		45039C341F5B9C35001DD70A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderProvider.swift; sourceTree = "<group>"; };
 		4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSession.swift; sourceTree = "<group>"; };
-		450C38201FDB88E4006792E3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
 		4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
 		4519F9871F5AB6590035AA85 /* GOTHIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHIC.TTF; sourceTree = "<group>"; };
@@ -112,6 +112,8 @@
 		457D32D11F7BE01E00C54E91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		457D32D31F7BE35700C54E91 /* DataHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandle.swift; sourceTree = "<group>"; };
 		457D32D51F7BE37100C54E91 /* ParseDataSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseDataSignIn.swift; sourceTree = "<group>"; };
+		45874C7C1FF3D2C000250231 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		45874C7E1FF3D83300250231 /* HandleNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleNetwork.swift; sourceTree = "<group>"; };
 		458D62FC1F72926B00D8CD80 /* FavoriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		458D62FF1F7292FE00D8CD80 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
@@ -205,7 +207,8 @@
 		450C381F1FDB88BE006792E3 /* NetworkReachability */ = {
 			isa = PBXGroup;
 			children = (
-				450C38201FDB88E4006792E3 /* NetworkReachability.swift */,
+				45874C7C1FF3D2C000250231 /* Reachability.swift */,
+				45874C7E1FF3D83300250231 /* HandleNetwork.swift */,
 			);
 			path = NetworkReachability;
 			sourceTree = "<group>";
@@ -1038,7 +1041,6 @@
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
-				450C38211FDB88E4006792E3 /* NetworkReachability.swift in Sources */,
 				B7166D8A1FC31D9600DD8F78 /* DetailNearHostelCell.swift in Sources */,
 				B77B75281F74109400B1E888 /* GoogleMap.swift in Sources */,
 				45486A301FAEBDFA001E68F3 /* DataCenter.swift in Sources */,
@@ -1053,12 +1055,14 @@
 				4506E8CD1FECC38300A19BD8 /* DownloadSession.swift in Sources */,
 				458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */,
 				B77B75251F73E5E500B1E888 /* MapViewController.swift in Sources */,
+				45874C7D1FF3D2C000250231 /* Reachability.swift in Sources */,
 				45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */,
 				455131981F7928B900BD731A /* MenuViewController.swift in Sources */,
 				458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */,
 				B7BD02C51FC31287003BB71E /* DetailCell.swift in Sources */,
 				B7BD02C21FC30C4C003BB71E /* HeaderImageCell.swift in Sources */,
 				457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */,
+				45874C7F1FF3D83300250231 /* HandleNetwork.swift in Sources */,
 				451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */,
 				457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */,
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
