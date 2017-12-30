@@ -11,7 +11,7 @@ import Foundation
 class HandleNetwork {
     
     // MARK - Variables
-    let reachability = Reachability()!
+    private let reachability = Reachability()!
     var networkChange:((_ hasConnection: Bool)->())?
     
     init() {
@@ -26,7 +26,7 @@ class HandleNetwork {
         }
     }
     
-    func setupReachability() {
+    private func setupReachability() {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(_:)), name: .reachabilityChanged, object: reachability)
         do{
             try reachability.startNotifier()
@@ -35,7 +35,7 @@ class HandleNetwork {
         }
     }
     
-    @objc func reachabilityChanged(_ noti: Notification) {
+    @objc private func reachabilityChanged(_ noti: Notification) {
         guard let reachInternet = noti.object as? Reachability else { return }
         guard let networkChange = networkChange else { return }
         reachInternet.whenReachable = { (reach) in

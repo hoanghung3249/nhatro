@@ -11,13 +11,18 @@ import RealmSwift
 
 struct RealmUtilities {
     
+    // MARK: - Init Realm
+    static func initRealm(_ version: UInt64, migrate block: MigrationBlock?) {
+        Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: version, migrationBlock: block)
+    }
+    
     // MARK: - Get instance realm
     static func getRealmInstanse() -> Realm {
         let defaultRealm = try! Realm()
         return defaultRealm
     }
     
-    // MARK: update Realm Object
+    // MARK: - Update Realm Object
     static func updateRealmObject(updateBlock: (_ realm: Realm) -> ()) {
         
         let defaultRealm = getRealmInstanse()
