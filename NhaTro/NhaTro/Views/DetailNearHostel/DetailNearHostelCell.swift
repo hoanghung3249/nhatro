@@ -36,23 +36,20 @@ class DetailNearHostelCell: UITableViewCell {
         
         //Register cell for collectionView
         let nib = UINib(nibName: "HomePageCell", bundle: nil)
-        cvwHostel.register(nib, forCellWithReuseIdentifier: "HomePageCell")
+        cvwHostel.register(nib, forCellWithReuseIdentifier: "HomePageCollectionViewCell")
     }
 
 }
 
+// MARK: - CollectionView Datasoure & Delegate
 extension DetailNearHostelCell: UICollectionViewDelegate,UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        return arrMotel.count
         return 5
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(ofType: HomePageCollectionViewCell.self, at: indexPath)
-        //        let motel = arrMotel[indexPath.row]
-        //        cell.configHomeCell(motel)
         return cell
     }
     

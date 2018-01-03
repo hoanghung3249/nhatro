@@ -16,8 +16,9 @@ class MapViewController: UIViewController,UISearchBarDelegate {
     fileprivate var mapView:GMSMapView?
     @IBOutlet weak var sldStep: G8SliderStep!
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
-
-    var destinations = [VacationDestination(name: "Duy hands0me", location: CLLocationCoordinate2D(latitude: 10.785872,longitude: 106.641432), zoom: 18, price: "1.000.000", phone: "0962667632"),VacationDestination(name: "123 Quang Trung, P.11, Quận Gò Vấp", location: CLLocationCoordinate2D(latitude: 10.786515,longitude: 106.645262), zoom: 20, price: "2.000.000", phone: "01666502222")]
+    fileprivate var location: CLLocationCoordinate2D?
+    fileprivate var arrMotel = [Motel]()
+    fileprivate let imageMarker = UIImage(named: "homeLocationMarker")!
     
     //MARK:- Life cycle
     override func viewDidLoad() {
@@ -57,6 +58,20 @@ class MapViewController: UIViewController,UISearchBarDelegate {
         navigationItem.titleView = searchBar
     }
     
+    private func callAPIFilter() {
+        guard let location = location else { return }
+        DataCenter.shared.callAPIFilterMotel(location: location, limitRadius: 3, price: 0) { [weak self] (success, mess, arrMotel) in
+            guard let strongSelf = self else { return }
+            if success {
+                strongSelf.arrMotel.removeAll()
+                strongSelf.arrMotel = arrMotel
+                strongSelf.addMarker()
+            } else {
+                guard let mess = mess else { return }
+                strongSelf.showAlert(with: mess)
+            }
+        }
+    }
     
     //MARK:- Action buttons
     
@@ -65,36 +80,31 @@ class MapViewController: UIViewController,UISearchBarDelegate {
     }
     
     @IBAction func changeSliderValue(_ sender: G8SliderStep) {
-//        if !sender.isTracking {
-//            let intValue = Int(round(sender.value))
-//            print(intValue)
-//        } else {
-//            if sender.value == 1 {
-//                self.txvText.text = "First text"
-//            } else if sender.value == 2 {
-//                self.txvText.text = "Second text"
-//            } else if sender.value == 3 {
-//                self.txvText.text = "Third text"
-//            }
-//            else if sender.value == 4 {
-//                self.txvText.text = "for text"
-//            }
-//            else if sender.value == 5 {
-//                self.txvText.text = "five text"
-//            }
-
-        }
-    
+        //        if !sender.isTracking {
+        //            let intValue = Int(round(sender.value))
+        //            print(intValue)
+        //        } else {
+        //            if sender.value == 1 {
+        //                self.txvText.text = "First text"
+        //            } else if sender.value == 2 {
+        //                self.txvText.text = "Second text"
+        //            } else if sender.value == 3 {
+        //                self.txvText.text = "Third text"
+        //            }
+        //            else if sender.value == 4 {
+        //                self.txvText.text = "for text"
+        //            }
+        //            else if sender.value == 5 {
+        //                self.txvText.text = "five text"
+        //            }
     }
-
-
-
-
+    
+}
 
 //MARK:- Setup Google Map
-extension MapViewController:GMSMapViewDelegate,CLLocationManagerDelegate{
-     func setupGoogleMap(){
-//        _ = destinations
+extension MapViewController: GMSMapViewDelegate {
+    
+     fileprivate func setupGoogleMap() {
         mapView = GMSMapView(frame: CGRect(x: 0, y: 0, width: self.viewGoogleMap.frame.size.width, height: self.viewGoogleMap.frame.size.height))
         mapView?.mapType = .terrain
         mapView?.isMyLocationEnabled = true
@@ -103,29 +113,51 @@ extension MapViewController:GMSMapViewDelegate,CLLocationManagerDelegate{
         DispatchQueue.main.async {
             self.viewGoogleMap.insertSubview(self.mapView!, at: 0)
         }
-//
-//        //Creates a marker in the center of the map.
-//        for i in destinations {
-//            let marker = GMSMarker(position: i.location)
-//            marker.icon = UIImage(named: "homeLocationMarker")
-//            marker.userData = i
-//            marker.map = mapView
-//        }
-        
+        moveMapviewCamera()
+    }
+    
+    private func moveMapviewCamera() {
+        LocationManager.shared.getCurrentLocation { [weak self] (userLocation, err) in
+            LocationManager.shared.stopUpdateLocation()
+            guard let strongSelf = self else { return }
+            if let userLocation = userLocation {
+                let camera = GMSCameraPosition.camera(withLatitude: userLocation.latitude, longitude: userLocation.longitude, zoom: 16)
+                strongSelf.location = userLocation
+                strongSelf.callAPIFilter()
+                DispatchQueue.main.async {
+                    strongSelf.mapView?.animate(to: camera)
+                }
+            } else {
+                print(err!)
+            }
+        }
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
         let infoWindow = Bundle.main.loadNibNamed("InfoWinDow", owner: self.viewGoogleMap, options: nil)?.first as? InfoWinDowView
-        if let des = marker.userData as? VacationDestination {
-            infoWindow?.lblPrice.text = des.price
-            infoWindow?.lblName.text = des.name
-            infoWindow?.lblPhone.text = des.phone
+        if let motelMarker = marker.userData as? Motel {
+            infoWindow?.lblPrice.text = "\(motelMarker.unit_price) VNĐ"
+            infoWindow?.lblName.text = motelMarker.location
+            infoWindow?.lblPhone.text = motelMarker.phone
         }
-        
         return infoWindow
+    }
+    
+    fileprivate func addMarker() {
+        arrMotel.forEach { [weak self] (motel) in
+            guard let strongSelf = self else { return }
+            let markerPosition = CLLocationCoordinate2D(latitude: motel.latitude, longitude: motel.longitude)
+            let marker = GMSMarker(position: markerPosition)
+            marker.icon = imageMarker
+            marker.userData = motel
+            DispatchQueue.main.async {
+                marker.map = strongSelf.mapView
+            }
+        }
     }
 
 }
+
 extension MapViewController{
     
      func setupSlider() {

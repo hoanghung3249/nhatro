@@ -10,14 +10,24 @@ import UIKit
 import Kingfisher
 
 class HeaderImageCell: UITableViewCell {
+    
     @IBOutlet weak var imgHeader: UIImageView!
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var btnLike: UIButton!
+    @IBOutlet weak var btnShare: UIButton!
+    
+    var actionButton: ((_ sender: UIButton)->())?
     
     @IBAction func like(_ sender: UIButton) {
+        guard let actionButton = actionButton else { return }
+        actionButton(sender)
     }
+    
     @IBAction func share(_ sender: UIButton) {
+        guard let actionButton = actionButton else { return }
+        actionButton(sender)
     }
     override func awakeFromNib() {
         super.awakeFromNib()

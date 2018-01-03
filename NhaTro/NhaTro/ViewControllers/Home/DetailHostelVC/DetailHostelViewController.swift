@@ -105,6 +105,10 @@ extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             let headerCell = tableView.dequeueReusableCell(ofType: HeaderImageCell.self, at: indexPath)
             headerCell.configHeaderCell(motel)
+            headerCell.actionButton = { [weak self] (sender) in
+                guard let strongSelf = self else { return }
+                strongSelf.handleHeaderAction(headerCell, sender)
+            }
             return headerCell
         case 1:
             let detailCell = tableView.dequeueReusableCell(ofType: DetailCell.self, at: indexPath)
@@ -155,6 +159,14 @@ extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
         photosViewController.overlayView.rightBarButtonItem? = UIBarButtonItem(title: nil, style: .done, target: nil, action: nil)
         DispatchQueue.main.async {
             self.pushTo(photosViewController)
+        }
+    }
+    
+    private func handleHeaderAction(_ cell: HeaderImageCell, _ sender: UIButton) {
+        if sender == cell.btnLike {
+            print("like")
+        } else {
+            print("share")
         }
     }
 }

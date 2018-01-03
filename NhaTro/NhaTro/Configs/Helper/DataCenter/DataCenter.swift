@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import CoreLocation
 
 class DataCenter {
     
@@ -154,6 +155,31 @@ class DataCenter {
             } else {
                 guard let mess = mess else { return }
                 completion(false, mess, [], nil)
+            }
+        }
+    }
+    
+    func callAPIFilterMotel(location: CLLocationCoordinate2D, limitRadius: Int, price: Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[Motel]) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _headers = createHeader(userToken)
+        let param = ["limit": limitRadius,
+                     "unit_price": price,
+                     "latitude": location.latitude,
+                     "longitude": location.longitude
+            ] as [String:Any]
+        NetworkService.requestData(.get, url: Constant.APIKey.getListFilter, parameters: param, encoding: URLEncoding.default, headers: _headers) { (data, pagination, mess, code) in
+            guard let completion = completion else { return }
+            if mess == nil {
+                var arrMotel = [Motel]()
+                guard let dataJSON = data?.arrayValue else { return }
+                for motelJSON in dataJSON {
+                    let motel = Motel(motelJSON)
+                    arrMotel.append(motel)
+                }
+                completion(true, nil, arrMotel)
+            } else {
+                guard let mess = mess else { return }
+                completion(false, mess, [])
             }
         }
     }

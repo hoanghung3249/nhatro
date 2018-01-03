@@ -164,6 +164,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="btnLike" destination="qHy-kz-vDh" id="mpe-Ke-hp1"/>
+                                            <outlet property="btnShare" destination="VRl-CG-74N" id="iVx-uf-T9i"/>
                                             <outlet property="imgHeader" destination="zz1-zQ-5Wn" id="tDa-ge-uNl"/>
                                             <outlet property="lblLocation" destination="jft-hX-YGC" id="R0y-ID-fvJ"/>
                                             <outlet property="lblPhone" destination="veE-vX-qjT" id="eVn-zp-ZLH"/>
