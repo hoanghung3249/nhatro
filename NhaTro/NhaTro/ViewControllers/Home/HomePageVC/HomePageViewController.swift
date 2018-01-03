@@ -29,6 +29,7 @@ class HomePageViewController: UIViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        LocationManager.shared.setup()
         getListMotel(current_Page)
         arrMotel.removeAll()
         self.setupCollectionView()
@@ -38,9 +39,6 @@ class HomePageViewController: UIViewController {
         super.viewWillAppear(animated)
         setupLayout()
         reachabilityChanged()
-//        getListMotel(current_Page)
-//        arrMotel.removeAll()
-//        self.setupCollectionView()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -53,7 +51,6 @@ class HomePageViewController: UIViewController {
     //MARK:- Support functions
     private func setupLayout() {
         tabBarController?.tabBar.isHidden = false
-        self.navigationItem.title = "Home"
     }
     
     private func setupCollectionView() {

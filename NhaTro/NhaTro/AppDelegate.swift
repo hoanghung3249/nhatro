@@ -18,8 +18,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate{
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.black], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.white], for: .normal)
@@ -34,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         //Config Google Map
         GMSPlacesClient.provideAPIKey(Constant.GoogleAPIKey)
         GMSServices.provideAPIKey(Constant.GoogleAPIKey)
-    
+        
         checkUserData()
         return true
     }
