@@ -10,7 +10,7 @@ import UIKit
 import GooglePlaces
 import GoogleMaps
 
-class MapViewController: UIViewController,UISearchBarDelegate {
+class MapViewController: UIViewController {
     
     @IBOutlet weak var viewGoogleMap: UIView!
     fileprivate var mapView:GMSMapView?
@@ -19,6 +19,9 @@ class MapViewController: UIViewController,UISearchBarDelegate {
     fileprivate var location: CLLocationCoordinate2D?
     fileprivate var arrMotel = [Motel]()
     fileprivate let imageMarker = UIImage(named: "homeLocationMarker")!
+    fileprivate var limitRadius: Int = 1
+    fileprivate var price: Int = 1
+    fileprivate var autocompleteController:GMSAutocompleteViewController?
     
     //MARK:- Life cycle
     override func viewDidLoad() {
@@ -58,9 +61,9 @@ class MapViewController: UIViewController,UISearchBarDelegate {
         navigationItem.titleView = searchBar
     }
     
-    private func callAPIFilter() {
+    private func callAPIFilter(with limitRadius: Int, price: Int) {
         guard let location = location else { return }
-        DataCenter.shared.callAPIFilterMotel(location: location, limitRadius: 3, price: 0) { [weak self] (success, mess, arrMotel) in
+        DataCenter.shared.callAPIFilterMotel(location: location, limitRadius: limitRadius, price: price) { [weak self] (success, mess, arrMotel) in
             guard let strongSelf = self else { return }
             if success {
                 strongSelf.arrMotel.removeAll()
@@ -80,25 +83,29 @@ class MapViewController: UIViewController,UISearchBarDelegate {
     }
     
     @IBAction func changeSliderValue(_ sender: G8SliderStep) {
-        //        if !sender.isTracking {
-        //            let intValue = Int(round(sender.value))
-        //            print(intValue)
-        //        } else {
-        //            if sender.value == 1 {
-        //                self.txvText.text = "First text"
-        //            } else if sender.value == 2 {
-        //                self.txvText.text = "Second text"
-        //            } else if sender.value == 3 {
-        //                self.txvText.text = "Third text"
-        //            }
-        //            else if sender.value == 4 {
-        //                self.txvText.text = "for text"
-        //            }
-        //            else if sender.value == 5 {
-        //                self.txvText.text = "five text"
-        //            }
+        if !sender.isTracking {
+            let intValue = Int(round(sender.value))
+            switch intValue {
+            case 1:
+                limitRadius = intValue
+            case 2:
+                limitRadius = intValue
+            case 3:
+                limitRadius = intValue
+            default:
+                limitRadius = 1
+            }
+        } else {
+            if Int(sender.value) == 1 {
+                limitRadius = Int(sender.value)
+            } else if Int(sender.value) == 2 {
+                limitRadius = Int(sender.value)
+            } else if Int(sender.value) == 3 {
+                limitRadius = Int(sender.value)
+            }
+        }
+        callAPIFilter(with: limitRadius, price: price)
     }
-    
 }
 
 //MARK:- Setup Google Map
@@ -123,7 +130,7 @@ extension MapViewController: GMSMapViewDelegate {
             if let userLocation = userLocation {
                 let camera = GMSCameraPosition.camera(withLatitude: userLocation.latitude, longitude: userLocation.longitude, zoom: 16)
                 strongSelf.location = userLocation
-                strongSelf.callAPIFilter()
+                strongSelf.callAPIFilter(with: strongSelf.limitRadius, price: strongSelf.price)
                 DispatchQueue.main.async {
                     strongSelf.mapView?.animate(to: camera)
                 }
@@ -161,7 +168,8 @@ extension MapViewController: GMSMapViewDelegate {
 extension MapViewController{
     
      func setupSlider() {
-        sldStep.stepImages = [UIImage(named:"ovalCopy2")!, UIImage(named:"ovalCopy2")!,UIImage(named:"ovalCopy2")!,]
+        let imgSlider = UIImage(named:"ovalCopy2")!
+        sldStep.stepImages = [imgSlider, imgSlider, imgSlider]
         sldStep.tickTitles = ["1km","3km","5km"]
         sldStep.minimumValue = 1
         sldStep.trackColor = Color.kLightGrayColor()
@@ -172,5 +180,54 @@ extension MapViewController{
         sldStep.trackColor = Color.kLightGrayColor()
         sldStep.value = 1
         sldStep.isContinuous = false
+    }
+}
+
+// MARK: - Searchbar Delegate
+extension MapViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        autocompleteController = GMSAutocompleteViewController()
+        autocompleteController?.delegate = self
+        DispatchQueue.main.async {
+            self.present(self.autocompleteController!, animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - GMSAutoComplete Delegate
+extension MapViewController: GMSAutocompleteViewControllerDelegate {
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        location = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        if let address = place.formattedAddress {
+            searchBar.text = address
+        }
+        callAPIFilter(with: limitRadius, price: price)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
