@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VerifyViewController: UIViewController {
+class VerifyViewController: BaseViewController {
     
     
     @IBOutlet weak var txtConfirmCode: UITextField!
@@ -21,11 +21,6 @@ class VerifyViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.setupUI()
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
-    
     
     //MARK:- Support functions
     private func setupUI() {

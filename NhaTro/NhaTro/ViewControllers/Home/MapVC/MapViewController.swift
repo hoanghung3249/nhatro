@@ -13,8 +13,9 @@ import GoogleMaps
 class MapViewController: UIViewController {
     
     @IBOutlet weak var viewGoogleMap: UIView!
-    fileprivate var mapView:GMSMapView?
     @IBOutlet weak var sldStep: G8SliderStep!
+    
+    fileprivate var mapView:GMSMapView?
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
     fileprivate var location: CLLocationCoordinate2D?
     fileprivate var arrMotel = [Motel]()
@@ -30,11 +31,11 @@ class MapViewController: UIViewController {
         setupNavi()
         setupSlider()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupGoogleMap()
     }
-    
     
     //MARK:- Support functions
     private func setupNavi(){
@@ -165,9 +166,9 @@ extension MapViewController: GMSMapViewDelegate {
 
 }
 
+// MARK: - Slider's setup
 extension MapViewController{
-    
-     func setupSlider() {
+     fileprivate func setupSlider() {
         let imgSlider = UIImage(named:"ovalCopy2")!
         sldStep.stepImages = [imgSlider, imgSlider, imgSlider]
         sldStep.tickTitles = ["1km","3km","5km"]

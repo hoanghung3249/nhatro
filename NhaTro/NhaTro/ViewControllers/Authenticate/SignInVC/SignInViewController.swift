@@ -9,7 +9,7 @@
 import UIKit
 import SwiftyJSON
 
-class SignInViewController: UIViewController {
+class SignInViewController: BaseViewController {
     
     
     @IBOutlet weak var btnForgotPass: UIButton!
@@ -172,7 +172,7 @@ extension SignInViewController {
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()
             if success {
-                Utilities.shared.showAlerControler(title: "SUCCESS", message: "Please checking your email account!", confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
+                Utilities.shared.showAlerControler(title: "THÔNG BÁO", message: "Xin kiểm tra lại tài khoản email!", confirmButtonText: "OK", cancelButtonText: nil, atController: strongSelf, completion: { (bool) in
                     if bool {
                         strongSelf.dismissView()
                     }

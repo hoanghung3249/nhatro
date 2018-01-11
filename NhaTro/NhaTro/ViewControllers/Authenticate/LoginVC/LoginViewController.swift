@@ -9,7 +9,7 @@
 import UIKit
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     // MARK: - Outlets and Variables
     @IBOutlet weak var imgLogo: UIImageView!
@@ -29,11 +29,6 @@ class LoginViewController: UIViewController {
         self.setupGoogle()
         self.setupUI()
     }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     
     //MARK:- Support function
     

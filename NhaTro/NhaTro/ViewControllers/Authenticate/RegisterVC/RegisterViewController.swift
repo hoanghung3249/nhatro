@@ -10,7 +10,7 @@ import UIKit
 import NKVPhonePicker
 import SwiftyJSON
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
 
     @IBOutlet weak var txtConfirmPassWord: UITextField!
     @IBOutlet weak var txtPassWord: UITextField!
@@ -32,13 +32,7 @@ class RegisterViewController: UIViewController {
 //        self.setupSegmented()
         setupUI()
         self.setupDelegate()
-        
     }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     
     //MARK:- Support functions
     private func setupSegmented() {
@@ -109,28 +103,6 @@ extension RegisterViewController: UITextFieldDelegate {
 
 //MARK:- Support API
 extension RegisterViewController {
-    
-    //Tạo param dùng để call API 
-    /*
-     {
-     "email": "hoanghung@gmail.com",
-     "first_name": "Hung",
-     "last_name": "Nguyen",
-     "phone": "0937094414",
-     "password": "123456"
-     }
-     */
-    fileprivate func createParamRegister(_ email:String,_ pass:String,_ firstName:String,_ lastName:String,_ phone:String ) -> [String:Any] {
-        
-        var params:[String:Any] = Dictionary()
-        params.updateValue(email as Any, forKey: "email")
-        params.updateValue(pass as Any, forKey: "password")
-        params.updateValue(firstName as Any, forKey: "first_name")
-        params.updateValue(lastName as Any, forKey: "last_name")
-        params.updateValue(phone as Any, forKey: "phone")
-        return params
-    }
-    
     
     //Gọi API sau khi có param
     fileprivate func register(_ params:[String:Any]) {

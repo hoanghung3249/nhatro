@@ -25,6 +25,7 @@
 		4551319D1F792B3000BD731A /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319C1F792B3000BD731A /* MenuCell.swift */; };
 		4551319F1F793D7000BD731A /* Params.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551319E1F793D7000BD731A /* Params.swift */; };
 		455C0F1E1FFCB7C20048E405 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455C0F1D1FFCB7C20048E405 /* LocationManager.swift */; };
+		4564629820007837009A6A32 /* MotelRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564629720007837009A6A32 /* MotelRealm.swift */; };
 		456AF47A1FE4C2A200A06EC5 /* RealmUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456AF4791FE4C2A200A06EC5 /* RealmUtilities.swift */; };
 		457D32D21F7BE01E00C54E91 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D11F7BE01E00C54E91 /* User.swift */; };
 		457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457D32D31F7BE35700C54E91 /* DataHandle.swift */; };
@@ -36,6 +37,7 @@
 		458D630F1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */; };
 		458D63101F72CDCC00D8CD80 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D630E1F72CDCC00D8CD80 /* TabBarViewController.swift */; };
 		45925C3C1FB800FD00A15AB5 /* JSONFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45925C3B1FB800FD00A15AB5 /* JSONFormat.swift */; };
+		45B5048C20079DD60029FBE6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B5048B20079DD60029FBE6 /* BaseViewController.swift */; };
 		45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B091F50714D005791E4 /* NetworkService.swift */; };
 		45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */; };
 		45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EF0B1B1F50746A005791E4 /* Main.storyboard */; };
@@ -110,6 +112,7 @@
 		4551319C1F792B3000BD731A /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		4551319E1F793D7000BD731A /* Params.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Params.swift; sourceTree = "<group>"; };
 		455C0F1D1FFCB7C20048E405 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4564629720007837009A6A32 /* MotelRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotelRealm.swift; sourceTree = "<group>"; };
 		456AF4791FE4C2A200A06EC5 /* RealmUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtilities.swift; sourceTree = "<group>"; };
 		457D32D11F7BE01E00C54E91 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		457D32D31F7BE35700C54E91 /* DataHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandle.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		458D630C1F72CDCC00D8CD80 /* NhaTroNavigationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NhaTroNavigationVC.swift; sourceTree = "<group>"; };
 		458D630E1F72CDCC00D8CD80 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		45925C3B1FB800FD00A15AB5 /* JSONFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFormat.swift; sourceTree = "<group>"; };
+		45B5048B20079DD60029FBE6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		45EF0B091F50714D005791E4 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		45EF0B1A1F50746A005791E4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45EF0B1B1F50746A005791E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				456462962000781B009A6A32 /* MotelRealm */,
 				452AEE151FC13BC800CD85FA /* Motel */,
 				452AEE121FC1389F00CD85FA /* Pagination */,
 				45925C3A1FB800EE00A15AB5 /* JSONFormat */,
@@ -402,6 +407,14 @@
 			path = LocationManager;
 			sourceTree = "<group>";
 		};
+		456462962000781B009A6A32 /* MotelRealm */ = {
+			isa = PBXGroup;
+			children = (
+				4564629720007837009A6A32 /* MotelRealm.swift */,
+			);
+			path = MotelRealm;
+			sourceTree = "<group>";
+		};
 		456AF4781FE4C26200A06EC5 /* RealmUtilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +451,7 @@
 		458D630A1F72CDCC00D8CD80 /* ViewCommon */ = {
 			isa = PBXGroup;
 			children = (
+				45B5048A20079DBF0029FBE6 /* BaseViewController */,
 				458D630B1F72CDCC00D8CD80 /* Navigation */,
 				458D630D1F72CDCC00D8CD80 /* TabbarVC */,
 			);
@@ -466,6 +480,14 @@
 				45925C3B1FB800FD00A15AB5 /* JSONFormat.swift */,
 			);
 			path = JSONFormat;
+			sourceTree = "<group>";
+		};
+		45B5048A20079DBF0029FBE6 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45B5048B20079DD60029FBE6 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
 			sourceTree = "<group>";
 		};
 		45EF0B071F507127005791E4 /* API */ = {
@@ -1033,6 +1055,8 @@
 				45EF0B2C1F507596005791E4 /* CategoriesAddition.swift in Sources */,
 				452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */,
 				B77C15F81F5A507000D03921 /* RegisterViewController.swift in Sources */,
+				45B5048C20079DD60029FBE6 /* BaseViewController.swift in Sources */,
+				4564629820007837009A6A32 /* MotelRealm.swift in Sources */,
 				B7BD02C81FC315CE003BB71E /* ImageDetailCell.swift in Sources */,
 				45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */,
 				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
