@@ -93,7 +93,7 @@ class DetailHostelViewController: UIViewController {
 }
 
 // MARK: - Tableview Datasource and Delegate
-extension DetailHostelViewController:UITableViewDelegate,UITableViewDataSource{
+extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource{
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
