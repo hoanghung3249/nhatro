@@ -13,31 +13,33 @@ class ImageDetailCell: UITableViewCell {
     @IBOutlet weak var cvwImageDeatil: UICollectionView!
     var completionHandler:((_ indexPath:IndexPath)->())?
     var motel:Motel?
+    var sizeCell: CGFloat = 0.0
+    var sizeImgCell: CGFloat = 0.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCollectionView()
-        // Initialization code
     }
     
      private func setupCollectionView(){
         cvwImageDeatil.delegate = self
         cvwImageDeatil.dataSource = self
-        //Setup layout for item in collectionview
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 80, height: 80)
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        cvwImageDeatil.collectionViewLayout = layout
-
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func configImageDetailCell(_ motel:Motel) {
+    func configImageDetailCell(_ motel:Motel, viewSize: CGFloat) {
         self.motel = motel
+        self.sizeCell = viewSize
+        //Setup layout for item in collectionview
+        let layout = UICollectionViewFlowLayout()
+        sizeImgCell = sizeCell / 4 - 12.5
+        layout.itemSize = CGSize(width: sizeImgCell, height: sizeImgCell)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 10
+        cvwImageDeatil.collectionViewLayout = layout
     }
 
 }
@@ -51,7 +53,8 @@ extension ImageDetailCell:UICollectionViewDelegate,UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: 80, height: 80)
+        sizeImgCell = sizeCell / 4 - 12.5
+        return CGSize(width: sizeImgCell, height: sizeImgCell)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

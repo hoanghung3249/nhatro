@@ -651,7 +651,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6rP-Jd-90c">
-                                                <rect key="frame" x="15" y="481" width="350" height="78"/>
+                                                <rect key="frame" x="10" y="481" width="355" height="78"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="78" id="I5M-3a-G3s"/>
@@ -719,7 +719,7 @@
                                             <constraint firstItem="8Mg-Dx-B84" firstAttribute="top" secondItem="6rP-Jd-90c" secondAttribute="bottom" constant="40" id="Qwo-Ac-Z8z"/>
                                             <constraint firstAttribute="trailing" secondItem="05z-OR-LnO" secondAttribute="trailing" constant="11" id="Rb6-8N-Pdb"/>
                                             <constraint firstItem="Hdl-Jb-axE" firstAttribute="leading" secondItem="vl8-4F-MEN" secondAttribute="leading" constant="13" id="TiW-73-GCp"/>
-                                            <constraint firstItem="6rP-Jd-90c" firstAttribute="leading" secondItem="vl8-4F-MEN" secondAttribute="leading" constant="15" id="Vdc-af-BbW"/>
+                                            <constraint firstItem="6rP-Jd-90c" firstAttribute="leading" secondItem="vl8-4F-MEN" secondAttribute="leading" constant="10" id="Vdc-af-BbW"/>
                                             <constraint firstAttribute="trailing" secondItem="YVG-ek-uYI" secondAttribute="trailing" constant="7" id="glv-oo-sSc"/>
                                             <constraint firstAttribute="trailing" secondItem="6rP-Jd-90c" secondAttribute="trailing" constant="10" id="hZC-tk-jTH"/>
                                             <constraint firstItem="YVG-ek-uYI" firstAttribute="top" secondItem="pKr-Gf-zPj" secondAttribute="bottom" constant="15" id="m33-qE-fPx"/>

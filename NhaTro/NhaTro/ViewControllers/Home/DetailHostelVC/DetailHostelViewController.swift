@@ -117,7 +117,7 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
             return detailCell
         case 2:
             let imageDetailCell = tableView.dequeueReusableCell(ofType: ImageDetailCell.self, at: indexPath)
-            imageDetailCell.configImageDetailCell(motel)
+            imageDetailCell.configImageDetailCell(motel, viewSize: view.frame.width)
             imageDetailCell.completionHandler = { [weak self] (index) in
                 guard let strongSelf = self else { return }
                 strongSelf.presentPhotoVC(index, arrImage: strongSelf.arrImg)

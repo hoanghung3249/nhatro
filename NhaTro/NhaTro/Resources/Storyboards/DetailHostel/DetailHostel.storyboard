@@ -450,7 +450,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4GB-jF-uN9">
-                                                    <rect key="frame" x="8" y="39" width="359" height="86"/>
+                                                    <rect key="frame" x="10" y="39" width="355" height="86"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="86" id="Qxj-vz-K8X"/>
@@ -493,8 +493,8 @@
                                                 <constraint firstItem="OUv-FP-1zh" firstAttribute="top" secondItem="q37-CC-cC6" secondAttribute="top" constant="7" id="9R5-Ns-A0Y"/>
                                                 <constraint firstItem="OUv-FP-1zh" firstAttribute="leading" secondItem="q37-CC-cC6" secondAttribute="leading" constant="10" id="ImH-0q-AVo"/>
                                                 <constraint firstAttribute="trailing" secondItem="OUv-FP-1zh" secondAttribute="trailing" id="Wnj-s1-Tbx"/>
-                                                <constraint firstItem="4GB-jF-uN9" firstAttribute="leading" secondItem="q37-CC-cC6" secondAttribute="leading" constant="8" id="iCN-p9-fIe"/>
-                                                <constraint firstAttribute="trailing" secondItem="4GB-jF-uN9" secondAttribute="trailing" constant="8" id="wR6-eS-gOO"/>
+                                                <constraint firstItem="4GB-jF-uN9" firstAttribute="leading" secondItem="q37-CC-cC6" secondAttribute="leading" constant="10" id="iCN-p9-fIe"/>
+                                                <constraint firstAttribute="trailing" secondItem="4GB-jF-uN9" secondAttribute="trailing" constant="10" id="wR6-eS-gOO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
