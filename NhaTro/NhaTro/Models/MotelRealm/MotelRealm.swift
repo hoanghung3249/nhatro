@@ -30,39 +30,42 @@ class MotelRealm: Object {
     let longitude = RealmOptional<Double>()
     @objc dynamic var createdAt: String?
     let arrImage = List<RealmString>()
-    var internalArrImg = [String]()
+    let images = List<MotelImageRealm>()
+//    var internalArrImg = [String]()
     
     override static func primaryKey() -> String? {
         return "motel_Id"
     }
     
-    func addOrUpdate(_ realm: Realm) {
+    func addOrUpdate(_ realm: Realm, motel: Motel) {
         var values: [String: Any?] = [
-            "motel_Id": motel_Id,
-            "name": name,
-            "firstName": firstName,
-            "lastName": lastName,
-            "avatar": avatar,
-            "des": des,
-            "location": location,
-            "phone": phone,
-            "unit_price": unit_price,
-            "promotion_price": promotion_price,
-            "area": area,
-            "latitude": latitude.value,
-            "longitude": longitude.value,
-            "createdAt": createdAt,
+            "motel_Id": motel.motel_Id,
+            "name": motel.name,
+            "firstName": motel.firstName,
+            "lastName": motel.lastName,
+            "avatar": motel.avatar,
+            "des": motel.description,
+            "location": motel.location,
+            "phone": motel.phone,
+            "unit_price": motel.unit_price,
+            "promotion_price": motel.promotion_price,
+            "area": motel.area,
+            "latitude": motel.latitude,
+            "longitude": motel.longitude,
+            "createdAt": motel.createdAt,
         ]
-        if internalArrImg.count > 0 {
-            internalArrImg.forEach({ (img) in
-                let realmString = RealmString()
-                realmString.stringValue = img
-                arrImage.append(realmString)
+
+        if motel.images.count > 0 {
+            motel.images.forEach({ (image) in
+                let imageRealm = MotelImageRealm()
+                imageRealm.sub_image = image.sub_image
+                imageRealm.sub_image_thumb = image.sub_image_thumb
+                images.append(imageRealm)
             })
-            values["arrImage"] = arrImage
         }
-        values["arrImage"] = arrImage
-        
+        values["images"] = images
+        values["imageName"] = arrImage
+
         realm.create(MotelRealm.self, value: values, update: true)
     }
     

@@ -52,6 +52,55 @@ struct Utilities {
         }
     }
     
+    func beginBackgroundTask() -> UIBackgroundTaskIdentifier? {
+        
+        var backgroundTask: UIBackgroundTaskIdentifier?
+        backgroundTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
+            Utilities.shared.endBackgroundTask(backgroundTask)
+        })
+        
+        return backgroundTask
+    }
+    
+    func endBackgroundTask(_ task: UIBackgroundTaskIdentifier?) {
+        
+        guard let backgroundTask = task else {return}
+        print("+++++++++End background \(backgroundTask)")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+    }
+    
+    func saveMotelLocal(_ motel: Motel) {
+        RealmUtilities.updateRealmObject { (realm) in
+            let motelRealm = MotelRealm()
+            motelRealm.addOrUpdate(realm, motel: motel)
+        }
+        
+        var imgDownload = [String:String]()
+        imgDownload.updateValue(motel.avatar, forKey: "\(motel.motel_Id)img0")
+        for index in 0..<motel.images.count {
+            imgDownload.updateValue(motel.images[index].sub_image, forKey: "\(motel.motel_Id)img\(index + 1)")
+            imgDownload.updateValue(motel.images[index].sub_image_thumb, forKey: "\(motel.motel_Id)img\(index + 1)thumb")
+        }
+        let download = DownloadSession(with: motel, imgDownload: imgDownload)
+        for (key, value) in imgDownload {
+            download.downloadFile(identifier: key, url: value)
+        }
+    }
+    
+    func deleteLocalFile(fileName: String?) {
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        if let name = fileName {
+            let fileURL = documentsURL.appendingPathComponent("\(name)")
+            do {
+                try FileManager.default.removeItem(at: fileURL)
+                print("\nDeleted local file: \(name)")
+            } catch let error {
+                print("Delete file fail: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     //MARK: - Calendar Support Functions
     ///output: [JAN 2017, FEB 2017,...]
     func getAllMonthsInCurYear() -> [String]{

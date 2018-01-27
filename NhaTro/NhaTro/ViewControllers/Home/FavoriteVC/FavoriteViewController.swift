@@ -8,6 +8,7 @@
 
 import UIKit
 import HGPlaceholders
+import RealmSwift
 
 class FavoriteViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class FavoriteViewController: UIViewController {
     fileprivate var placeholderCollectionView: CollectionView? {
         get { return cvwFavorite }
     }
+    
+    fileprivate var arrMotel = [Motel]()
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -62,15 +65,15 @@ class FavoriteViewController: UIViewController {
 // MARK: - CollectionView DataSource and Delegate
 extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return arrMotel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(ofType: HomePageCollectionViewCell.self, at: indexPath)
-//        if arrMotel.count > 0 {
-//            let motel = arrMotel[indexPath.row]
-//            cell.configHomeCell(motel)
-//        }
+        if arrMotel.count > 0 {
+            let motel = arrMotel[indexPath.row]
+            cell.configHomeCell(motel)
+        }
         return cell
     }
     
@@ -79,9 +82,9 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let motel = arrMotel[indexPath.row]
+        let motel = arrMotel[indexPath.row]
         let detailVC = Storyboard.detail.instantiateViewController(ofType: DetailHostelViewController.self)
-//        detailVC.motel = motel
+        detailVC.motel = motel
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(detailVC, animated: true)

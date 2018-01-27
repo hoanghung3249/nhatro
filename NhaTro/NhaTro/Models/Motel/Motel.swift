@@ -18,9 +18,9 @@ struct Motel {
     var location:String
     var motel_Id:Int
     var phone:String
-    var unit_price:Double
-    var promotion_price:Double
-    var area:Double
+    var unit_price:String
+    var promotion_price:String
+    var area:String
     var latitude:Double
     var longitude:Double
     var images = [MotelImage]()
@@ -31,9 +31,9 @@ struct Motel {
         description = dataJSON["description"].stringValue
         motel_Id = dataJSON["id"].intValue
         phone = dataJSON["phone"].stringValue
-        unit_price = dataJSON["unit_price"].doubleValue
-        promotion_price = dataJSON["promotion_price"].doubleValue
-        area = dataJSON["erea"].doubleValue
+        unit_price = dataJSON["unit_price"].stringValue
+        promotion_price = dataJSON["promotion_price"].stringValue
+        area = dataJSON["erea"].stringValue
         latitude = dataJSON["latitude"].doubleValue
         longitude = dataJSON["longitude"].doubleValue
         location = dataJSON["location"].stringValue
@@ -59,5 +59,10 @@ struct MotelImage {
     init(_ dataJSON:JSON) {
         sub_image = dataJSON["sub_image"].stringValue
         sub_image_thumb = dataJSON["sub_image_thumb"].stringValue
+    }
+    
+    init() {
+        sub_image = ""
+        sub_image_thumb = ""
     }
 }

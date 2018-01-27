@@ -107,7 +107,7 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
             headerCell.configHeaderCell(motel)
             headerCell.actionButton = { [weak self] (sender) in
                 guard let strongSelf = self else { return }
-                strongSelf.handleHeaderAction(headerCell, sender)
+                strongSelf.handleHeaderAction(headerCell, sender, motel)
             }
             return headerCell
         case 1:
@@ -162,11 +162,16 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    private func handleHeaderAction(_ cell: HeaderImageCell, _ sender: UIButton) {
+    private func handleHeaderAction(_ cell: HeaderImageCell, _ sender: UIButton, _ motel: Motel) {
         if sender == cell.btnLike {
             print("like")
+            saveLocalAndDownloadImage(motel)
         } else {
             print("share")
         }
+    }
+    
+    private func saveLocalAndDownloadImage(_ motel: Motel) {
+        Utilities.shared.saveMotelLocal(motel)
     }
 }

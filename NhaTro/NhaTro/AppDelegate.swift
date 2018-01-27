@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.black], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.white], for: .normal)
         // Init Ream setup
-        RealmUtilities.initRealm(0) { (_, _) in
+        RealmUtilities.initRealm(1) { (_, _) in
             
         }
 //        FirebaseApp.configure()
