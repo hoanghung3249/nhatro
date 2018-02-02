@@ -13,6 +13,14 @@
 		4506E8CD1FECC38300A19BD8 /* DownloadSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
+		451CBF5F20249538007ED7BC /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CBF5520249538007ED7BC /* DropDownCell.xib */; };
+		451CBF6020249538007ED7BC /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5720249538007ED7BC /* DPDKeyboardListener.swift */; };
+		451CBF6120249538007ED7BC /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5820249538007ED7BC /* DPDConstants.swift */; };
+		451CBF6220249538007ED7BC /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5920249538007ED7BC /* DPDUIView+Extension.swift */; };
+		451CBF6320249538007ED7BC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 451CBF5A20249538007ED7BC /* Info.plist */; };
+		451CBF6420249538007ED7BC /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5C20249538007ED7BC /* DropDown.swift */; };
+		451CBF6520249538007ED7BC /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5D20249538007ED7BC /* DropDownCell.swift */; };
+		451CBF6620249538007ED7BC /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5E20249538007ED7BC /* DropDown+Appearance.swift */; };
 		452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE131FC138DA00CD85FA /* Pagination.swift */; };
 		452AEE171FC13BD400CD85FA /* Motel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE161FC13BD400CD85FA /* Motel.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
@@ -99,6 +107,15 @@
 		4519F98A1F5AB6590035AA85 /* GOTHICBI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHICBI.TTF; sourceTree = "<group>"; };
 		4519F98B1F5AB6590035AA85 /* gothici.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gothici.ttf; sourceTree = "<group>"; };
 		451CB5671FBFEC570025EB44 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		451CBF5320249538007ED7BC /* DropDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDown.h; sourceTree = "<group>"; };
+		451CBF5520249538007ED7BC /* DropDownCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCell.xib; sourceTree = "<group>"; };
+		451CBF5720249538007ED7BC /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		451CBF5820249538007ED7BC /* DPDConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPDConstants.swift; sourceTree = "<group>"; };
+		451CBF5920249538007ED7BC /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		451CBF5A20249538007ED7BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		451CBF5C20249538007ED7BC /* DropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		451CBF5D20249538007ED7BC /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
+		451CBF5E20249538007ED7BC /* DropDown+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DropDown+Appearance.swift"; sourceTree = "<group>"; };
 		452AEE131FC138DA00CD85FA /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		452AEE161FC13BD400CD85FA /* Motel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motel.swift; sourceTree = "<group>"; };
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +265,46 @@
 				451CB5671FBFEC570025EB44 /* Reusable.swift */,
 			);
 			path = Reusable;
+			sourceTree = "<group>";
+		};
+		451CBF5220249538007ED7BC /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				451CBF5320249538007ED7BC /* DropDown.h */,
+				451CBF5420249538007ED7BC /* resources */,
+				451CBF5620249538007ED7BC /* helpers */,
+				451CBF5A20249538007ED7BC /* Info.plist */,
+				451CBF5B20249538007ED7BC /* src */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		451CBF5420249538007ED7BC /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				451CBF5520249538007ED7BC /* DropDownCell.xib */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		451CBF5620249538007ED7BC /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				451CBF5720249538007ED7BC /* DPDKeyboardListener.swift */,
+				451CBF5820249538007ED7BC /* DPDConstants.swift */,
+				451CBF5920249538007ED7BC /* DPDUIView+Extension.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		451CBF5B20249538007ED7BC /* src */ = {
+			isa = PBXGroup;
+			children = (
+				451CBF5C20249538007ED7BC /* DropDown.swift */,
+				451CBF5D20249538007ED7BC /* DropDownCell.swift */,
+				451CBF5E20249538007ED7BC /* DropDown+Appearance.swift */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		452AEE121FC1389F00CD85FA /* Pagination */ = {
@@ -567,6 +624,7 @@
 		45EF0B111F50739B005791E4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				451CBF5220249538007ED7BC /* DropDown */,
 				B743F4FE1F74C27200122804 /* G8SliderStep */,
 				4519F9821F5AB0C60035AA85 /* XMSegmentedControl */,
 				45EF0B331F5075D4005791E4 /* TransitionManager */,
@@ -929,10 +987,12 @@
 				45FF152B1F6E408300473B18 /* GOTHICBI.TTF in Resources */,
 				45FF152C1F6E408300473B18 /* gothici.ttf in Resources */,
 				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
+				451CBF6320249538007ED7BC /* Info.plist in Resources */,
 				B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */,
 				453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */,
 				4551319B1F7929C000BD731A /* MenuCell.xib in Resources */,
 				45EF0B231F50752E005791E4 /* Assets.xcassets in Resources */,
+				451CBF5F20249538007ED7BC /* DropDownCell.xib in Resources */,
 				45EF0B1C1F50746A005791E4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1062,6 +1122,7 @@
 				45B5048C20079DD60029FBE6 /* BaseViewController.swift in Sources */,
 				4564629820007837009A6A32 /* MotelRealm.swift in Sources */,
 				B7BD02C81FC315CE003BB71E /* ImageDetailCell.swift in Sources */,
+				451CBF6220249538007ED7BC /* DPDUIView+Extension.swift in Sources */,
 				45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */,
 				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
 				458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */,
@@ -1069,6 +1130,7 @@
 				B77BB0041F77650700A24DBE /* DetailHostelViewController.swift in Sources */,
 				B7166D8E1FCC439400DD8F78 /* ImageHostelViewController.swift in Sources */,
 				45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */,
+				451CBF6620249538007ED7BC /* DropDown+Appearance.swift in Sources */,
 				B77BB0091F77FF8700A24DBE /* SignInViewController.swift in Sources */,
 				4550B5901F87BBE200E0F43B /* ChangePassViewController.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
@@ -1077,6 +1139,7 @@
 				457D32D21F7BE01E00C54E91 /* User.swift in Sources */,
 				B77B752F1F7417BE00B1E888 /* InfoWinDowView.swift in Sources */,
 				4506E8CA1FECB13300A19BD8 /* PlaceholderProvider.swift in Sources */,
+				451CBF6120249538007ED7BC /* DPDConstants.swift in Sources */,
 				45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */,
 				B741D60E1F6B8FAE00C11EE7 /* HomePageViewController.swift in Sources */,
 				45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */,
@@ -1104,11 +1167,14 @@
 				457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */,
 				45874C7F1FF3D83300250231 /* HandleNetwork.swift in Sources */,
 				451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */,
+				451CBF6020249538007ED7BC /* DPDKeyboardListener.swift in Sources */,
 				457D32D41F7BE35700C54E91 /* DataHandle.swift in Sources */,
 				452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */,
+				451CBF6420249538007ED7BC /* DropDown.swift in Sources */,
 				B77D29441F62D1A400C8F9D5 /* Google.swift in Sources */,
 				B741D6151F6BC38000C11EE7 /* HomePageCollectionViewCell.swift in Sources */,
 				452AEE171FC13BD400CD85FA /* Motel.swift in Sources */,
+				451CBF6520249538007ED7BC /* DropDownCell.swift in Sources */,
 				4551319F1F793D7000BD731A /* Params.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

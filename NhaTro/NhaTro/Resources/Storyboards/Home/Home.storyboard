@@ -191,15 +191,36 @@
                                                     <constraint firstAttribute="height" constant="21" id="hHo-A8-NDv"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4F-LX-ImO">
+                                                <rect key="frame" x="10" y="0.0" width="177" height="45"/>
+                                                <connections>
+                                                    <action selector="showDropDownPrice:" destination="7kQ-6I-u9T" eventType="touchUpInside" id="kfq-6X-OUG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="akt-lH-JqZ">
+                                                <rect key="frame" x="188" y="0.0" width="177" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <connections>
+                                                    <action selector="showDropDownArea:" destination="7kQ-6I-u9T" eventType="touchUpInside" id="q87-XI-aFf"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="d4F-LX-ImO" firstAttribute="leading" secondItem="mCM-d3-Mel" secondAttribute="leading" constant="10" id="9Qm-rI-67O"/>
+                                            <constraint firstItem="akt-lH-JqZ" firstAttribute="top" secondItem="d4F-LX-ImO" secondAttribute="top" id="Ife-Gq-d7i"/>
+                                            <constraint firstItem="D9Q-r0-65v" firstAttribute="leading" secondItem="d4F-LX-ImO" secondAttribute="trailing" id="JmO-Dz-htA"/>
                                             <constraint firstItem="aYd-IP-mGE" firstAttribute="leading" secondItem="D9Q-r0-65v" secondAttribute="trailing" constant="60" id="L9h-Ip-HrQ"/>
+                                            <constraint firstItem="akt-lH-JqZ" firstAttribute="leading" secondItem="D9Q-r0-65v" secondAttribute="trailing" id="MxI-Ta-bXu"/>
+                                            <constraint firstAttribute="bottom" secondItem="d4F-LX-ImO" secondAttribute="bottom" id="QWM-cb-xhG"/>
                                             <constraint firstItem="D9Q-r0-65v" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="4" id="XYs-xT-uu6"/>
                                             <constraint firstItem="D9Q-r0-65v" firstAttribute="centerX" secondItem="mCM-d3-Mel" secondAttribute="centerX" id="YY7-e0-M4i"/>
                                             <constraint firstItem="QRX-K5-9aB" firstAttribute="leading" secondItem="aE5-qM-pRE" secondAttribute="trailing" constant="9" id="dT0-bi-Fqj"/>
+                                            <constraint firstItem="akt-lH-JqZ" firstAttribute="bottom" secondItem="d4F-LX-ImO" secondAttribute="bottom" id="dsI-K2-UXJ"/>
                                             <constraint firstItem="aE5-qM-pRE" firstAttribute="leading" secondItem="mCM-d3-Mel" secondAttribute="leading" constant="53" id="fZm-5m-ELr"/>
+                                            <constraint firstItem="d4F-LX-ImO" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" id="lhX-3d-X01"/>
                                             <constraint firstItem="QRX-K5-9aB" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="13" id="n28-vH-bgB"/>
+                                            <constraint firstAttribute="trailing" secondItem="akt-lH-JqZ" secondAttribute="trailing" constant="10" id="nZY-zI-3df"/>
                                             <constraint firstItem="0j5-Pv-GrO" firstAttribute="leading" secondItem="aYd-IP-mGE" secondAttribute="trailing" constant="9" id="ogc-rO-2tQ"/>
                                             <constraint firstItem="aYd-IP-mGE" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="14" id="tTQ-ye-fnM"/>
                                             <constraint firstItem="aE5-qM-pRE" firstAttribute="top" secondItem="mCM-d3-Mel" secondAttribute="top" constant="14" id="uFy-jJ-1RN"/>
@@ -280,6 +301,8 @@
                         <viewLayoutGuide key="safeArea" id="tHV-A7-OQA"/>
                     </view>
                     <connections>
+                        <outlet property="btnShowArea" destination="akt-lH-JqZ" id="MNI-aW-Zyl"/>
+                        <outlet property="btnShowPrice" destination="d4F-LX-ImO" id="3CP-cf-OSj"/>
                         <outlet property="sldStep" destination="gZr-cl-SmX" id="NXM-SO-fon"/>
                         <outlet property="viewGoogleMap" destination="psu-mZ-rAK" id="fzD-GW-XRM"/>
                     </connections>

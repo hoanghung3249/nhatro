@@ -38,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         GMSPlacesClient.provideAPIKey(Constant.GoogleAPIKey)
         GMSServices.provideAPIKey(Constant.GoogleAPIKey)
         
+        //DropDown method
+        DropDown.startListeningToKeyboard()
+        
         checkUserData()
         return true
     }

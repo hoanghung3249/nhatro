@@ -12,8 +12,12 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     
+    // MARK: - Outlets and Variables
     @IBOutlet weak var viewGoogleMap: UIView!
     @IBOutlet weak var sldStep: G8SliderStep!
+    @IBOutlet weak var btnShowPrice: UIButton!
+    @IBOutlet weak var btnShowArea: UIButton!
+    let dropDown = DropDown()
     
     fileprivate var mapView:GMSMapView?
     lazy var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
@@ -23,6 +27,9 @@ class MapViewController: UIViewController {
     fileprivate var limitRadius: Int = 1
     fileprivate var price: Int = 1
     fileprivate var autocompleteController:GMSAutocompleteViewController?
+    fileprivate var isFilterPrice = true
+    fileprivate let arrFilterPrice = ["Tất cả", "Dưới 5 triệu", "Trên 5 triệu"]
+    fileprivate let arrFilterArea = ["1","3","5"]
     
     //MARK:- Life cycle
     override func viewDidLoad() {
@@ -60,6 +67,29 @@ class MapViewController: UIViewController {
             textSearch.clipsToBounds = true
         }
         navigationItem.titleView = searchBar
+    }
+    
+    private func setupDropdown(_ anchorView: UIView, dataSource: [String]) {
+        dropDown.anchorView = anchorView
+        dropDown.direction = .bottom
+        dropDown.cornerRadiusDPD = 10
+        dropDown.borderWidth = 0.5
+        dropDown.borderColor = .gray
+        dropDown.shadowOpacity = 0.5
+        dropDown.backgroundColor = .white
+        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.width = anchorView.frame.width
+        dropDown.dataSource = dataSource
+        
+        dropDown.selectionAction = { [weak self] (index: Int, item: String) in
+            guard let strongSelf = self else { return }
+            if strongSelf.isFilterPrice {
+                
+            } else {
+                
+            }
+        }
+        
     }
     
     private func callAPIFilter(with limitRadius: Int, price: Int) {
@@ -107,6 +137,21 @@ class MapViewController: UIViewController {
         }
         callAPIFilter(with: limitRadius, price: price)
     }
+    
+    @IBAction func showDropDownPrice(_ sender: UIButton) {
+        print("show price")
+        isFilterPrice = true
+        setupDropdown(btnShowPrice, dataSource: arrFilterPrice)
+        dropDown.show()
+    }
+    
+    @IBAction func showDropDownArea(_ sender: UIButton) {
+        print("show area")
+        isFilterPrice = false
+        setupDropdown(btnShowArea, dataSource: arrFilterArea)
+        dropDown.show()
+    }
+    
 }
 
 //MARK:- Setup Google Map
@@ -186,14 +231,16 @@ extension MapViewController{
 
 // MARK: - Searchbar Delegate
 extension MapViewController: UISearchBarDelegate {
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        view.endEditing(true)
-        autocompleteController = GMSAutocompleteViewController()
-        autocompleteController?.delegate = self
-        DispatchQueue.main.async {
-            self.present(self.autocompleteController!, animated: true, completion: nil)
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        if searchBar == self.searchBar {
+            autocompleteController = GMSAutocompleteViewController()
+            autocompleteController?.delegate = self
+            DispatchQueue.main.async {
+                self.present(self.autocompleteController!, animated: true, completion: nil)
+            }
+            return false
         }
+        return true
     }
 }
 
