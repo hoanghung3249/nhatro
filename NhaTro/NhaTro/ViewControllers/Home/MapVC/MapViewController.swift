@@ -29,7 +29,7 @@ class MapViewController: UIViewController {
     fileprivate var autocompleteController:GMSAutocompleteViewController?
     fileprivate var isFilterPrice = true
     fileprivate let arrFilterPrice = ["Tất cả", "Dưới 5 triệu", "Trên 5 triệu"]
-    fileprivate let arrFilterArea = ["1","3","5"]
+    fileprivate let arrFilterArea = ["1m²","3m²","5m²"]
     
     //MARK:- Life cycle
     override func viewDidLoad() {
@@ -197,6 +197,10 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     fileprivate func addMarker() {
+        guard let mapView = mapView else { return }
+        DispatchQueue.main.async {
+            mapView.clear()
+        }
         arrMotel.forEach { [weak self] (motel) in
             guard let strongSelf = self else { return }
             let markerPosition = CLLocationCoordinate2D(latitude: motel.latitude, longitude: motel.longitude)

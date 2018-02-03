@@ -87,6 +87,21 @@ struct Utilities {
         }
     }
     
+    func getURL(with localName: String, urlString: String) -> URL? {
+        guard let streamURL = URL(string: urlString) else { return nil }
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        let fileURL: URL
+        
+        let localURL = documentsURL.appendingPathComponent(localName)
+        if FileManager.default.fileExists(atPath: localURL.path) {
+            fileURL = localURL
+        } else {
+            fileURL = streamURL
+        }
+        return fileURL
+    }
+    
     func deleteLocalFile(fileName: String?) {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
@@ -99,6 +114,12 @@ struct Utilities {
                 print("Delete file fail: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func removeCache() {
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
     }
     
     //MARK: - Calendar Support Functions

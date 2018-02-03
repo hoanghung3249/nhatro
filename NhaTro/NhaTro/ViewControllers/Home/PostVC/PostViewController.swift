@@ -42,7 +42,7 @@ class PostViewController: UIViewController {
         self.txtPrice.underlined(Color.txtUnderlineColor())
         self.txtAcreage.underlined(Color.txtUnderlineColor())
         self.txtPhone.underlined(Color.txtUnderlineColor())
-        txtAcreage.addTextRightView("m2", Font.fontAvenirNext(12))
+        txtAcreage.addTextRightView("m²", Font.fontAvenirNext(15))
         txtPrice.addTextRightView("VNĐ", Font.fontAvenirNext(12))
     }
     
