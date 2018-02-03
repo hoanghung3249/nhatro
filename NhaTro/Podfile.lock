@@ -8,12 +8,12 @@ PODS:
   - AXPhotoViewer/Lite (1.3.6):
     - AXPhotoViewer/Core
   - AXStateButton (1.1.4)
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
+  - Bolts/Tasks (1.9.0)
   - FacebookCore (0.3.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.27)
@@ -147,7 +147,7 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AXPhotoViewer: f1edb13f8116f57e67c5f2a6484acd9f8a54d263
   AXStateButton: 6c515a433e37551505046429b5be04c12daa8c07
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
   FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
   FacebookShare: 0469964297ebd75f052be2c5083389a4208e82b7
@@ -180,6 +180,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TLPhotoPicker: d850050494b9dcac0b585cf2d49ad2accf692d25
 
-PODFILE CHECKSUM: ce4430d334991926bef6de6495ad4c3188ad10f4
+PODFILE CHECKSUM: 508858f2a9fa431212d39ef9170decd33bdfe689
 
 COCOAPODS: 1.3.1
