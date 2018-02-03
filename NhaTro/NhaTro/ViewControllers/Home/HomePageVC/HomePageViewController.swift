@@ -50,6 +50,7 @@ class HomePageViewController: UIViewController {
     
     //MARK:- Support functions
     private func setupLayout() {
+        navigationItem.title = "Trang Chủ"
         tabBarController?.tabBar.isHidden = false
     }
     
