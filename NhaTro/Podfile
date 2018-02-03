@@ -30,7 +30,7 @@ target 'NhaTro' do
 end
 post_install do |installer|
     installer.pods_project.targets.each do |target|
-        if ['Texture', 'FacebookCore', 'FacebookLogin', 'FacebookShare', 'FBSDKCoreKit', 'FBSDKLoginKit', 'FBSDKShareKit', 'Bolts'].include? target.name
+        if ['Texture', 'FacebookCore', 'FacebookLogin', 'FacebookShare', 'FBSDKCoreKit', 'FBSDKLoginKit', 'FBSDKShareKit'].include? target.name
             target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '3.2'
             end
