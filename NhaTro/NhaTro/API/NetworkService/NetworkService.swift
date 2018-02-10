@@ -192,4 +192,23 @@ struct NetworkService {
         }
     }
     
+    static func requestAPIDirection(_ urlString: String, header: HTTPHeaders , completion: @escaping ((_ points: String?, _ error: String?)->())) {
+        guard let url = URL(string: urlString) else { return }
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                guard let value = value as? [String: Any] else { return }
+                if let routes = value["routes"] as? [[String: Any]] {
+                    if let lines = routes[0]["overview_polyline"] as? [String: Any] {
+                        guard let points = lines["points"] as? String else { return }
+                        completion(points, nil)
+                    }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil, error.localizedDescription)
+            }
+        }
+    }
+    
 }

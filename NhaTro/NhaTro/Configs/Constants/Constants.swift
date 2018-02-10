@@ -12,6 +12,8 @@ import UIKit
 struct Constant {
     
     static let GoogleAPIKey = "AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww"
+    static let googleDirectionKey = "AIzaSyBxbJblSeYPL_b4RghEhzQV47-mRq0Sfno"
+    static let googleURLDirection = "https://maps.googleapis.com/maps/api/directions/json"
     
     struct APIKey {
         

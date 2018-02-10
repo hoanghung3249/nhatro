@@ -10,6 +10,8 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 import CoreLocation
+import GooglePlaces
+import GoogleMaps
 
 class DataCenter {
     
@@ -28,6 +30,13 @@ class DataCenter {
                                         ]
             return _header
         }
+    }
+    
+    private func createHeaderDirection() -> HTTPHeaders {
+        let _header: HTTPHeaders = ["Content-Type": "application/json",
+                                    "Accept": "application/json"
+                                    ]
+        return _header
     }
     
     private func returnMessage(with error: String) -> String {
@@ -217,6 +226,24 @@ class DataCenter {
             }
         }) { (error) in
             completion(false, error.localizedDescription)
+        }
+    }
+    
+    func direction(from origin: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D, completion: @escaping (_ point: GMSPolyline?) -> ()) {
+        let urlString = "\(Constant.googleURLDirection)?origin=\(origin.latitude),\(origin.longitude)&destination=\(destination.latitude),\(destination.longitude)&mode=driving&units=metric&sensor=true&key=\(Constant.googleDirectionKey)"
+        
+        let header = createHeaderDirection()
+        NetworkService.requestAPIDirection(urlString, header: header) { (points, mess) in
+            if let points = points {
+                let path = GMSPath(fromEncodedPath: points)
+                let singleLine = GMSPolyline(path: path)
+                singleLine.strokeWidth = 7
+                singleLine.strokeColor = Color.mainColor()
+                completion(singleLine)
+            } else {
+                guard let mess = mess else { return }
+                print(mess)
+            }
         }
     }
     

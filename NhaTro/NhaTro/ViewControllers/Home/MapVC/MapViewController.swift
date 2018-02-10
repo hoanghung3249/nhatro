@@ -107,6 +107,20 @@ class MapViewController: UIViewController {
         }
     }
     
+    private func direction() {
+        guard let location = location else { return }
+        let destination = CLLocationCoordinate2D(latitude: 10.841240, longitude: 106.664897)
+        DataCenter.shared.direction(from: location, to: destination) { [weak self] (singleLine) in
+            guard let strongSelf = self else { return }
+            guard let singleLine = singleLine else { return }
+            let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 14)
+            DispatchQueue.main.async {
+                strongSelf.mapView?.animate(to: camera)
+                singleLine.map = strongSelf.mapView
+            }
+        }
+    }
+    
     //MARK:- Action buttons
     
     @objc func backView() {
