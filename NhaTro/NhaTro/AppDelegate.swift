@@ -22,11 +22,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.black], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.white], for: .normal)
+        
+        setupSDK(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        return true
+    }
+    
+    private func setupSDK(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         // Init Ream setup
         RealmUtilities.initRealm(1) { (_, _) in
             
         }
-//        FirebaseApp.configure()
+        //        FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
         IQKeyboardManager.shared().isEnabled = true
@@ -42,9 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         DropDown.startListeningToKeyboard()
         
         checkUserData()
-        return true
     }
-    
     
     private func checkUserData() {
         //Check user data để chuyển màn hình

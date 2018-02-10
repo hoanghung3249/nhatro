@@ -45,6 +45,13 @@ struct StatusCode {
     
 }
 
+struct ErrorMessage {
+    
+    static let cannotConnect                = "Could not connect to the server."
+    static let cannotConnectVN              = "Đã xảy ra lỗi, xin hãy thử lại!"
+    
+}
+
 
 struct Storyboard {
     

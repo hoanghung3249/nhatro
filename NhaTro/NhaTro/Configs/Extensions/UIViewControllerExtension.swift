@@ -11,13 +11,13 @@ import UIKit
 extension UIViewController {
     
     func showAlert(with messages: String) {
-        let alert = UIAlertController(title: "ERROR", message: messages, preferredStyle: .alert)
+        let alert = UIAlertController(title: "THÔNG BÁO", message: messages, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func showAlertSuccess(with messages: String) {
-        let alert = UIAlertController(title: "MESSAGE", message: messages, preferredStyle: .alert)
+        let alert = UIAlertController(title: "THÔNG BÁO", message: messages, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

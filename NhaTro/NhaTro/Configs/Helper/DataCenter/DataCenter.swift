@@ -30,9 +30,18 @@ class DataCenter {
         }
     }
     
+    private func returnMessage(with error: String) -> String {
+        var messReturn = error
+        if messReturn == ErrorMessage.cannotConnect {
+            messReturn = ErrorMessage.cannotConnectVN
+        }
+        return messReturn
+    }
+    
     func callAPILogin(with params: [String:Any], url: String , _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         let _header = createHeader("")
-        NetworkService.requestWith(.post, url: url, parameters: params, header: _header) { (data, error, code) in
+        NetworkService.requestWith(.post, url: url, parameters: params, header: _header) { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             let parser:ParseDataSignIn = ParseDataSignIn()
             if error == nil {
@@ -43,7 +52,7 @@ class DataCenter {
                     completion(true, nil)
                 }
             } else {
-                completion(false, error!)
+                completion(false, strongSelf.returnMessage(with: error!))
             }
         }
     }
@@ -51,12 +60,13 @@ class DataCenter {
     func callAPIForgotPass(with params: [String:Any], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         guard let userToken = USER?.token else { return }
         let _header = createHeader(userToken)
-        NetworkService.requestWith(.post, url: Constant.APIKey.forgotPass, parameters: params, header: _header) { (data, error, code) in
+        NetworkService.requestWith(.post, url: Constant.APIKey.forgotPass, parameters: params, header: _header) { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             if error == nil {
                 completion(true, nil)
             } else {
-                completion(false, error!)
+                completion(false, strongSelf.returnMessage(with: error!))
             }
         }
     }
@@ -64,14 +74,15 @@ class DataCenter {
     func callAPIUpdateRole(_ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         guard let userToken = USER?.token else { return }
         let _header = createHeader(userToken)
-        NetworkService.requestWithHeader(.get, url: Constant.APIKey.updateRole, parameters: nil, header: _header) { (data, mess, code) in
+        NetworkService.requestWithHeader(.get, url: Constant.APIKey.updateRole, parameters: nil, header: _header) { [weak self] (data, mess, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             guard let code = code else { return }
             if code == StatusCode.success {
                 completion(true, nil)
             } else {
                 guard let error = mess else { return }
-                completion(false, error)
+                completion(false, strongSelf.returnMessage(with: error))
             }
         }
     }
@@ -79,7 +90,8 @@ class DataCenter {
     func callAPILogOut(_ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         guard let userToken = USER?.token else { return }
         let _header = createHeader(userToken)
-        NetworkService.requestWithHeader(.get, url: Constant.APIKey.logOut, parameters: nil, header: _header) { (data, error, code) in
+        NetworkService.requestWithHeader(.get, url: Constant.APIKey.logOut, parameters: nil, header: _header) { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             if error != nil {
                 if let code = code {
@@ -91,7 +103,7 @@ class DataCenter {
                         completion(true, nil)
                     } else {
                         guard let err = error else { return }
-                        completion(false, err)
+                        completion(false, strongSelf.returnMessage(with: err))
                     }
                 }
             }
@@ -101,13 +113,14 @@ class DataCenter {
     func callAPIChangePassword(_ params: [String:Any], _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
         guard let userToken = USER?.token else { return }
         let _header = createHeader(userToken)
-        NetworkService.requestWithHeader(.post, url: Constant.APIKey.changePass, parameters: params, header: _header, Completion: { (data, error, code) in
+        NetworkService.requestWithHeader(.post, url: Constant.APIKey.changePass, parameters: params, header: _header, Completion: { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             if let code = code {
                 if code == StatusCode.success {
                     completion(true, nil)
                 } else {
-                    completion(false, error!)
+                    completion(false, strongSelf.returnMessage(with: error!))
                 }
             }
         })
@@ -117,7 +130,8 @@ class DataCenter {
         guard let userToken = USER?.token else { return }
         let _headers = createHeader(userToken)
         guard let completion = completion else { return }
-        NetworkService.callApiMultiPart(url: Constant.APIKey.updateProfile, withNames: [imageName], method: .post, images: imageProfile, parameters: param, headers: _headers, completion: { (data) in
+        NetworkService.callApiMultiPart(url: Constant.APIKey.updateProfile, withNames: [imageName], method: .post, images: imageProfile, parameters: param, headers: _headers, completion: { [weak self] (data) in
+            guard let strongSelf = self else { return }
             let jsonFormat = JSONFormat(data)
             let parser:ParseDataSignIn = ParseDataSignIn()
             if jsonFormat.status == "success" {
@@ -126,7 +140,7 @@ class DataCenter {
                 parser.fetchDataSignIn(data: userData)
                 completion(true, jsonFormat.message)
             } else {
-                completion(false, jsonFormat.message)
+                completion(false, strongSelf.returnMessage(with: jsonFormat.message))
             }
         }) { (error) in
             print(error.localizedDescription)
@@ -140,7 +154,8 @@ class DataCenter {
         let param = ["country":3,
                      "page":page
         ] as [String:Any]
-        NetworkService.requestData(.get, url: Constant.APIKey.getListMotel, parameters: param, encoding: URLEncoding.default, headers: _headers) { (data, pagination,mess, code) in
+        NetworkService.requestData(.get, url: Constant.APIKey.getListMotel, parameters: param, encoding: URLEncoding.default, headers: _headers) { [weak self] (data, pagination,mess, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             if mess == nil {
                 var arrMotel = [Motel]()
@@ -154,7 +169,7 @@ class DataCenter {
                 completion(true, nil, arrMotel, paging)
             } else {
                 guard let mess = mess else { return }
-                completion(false, mess, [], nil)
+                completion(false, strongSelf.returnMessage(with: mess), [], nil)
             }
         }
     }
@@ -167,7 +182,8 @@ class DataCenter {
                      "latitude": location.latitude,
                      "longitude": location.longitude
             ] as [String:Any]
-        NetworkService.requestData(.get, url: Constant.APIKey.getListFilter, parameters: param, encoding: URLEncoding.default, headers: _headers) { (data, pagination, mess, code) in
+        NetworkService.requestData(.get, url: Constant.APIKey.getListFilter, parameters: param, encoding: URLEncoding.default, headers: _headers) { [weak self] (data, pagination, mess, code) in
+            guard let strongSelf = self else { return }
             guard let completion = completion else { return }
             if mess == nil {
                 var arrMotel = [Motel]()
@@ -179,7 +195,7 @@ class DataCenter {
                 completion(true, nil, arrMotel)
             } else {
                 guard let mess = mess else { return }
-                completion(false, mess, [])
+                completion(false, strongSelf.returnMessage(with: mess), [])
             }
         }
     }
@@ -190,13 +206,14 @@ class DataCenter {
         let arrImg = createArrImage(arrImage)
         let arrImgName = createImagesName(arrImg)
         guard let completion = completion else { return }
-        NetworkService.callApiMultiPart(url: Constant.APIKey.postMotel, withNames: arrImgName, method: .post, images: arrImg, parameters: param, headers: _header, completion: { (data) in
+        NetworkService.callApiMultiPart(url: Constant.APIKey.postMotel, withNames: arrImgName, method: .post, images: arrImg, parameters: param, headers: _header, completion: { [weak self] (data) in
+            guard let strongSelf = self else { return }
             let jsonFormat = JSONFormat(data)
             print(jsonFormat)
             if jsonFormat.status == "success" {
                 completion(true, nil)
             } else {
-                completion(false, jsonFormat.message)
+                completion(false, strongSelf.returnMessage(with: jsonFormat.message))
             }
         }) { (error) in
             completion(false, error.localizedDescription)
