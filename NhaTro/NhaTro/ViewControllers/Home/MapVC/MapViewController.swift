@@ -58,7 +58,7 @@ class MapViewController: UIViewController {
     
     private func setupSearchBar() {
         searchBar.searchBarStyle = UISearchBarStyle.prominent
-        searchBar.placeholder = "Search"
+        searchBar.placeholder = "Tìm kiếm"
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
         searchBar.delegate = self

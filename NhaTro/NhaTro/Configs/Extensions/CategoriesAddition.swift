@@ -64,18 +64,18 @@ extension String {
         return NSStringFromClass(aClass).components(separatedBy: ".").last!
     }
     
-    func substring(_ from: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
-    }
+//    func substring(_ from: Int) -> String {
+//        return self.substring(from: self.index(self.startIndex, offsetBy: from))
+//    }
     
     var length: Int {
-        return self.characters.count
+        return self.count
     }
     
     //validate email
     func isValidEmail()-> Bool{
         //Maximum length: 254 characters
-        if self.characters.count > 254 {
+        if self.count > 254 {
             return false
         }
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
@@ -88,9 +88,9 @@ extension String {
     var isPhoneNumber: Bool {
         do {
             let detector = try NSDataDetector(types: NSTextCheckingResult.CheckingType.phoneNumber.rawValue)
-            let matches = detector.matches(in: self, options: [], range: NSMakeRange(0, self.characters.count))
+            let matches = detector.matches(in: self, options: [], range: NSMakeRange(0, self.count))
             if let res = matches.first {
-                return res.resultType == .phoneNumber && res.range.location == 0 && res.range.length == self.characters.count && self.characters.count == 10
+                return res.resultType == .phoneNumber && res.range.location == 0 && res.range.length == self.count && self.count == 10
             } else {
                 return false
             }

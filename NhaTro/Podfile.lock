@@ -104,7 +104,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - NKVPhonePicker (1.2.0)
+  - NKVPhonePicker (1.2.1)
   - NVActivityIndicatorView (4.0.0):
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
@@ -172,7 +172,7 @@ SPEC CHECKSUMS:
   Kingfisher: 6793a473357b5dbee42b0068ef203fe8325f259e
   KRPullLoader: 8209e472b2f7f67b22e809f0b614ca1043a8239e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  NKVPhonePicker: bde21135440ae62684528664d82bd51e1be69b13
+  NKVPhonePicker: 32dc6aeaf1821ae5b32284f3e543a32b73cd5910
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
