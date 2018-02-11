@@ -199,10 +199,14 @@ struct NetworkService {
             case .success(let value):
                 guard let value = value as? [String: Any] else { return }
                 if let routes = value["routes"] as? [[String: Any]] {
-                    if let lines = routes[0]["overview_polyline"] as? [String: Any] {
+                    if let route = routes.first, let lines = route["overview_polyline"] as? [String: Any] {
                         guard let points = lines["points"] as? String else { return }
                         completion(points, nil)
                     }
+//                    if let lines = routes[0]["overview_polyline"] as? [String: Any] {
+//                        guard let points = lines["points"] as? String else { return }
+//                        completion(points, nil)
+//                    }
                 }
             case .failure(let error):
                 print(error.localizedDescription)

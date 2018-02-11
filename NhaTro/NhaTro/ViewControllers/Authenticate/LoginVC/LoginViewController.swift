@@ -25,7 +25,6 @@ class LoginViewController: BaseViewController {
     //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.setupGoogle()
         self.setupUI()
     }
@@ -84,7 +83,7 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func loginGoogle(_ sender: UIButton) {
-        GIDSignIn.sharedInstance().clientID = "151862910224-3hec1qnegk798ua6ja7q1sdud6gshh37.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = Constant.googleSignInKey
         GIDSignIn.sharedInstance().signIn()
     }
 

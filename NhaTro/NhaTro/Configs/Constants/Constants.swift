@@ -14,6 +14,7 @@ struct Constant {
     static let GoogleAPIKey = "AIzaSyDoEM53gYja9D3Gjou5nMsWe1MiDbkBHww"
     static let googleDirectionKey = "AIzaSyBxbJblSeYPL_b4RghEhzQV47-mRq0Sfno"
     static let googleURLDirection = "https://maps.googleapis.com/maps/api/directions/json"
+    static let googleSignInKey = "151862910224-3hec1qnegk798ua6ja7q1sdud6gshh37.apps.googleusercontent.com"
     
     struct APIKey {
         

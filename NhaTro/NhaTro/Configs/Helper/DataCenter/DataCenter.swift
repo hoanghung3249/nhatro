@@ -12,6 +12,7 @@ import Alamofire
 import CoreLocation
 import GooglePlaces
 import GoogleMaps
+import Kingfisher
 
 class DataCenter {
     
@@ -106,9 +107,8 @@ class DataCenter {
                 if let code = code {
                     if code == StatusCode.success {
                         USER?.logOut()
-                        URLCache.shared.removeAllCachedResponses()
-                        URLCache.shared.diskCapacity = 0
-                        URLCache.shared.memoryCapacity = 0
+                        KingfisherManager.shared.cache.clearMemoryCache()
+                        Utilities.shared.removeCache()
                         completion(true, nil)
                     } else {
                         guard let err = error else { return }

@@ -48,8 +48,8 @@ class SignInViewController: BaseViewController {
             NSAttributedStringKey.foregroundColor : UIColor.white,
             NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue] as [NSAttributedStringKey : Any]
         
-        let stringAttribute = NSMutableAttributedString(string: "Forgot Password?", attributes: btnAttributes)
-        let stringAttribute1 = NSMutableAttributedString(string: "Register with Email?", attributes: btnAttributes)
+        let stringAttribute = NSMutableAttributedString(string: "Quên mật khẩu?", attributes: btnAttributes)
+        let stringAttribute1 = NSMutableAttributedString(string: "Đăng ký với email?", attributes: btnAttributes)
         btnForgotPass.setAttributedTitle(stringAttribute, for: .normal)
         btnRegister.setAttributedTitle(stringAttribute1, for: .normal)
         
@@ -101,7 +101,7 @@ class SignInViewController: BaseViewController {
     }
     
     @IBAction func RegisterEmail(_ sender: UIButton) {
-        let registerVC = Storyboard.main.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        let registerVC = Storyboard.main.instantiateViewController(ofType: RegisterViewController.self)
         self.pushTo(registerVC)
     }
     
@@ -119,11 +119,11 @@ class SignInViewController: BaseViewController {
     @IBAction func resendEmail(_ sender: UIButton) {
         guard let email = self.txtResendEmail.text else { return }
         if email.isEmptyOrWhitespace() {
-            self.showAlert(with: "Please input the email!")
+            self.showAlert(with: "Xin hãy nhập email!")
             return
         }
         if !email.isValidEmail() {
-            self.showAlert(with: "The email format is invalid.")
+            self.showAlert(with: "Địa chỉ email không đúng định dạng. Xin nhập lại!")
             return
         }
         var param:[String:Any] = Dictionary()
