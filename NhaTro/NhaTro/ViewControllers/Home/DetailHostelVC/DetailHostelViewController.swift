@@ -165,9 +165,33 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
     private func handleHeaderAction(_ cell: HeaderImageCell, _ sender: UIButton, _ motel: Motel) {
         if sender == cell.btnLike {
             print("like")
-            saveLocalAndDownloadImage(motel)
-        } else {
-            print("share")
+            var isLike = false
+            if sender.isSelected {
+                isLike = sender.isSelected
+            } else {
+                isLike = sender.isSelected
+            }
+            DataCenter.shared.likeOrUnlikeMotel(with: motel.motel_Id, isLike: isLike, { [weak self] (isSuccess, mess) in
+                guard let strongSelf = self else { return }
+                if isSuccess {
+                    if isLike {
+                        strongSelf.saveLocalAndDownloadImage(motel)
+                    } else {
+                        RealmUtilities.updateRealmObject(updateBlock: { (realm) in
+                            guard let motelLocal = realm.objects(MotelRealm.self).filter(NSPredicate(format: "id == %d", motel.motel_Id)).first else { return }
+                            let motelImage = motelLocal.images
+                            motelLocal.arrImage.forEach({ (imgName) in
+                                Utilities.shared.deleteLocalFile(fileName: imgName.stringValue)
+                            })
+                            realm.delete(motelLocal)
+                            realm.delete(motelImage)
+                        })
+                    }
+                } else {
+                    guard let mess = mess else { return }
+                    strongSelf.showAlert(with: mess)
+                }
+            })
         }
     }
     

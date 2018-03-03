@@ -58,6 +58,9 @@
 		45EF0B301F5075A3005791E4 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B2F1F5075A3005791E4 /* ProgressView.swift */; };
 		45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B311F5075AD005791E4 /* Utilities.swift */; };
 		45EF0B351F5075DE005791E4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF0B341F5075DE005791E4 /* TransitionManager.swift */; };
+		45F16899203DAD0900A3C08F /* MotelRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F16898203DAD0900A3C08F /* MotelRoomViewController.swift */; };
+		45F1689C203DB1D500A3C08F /* MotelRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F1689B203DB1D500A3C08F /* MotelRoom.swift */; };
+		45F1689F203DBB4B00A3C08F /* PostedMotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F1689E203DBB4B00A3C08F /* PostedMotelViewController.swift */; };
 		45FF15271F6E408300473B18 /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */; };
 		45FF15281F6E408300473B18 /* GOTHIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9871F5AB6590035AA85 /* GOTHIC.TTF */; };
 		45FF15291F6E408300473B18 /* gothicb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4519F9881F5AB6590035AA85 /* gothicb.ttf */; };
@@ -156,6 +159,9 @@
 		45EF0B2F1F5075A3005791E4 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		45EF0B311F5075AD005791E4 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45EF0B341F5075DE005791E4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		45F16898203DAD0900A3C08F /* MotelRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotelRoomViewController.swift; sourceTree = "<group>"; };
+		45F1689B203DB1D500A3C08F /* MotelRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotelRoom.swift; sourceTree = "<group>"; };
+		45F1689E203DBB4B00A3C08F /* PostedMotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostedMotelViewController.swift; sourceTree = "<group>"; };
 		6B04541E64344E56F652E0A3 /* Pods-NhaTro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.debug.xcconfig"; sourceTree = "<group>"; };
 		A549A2A6141EB784B85B84AF /* Pods-NhaTro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NhaTro.release.xcconfig"; path = "Pods/Target Support Files/Pods-NhaTro/Pods-NhaTro.release.xcconfig"; sourceTree = "<group>"; };
 		B7166D891FC31D9600DD8F78 /* DetailNearHostelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNearHostelCell.swift; sourceTree = "<group>"; };
@@ -369,6 +375,7 @@
 		453C6A121F62CABE00F856D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				45F1689A203DB1BA00A3C08F /* MotelRoom */,
 				456462962000781B009A6A32 /* MotelRealm */,
 				452AEE151FC13BC800CD85FA /* Motel */,
 				452AEE121FC1389F00CD85FA /* Pagination */,
@@ -441,6 +448,8 @@
 		455131961F7928AA00BD731A /* MenuVC */ = {
 			isa = PBXGroup;
 			children = (
+				45F1689D203DBB3800A3C08F /* PostedMotel */,
+				45F16897203DAC4300A3C08F /* MotelRoom */,
 				4550B58E1F87BBCE00E0F43B /* ChangePassVC */,
 				45429C881F8662CC0019493C /* InfoVC */,
 				455131991F7929AF00BD731A /* Cell */,
@@ -714,6 +723,30 @@
 				45EF0B341F5075DE005791E4 /* TransitionManager.swift */,
 			);
 			path = TransitionManager;
+			sourceTree = "<group>";
+		};
+		45F16897203DAC4300A3C08F /* MotelRoom */ = {
+			isa = PBXGroup;
+			children = (
+				45F16898203DAD0900A3C08F /* MotelRoomViewController.swift */,
+			);
+			path = MotelRoom;
+			sourceTree = "<group>";
+		};
+		45F1689A203DB1BA00A3C08F /* MotelRoom */ = {
+			isa = PBXGroup;
+			children = (
+				45F1689B203DB1D500A3C08F /* MotelRoom.swift */,
+			);
+			path = MotelRoom;
+			sourceTree = "<group>";
+		};
+		45F1689D203DBB3800A3C08F /* PostedMotel */ = {
+			isa = PBXGroup;
+			children = (
+				45F1689E203DBB4B00A3C08F /* PostedMotelViewController.swift */,
+			);
+			path = PostedMotel;
 			sourceTree = "<group>";
 		};
 		75A47287B3355DCB6C75BB3C /* Pods */ = {
@@ -1130,10 +1163,12 @@
 				B77BB0041F77650700A24DBE /* DetailHostelViewController.swift in Sources */,
 				B7166D8E1FCC439400DD8F78 /* ImageHostelViewController.swift in Sources */,
 				45EF0B0A1F50714D005791E4 /* NetworkService.swift in Sources */,
+				45F1689F203DBB4B00A3C08F /* PostedMotelViewController.swift in Sources */,
 				451CBF6620249538007ED7BC /* DropDown+Appearance.swift in Sources */,
 				B77BB0091F77FF8700A24DBE /* SignInViewController.swift in Sources */,
 				4550B5901F87BBE200E0F43B /* ChangePassViewController.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
+				45F16899203DAD0900A3C08F /* MotelRoomViewController.swift in Sources */,
 				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				457D32D21F7BE01E00C54E91 /* User.swift in Sources */,
@@ -1161,6 +1196,7 @@
 				45874C7D1FF3D2C000250231 /* Reachability.swift in Sources */,
 				45EF0B321F5075AD005791E4 /* Utilities.swift in Sources */,
 				455131981F7928B900BD731A /* MenuViewController.swift in Sources */,
+				45F1689C203DB1D500A3C08F /* MotelRoom.swift in Sources */,
 				458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */,
 				B7BD02C51FC31287003BB71E /* DetailCell.swift in Sources */,
 				B7BD02C21FC30C4C003BB71E /* HeaderImageCell.swift in Sources */,
@@ -1293,7 +1329,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 533G42X52A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1318,7 +1356,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 533G42X52A;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

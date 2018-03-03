@@ -311,6 +311,80 @@
             </objects>
             <point key="canvasLocation" x="-1703.2" y="1412.7436281859073"/>
         </scene>
+        <!--Posted Motel View Controller-->
+        <scene sceneID="R1m-lb-kZ0">
+            <objects>
+                <viewController storyboardIdentifier="PostedMotelViewController" id="ttr-j0-qf6" customClass="PostedMotelViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ve2-Yn-EGU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="frh-77-o6e" customClass="CollectionView" customModule="HGPlaceholders">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="t3L-Kr-NBg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="frh-77-o6e" firstAttribute="leading" secondItem="BWv-Kr-ojy" secondAttribute="leading" id="0wN-7k-BOv"/>
+                            <constraint firstAttribute="bottom" secondItem="frh-77-o6e" secondAttribute="bottom" id="Dm4-jW-3Oz"/>
+                            <constraint firstItem="BWv-Kr-ojy" firstAttribute="trailing" secondItem="frh-77-o6e" secondAttribute="trailing" id="MlP-lG-u6h"/>
+                            <constraint firstItem="frh-77-o6e" firstAttribute="top" secondItem="BWv-Kr-ojy" secondAttribute="top" id="NCK-vv-usW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BWv-Kr-ojy"/>
+                    </view>
+                    <connections>
+                        <outlet property="cvwMotel" destination="frh-77-o6e" id="Pmx-3h-zvj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51Z-W2-zbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1725" y="2093"/>
+        </scene>
+        <!--Motel Room View Controller-->
+        <scene sceneID="yqh-fM-ghf">
+            <objects>
+                <viewController storyboardIdentifier="MotelRoomViewController" id="E3p-yq-QsM" customClass="MotelRoomViewController" customModule="NhaTro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SNo-dV-sAq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fan-EZ-Tmy" customClass="CollectionView" customModule="HGPlaceholders">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hnR-7A-f0Y">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4eN-Dh-4pA" firstAttribute="trailing" secondItem="fan-EZ-Tmy" secondAttribute="trailing" id="Spa-Ic-OQg"/>
+                            <constraint firstItem="fan-EZ-Tmy" firstAttribute="leading" secondItem="4eN-Dh-4pA" secondAttribute="leading" id="ZBg-DN-zgH"/>
+                            <constraint firstItem="fan-EZ-Tmy" firstAttribute="top" secondItem="4eN-Dh-4pA" secondAttribute="top" id="irj-MC-xKh"/>
+                            <constraint firstAttribute="bottom" secondItem="fan-EZ-Tmy" secondAttribute="bottom" id="jdc-Ty-nrx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4eN-Dh-4pA"/>
+                    </view>
+                    <connections>
+                        <outlet property="cvwMotelRoom" destination="fan-EZ-Tmy" id="gIC-4m-KhX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x4d-9Z-UMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-773" y="2088"/>
+        </scene>
         <!--Change Pass View Controller-->
         <scene sceneID="83I-uQ-XT4">
             <objects>

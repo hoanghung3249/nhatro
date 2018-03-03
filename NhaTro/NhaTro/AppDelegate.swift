@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
                 let homeVC = TabBarViewController()
                 window?.rootViewController = homeVC
             } else {
-                let loginVC = Storyboard.main.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                let loginVC = Storyboard.main.instantiateViewController(ofType: LoginViewController.self)
                 window?.rootViewController = loginVC
             }
         }

@@ -27,6 +27,7 @@ class HeaderImageCell: UITableViewCell {
     
     @IBAction func share(_ sender: UIButton) {
         guard let actionButton = actionButton else { return }
+        sender.isSelected = !sender.isSelected
         actionButton(sender)
     }
     override func awakeFromNib() {

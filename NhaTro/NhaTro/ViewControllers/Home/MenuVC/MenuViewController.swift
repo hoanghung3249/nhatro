@@ -12,7 +12,7 @@ class MenuViewController: UIViewController {
 
     @IBOutlet weak var tbvMenu: UITableView!
     
-    fileprivate let arrTitle:[String] = ["Thông tin", "Phòng trọ", "Lịch sử", "Bảo mật" ,"Đăng xuất"]
+    fileprivate let arrTitle:[String] = ["Thông tin", "Phòng trọ", "Bài đăng", "Bảo mật" ,"Đăng xuất"]
     fileprivate let arrImgIcon:[String] = ["user", "home-1", "history","lock","logout"]
     
     //MARK:- Life Cycle
@@ -41,15 +41,27 @@ class MenuViewController: UIViewController {
     }
     
     fileprivate func showInfoVC() {
-        let infoVC = Storyboard.home.instantiateViewController(withIdentifier: "InfoViewController") as! InfoViewController
+        let infoVC = Storyboard.home.instantiateViewController(ofType: InfoViewController.self)
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
     fileprivate func showChangePassVC() {
-        let changePassVC = Storyboard.home.instantiateViewController(withIdentifier: "ChangePassViewController") as! ChangePassViewController
+        let changePassVC = Storyboard.home.instantiateViewController(ofType: ChangePassViewController.self)
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(changePassVC, animated: true)
+    }
+    
+    fileprivate func showMotelRoomVC() {
+        let motelRoomVC = Storyboard.home.instantiateViewController(ofType: MotelRoomViewController.self)
+        hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(motelRoomVC, animated: true)
+    }
+    
+    fileprivate func showPostedMotelVC() {
+        let postedVC = Storyboard.home.instantiateViewController(ofType: PostedMotelViewController.self)
+        hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(postedVC, animated: true)
     }
     
 }
@@ -62,7 +74,7 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
+        let cell = tableView.dequeueReusableCell(ofType: MenuCell.self, at: indexPath)
         cell.selectionStyle = .none
         let title = self.arrTitle[indexPath.row]
         let icon = self.arrImgIcon[indexPath.row]
@@ -78,6 +90,12 @@ extension MenuViewController: UITableViewDataSource, UITableViewDelegate {
         switch (indexPath.row) {
         case 0:
             self.showInfoVC()
+            break
+        case 1:
+            self.showMotelRoomVC()
+            break
+        case 2:
+            self.showPostedMotelVC()
             break
         case 3:
             self.showChangePassVC()

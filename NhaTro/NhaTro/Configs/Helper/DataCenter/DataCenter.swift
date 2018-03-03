@@ -247,6 +247,116 @@ class DataCenter {
         }
     }
     
+    func getListUserMotel(page:Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[Motel], _ pagination:Pagination?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _headers = createHeader(userToken)
+        let param = ["page":page] as [String:Any]
+        NetworkService.requestData(.get, url: Constant.APIKey.getListUserMotel, parameters: param, encoding: URLEncoding.default, headers: _headers) { [weak self] (data, pagination,mess, code) in
+            guard let strongSelf = self else { return }
+            guard let completion = completion else { return }
+            if mess == nil {
+                var arrMotel = [Motel]()
+                guard let dataJSON = data?.arrayValue, let pagination = pagination else { return }
+                let paging = Pagination(pagination)
+                for motelJSON in dataJSON {
+                    let motel = Motel(motelJSON)
+                    print(motel)
+                    arrMotel.append(motel)
+                }
+                completion(true, nil, arrMotel, paging)
+            } else {
+                guard let mess = mess else { return }
+                completion(false, strongSelf.returnMessage(with: mess), [], nil)
+            }
+        }
+    }
+    
+    func deleteUserMotel(with id: Int, _ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        let params = ["id": id] as [String: Any]
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        NetworkService.requestWithHeader(.post, url: Constant.APIKey.deleteUserMotel, parameters: params, header: _header, Completion: { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
+            guard let completion = completion else { return }
+            if let code = code {
+                if code == StatusCode.success {
+                    completion(true, nil)
+                } else {
+                    completion(false, strongSelf.returnMessage(with: error!))
+                }
+            }
+        })
+    }
+    
+    func getListUserLike(page:Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[Motel], _ pagination:Pagination?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _headers = createHeader(userToken)
+        let param = ["page":page] as [String:Any]
+        NetworkService.requestData(.get, url: Constant.APIKey.getListUserLike, parameters: param, encoding: URLEncoding.default, headers: _headers) { [weak self] (data, pagination,mess, code) in
+            guard let strongSelf = self else { return }
+            guard let completion = completion else { return }
+            if mess == nil {
+                var arrMotel = [Motel]()
+                guard let dataJSON = data?.arrayValue, let pagination = pagination else { return }
+                let paging = Pagination(pagination)
+                for motelJSON in dataJSON {
+                    let motel = Motel(motelJSON)
+                    print(motel)
+                    arrMotel.append(motel)
+                }
+                completion(true, nil, arrMotel, paging)
+            } else {
+                guard let mess = mess else { return }
+                completion(false, strongSelf.returnMessage(with: mess), [], nil)
+            }
+        }
+    }
+    
+    func likeOrUnlikeMotel(with id: Int, isLike: Bool = true,_ completion:((_ success:Bool, _ mess:String?) -> Void)?) {
+        let params = ["id": id] as [String: Any]
+        guard let userToken = USER?.token else { return }
+        let _header = createHeader(userToken)
+        var url = Constant.APIKey.likeMotel
+        if !isLike {
+            url = Constant.APIKey.unlikeMotel
+        }
+        NetworkService.requestWithHeader(.get, url: url, parameters: params, header: _header, encoding: URLEncoding.default, Completion: { [weak self] (data, error, code) in
+            guard let strongSelf = self else { return }
+            guard let completion = completion else { return }
+            if let code = code {
+                if code == StatusCode.success {
+                    completion(true, nil)
+                } else {
+                    completion(false, strongSelf.returnMessage(with: error!))
+                }
+            }
+        })
+    }
+    
+    func getListRoomMotel(page:Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[MotelRoom], _ pagination:Pagination?) -> Void)?) {
+        guard let userToken = USER?.token else { return }
+        let _headers = createHeader(userToken)
+        let param = ["page":page] as [String:Any]
+        NetworkService.requestData(.get, url: Constant.APIKey.getMotelRoom, parameters: param, encoding: URLEncoding.default, headers: _headers) { [weak self] (data, pagination,mess, code) in
+            guard let strongSelf = self else { return }
+            guard let completion = completion else { return }
+            if mess == nil {
+                var arrMotel = [MotelRoom]()
+                guard let dataJSON = data?.arrayValue, let pagination = pagination else { return }
+                let paging = Pagination(pagination)
+                for motelJSON in dataJSON {
+                    let motel = MotelRoom(motelJSON)
+                    print(motel)
+                    arrMotel.append(motel)
+                }
+                completion(true, nil, arrMotel, paging)
+            } else {
+                guard let mess = mess else { return }
+                completion(false, strongSelf.returnMessage(with: mess), [], nil)
+            }
+        }
+    }
+    
     private func createArrImage(_ arrImg:[UIImage]) -> [UIImage] {
         let arrImage = arrImg.filter({ $0 != UIImage(named: "add_image")! })
         return arrImage
