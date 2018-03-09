@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 struct Utilities {
     
@@ -50,6 +51,36 @@ struct Utilities {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             completion()
         }
+    }
+    
+    func getRegion(_ region: String) -> [String] {
+        var arrRegion = [String]()
+        guard let path = Bundle.main.path(forResource: "khuvuc", ofType: "json") else { return [] }
+        let pathURL = URL(fileURLWithPath: path)
+        do {
+            let data = try Data(contentsOf: pathURL)
+            guard let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any] else { return [] }
+            let jsonData = JSON(json)
+            var keyRegion = ""
+            switch region {
+            case "Miền Bắc":
+                keyRegion = "Bac"
+            case "Miền Trung":
+                keyRegion = "Trung"
+            case "Miền Nam":
+                keyRegion = "Nam"
+            default:
+                keyRegion = ""
+            }
+            guard let regions = jsonData[keyRegion].array else { return [] }
+            for r in regions {
+                arrRegion.append(r["name"].stringValue)
+            }
+            return arrRegion
+        } catch (let error) {
+            print(error.localizedDescription)
+        }
+        return arrRegion
     }
     
     func beginBackgroundTask() -> UIBackgroundTaskIdentifier? {

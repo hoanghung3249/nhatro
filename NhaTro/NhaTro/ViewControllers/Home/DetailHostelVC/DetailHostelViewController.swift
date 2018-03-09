@@ -175,7 +175,7 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
                 guard let strongSelf = self else { return }
                 if isSuccess {
                     if isLike {
-                        strongSelf.saveLocalAndDownloadImage(motel)
+                        Utilities.shared.saveMotelLocal(motel)
                     } else {
                         RealmUtilities.updateRealmObject(updateBlock: { (realm) in
                             guard let motelLocal = realm.objects(MotelRealm.self).filter(NSPredicate(format: "id == %d", motel.motel_Id)).first else { return }
@@ -193,9 +193,5 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
                 }
             })
         }
-    }
-    
-    private func saveLocalAndDownloadImage(_ motel: Motel) {
-        Utilities.shared.saveMotelLocal(motel)
     }
 }

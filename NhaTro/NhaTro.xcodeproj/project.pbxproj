@@ -21,6 +21,10 @@
 		451CBF6420249538007ED7BC /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5C20249538007ED7BC /* DropDown.swift */; };
 		451CBF6520249538007ED7BC /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5D20249538007ED7BC /* DropDownCell.swift */; };
 		451CBF6620249538007ED7BC /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CBF5E20249538007ED7BC /* DropDown+Appearance.swift */; };
+		4520B7CF205235DE00978ED9 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520B7CE205235DE00978ED9 /* SelectRegionViewController.swift */; };
+		4520B7D220524C3F00978ED9 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520B7D120524C3F00978ED9 /* RegionViewController.swift */; };
+		4520B7D5205250D700978ED9 /* khuvuc.json in Resources */ = {isa = PBXBuildFile; fileRef = 4520B7D4205250D700978ED9 /* khuvuc.json */; };
+		4520B7D82052540F00978ED9 /* Enumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4520B7D72052540F00978ED9 /* Enumeration.swift */; };
 		452AEE141FC138DA00CD85FA /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE131FC138DA00CD85FA /* Pagination.swift */; };
 		452AEE171FC13BD400CD85FA /* Motel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452AEE161FC13BD400CD85FA /* Motel.swift */; };
 		452E4DD61F4B16F200F27656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E4DD51F4B16F200F27656 /* AppDelegate.swift */; };
@@ -119,6 +123,10 @@
 		451CBF5C20249538007ED7BC /* DropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
 		451CBF5D20249538007ED7BC /* DropDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		451CBF5E20249538007ED7BC /* DropDown+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		4520B7CE205235DE00978ED9 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
+		4520B7D120524C3F00978ED9 /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
+		4520B7D4205250D700978ED9 /* khuvuc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = khuvuc.json; sourceTree = "<group>"; };
+		4520B7D72052540F00978ED9 /* Enumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumeration.swift; sourceTree = "<group>"; };
 		452AEE131FC138DA00CD85FA /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		452AEE161FC13BD400CD85FA /* Motel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motel.swift; sourceTree = "<group>"; };
 		452E4DD21F4B16F200F27656 /* NhaTro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NhaTro.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +319,38 @@
 				451CBF5E20249538007ED7BC /* DropDown+Appearance.swift */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		4520B7CD205235C300978ED9 /* SelectRegionVC */ = {
+			isa = PBXGroup;
+			children = (
+				4520B7CE205235DE00978ED9 /* SelectRegionViewController.swift */,
+			);
+			path = SelectRegionVC;
+			sourceTree = "<group>";
+		};
+		4520B7D020524C3100978ED9 /* RegionVC */ = {
+			isa = PBXGroup;
+			children = (
+				4520B7D120524C3F00978ED9 /* RegionViewController.swift */,
+			);
+			path = RegionVC;
+			sourceTree = "<group>";
+		};
+		4520B7D3205250BA00978ED9 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				4520B7D4205250D700978ED9 /* khuvuc.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		4520B7D6205253A600978ED9 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4520B7D72052540F00978ED9 /* Enumeration.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		452AEE121FC1389F00CD85FA /* Pagination */ = {
@@ -578,6 +618,7 @@
 		45EF0B0B1F507318005791E4 /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				4520B7D6205253A600978ED9 /* Enums */,
 				451CB5661FBFEC2B0025EB44 /* Reusable */,
 				45EF0B101F507381005791E4 /* Utilities */,
 				45EF0B0F1F507376005791E4 /* Helper */,
@@ -645,6 +686,7 @@
 		45EF0B131F5073E2005791E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4520B7D3205250BA00978ED9 /* Files */,
 				453C6A111F62CAAE00F856D8 /* Plists */,
 				4519F9851F5AB6430035AA85 /* Fonts */,
 				45EF0B181F50742D005791E4 /* Storyboards */,
@@ -693,6 +735,8 @@
 		45EF0B1E1F5074C0005791E4 /* Authenticate */ = {
 			isa = PBXGroup;
 			children = (
+				4520B7D020524C3100978ED9 /* RegionVC */,
+				4520B7CD205235C300978ED9 /* SelectRegionVC */,
 				B77BB0071F77FF7500A24DBE /* SignInVC */,
 				B7504C781F5BB73100C1730D /* VerifyVC */,
 				B77C15F61F5A504400D03921 /* RegisterVC */,
@@ -1021,6 +1065,7 @@
 				45FF152C1F6E408300473B18 /* gothici.ttf in Resources */,
 				45EF0B1D1F50746A005791E4 /* Main.storyboard in Resources */,
 				451CBF6320249538007ED7BC /* Info.plist in Resources */,
+				4520B7D5205250D700978ED9 /* khuvuc.json in Resources */,
 				B741D6071F6B8D0300C11EE7 /* Home.storyboard in Resources */,
 				453C6A1F1F62D29300F856D8 /* GoogleService-Info.plist in Resources */,
 				4551319B1F7929C000BD731A /* MenuCell.xib in Resources */,
@@ -1157,6 +1202,8 @@
 				B7BD02C81FC315CE003BB71E /* ImageDetailCell.swift in Sources */,
 				451CBF6220249538007ED7BC /* DPDUIView+Extension.swift in Sources */,
 				45EF0B211F5074DB005791E4 /* LoginViewController.swift in Sources */,
+				4520B7D82052540F00978ED9 /* Enumeration.swift in Sources */,
+				4520B7CF205235DE00978ED9 /* SelectRegionViewController.swift in Sources */,
 				45EF0B2D1F507596005791E4 /* UIViewControllerExtension.swift in Sources */,
 				458D63001F7292FE00D8CD80 /* PostViewController.swift in Sources */,
 				B7BD02CA1FC315EF003BB71E /* ImageDetailCollectionViewCell.swift in Sources */,
@@ -1169,6 +1216,7 @@
 				4550B5901F87BBE200E0F43B /* ChangePassViewController.swift in Sources */,
 				45EF0B2E1F507596005791E4 /* UIViewExtension.swift in Sources */,
 				45F16899203DAD0900A3C08F /* MotelRoomViewController.swift in Sources */,
+				4520B7D220524C3F00978ED9 /* RegionViewController.swift in Sources */,
 				B77D29421F62D19800C8F9D5 /* Facebook.swift in Sources */,
 				4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */,
 				457D32D21F7BE01E00C54E91 /* User.swift in Sources */,

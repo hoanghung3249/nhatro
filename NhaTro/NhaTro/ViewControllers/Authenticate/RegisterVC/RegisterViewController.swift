@@ -75,7 +75,6 @@ class RegisterViewController: BaseViewController {
 //        }
         let tabbarVC = TabBarViewController()
         self.present(tabbarVC, animated: true, completion: nil)
-        
     }
     
 
