@@ -43,6 +43,7 @@ class RegionViewController: UIViewController {
         for r in Utilities.shared.getRegion(region) {
             arrRegion.append(r)
         }
+        arrRegion = arrRegion.sorted()
         DispatchQueue.main.async {
             self.tbvRegion.reloadData()
         }

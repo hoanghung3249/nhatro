@@ -23,7 +23,6 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var segmentedControl: XMSegmentedControl!
     
     @IBOutlet weak var lctTopBtnBack: NSLayoutConstraint!
-    let parser:ParseDataSignIn = ParseDataSignIn()
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -73,8 +72,12 @@ class RegisterViewController: BaseViewController {
 //            self.register(param!)
 //
 //        }
-        let tabbarVC = TabBarViewController()
-        self.present(tabbarVC, animated: true, completion: nil)
+//        let tabbarVC = TabBarViewController()
+//        self.present(tabbarVC, animated: true, completion: nil)
+        let selectRegionVC = Storyboard.main.instantiateViewController(ofType: SelectRegionViewController.self)
+        let navi = NhaTroNavigationVC(rootViewController: selectRegionVC)
+        navi.setupTitle("Chọn Khu Vực")
+        present(navi, animated: true, completion: nil)
     }
     
 
