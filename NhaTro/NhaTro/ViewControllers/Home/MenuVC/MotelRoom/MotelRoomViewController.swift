@@ -45,7 +45,6 @@ class MotelRoomViewController: UIViewController {
     //MARK:- Support functions
     private func setupLayout() {
         navigationItem.title = "Phòng Trọ"
-        tabBarController?.tabBar.isHidden = false
     }
     
     private func setupCollectionView() {

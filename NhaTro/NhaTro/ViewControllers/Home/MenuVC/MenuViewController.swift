@@ -42,25 +42,25 @@ class MenuViewController: UIViewController {
     
     fileprivate func showInfoVC() {
         let infoVC = Storyboard.home.instantiateViewController(ofType: InfoViewController.self)
-        self.hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(infoVC, animated: true)
     }
     
     fileprivate func showChangePassVC() {
         let changePassVC = Storyboard.home.instantiateViewController(ofType: ChangePassViewController.self)
-        self.hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.pushViewController(changePassVC, animated: true)
     }
     
     fileprivate func showMotelRoomVC() {
         let motelRoomVC = Storyboard.home.instantiateViewController(ofType: MotelRoomViewController.self)
-        hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.pushViewController(motelRoomVC, animated: true)
     }
     
     fileprivate func showPostedMotelVC() {
         let postedVC = Storyboard.home.instantiateViewController(ofType: PostedMotelViewController.self)
-        hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.isHidden = true
         navigationController?.pushViewController(postedVC, animated: true)
     }
     
