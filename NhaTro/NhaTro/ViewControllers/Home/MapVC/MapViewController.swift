@@ -30,6 +30,8 @@ class MapViewController: UIViewController {
     fileprivate var isFilterPrice = true
     fileprivate let arrFilterPrice = ["Tất cả", "Dưới 5 triệu", "Trên 5 triệu"]
     fileprivate let arrFilterArea = ["1m²","3m²","5m²"]
+    // Check to avoid call API
+    fileprivate var isFinished = true
     
     //MARK:- Life cycle
     override func viewDidLoad() {
@@ -97,6 +99,7 @@ class MapViewController: UIViewController {
         DataCenter.shared.callAPIFilterMotel(location: location, limitRadius: limitRadius, price: price) { [weak self] (success, mess, arrMotel) in
             guard let strongSelf = self else { return }
             if success {
+                strongSelf.isFinished = true
                 strongSelf.arrMotel.removeAll()
                 strongSelf.arrMotel = arrMotel
                 strongSelf.addMarker()
@@ -149,7 +152,10 @@ class MapViewController: UIViewController {
                 limitRadius = Int(sender.value)
             }
         }
-        callAPIFilter(with: limitRadius, price: price)
+        if isFinished {
+            isFinished = false
+            callAPIFilter(with: limitRadius, price: price)
+        }
     }
     
     @IBAction func showDropDownPrice(_ sender: UIButton) {
@@ -190,7 +196,10 @@ extension MapViewController: GMSMapViewDelegate {
             if let userLocation = userLocation {
                 let camera = GMSCameraPosition.camera(withLatitude: userLocation.latitude, longitude: userLocation.longitude, zoom: 16)
                 strongSelf.location = userLocation
-                strongSelf.callAPIFilter(with: strongSelf.limitRadius, price: strongSelf.price)
+                if strongSelf.isFinished {
+                    strongSelf.isFinished = false
+                    strongSelf.callAPIFilter(with: strongSelf.limitRadius, price: strongSelf.price)
+                }
                 DispatchQueue.main.async {
                     strongSelf.mapView?.animate(to: camera)
                 }
@@ -270,7 +279,10 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
         if let address = place.formattedAddress {
             searchBar.text = address
         }
-        callAPIFilter(with: limitRadius, price: price)
+        if isFinished {
+            isFinished = false
+            callAPIFilter(with: limitRadius, price: price)
+        }
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }

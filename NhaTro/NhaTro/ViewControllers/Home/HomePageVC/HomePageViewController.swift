@@ -30,6 +30,7 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LocationManager.shared.setup()
+        ProgressView.shared.show(view)
         getListMotel(current_Page)
         arrMotel.removeAll()
         self.setupCollectionView()
@@ -80,7 +81,7 @@ class HomePageViewController: UIViewController {
     }
     
     fileprivate func getListMotel(_ page:Int) {
-        ProgressView.shared.show(view)
+//        ProgressView.shared.show(view)
         DataCenter.shared.callAPIGetListMotel(page: page) { [weak self] (success, mess, arrMotel, paging) in
             guard let strongSelf = self else { return }
             ProgressView.shared.hide()

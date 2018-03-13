@@ -158,6 +158,7 @@ class DataCenter {
     }
     
     func callAPIGetListMotel(page:Int, _ completion:((_ success:Bool, _ mess:String?, _ arrMotel:[Motel], _ pagination:Pagination?) -> Void)?) {
+        //1: Bac, 2:Trung, 3:Nam
         guard let userToken = USER?.token else { return }
         let _headers = createHeader(userToken)
         let param = ["country":3,
