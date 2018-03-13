@@ -15,6 +15,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.tabBar.barTintColor = Color.mainColor()
         self.setupViewController()
+        self.delegate = self
     }
     
     private func setupViewController() {
@@ -41,4 +42,14 @@ class TabBarViewController: UITabBarController {
         self.viewControllers = [naviPageVC, naviLikeVC , naviPostVC, naviMenuVC]
         self.selectedViewController = naviPageVC
     }
+    
+}
+
+// MARK: - Extension TabbarController Delegate
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        self.tabBar.isHidden = false
+    }
+    
 }
