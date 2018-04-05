@@ -167,9 +167,16 @@ class MapViewController: UIViewController {
     
     @IBAction func showDropDownArea(_ sender: UIButton) {
         print("show area")
-        isFilterPrice = false
-        setupDropdown(btnShowArea, dataSource: arrFilterArea)
-        dropDown.show()
+//        isFilterPrice = false
+//        setupDropdown(btnShowArea, dataSource: arrFilterArea)
+//        dropDown.show()
+        let selectRegionVC = Storyboard.main.instantiateViewController(ofType: SelectRegionViewController.self)
+        selectRegionVC.isLoginView = false
+        selectRegionVC.delegate = self
+//        let navi = NhaTroNavigationVC(rootViewController: selectRegionVC)
+//        navi.setupTitle("Chọn Khu Vực")
+//        present(selectRegionVC, animated: true, completion: nil)
+        navigationController?.pushViewController(selectRegionVC, animated: true)
     }
     
 }
@@ -210,11 +217,11 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        let infoWindow = Bundle.main.loadNibNamed("InfoWinDow", owner: self.viewGoogleMap, options: nil)?.first as? InfoWinDowView
+        guard let infoWindow = Bundle.main.loadNibNamed("InfoWinDow", owner: self.viewGoogleMap, options: nil)?.first as? InfoWinDowView else { return nil }
         if let motelMarker = marker.userData as? Motel {
-            infoWindow?.lblPrice.text = "\(motelMarker.unit_price) VNĐ"
-            infoWindow?.lblName.text = motelMarker.location
-            infoWindow?.lblPhone.text = motelMarker.phone
+            infoWindow.lblPrice.text = "\(motelMarker.unit_price) VNĐ"
+            infoWindow.lblName.text = motelMarker.location
+            infoWindow.lblPhone.text = motelMarker.phone
         }
         return infoWindow
     }
@@ -307,5 +314,26 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+
+// MARK: - Select Region Delegate
+extension MapViewController: SelectRegionDelegate {
+    
+    func callGMSPlacse() {
+        let placeClient = GMSPlacesClient()
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        placeClient.autocompleteQuery(UserDefaults.string(forKey: .area)!, bounds: nil, filter: filter) { (results, err) in
+            if let error = err {
+                print(error.localizedDescription)
+            }
+            guard let results = results, let result = results.first, let placeID = result.placeID else { return }
+            DataCenter.shared.getLocation(placeID, completion: { [weak self] (success, lat, long) in
+                guard let strongSelf = self else { return }
+                strongSelf.location = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                strongSelf.callAPIFilter(with: strongSelf.limitRadius, price: strongSelf.price)
+            })
+        }
     }
 }

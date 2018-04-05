@@ -51,6 +51,11 @@ struct Constant {
         static let unlikeMotel              = "\(domain)/motel/unlike-news-by-user"
     }
     
+    static func getURLPlaceClient(from placeID: String, key: String) -> String {
+        let url = "https://maps.googleapis.com/maps/api/place/details/json?input=bar&placeid=\(placeID)&key=\(key)"
+        return url
+    }
+    
 }
 
 

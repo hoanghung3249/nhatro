@@ -56,12 +56,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         if let userData = parseUserData() {
             window?.makeKeyAndVisible()
             if userData.email != "" {
-                let homeVC = TabBarViewController()
-                window?.rootViewController = homeVC
+                if UserDefaults.bool(forKey: .isRegionSelected) {
+                    let homeVC = TabBarViewController()
+                    window?.rootViewController = homeVC
+                } else {
+                    let selectRegion = Storyboard.main.instantiateViewController(ofType: SelectRegionViewController.self)
+                    selectRegion.isLoginView = true
+                    let navi = NhaTroNavigationVC(rootViewController: selectRegion)
+                    navi.setupTitle("Chọn Khu Vực")
+                    window?.rootViewController = navi
+                }
             } else {
                 let loginVC = Storyboard.main.instantiateViewController(ofType: LoginViewController.self)
                 window?.rootViewController = loginVC
             }
+        } else {
+            let loginVC = Storyboard.main.instantiateViewController(ofType: LoginViewController.self)
+            window?.rootViewController = loginVC
         }
     }
     

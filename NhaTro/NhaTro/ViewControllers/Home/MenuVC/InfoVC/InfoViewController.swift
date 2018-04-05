@@ -157,6 +157,7 @@ extension InfoViewController: XMSegmentedControlDelegate {
             ProgressView.shared.hide()
             if success {
                 strongSelf.showAlertSuccess(with: "Nâng cấp tài khoản thành công!")
+                UserDefaults.setValue(true, forKey: .isSendMailActive)
             } else {
                 guard let err = mess else { return }
                 strongSelf.segmentedControl.selectedSegment = 0

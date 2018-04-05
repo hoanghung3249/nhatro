@@ -11,6 +11,7 @@
 		45039C351F5B9C35001DD70A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45039C341F5B9C35001DD70A /* Constants.swift */; };
 		4506E8CA1FECB13300A19BD8 /* PlaceholderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */; };
 		4506E8CD1FECC38300A19BD8 /* DownloadSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */; };
+		45099731206D154A005A4EA2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45099730206D154A005A4EA2 /* Extensions.swift */; };
 		4519F9841F5AB0D30035AA85 /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */; };
 		451CB5681FBFEC570025EB44 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451CB5671FBFEC570025EB44 /* Reusable.swift */; };
 		451CBF5F20249538007ED7BC /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 451CBF5520249538007ED7BC /* DropDownCell.xib */; };
@@ -106,6 +107,7 @@
 		45039C341F5B9C35001DD70A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4506E8C91FECB13300A19BD8 /* PlaceholderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderProvider.swift; sourceTree = "<group>"; };
 		4506E8CC1FECC38300A19BD8 /* DownloadSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadSession.swift; sourceTree = "<group>"; };
+		45099730206D154A005A4EA2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4519F9831F5AB0D30035AA85 /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
 		4519F9861F5AB6590035AA85 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
 		4519F9871F5AB6590035AA85 /* GOTHIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GOTHIC.TTF; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				45EF0B291F507596005791E4 /* CategoriesAddition.swift */,
 				45EF0B2A1F507596005791E4 /* UIViewControllerExtension.swift */,
 				45EF0B2B1F507596005791E4 /* UIViewExtension.swift */,
+				45099730206D154A005A4EA2 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1246,6 +1249,7 @@
 				455131981F7928B900BD731A /* MenuViewController.swift in Sources */,
 				45F1689C203DB1D500A3C08F /* MotelRoom.swift in Sources */,
 				458D62FD1F72926B00D8CD80 /* FavoriteViewController.swift in Sources */,
+				45099731206D154A005A4EA2 /* Extensions.swift in Sources */,
 				B7BD02C51FC31287003BB71E /* DetailCell.swift in Sources */,
 				B7BD02C21FC30C4C003BB71E /* HeaderImageCell.swift in Sources */,
 				457D32D61F7BE37100C54E91 /* ParseDataSignIn.swift in Sources */,

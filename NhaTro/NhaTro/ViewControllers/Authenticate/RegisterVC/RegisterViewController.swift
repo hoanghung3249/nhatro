@@ -64,20 +64,19 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func nextStep(_ sender: UIButton) {
-//        guard let email = self.txtEmail.text, let pass = self.txtPassWord.text, let phone = self.txtPhoneNumber.text, let firstName = self.txtFirstName.text, let confirmPass = self.txtConfirmPassWord.text,let lastName = self.txtLastName.text else { return }
-//        let (param,error) = Params.createParamResgister(email, pass, phone, firstName, lastName, confirmPass)
-//        if error != nil {
-//            self.showAlert(with: error!)
-//        }else{
-//            self.register(param!)
-//
-//        }
+        guard let email = self.txtEmail.text, let pass = self.txtPassWord.text, let phone = self.txtPhoneNumber.text, let firstName = self.txtFirstName.text, let confirmPass = self.txtConfirmPassWord.text,let lastName = self.txtLastName.text else { return }
+        let (param,error) = Params.createParamResgister(email, pass, phone, firstName, lastName, confirmPass)
+        if error != nil {
+            self.showAlert(with: error!)
+        } else {
+            self.register(param!)
+        }
 //        let tabbarVC = TabBarViewController()
 //        self.present(tabbarVC, animated: true, completion: nil)
-        let selectRegionVC = Storyboard.main.instantiateViewController(ofType: SelectRegionViewController.self)
-        let navi = NhaTroNavigationVC(rootViewController: selectRegionVC)
-        navi.setupTitle("Chọn Khu Vực")
-        present(navi, animated: true, completion: nil)
+//        let selectRegionVC = Storyboard.main.instantiateViewController(ofType: SelectRegionViewController.self)
+//        let navi = NhaTroNavigationVC(rootViewController: selectRegionVC)
+//        navi.setupTitle("Chọn Khu Vực")
+//        present(navi, animated: true, completion: nil)
     }
     
 

@@ -215,4 +215,28 @@ struct NetworkService {
         }
     }
     
+    static func requesAPILocation(_ url: String, header: HTTPHeaders, completion:@escaping ((_ success: Bool, _ error: String?, _ lat: Double?, _ long: Double?)->())) {
+        guard let url = URL(string: url) else { return }
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                guard let result = json["result"].dictionary else {
+                    completion(false, "Cannot get result", nil, nil)
+                    return
+                }
+                guard let geometry = result["geometry"]?.dictionary, let location = geometry["location"]?.dictionary else {
+                    completion(false, "Cannot parse result", nil, nil)
+                    return
+                }
+                let lat = location["lat"]?.doubleValue
+                let long = location["lng"]?.doubleValue
+                completion(true, nil, lat, long)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(false, error.localizedDescription, nil, nil)
+            }
+        }
+    }
+    
 }

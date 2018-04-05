@@ -13,3 +13,11 @@ public enum Region: String {
     case trung = "Trung"
     case nam = "Nam"
 }
+
+enum DefaultValueKeys: String {
+    case isSendMailActive       = "isSendMailActive"
+    case isUserActived          = "isUserActived"
+    case isRegionSelected       = "isRegionSelected"
+    case region                 = "region"
+    case area                   = "area"
+}

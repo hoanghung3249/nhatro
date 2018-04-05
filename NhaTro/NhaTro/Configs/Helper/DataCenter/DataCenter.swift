@@ -161,7 +161,7 @@ class DataCenter {
         //1: Bac, 2:Trung, 3:Nam
         guard let userToken = USER?.token else { return }
         let _headers = createHeader(userToken)
-        let param = ["country":3,
+        let param = ["country":UserDefaults.integer(forKey: .region),
                      "page":page
         ] as [String:Any]
         NetworkService.requestData(.get, url: Constant.APIKey.getListMotel, parameters: param, encoding: URLEncoding.default, headers: _headers) { [weak self] (data, pagination,mess, code) in
@@ -354,6 +354,22 @@ class DataCenter {
             } else {
                 guard let mess = mess else { return }
                 completion(false, strongSelf.returnMessage(with: mess), [], nil)
+            }
+        }
+    }
+    
+    func getLocation(_ placeID: String, completion:@escaping ((_ success: Bool, _ lat: Double, _ long: Double)->())) {
+        let url = Constant.getURLPlaceClient(from: placeID, key: Constant.googleDirectionKey)
+        let headers = createHeaderDirection()
+        NetworkService.requesAPILocation(url, header: headers) { (success, err, lat, long) in
+            if success {
+                guard let lat = lat, let long = long else {
+                    completion(false, 0.0, 0.0)
+                    return
+                }
+                completion(true, lat, long)
+            } else {
+                completion(false, 0.0, 0.0)
             }
         }
     }
