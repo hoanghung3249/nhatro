@@ -9,9 +9,6 @@
 import UIKit
 import SwiftyJSON
 
-protocol RegionVCDelegate: class{
-    func dismissVC()
-}
 
 class RegionViewController: UIViewController {
 
@@ -19,9 +16,8 @@ class RegionViewController: UIViewController {
     
     @IBOutlet weak var tbvRegion: UITableView!
     var region: String = ""
-    fileprivate var arrRegion: [String] = []
+    fileprivate var arrRegion: [RegionVN] = []
     var isLoginView = true
-    weak var delegate: RegionVCDelegate?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -49,7 +45,7 @@ class RegionViewController: UIViewController {
         for r in Utilities.shared.getRegion(region) {
             arrRegion.append(r)
         }
-        arrRegion = arrRegion.sorted()
+        arrRegion = arrRegion.sorted(by: {$0.region < $1.region})
         DispatchQueue.main.async {
             self.tbvRegion.reloadData()
         }
@@ -72,7 +68,7 @@ extension RegionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RegionCell", for: indexPath)
         let r = arrRegion[indexPath.row]
-        cell.textLabel?.text = r
+        cell.textLabel?.text = r.region
         return cell
     }
     
@@ -89,21 +85,17 @@ extension RegionViewController: UITableViewDataSource, UITableViewDelegate {
             UserDefaults.setValue(0, forKey: .region)
         }
         UserDefaults.setValue(true, forKey: .isRegionSelected)
-        UserDefaults.setValue(area, forKey: .area)
+        UserDefaults.setValue(area.region, forKey: .area)
         if isLoginView {
             let tabbar = TabBarViewController()
             present(tabbar, animated: true, completion: nil)
         } else {
             if let selectRegionVC = parent?.childViewControllers.filter({$0.isKind(of: SelectRegionViewController.self)}).first as? SelectRegionViewController {
                 navigationController?.popViewControllerWithHandler {
-                    selectRegionVC.delegate?.callGMSPlacse()
+                    selectRegionVC.delegate?.dismissVC(with: area.location)
                     selectRegionVC.navigationController?.popViewController(animated: true)
                 }
             }
-//            delegate?.dismissVC()
-            
-            
-//            navigationController?.popViewController(animated: false)
         }
     }
     

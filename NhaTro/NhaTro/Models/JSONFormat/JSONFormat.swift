@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import CoreLocation
 
 struct JSONFormat {
     
@@ -23,4 +24,19 @@ struct JSONFormat {
         data = dataJSON["data"]
     }
     
+}
+
+struct RegionVN {
+    
+    var region: String
+    var lat: Double
+    var long: Double
+    var location: CLLocationCoordinate2D
+    
+    init(_ dataJSON: JSON) {
+        region = dataJSON["name"].stringValue
+        lat = dataJSON["lat"].doubleValue
+        long = dataJSON["long"].doubleValue
+        location = CLLocationCoordinate2D(latitude: lat, longitude: long)
+    }
 }

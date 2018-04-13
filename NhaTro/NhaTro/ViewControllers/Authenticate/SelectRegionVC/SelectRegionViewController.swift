@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol SelectRegionDelegate: class {
-    func callGMSPlacse()
+    func dismissVC(with location: CLLocationCoordinate2D)
 }
 
 class SelectRegionViewController: UIViewController {
@@ -58,16 +59,7 @@ extension SelectRegionViewController: UITableViewDataSource, UITableViewDelegate
         let regionVC = Storyboard.main.instantiateViewController(ofType: RegionViewController.self)
         regionVC.region = region
         regionVC.isLoginView = isLoginView
-        regionVC.delegate = self
         navigationController?.pushViewController(regionVC, animated: true)
     }
 }
 
-// MARK: - RegionViewController Delegate
-extension SelectRegionViewController: RegionVCDelegate {
-    
-    func dismissVC() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-}

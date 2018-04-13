@@ -53,8 +53,8 @@ struct Utilities {
         }
     }
     
-    func getRegion(_ region: String) -> [String] {
-        var arrRegion = [String]()
+    func getRegion(_ region: String) -> [RegionVN] {
+        var arrRegion = [RegionVN]()
         guard let path = Bundle.main.path(forResource: "khuvuc", ofType: "json") else { return [] }
         let pathURL = URL(fileURLWithPath: path)
         do {
@@ -74,13 +74,14 @@ struct Utilities {
             }
             guard let regions = jsonData[keyRegion].array else { return [] }
             for r in regions {
-                arrRegion.append(r["name"].stringValue)
+                let region = RegionVN(r)
+                arrRegion.append(region)
             }
             return arrRegion
         } catch (let error) {
             print(error.localizedDescription)
+            return []
         }
-        return arrRegion
     }
     
     func beginBackgroundTask() -> UIBackgroundTaskIdentifier? {

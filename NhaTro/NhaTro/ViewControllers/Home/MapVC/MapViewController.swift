@@ -320,20 +320,9 @@ extension MapViewController: GMSAutocompleteViewControllerDelegate {
 // MARK: - Select Region Delegate
 extension MapViewController: SelectRegionDelegate {
     
-    func callGMSPlacse() {
-        let placeClient = GMSPlacesClient()
-        let filter = GMSAutocompleteFilter()
-        filter.type = .city
-        placeClient.autocompleteQuery(UserDefaults.string(forKey: .area)!, bounds: nil, filter: filter) { (results, err) in
-            if let error = err {
-                print(error.localizedDescription)
-            }
-            guard let results = results, let result = results.first, let placeID = result.placeID else { return }
-            DataCenter.shared.getLocation(placeID, completion: { [weak self] (success, lat, long) in
-                guard let strongSelf = self else { return }
-                strongSelf.location = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                strongSelf.callAPIFilter(with: strongSelf.limitRadius, price: strongSelf.price)
-            })
-        }
+    func dismissVC(with location: CLLocationCoordinate2D) {
+        self.location = location
+        self.searchBar.text = UserDefaults.string(forKey: .area)
+        callAPIFilter(with: limitRadius, price: price)
     }
 }
