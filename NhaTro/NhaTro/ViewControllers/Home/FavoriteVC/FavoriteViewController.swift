@@ -20,6 +20,7 @@ class FavoriteViewController: UIViewController {
     }
     
     fileprivate var arrMotel = [Motel]()
+    fileprivate var motels = [MotelRealm]()
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -35,6 +36,16 @@ class FavoriteViewController: UIViewController {
     }
     
     //MARK:- Support functions
+    private func getListMotel() {
+        let realm = RealmUtilities.getRealmInstanse()
+        let motelsRealm = realm.objects(MotelRealm.self)
+        motelsRealm.forEach { (motel) in
+            motels.append(motel)
+        }
+        DispatchQueue.main.async {
+            self.cvwFavorite.reloadData()
+        }
+    }
     
     private func setupCollectionView() {
         cvwFavorite.delegate = self

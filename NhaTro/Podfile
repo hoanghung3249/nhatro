@@ -24,7 +24,7 @@ target 'NhaTro' do
     pod 'GoogleMaps’
     pod 'GooglePlaces'
     pod "KRPullLoader"	
-    pod 'AXPhotoViewer'
+    pod 'AXPhotoViewer', '~> 1.6.1'
     pod 'RealmSwift'
     pod 'HGPlaceholders'
 end

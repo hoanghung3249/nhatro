@@ -18,7 +18,7 @@ class DetailHostelViewController: UIViewController {
     fileprivate var isReload = false
     var motel:Motel?
     
-    var arrImg = [PhotoProtocol]()
+    var arrImg = [AXPhotoProtocol]()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class DetailHostelViewController: UIViewController {
         guard let motel = motel else { return }
         if motel.images.count > 0 {
             for img in motel.images {
-                let photo = Photo(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: nil, url: URL(string: "\(Constant.APIKey.baseUrl)\(img.sub_image)"))
+                let photo = AXPhoto(attributedTitle: nil, attributedDescription: nil, attributedCredit: nil, imageData: nil, image: nil, url: URL(string: "\(Constant.APIKey.baseUrl)\(img.sub_image)"))
                 arrImg.append(photo)
             }
         }
@@ -147,9 +147,9 @@ extension DetailHostelViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    private func presentPhotoVC(_ indexPath:IndexPath, arrImage:[PhotoProtocol]) {
-        let dataSource = PhotosDataSource(photos: arrImage, initialPhotoIndex: indexPath.row)
-        let photosViewController = PhotosViewController(dataSource: dataSource)
+    private func presentPhotoVC(_ indexPath:IndexPath, arrImage:[AXPhotoProtocol]) {
+        let dataSource = AXPhotosDataSource(photos: arrImage, initialPhotoIndex: indexPath.row)
+        let photosViewController = AXPhotosViewController(dataSource: dataSource)
         photosViewController.view.backgroundColor = .clear
         photosViewController.overlayView.topStackContainer.backgroundColor = Color.mainColor(with: 1.0)
         photosViewController.overlayView.backgroundColor = .clear
